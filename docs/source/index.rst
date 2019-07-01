@@ -10,6 +10,8 @@ Welcome to bgwas3's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   tutorial
+
 
 
 Indices and tables
