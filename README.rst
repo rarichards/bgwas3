@@ -7,8 +7,4 @@ Read the docs_.
 
 .. _docs: http://bgwas3.readthedocs.io
 
-.. graphviz::
-
-   digraph foo {
-      "bar" -> "baz";
-   }
+.. image:: docs/_static/flow.svg
