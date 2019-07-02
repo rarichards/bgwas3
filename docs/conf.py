@@ -7,7 +7,7 @@ release = '0.0.1'
 # General configuration
 master_doc = 'index'
 extensions = [
-    'sphinxcontrib.mermaid'
+    'sphinx.ext.graphviz'
 ]
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
