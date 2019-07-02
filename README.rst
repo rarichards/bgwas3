@@ -3,4 +3,6 @@
 bgwas3
 ======
 
-#.. image:: docs/source/_static/diagram.svg
+Read the docs_.
+
+.. _docs: http://bgwas3.readthedocs.io
