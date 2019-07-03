@@ -1,4 +1,69 @@
- digraph graphname {
-     a -> b -> c;
-     b -> d;
- }
+digraph graphname {
+
+	node [
+		fontname="Sans serif" 
+		fontsize="8"
+		shape="rectangle"
+		margin="0.1, 0.05"
+		height=0
+		width=0
+		];
+	
+	dat_wgs [
+		label = <
+			WGS<br/>
+			<font color="blue" point-size="6">.fastd</font>
+			>
+		];
+
+	dat_pheno [
+		label = <
+			Phenotypes<br/>
+			<font color="blue" point-size="6">.tsv</font>
+			>
+		];
+
+	dat_kmers [
+		label = <
+			K-mers<br/>
+			<font color="blue" point-size="6">.gz</font>
+			>
+		];
+
+	
+	dat_assoc [
+		label = <
+			Associations<br/>
+			<font color="blue" point-size="6">.tsv</font>
+			>
+		];
+
+
+	node [
+		fontsize="20"
+		margin="0.1, 0.05"
+		height=0
+		width=0
+		];
+
+	proc_gwas [
+		label = <
+			GWAS<br/>
+			<font color="red" point-size="6">pyseer</font>
+			>
+		]
+
+	edge [
+		arrowhead="none"
+		];
+
+	dat_wgs -> proc_gwas;
+	dat_pheno -> proc_gwas;
+
+	edge [
+		arrowhead="normal"
+		];
+
+	proc_gwas -> dat_assoc;
+
+	}
