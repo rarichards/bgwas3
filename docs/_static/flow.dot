@@ -1,5 +1,4 @@
 digraph graphname {
-
 	node [
 		fontname="Sans serif" 
 		fontsize="8"
