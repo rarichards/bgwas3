@@ -1,0 +1,30 @@
+- [p] three
+	- [ ] make basic pipline
+			- [x] go through project quickstart
+					- [x] go through example pipeline
+			- [x] read about making python packages
+			- [x] research pytest and travis
+			- [x] set up drmaa on hpc
+			- [ ] kmer mining
+				- [ ] write function
+				- [ ] test as part of pipline
+			- [ ] fix kmer mapping
+					- [ ] fix pyseer mapping script
+					- [ ] rsearch other mapping scripts
+					- [ ] write script
+					- [ ] test with teest data
+			- [ ] put all together
+			- [ ] test
+			- [ ] send code and plot to antonio
+	- [ ] testing
+		- [ ] write test for each tool/ function
+		- [ ] set up travis
+		- [m] research jenkins for testing
+	- [ ] read other tools to maybe add to end of pipeline
+		- [ ] matrixqtl
+			~ http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/
+		- [ ] bolt lmm
+			~ https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-20001
+		- [ ] qtltools
+			~ https://qtltools.github.io/qtltools/
+	-
