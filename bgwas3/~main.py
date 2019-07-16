@@ -53,7 +53,7 @@ def getKmers(infile, outfile):
 @follows(getContigs)
 @transform(
     input = getContigs,
-    filter = regex("contigs")
+    filter = regex("contigs"),
     output = r"phylogeny.tree"
     )
 def getPhylogeny(infile, outfile):
@@ -111,7 +111,7 @@ def getPhenos(infile, outfile):
     input = getPhenos,
     filter = regex("phenos/(.*)\.tsv"),
     output = r"\1\.assoc",
-    add_inputs(getDistances, getKmers)
+    add_inputs = [getDistances, getKmers]
     )
 def get_assoc(infiles, outfile):
 
@@ -138,9 +138,9 @@ def get_assoc(infiles, outfile):
     )
 @transform(
     input = getAssoc,
-    filter = regex("associations/(.*).assoc")
+    filter = regex("associations/(.*).assoc"),
     output = r"annotated/\1\.txt",
-    add_inputs("ref_genomes")
+    add_inputs = ["ref_genomes"]
     )
 def getKmerAnnotation(infiles, outfile):
 
@@ -151,11 +151,7 @@ def getKmerAnnotation(infiles, outfile):
     statement = '''
     ls %(ref_genomes) | awk '{print $1 "\t" ref}' > ref_genome_list.txt &&
     python %(PY_SRC_PATH)/summarise_annotations.py
-
-
-
-
-    
+    '''
 # }}}
 
 @follows (

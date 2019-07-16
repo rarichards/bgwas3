@@ -28,19 +28,13 @@ with open(os.path.join(here, 'requirements.txt'), encoding='utf-8') as required:
 setup(
     name = 'bgwas3',
     version = '0.1',
-    description = 'Sequence Elements Enrichment Analysis (SEER), python implementation',
     long_description = long_description,
     url = 'http://github.com/g-r-eg/bgwas3',
     author = 'Gregory Leeman',
     author_email = 'gregoryleeman@outlook.com',
     license = 'GNU General Public License v3.0',
     packages = ['bgwas3'],
-    entry_points = {
-        "console_scripts": [
-            'bgwas3 = bgwas3.__main__:main',
-            ]
-    },
+    entry_points = {"console_scripts": ['bgwas3 = bgwas3.bgwas3:main']},
     install_requires = install_requires,
     zip_safe = False
     )
-

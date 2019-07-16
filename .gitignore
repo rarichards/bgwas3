@@ -1,1 +1,3 @@
 .pytest_cache/
+build/
+bgwas3.egg-info/
