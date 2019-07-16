@@ -1,20 +1,19 @@
 - [ ] make basic pipline
-		- [x] go through project quickstart
-				- [x] go through example pipeline
-		- [x] read about making python packages
-		- [x] research pytest and travis
-		- [x] set up drmaa on hpc
-		- [x] kmer mining
-			- [x] write function
-			- [x] test as part of pipline
+	- [x] go through project quickstart
+		- [x] go through example pipeline
+	- [x] read about making python packages
+	- [x] set up drmaa
+	- [ ] kmer mapping step
 		- [ ] fix kmer mapping
-				- [x] rsearch other mapping scripts
-				- [ ] fix pyseer mapping script
-				- [ ] write script
-				- [ ] test with teest data
-		- [ ] put all together
-		- [ ] test
-		- [ ] send code and plot to antonio
+		- [w] test
+	- [ ] kmer mining step
+	- [w] make demo to show antonio
+		- [ ] make flowchart
+		- [ ] use with test data
+		- [ ] fix drmaa
+	- [ ] write outline
+	- [m] research pytest and travis
+	- [s] meeting
 - [ ] testing
 	- [ ] write test for each tool/ function
 	- [ ] set up travis
