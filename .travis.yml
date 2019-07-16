@@ -7,4 +7,4 @@ install:
   - python setup.py install || python3 setup.py install
   - pip3 install -U pytest
 script:
-  - pytest -v
+  - pytest -v --cache-clear
