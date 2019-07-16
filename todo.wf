@@ -3,26 +3,26 @@
 		- [x] go through example pipeline
 	- [x] read about making python packages
 	- [x] set up drmaa
-	- [ ] kmer mapping step
-		- [ ] fix kmer mapping
+	- [ ] kmer mapping step @tue
+		- [ ] fix kmer mapping 
 		- [w] test
-	- [ ] kmer mining step
-	- [w] make demo to show antonio
+	- [ ] kmer mining step @tue
+	- [w] make demo to show antonio @tue
 		- [ ] make flowchart
 		- [ ] use with test data
 		- [ ] fix drmaa
-	- [ ] write outline
+	- [ ] write outline @wed
 	- [m] research pytest and travis
 	- [s] meeting
 - [ ] testing
 	- [ ] write test for each tool/ function
 	- [ ] set up travis
 	- [m] research jenkins for testing
-- [ ] read other tools to maybe add to end of pipeline
-	- [ ] matrixqtl
+- [ ] read other tools to maybe add to end of pipeline @thu
+	- [ ] matrixqtl 
 		~ http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/
-	- [ ] bolt lmm
+	- [ ] bolt @thu
 		~ https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-20001
-	- [ ] qtltools
+	- [ ] qtltools @thu
 		~ https://qtltools.github.io/qtltools/
 -
