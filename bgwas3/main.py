@@ -137,29 +137,25 @@ def get_assoc(infiles, outfile):
     getAssoc,
     )
 @transform(
-    input = r"associations/.*\.assoc",
+    input = getAssoc,
     filter = regex("associations/(.*).assoc")
-    output = r"annotated\1\.txt",
-    add_inputs(getDistances, getKmers)
+    output = r"annotated/\1\.txt",
+    add_inputs("ref_genomes")
     )
 def getKmerAnnotation(infiles, outfile):
 
-    phenos = infiles[0]
-    distances = infiles[1][0]
-    kmers = infiles[1][1]
-    
-    statement = '''
-    pyseer
-        --phenotypes=%(pheno)s
-        --kmers=%(kmers)s
-        --distances=%(distances)s
-        --min-af=0.01
-        --max-af=0.99
-        --cpu=15
-        --filter-pvalue=1E-8
-        > %(outfile)s
-    '''
+    ref_genomes = infiles[1][0]
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                           "python"))
 
+    statement = '''
+    ls %(ref_genomes) | awk '{print $1 "\t" ref}' > ref_genome_list.txt &&
+    python %(PY_SRC_PATH)/summarise_annotations.py
+
+
+
+
+    
 # }}}
 
 @follows (
