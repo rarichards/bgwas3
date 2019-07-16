@@ -7,4 +7,4 @@ Read the docs_.
 
 .. _docs: http://bgwas3.readthedocs.io
 
-#.. image:: docs/_static/flow.svg
+.. Comment image:: docs/_static/flow.svg
