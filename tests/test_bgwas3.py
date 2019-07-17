@@ -9,3 +9,4 @@ def test_0():
 
 def test_1():
     os.system("python ../bgwas3/bgwas3.py show full > 1.log")
+    os.system("cat 1.log")
