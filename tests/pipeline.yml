@@ -1,8 +1,0 @@
-cluster:
-  memory_resource: mem
-  options: -l walltime=00:10:00 -l select=1:ncpus=4:mem=2gb
-  queue_manager: pbspro
-  queue: NONE
-  parallel_environment:  ""
-report:
-  threads: 2
