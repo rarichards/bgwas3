@@ -8,4 +8,4 @@ def test_0():
     assert x == y, str(x) + " does not equal " + str(y)
 
 def test_1():
-    os.system("bgwas3 show full")
+    os.system("python ../bgwas3/bgwas3.py show full > 1.log")

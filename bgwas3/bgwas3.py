@@ -24,6 +24,22 @@ def getContigs(infile, outfile):
     pass
 
 # }}}
+# listContigs {{{
+@follows (
+    getContigs
+    )
+@transform(
+    input = getContigs,
+    filter = regex("contigs"),
+    output = r"contig_list.txt"
+    )
+def listContigs(infile, outfile):
+    statement = '''
+    ls %(infile)s | awk -F. '{print $1 "\t" $0}' > %(outfile)s
+    '''
+    P.run(statement)
+
+# }}}
 # getKmers {{{
 @follows (
     getContigs
@@ -87,16 +103,17 @@ def getDistances(infile, outfile):
 
 # }}}
 # getPhenos {{{
-@split(
+@follows(mkdir("phenos"))
+@transform(
     input = "pheno.tsv",
-    output = r"phenos/.*\.tsv"
+    filter = regex("pheno.tsv"),
+    output = r"phenos.dir"
     )
 def getPhenos(infile, outfile):
 
     statement = '''
-    Rscript %(R_SRC_PATH)s/split_tsv.R %(infile)s phenos
+    Rscript %(R_SRC_PATH)s/split_tsv.R %(infile)s %(outfile)s
     '''
-
     P.run(statement)
 
 # }}}
@@ -112,7 +129,7 @@ def getPhenos(infile, outfile):
     output = r"\1\.assoc",
     add_inputs = [getDistances, getKmers]
     )
-def get_assoc(infiles, outfile):
+def getAssoc(infiles, outfile):
 
     phenos = infiles[0]
     distances = infiles[1][0]
