@@ -1,0 +1,11 @@
+name: bgwas3
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - cgatcore
+  - ruffus
+  #- prokka

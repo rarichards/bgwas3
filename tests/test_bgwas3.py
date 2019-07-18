@@ -47,7 +47,7 @@ def runStep(step_name, req_files, outfile, yml, local=False): # {{{
 
     if len([f for f in os.listdir() if f.startswith("core")]) != 0:
 
-        f_name = [f for f in os.listdir() if f.endswith(".sh")]
+        f_name = [f for f in os.listdir() if f.endswith(".sh") and f.startswith("ct")]
         f = open(f_name[0], "r")
         pbs_template = open(test_dir + "/pbs_temp.sh", "r")
         pbs_name = "pbs_" + step_name + ".sh"
@@ -88,3 +88,8 @@ def test_getKmers():
 def test_getPhenos():
     req_files = ["phenos.tsv"]
     runStep("getPhenos", req_files, "phenos.dir", "", local=True)
+
+@pytest.mark.cluster
+def test_prokka():
+    req_files = ["fastq.dir", "contigs.dir"]
+    runStep("prokka", req_files, "annotations.dir", "")

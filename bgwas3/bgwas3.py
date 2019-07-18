@@ -59,22 +59,49 @@ def getKmers(infile, outfile):
     P.run(statement)
 
 # }}}
-# annotate {{{
-@follows(getContigs)
-@transform(
-    input = getContigs,
-    filter = regex(".*"),
-    output = r"annotations"
+# prokka {{{
+@follows(
+    getContigs,
+    mkdir("annotations.dir")
     )
-def getPhylogeny(infile, outfile):
+@transform(
+    "contigs.dir/*",
+    regex("contigs.dir/(.*)\.fa"),
+    r"annotations\.dir/\1/\1.gff",
+    r"\1"
+    )
+def prokka(infile, outfile, idd):
     
-    ''' Get phylogeny '''
+    ''' Annotate with prokka '''
 
+    to_cluster = True
 
-    pass
+    statement = '''
+    prokka --centre X --compliant %(infile)s --outdir annotations.dir/%(idd)s --force
+    '''
+
+    P.run(statement)
 
 # }}}
+# roary {{{
+@follows(
+    prokka,
+    )
+@transform(
+    input = "annotations.dir/*"
+    filter = regex(r".*"),
+    output = "roary.dir"
+    )
+def roary(infile, outfile):
 
+    statement = '''
+    roary -f %(outfile)s -e -n -v -r %(infiles)/*.gff 
+    '''
+
+    #P.run(statement)
+
+    pass
+# }}}
 # getPhylogeny {{{
 @follows(getContigs)
 @transform(
