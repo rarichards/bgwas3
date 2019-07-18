@@ -1,0 +1,23 @@
+- [ ] finish pipeline
+	- [ ] fix cluster problem
+		- [s] fix cluster with antonio
+	- [w] test with cluster
+	- [ ] adds analysis steps
+		- [ ] read 3 papers on analyis
+			- [s] ask antonio what each of these steps do
+			- [w] matrixqtl
+				~ http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/
+			- [w] bolt 
+				~ https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-20001
+			- [w] qtltools
+				~ https://qtltools.github.io/qtltools/
+		- [w] add aalysis based on results of running data
+	- [m] make automatic plots for results
+- [w] write docs
+- [ ] run with data
+	- [s] get data from antonio
+	- [w] run
+	- [w] analysis
+- [ ] dissertation
+	- [w] write outline
+	- [w] write draft 1

@@ -88,7 +88,7 @@ def prokka(infile, outfile, idd):
     prokka,
     )
 @transform(
-    input = "annotations.dir/*"
+    input = "annotations.dir/*",
     filter = regex(r".*"),
     output = "roary.dir"
     )
@@ -102,6 +102,7 @@ def roary(infile, outfile):
 
     pass
 # }}}
+
 # getPhylogeny {{{
 @follows(getContigs)
 @transform(
