@@ -2,6 +2,10 @@
 	- [ ] fix cluster problem
 		- [s] fix cluster with antonio
 	- [w] test with cluster
+	- [ ] see how to run batch jobs
+		- [s] antonio
+	- [w] finish core
+	- [w] test core
 	- [ ] adds analysis steps
 		- [ ] read 3 papers on analyis
 			- [s] ask antonio what each of these steps do
@@ -19,5 +23,6 @@
 	- [w] run
 	- [w] analysis
 - [ ] dissertation
+	- [ ] go through examples
 	- [w] write outline
 	- [w] write draft 1
