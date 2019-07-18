@@ -59,6 +59,22 @@ def getKmers(infile, outfile):
     P.run(statement)
 
 # }}}
+# annotate {{{
+@follows(getContigs)
+@transform(
+    input = getContigs,
+    filter = regex(".*"),
+    output = r"annotations"
+    )
+def getPhylogeny(infile, outfile):
+    
+    ''' Get phylogeny '''
+
+
+    pass
+
+# }}}
+
 # getPhylogeny {{{
 @follows(getContigs)
 @transform(
