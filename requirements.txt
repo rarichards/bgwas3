@@ -1,9 +1,4 @@
 cgatcore
-docopt
 drmaa>=0.7.6
 ruffus>=2.6
 pyseer
-r-dplyr
-r-tidyr
-r-readr
-r-ggplot2
