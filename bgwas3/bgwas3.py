@@ -10,14 +10,11 @@ P.get_parameters(
   "../pipeline.yml",
   "pipeline.yml"])
 
-PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
-
 # getContigs {{{
 @transform(
-    input = "fastq",
-    filter = regex("fastq"),
-    output = r"contigs"
+    input = "fastq.dir",
+    filter = regex("fastq.dir"),
+    output = r"contigs.dir"
     )
 def getContigs(infile, outfile):
     ''' Contig assembly '''
@@ -30,7 +27,7 @@ def getContigs(infile, outfile):
     )
 @transform(
     input = getContigs,
-    filter = regex("contigs"),
+    filter = regex(".*"),
     output = r"contig_list.txt"
     )
 def listContigs(infile, outfile):
@@ -46,23 +43,17 @@ def listContigs(infile, outfile):
     )
 @transform(
     input = getContigs,
-    filter = regex("contigs"),
+    filter = regex(".*"),
     output = r"kmers.gz"
     )
 def getKmers(infile, outfile):
     ''' Kmer mining/ counting with fsm-lite '''
 
     statement = '''
-    ls %(infile) | awk -F. '{print $1 "\t" $0}' > contig_list.txt &&
-    fsm-lite
-        -l contig_list.txt
-        -s 6
-        -S 610
-        -v
-        -t fsm_kmers
-    | gzip 
-        -c
-        > %(outfile)
+    ls %(infile)s | awk -F. '{print $1 "\t" $0}' > contig_list.txt &&
+    cd %(infile)s &&
+    ls &&
+    fsm-lite -l ../contig_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
     '''
 
     P.run(statement)
@@ -72,7 +63,7 @@ def getKmers(infile, outfile):
 @follows(getContigs)
 @transform(
     input = getContigs,
-    filter = regex("contigs"),
+    filter = regex(".*"),
     output = r"phylogeny.tree"
     )
 def getPhylogeny(infile, outfile):
@@ -93,6 +84,8 @@ def getDistances(infile, outfile):
     
     '''Get distances from a phylogeny tree that has been midpoint rooted'''
 
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
     statement = '''
     python %(PY_SRC_PATH)s/phylogeny_distance.py 
         --calc-C %(infile)s 
@@ -103,17 +96,24 @@ def getDistances(infile, outfile):
 
 # }}}
 # getPhenos {{{
-@follows(mkdir("phenos"))
 @transform(
-    input = "pheno.tsv",
-    filter = regex("pheno.tsv"),
+    input = "phenos.tsv",
+    filter = regex("phenos.tsv"),
     output = r"phenos.dir"
     )
 def getPhenos(infile, outfile):
+    ''' split a tsv file into multiple tsv files by column '''
 
     statement = '''
-    Rscript %(R_SRC_PATH)s/split_tsv.R %(infile)s %(outfile)s
+    mkdir %(outfile)s &&
+    cd %(outfile)s &&
+    cols=`awk -F"\\t" '{print NF; exit}' ../%(infile)s` &&
+    for col in $(seq 2 $cols); do
+        pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' ../%(infile)s` &&
+        awk -F"\\t" -v col=$col '{print $1"\\t"$col}' ../%(infile)s > ${pheno}.tsv;
+    done
     '''
+
     P.run(statement)
 
 # }}}
@@ -161,6 +161,8 @@ def getAssoc(infiles, outfile):
 def getKmerAnnotation(infiles, outfile):
 
     ref_genomes = infiles[1][0]
+
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
     statement = '''
     ls %(ref_genomes) | awk '{print $1 "\t" ref}' > ref_genome_list.txt &&

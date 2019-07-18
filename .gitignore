@@ -3,3 +3,4 @@ build/
 bgwas3.egg-info/
 env/
 tests/temp/
+todo.wf
