@@ -3,3 +3,6 @@ build/
 bgwas3.egg-info/
 env/
 tests/temp/
+*/__pycache__
+NOTES.rst
+JOURNAL.rst

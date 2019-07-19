@@ -10,44 +10,50 @@ P.get_parameters(
   "../pipeline.yml",
   "pipeline.yml"])
 
-# getContigs {{{
+# assembly {{{
 @transform(
-    input = "fastq.dir",
-    filter = regex("fastq.dir"),
-    output = r"contigs.dir"
+    "fastq.dir",
+    regex("fastq\.dir"),
+    "contigs.dir"
     )
-def getContigs(infile, outfile):
+def assembly(infile, outfile):
     ''' Contig assembly '''
     pass
 
 # }}}
 # listContigs {{{
 @follows (
-    getContigs
+    assembly
     )
 @transform(
-    input = getContigs,
-    filter = regex(".*"),
-    output = r"contig_list.txt"
+    "contigs.dir",
+    regex("contigs\.dir"),
+    "contig_list.txt"
     )
 def listContigs(infile, outfile):
+
+    ''' Test step that lists the contigs '''
+
     statement = '''
     ls %(infile)s | awk -F. '{print $1 "\t" $0}' > %(outfile)s
     '''
     P.run(statement)
 
 # }}}
-# getKmers {{{
+# fsm {{{
 @follows (
-    getContigs
+    assembly
     )
 @transform(
-    input = getContigs,
-    filter = regex(".*"),
-    output = r"kmers.gz"
+    assembly,
+    regex("contigs\.dir"),
+    "kmers.gz"
     )
-def getKmers(infile, outfile):
+def fsm(infile, outfile):
+
     ''' Kmer mining/ counting with fsm-lite '''
+
+    to_cluster = True
 
     statement = '''
     ls %(infile)s | awk -F. '{print $1 "\t" $0}' > contig_list.txt &&
@@ -61,7 +67,7 @@ def getKmers(infile, outfile):
 # }}}
 # prokka {{{
 @follows(
-    getContigs,
+    assembly,
     mkdir("annotations.dir")
     )
 @transform(
@@ -77,7 +83,7 @@ def prokka(infile, outfile, idd):
     to_cluster = True
 
     statement = '''
-    prokka --centre X --compliant %(infile)s --outdir annotations.dir/%(idd)s --force
+    prokka --centre X --compliant %(infile)s --outdir annotations.dir --force --prefix %(idd)s
     '''
 
     P.run(statement)
@@ -88,43 +94,32 @@ def prokka(infile, outfile, idd):
     prokka,
     )
 @transform(
-    input = "annotations.dir/*",
-    filter = regex(r".*"),
-    output = "roary.dir"
+    "annotations.dir",
+    regex(r"annotations\.dir"),
+    "roary.dir"
     )
 def roary(infile, outfile):
+
+    ''' Roary '''
+
+    to_cluster = True
 
     statement = '''
     roary -f %(outfile)s -e -n -v -r %(infiles)/*.gff 
     '''
 
-    #P.run(statement)
+    P.run(statement)
 
     pass
 # }}}
-
-# getPhylogeny {{{
-@follows(getContigs)
+# distanceFromTree {{{
+@follows(roary)
 @transform(
-    input = getContigs,
-    filter = regex(".*"),
-    output = r"phylogeny.tree"
+    "roary.dir/*",
+    regex(r"roary.dir/(.*)\.(tree|newick)"),
+    "distance.tsv"
     )
-def getPhylogeny(infile, outfile):
-    
-    ''' Get phylogeny '''
-
-    pass
-
-# }}}
-# getDistances {{{
-@follows(getPhylogeny)
-@transform(
-    input = getPhylogeny,
-    filter = regex("phylogeny.tree"),
-    output = r"distances.tsv"
-    )
-def getDistances(infile, outfile):
+def distanceFromTree(infile, outfile):
     
     '''Get distances from a phylogeny tree that has been midpoint rooted'''
 
@@ -139,13 +134,13 @@ def getDistances(infile, outfile):
     P.run(statement)
 
 # }}}
-# getPhenos {{{
+# splitPhenos {{{
 @transform(
-    input = "phenos.tsv",
-    filter = regex("phenos.tsv"),
-    output = r"phenos.dir"
+    "phenos.tsv",
+    regex("phenos\.tsv"),
+    "phenos.dir"
     )
-def getPhenos(infile, outfile):
+def splitPhenos(infile, outfile):
     ''' split a tsv file into multiple tsv files by column '''
 
     statement = '''
@@ -161,29 +156,30 @@ def getPhenos(infile, outfile):
     P.run(statement)
 
 # }}}
-# getAssoc {{{
+# pyseer {{{
 @follows(
-    getKmers,
-    getDistances,
-    getPhenos
+    fsm,
+    distanceFromTree,
+    splitPhenos
     )
 @transform(
-    input = getPhenos,
-    filter = regex("phenos/(.*)\.tsv"),
-    output = r"\1\.assoc",
-    add_inputs = [getDistances, getKmers]
+    "phenos.dir/*",
+    regex("phenos/(.*)\.tsv"),
+    r"pyseer.dir/\1\.assoc",
+    r"\1",
+    add_inputs = [distanceFromTree, fsm]
     )
-def getAssoc(infiles, outfile):
+def pyseer(infiles, outfile, idd):
 
-    phenos = infiles[0]
-    distances = infiles[1][0]
+    pheno = infiles[0][0]
+    distance = infiles[1][0]
     kmers = infiles[1][1]
-    
+
     statement = '''
     pyseer
         --phenotypes=%(pheno)s
         --kmers=%(kmers)s
-        --distances=%(distances)s
+        --distances=%(distance)s
         --min-af=0.01
         --max-af=0.99
         --cpu=15
@@ -192,30 +188,55 @@ def getAssoc(infiles, outfile):
     '''
 
 # }}}
-# getKmerAnnotation {{{
-@follows(
-    getAssoc,
+# makeRefList {{{
+@follows (
+    prokka
     )
 @transform(
-    input = getAssoc,
-    filter = regex("associations/(.*).assoc"),
-    output = r"annotated/\1\.txt",
-    add_inputs = ["ref_genomes"]
+    "prokka.dir",
+    regex("prokka\.dir"),
+    "ref.txt",
+    add_inputs = ["ref.dir"]
     )
-def getKmerAnnotation(infiles, outfile):
+def makeRefList(infiles, outfile):
 
+    ''' Make a list of references for kmer mapping '''
+
+    prokka_dir = infiles[0][0]
+    ref_dir = infiles[1][0]
+
+    statement = '''
+    ls %(prokka_dir)s | grep ".gff" | awk '{print $1"\t%(prokka_dir)/"$1"\tref" }' > %(outfile)s &&
+    ls %(ref_dir)s  | awk '{print $1"\t%(ref_dir)/"$1"\tref" }' 
+    '''
+    P.run(statement)
+
+# }}}
+# mapKmers {{{
+@follows(
+    pyseer,
+    makeRefList
+    )
+@transform(
+    pyseer,
+    regex("pyseer.dir/(.*).assoc"),
+    r"map.dir/\1\.txt",
+    add_inputs = [makeRefList]
+    )
+def mapKmers(infiles, outfile):
+
+    infile = infiles[0][0]
     ref_genomes = infiles[1][0]
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
     statement = '''
-    ls %(ref_genomes) | awk '{print $1 "\t" ref}' > ref_genome_list.txt &&
     python %(PY_SRC_PATH)/summarise_annotations.py
     '''
 # }}}
 # full {{{
 @follows (
-    getKmerAnnotation
+    mapKmers
     )
 def full():
     pass
