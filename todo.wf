@@ -1,28 +1,67 @@
 - [ ] finish pipeline
-	- [ ] fix cluster problem
-		- [s] fix cluster with antonio
+	- [w] fix cluster problem
+		~ antonio looking into it
+	- [x] see how to run batch jobs
+	- [ ] finish core
+		- [ ] finish tests @fri
+			- [ ] kmer mapping
 	- [w] test with cluster
-	- [ ] see how to run batch jobs
-		- [s] antonio
-	- [w] finish core
-	- [w] test core
+	- [ ] make conda recipe/ travis work with conda
+	- [ ] add settings for steps in yml
+		- [ ] prokka
+		- [ ] roary
+		- [ ] pyseer
 	- [ ] adds analysis steps
-		- [ ] read 3 papers on analyis
-			- [s] ask antonio what each of these steps do
-			- [w] matrixqtl
+		- [m] read about 3 tools of analyis
+			- [x] ask antonio what each of these steps do
+			- [ ] matrixqtl
 				~ http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/
-			- [w] bolt 
+			- [ ] bolt 
 				~ https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-20001
-			- [w] qtltools
+			- [ ] qtltools
 				~ https://qtltools.github.io/qtltools/
+		- [ ] add pathway analysis step
+			- [ ] go trough marvig paer (2014) to research how they did pathway analysis
+				~ compared number of mutation to genes (classes) that are frequently mutated
+			- [ ] research tools for pathway analysis
+				- [ ] xgr
+					~ http://galahad.well.ox.ac.uk:3020/
+				- [ ] david
+					~ https://david-d.ncifcrf.gov/home.jsp
+				- [ ] patric
+					~ https://www.patricbrc.org/app/ComparativePathway
+				- [ ] shiny go
+					~ http://bioinformatics.sdstate.edu/go/
+				- [ ] panther
+					~ http://pantherdb.org/
 		- [w] add aalysis based on results of running data
+	- [ ] make a way for choosing a p-value cut off for significant kmers
+		- [ ] research how matrix qtl does this
+		- [ ] research how pyseer/ other tools do this
+			- [ ] does pyseer write to disk?
+	- [ ] add a multiple correction step
+		- [ ] research types
+			~ benhjamin fdr?
+			~ bonferonni
+		- [ ] research q-value package
 	- [m] make automatic plots for results
+- [ ] volker
+	- [w] get data ready to show
+	- [s] meet volker
 - [w] write docs
-- [ ] run with data
+- [ ] run with metabolomic data
 	- [s] get data from antonio
 	- [w] run
 	- [w] analysis
 - [ ] dissertation
 	- [ ] go through examples
-	- [w] write outline
+	- [ ] read metabolomics papers again !!!
+		- [ ] collect papers
+	- [ ] write outline (for wednesday)
+	- [ ] make flowchart graphic (for wednesday) !!!
 	- [w] write draft 1
+- [s] send antonio stuff
+- [s] meet antonio
+- [w] arrange meeting with huw and jake
+- [m] research amazon cloud
+	~ if nothing working
