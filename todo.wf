@@ -3,11 +3,11 @@
 		~ antonio looking into it
 	- [x] see how to run batch jobs
 	- [ ] finish core
-		- [ ] finish tests @fri
-			- [ ] kmer mapping
+		- [ ] finish tests
+			- [ ] kmer mapping @mon
 	- [w] test with cluster
-	- [ ] make conda recipe/ travis work with conda
-	- [ ] add settings for steps in yml
+	- [ ] make conda recipe/ travis work with conda @mon
+	- [ ] add settings for steps in yml @mon
 		- [ ] prokka
 		- [ ] roary
 		- [ ] pyseer
@@ -21,9 +21,9 @@
 			- [ ] qtltools
 				~ https://qtltools.github.io/qtltools/
 		- [ ] add pathway analysis step
-			- [ ] go trough marvig paer (2014) to research how they did pathway analysis
+			- [ ] go trough marvig paer (2014) to research how they did pathway analysis @mon
 				~ compared number of mutation to genes (classes) that are frequently mutated
-			- [ ] research tools for pathway analysis
+			- [ ] research tools for pathway analysis @mon
 				- [ ] xgr
 					~ http://galahad.well.ox.ac.uk:3020/
 				- [ ] david

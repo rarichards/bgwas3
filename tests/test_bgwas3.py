@@ -92,7 +92,7 @@ def test_splitPhenos():
 @pytest.mark.cluster
 def test_prokka():
     req_files = ["fastq.dir", "contigs.dir"]
-    runStep("prokka", req_files, "annotations.dir", "")
+    runStep("prokka", req_files, "annotations.dir", "", local=True)
 
 @pytest.mark.cluster
 def test_roary():
