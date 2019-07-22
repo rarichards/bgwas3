@@ -73,7 +73,7 @@ def fsm(infile, outfile):
 @transform(
     "contigs.dir/*",
     regex("contigs.dir/(.*)\.fa"),
-    r"annotations\.dir/\1/\1.gff",
+    r"annotations\.dir/\1.gff",
     r"\1"
     )
 def prokka(infile, outfile, idd):
