@@ -2,12 +2,15 @@
 	- [w] fix cluster problem
 		~ antonio looking into it
 	- [x] see how to run batch jobs
-	- [ ] finish core
-		- [ ] finish tests
-			- [ ] kmer mapping @mon
+	- [w] finish core
+		~ maintenance
+		- [ ] run prokka and roary step on laptop @mon
+		- [ ] kmer mapping @tue
 	- [w] test with cluster
-	- [ ] make conda recipe/ travis work with conda @mon
-	- [ ] add settings for steps in yml @mon
+		~ waiting for fix
+	- [ ] make conda recipe/ travis work with conda
+		- [ ] make pip package
+	- [w] add settings for steps in yml
 		- [ ] prokka
 		- [ ] roary
 		- [ ] pyseer
@@ -21,24 +24,17 @@
 			- [ ] qtltools
 				~ https://qtltools.github.io/qtltools/
 		- [ ] add pathway analysis step
-			- [ ] go trough marvig paer (2014) to research how they did pathway analysis @mon
+			- [x] go trough marvig paer (2014) to research how they did pathway analysis @mon
 				~ compared number of mutation to genes (classes) that are frequently mutated
-			- [ ] research tools for pathway analysis @mon
-				- [ ] xgr
-					~ http://galahad.well.ox.ac.uk:3020/
-				- [ ] david
-					~ https://david-d.ncifcrf.gov/home.jsp
-				- [ ] patric
-					~ https://www.patricbrc.org/app/ComparativePathway
-				- [ ] shiny go
-					~ http://bioinformatics.sdstate.edu/go/
-				- [ ] panther
-					~ http://pantherdb.org/
+			- [x] research tools for pathway analysis
+			- [w] write step
+				~ waiting ti
 		- [w] add aalysis based on results of running data
 	- [ ] make a way for choosing a p-value cut off for significant kmers
-		- [ ] research how matrix qtl does this
-		- [ ] research how pyseer/ other tools do this
-			- [ ] does pyseer write to disk?
+		- [ ] research how tools do it @mon
+			- [ ] research how matrix qtl does this
+			- [ ] research how pyseer/ other tools do this
+				- [ ] does pyseer write to disk?
 	- [ ] add a multiple correction step
 		- [ ] research types
 			~ benhjamin fdr?
@@ -54,11 +50,13 @@
 	- [w] run
 	- [w] analysis
 - [ ] dissertation
-	- [ ] go through examples
-	- [ ] read metabolomics papers again !!!
-		- [ ] collect papers
-	- [ ] write outline (for wednesday)
-	- [ ] make flowchart graphic (for wednesday) !!!
+	- [x] go through examples
+	- [x] read metabolomics papers again @mon
+	- [ ] rewrite notes to rst
+		- [ ] go over project 2
+		- [ ] go over old kb
+	- [ ] write outline (for wednesday) @tue
+	- [ ] make flowchart graphic (for wednesday) @tue
 	- [w] write draft 1
 - [s] send antonio stuff
 - [s] meet antonio
