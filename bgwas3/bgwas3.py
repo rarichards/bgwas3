@@ -34,7 +34,6 @@ def assembly(infile, outfile):
 # fsm {{{
 @merge(
     assembly,
-    regex("contigs/(.*)\.fa"),
     "kmers.gz"
     )
 def fsm(infile, outfile):
@@ -44,7 +43,7 @@ def fsm(infile, outfile):
     to_cluster = True
 
     statement = '''
-    ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_lis.txt &&
+    ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
     fsm-lite -l ../contig_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
     '''
@@ -55,11 +54,10 @@ def fsm(infile, outfile):
 
 # prokka {{{
 @follows(
-    assembly,
     mkdir("prokka")
     )
 @transform(
-    "contigs/*",
+    assembly,
     regex("contigs/(.*)\.fa"),
     r"prokka/\1\.gff",
     r"\1"
@@ -105,9 +103,6 @@ def roary(infile, outfile):
 # }}}
 
 # distanceFromTree {{{
-@follows(
-    roary
-    )
 @transform(
     roary,
     regex(".*"),
@@ -159,26 +154,28 @@ def splitPhenos(infile, outfiles):
 @transform(
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
-    r"pyseer/\1.assoc",
-    add_inputs(distanceFromTree, fsm) 
+    add_inputs(distanceFromTree, fsm),
+    r"pyseer/\1.assoc"
     )
-def pyseer(infile, outfile):
+def pyseer(infiles, outfile):
 
-    pheno = infiles[0][0]
-    distance = infiles[1][0]
-    kmers = infiles[1][1]
+    pheno = infiles[0]
+    distances = infiles[1]
+    kmers = infiles[2]
 
     statement = '''
     pyseer
-        --phenotypes=%(infile)s
-        --kmers=kmers.gz
-        --distances=distances.tsv
+        --phenotypes=%(pheno)s
+        --kmers=%(kmers)s
+        --distances=%(distances)s
         --min-af=0.01
         --max-af=0.99
         --cpu=15
         --filter-pvalue=1E-8
         > %(outfile)s
     '''
+
+    P.run(statement)
 
 # }}}
 
