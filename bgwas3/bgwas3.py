@@ -105,7 +105,7 @@ def roary(infile, outfile):
 # distanceFromTree {{{
 @transform(
     roary,
-    regex(".*"),
+    regex("roary/accessory_binary_genes\.fa\.newick"),
     "distances.tsv"
     )
 def distanceFromTree(infile, outfile):
@@ -162,6 +162,10 @@ def pyseer(infiles, outfile):
     pheno = infiles[0]
     distances = infiles[1]
     kmers = infiles[2]
+
+    print(pheno)
+    print(distances)
+    print(kmers)
 
     statement = '''
     pyseer

@@ -102,3 +102,7 @@ def test_distanceFromTree():
 @pytest.mark.cluster
 def test_pyseer():
     runStep("pyseer", ["pyseer"])
+
+@pytest.mark.local
+def test_pyseer_local():
+    runStep("pyseer", ["pyseer"], local=True)
