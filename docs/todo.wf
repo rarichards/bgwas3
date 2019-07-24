@@ -1,13 +1,25 @@
 - [ ] finish pipeline
-	- [w] fix cluster problem
+	- [ ] fix cluster problem
 		~ antonio looking into it
+		- [ ] retry @wed
 	- [x] see how to run batch jobs
 	- [ ] finish core
-		- [ ] finish tests @fri
-			- [ ] kmer mapping
+		~ maintenance
+		- [n] run prokka and roary step on laptop 
+			~ qsub working again
+		- [x] run prokka 
+		- [x] run roary 
+		- [ ] run pyseer @wed
+		- [w] kmer mapping @wed
+			- [ ] write test
+			- [ ] write
+			- [ ] test
 	- [w] test with cluster
+		~ waiting for fix
 	- [ ] make conda recipe/ travis work with conda
-	- [ ] add settings for steps in yml
+		- [w] make pip package
+			~ until more finished
+	- [w] add settings for steps in yml
 		- [ ] prokka
 		- [ ] roary
 		- [ ] pyseer
@@ -21,30 +33,23 @@
 			- [ ] qtltools
 				~ https://qtltools.github.io/qtltools/
 		- [ ] add pathway analysis step
-			- [ ] go trough marvig paer (2014) to research how they did pathway analysis
+			- [x] go trough marvig paer (2014) to research how they did pathway analysis
 				~ compared number of mutation to genes (classes) that are frequently mutated
-			- [ ] research tools for pathway analysis
-				- [ ] xgr
-					~ http://galahad.well.ox.ac.uk:3020/
-				- [ ] david
-					~ https://david-d.ncifcrf.gov/home.jsp
-				- [ ] patric
-					~ https://www.patricbrc.org/app/ComparativePathway
-				- [ ] shiny go
-					~ http://bioinformatics.sdstate.edu/go/
-				- [ ] panther
-					~ http://pantherdb.org/
+			- [x] research tools for pathway analysis
+			- [w] write step @wed
+				~ waiting until get up to this
 		- [w] add aalysis based on results of running data
 	- [ ] make a way for choosing a p-value cut off for significant kmers
-		- [ ] research how matrix qtl does this
-		- [ ] research how pyseer/ other tools do this
-			- [ ] does pyseer write to disk?
+		- [ ] research how tools do it @wed
+			- [ ] research how matrix qtl does this
+			- [ ] research how pyseer/ other tools do this
+				- [ ] does pyseer write to disk?
 	- [ ] add a multiple correction step
-		- [ ] research types
+		- [ ] research types of multiple correction @wed
 			~ benhjamin fdr?
 			~ bonferonni
 		- [ ] research q-value package
-	- [m] make automatic plots for results
+	- [w] make automatic plots for results
 - [ ] volker
 	- [w] get data ready to show
 	- [s] meet volker
@@ -54,11 +59,13 @@
 	- [w] run
 	- [w] analysis
 - [ ] dissertation
-	- [ ] go through examples
-	- [ ] read metabolomics papers again !!!
-		- [ ] collect papers
-	- [ ] write outline (for wednesday)
-	- [ ] make flowchart graphic (for wednesday) !!!
+	- [x] go through examples
+	- [x] read metabolomics papers again @mon
+	- [ ] rewrite notes to rst
+		- [ ] go over project 2
+		- [ ] go over old kb
+	- [ ] write outline (for wednesday) !!! @wed
+	- [ ] make flowchart graphic (for wednesday) @wed
 	- [w] write draft 1
 - [s] send antonio stuff
 - [s] meet antonio
