@@ -1,15 +1,24 @@
 - [ ] finish pipeline
-	- [w] fix cluster problem
+	- [ ] fix cluster problem
 		~ antonio looking into it
+		- [ ] retry @wed
 	- [x] see how to run batch jobs
-	- [w] finish core
+	- [ ] finish core
 		~ maintenance
-		- [ ] run prokka and roary step on laptop @mon
-		- [ ] kmer mapping @tue
+		- [n] run prokka and roary step on laptop 
+			~ qsub working again
+		- [x] run prokka 
+		- [x] run roary 
+		- [ ] run pyseer @wed
+		- [w] kmer mapping @wed
+			- [ ] write test
+			- [ ] write
+			- [ ] test
 	- [w] test with cluster
 		~ waiting for fix
 	- [ ] make conda recipe/ travis work with conda
-		- [ ] make pip package
+		- [w] make pip package
+			~ until more finished
 	- [w] add settings for steps in yml
 		- [ ] prokka
 		- [ ] roary
@@ -24,23 +33,23 @@
 			- [ ] qtltools
 				~ https://qtltools.github.io/qtltools/
 		- [ ] add pathway analysis step
-			- [x] go trough marvig paer (2014) to research how they did pathway analysis @mon
+			- [x] go trough marvig paer (2014) to research how they did pathway analysis
 				~ compared number of mutation to genes (classes) that are frequently mutated
 			- [x] research tools for pathway analysis
-			- [w] write step
-				~ waiting ti
+			- [w] write step @wed
+				~ waiting until get up to this
 		- [w] add aalysis based on results of running data
 	- [ ] make a way for choosing a p-value cut off for significant kmers
-		- [ ] research how tools do it @mon
+		- [ ] research how tools do it @wed
 			- [ ] research how matrix qtl does this
 			- [ ] research how pyseer/ other tools do this
 				- [ ] does pyseer write to disk?
 	- [ ] add a multiple correction step
-		- [ ] research types
+		- [ ] research types of multiple correction @wed
 			~ benhjamin fdr?
 			~ bonferonni
 		- [ ] research q-value package
-	- [m] make automatic plots for results
+	- [w] make automatic plots for results
 - [ ] volker
 	- [w] get data ready to show
 	- [s] meet volker
@@ -55,8 +64,8 @@
 	- [ ] rewrite notes to rst
 		- [ ] go over project 2
 		- [ ] go over old kb
-	- [ ] write outline (for wednesday) @tue
-	- [ ] make flowchart graphic (for wednesday) @tue
+	- [ ] write outline (for wednesday) !!! @wed
+	- [ ] make flowchart graphic (for wednesday) @wed
 	- [w] write draft 1
 - [s] send antonio stuff
 - [s] meet antonio

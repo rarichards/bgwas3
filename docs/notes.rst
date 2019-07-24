@@ -62,3 +62,15 @@ http://software.broadinstitute.org/gsea/index.jsp
 Reactome
 ````````
 https://reactome.org/
+
+Patric
+``````
+https://www.patricbrc.org/app/ComparativePathway
+
+Shiny go
+````````
+http://bioinformatics.sdstate.edu/go/
+
+Panther
+```````
+https://reactome.org/
