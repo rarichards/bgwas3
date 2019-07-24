@@ -153,10 +153,13 @@ def splitPhenos(infile, outfiles):
 # }}}
 
 # pyseer {{{
+@follows(
+    mkdir("pyseer")
+    )
 @transform(
     splitPhenos,
-    suffix(".tsv"),
-    ".assoc",
+    regex("phenos/(.*)\.tsv"),
+    r"pyseer/\1.assoc",
     add_inputs(distanceFromTree, fsm) 
     )
 def pyseer(infile, outfile):

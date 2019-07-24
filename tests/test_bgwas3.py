@@ -93,8 +93,7 @@ def runStep(step_name, local=False): # {{{
     
 @pytest.mark.cluster
 def test_fsm():
-    req_files = ["fastq.dir", "contigs.dir"]
-    runStep("fsm", req_files, "kmers.gz", "")
+    runStep("fsm")
 
 @pytest.mark.local
 def test_splitPhenos():
@@ -102,20 +101,16 @@ def test_splitPhenos():
 
 @pytest.mark.cluster
 def test_prokka():
-    req_files = ["fastq.dir", "contigs.dir"]
-    runStep("prokka", req_files, "annotations.dir", "", local=True)
+    runStep("prokka")
 
 @pytest.mark.cluster
 def test_roary():
-    req_files = ["fastq.dir", "contigs.dir", "annotations.dir"]
-    runStep("roary", req_files, "roary.dir", "")
+    runStep("roary")
 
 @pytest.mark.local
 def test_distanceFromTree():
-    req_files = ["phenos.tsv", "phenos.dir"]
-    runStep("distanceFromTree", req_files, "distance.tsv", "", local=True)
+    runStep("distanceFromTree")
 
 @pytest.mark.cluster
 def test_pyseer():
-    req_files = ["fastq.dir", "contigs.dir", "annotations.dir", "roary.dir", "phenos.tsv", "phenos.dir", "distances.tsv"]
-    runStep("pyseer", req_files, "annotations.dir", "")
+    runStep("pyseer")
