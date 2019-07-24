@@ -3,6 +3,7 @@ import os
 import subprocess
 import shutil
 import filecmp
+from pathlib import Path
 
 test_dir = os.getcwd()
 ref_dir = test_dir + "/ref"
@@ -10,45 +11,54 @@ script = test_dir + "/../bgwas3/bgwas3.py"
 if not os.path.exists("temp"):
     os.mkdir("temp")
 
-def runStep(step_name, req_files, outfile, yml, local=False): # {{{
+def runStep(step_name, local=False): # {{{
 
+    # make temporary directory 
     os.chdir(test_dir)
     temp_dir = test_dir + "/temp/" + step_name
 
     if os.path.exists(temp_dir) and os.path.isdir(temp_dir):
         shutil.rmtree(temp_dir)
 
-    os.mkdir(temp_dir)
+    shutil.copytree(ref_dir, temp_dir)
 
-    for f in req_files:
-        source = ref_dir + "/" + f
-        target = temp_dir + "/" + f
-        assert os.path.exists(source), "Reference " +  f + " not found in reference folder."
-        if os.path.isfile(source):
-            print("Copying reference file '" + f + "' to temp directory:", end=" ")
-            shutil.copy(source, target)
-            print("done")
-        if(os.path.isdir(source)):
-            print("Copying reference directory '" + f + "' to temp directory:", end=" ")
-            shutil.copytree(source, target)
-            print("done")
+    #for f in req_files:
+    #    source = ref_dir + "/" + f
+    #    target = temp_dir + "/" + f
+    #    assert os.path.exists(source), "Reference " +  f + " not found in reference folder."
+    #    if os.path.isfile(source):
+    #        print("Copying reference file '" + f + "' to temp directory:", end=" ")
+    #        shutil.copy(source, target)
+    #        print("done")
+    #    if(os.path.isdir(source)):
+    #        print("Copying reference directory '" + f + "' to temp directory:", end=" ")
+    #        shutil.copytree(source, target)
+    #        print("done")
 
-    with open(temp_dir + "/pipeline.yml", "w") as f:
-        f.write(yml)
+    #with open(temp_dir + "/pipeline.yml", "w") as f:
+    #    f.write(yml)
 
     os.chdir(temp_dir)
 
-    statement = "python " + script + " make " + step_name
+    # make all pipeline tasks up to date
+    
+    assert subprocess.call("python " + script + " touch full", shell=True) == 0, "Cannot touch the pipeline"
+    os.remove("pipeline.log")
+
+    # make statment (force up to date step of interest)
+    statement = "python " + script + " make " + step_name + " -f " + step_name
 
     if local:
         statement += " --local"
 
-    with open("run.sh", "w") as f:
+    # save statement for debugging later
+    with open("statement.sh", "w") as f:
         f.write(statement)
 
-    print("Running: " + statement)
-    os.system(statement + " 2>&1 | tee test.log")
+    # run statement
+    subprocess.call(statement, shell=True)
 
+    # if cluster fails (dumps core.xxxx) then make a qsub file to test manually instead
     if len([f for f in os.listdir() if f.startswith("core")]) != 0:
 
         f_name = [f for f in os.listdir() if f.endswith(".sh") and f.startswith("ct")]
@@ -65,16 +75,19 @@ def runStep(step_name, req_files, outfile, yml, local=False): # {{{
         job_id = os.popen("qsub " + pbs_name).read()
         assert False, "Core dumped (cluster not working). " + pbs_name + " submitted with qsub instead instead (" + job_id + ")"
 
-    out = temp_dir + "/" + outfile
-    ref = ref_dir + "/" + outfile
-    assert os.path.exists(out), "Output '" + outfile + "' does not exist"
-    
-    if os.path.isdir(out):
-        assert os.listdir(out), "Output directory '" + outfile + "' is empty"
-        assert os.listdir(out) == os.listdir(ref), "Output directory '" + outfile + "' does not match reference directory" 
+    # test the contents of the temp directory and the reference directory
+    assert filecmp.dircmp(temp_dir, ref_dir), "Output does not match reference"
 
-    if os.path.isfile(out):
-        assert filecmp.cmp(out, ref), "Output file '" + outfile + "' does not match reference"
+    #out = temp_dir + "/" + outfile
+    #ref = ref_dir + "/" + outfile
+    #assert os.path.exists(out), "Output '" + outfile + "' does not exist"
+    
+    #if os.path.isdir(out):
+    #    assert os.listdir(out), "Output directory '" + outfile + "' is empty"
+    #    assert os.listdir(out) == os.listdir(ref), "Temporary directory '" + outfile + "' does not match reference" 
+
+    #if os.path.isfile(out):
+    #    assert filecmp.cmp(out, ref), "Temporary file '" + outfile + "' does not match reference"
 
 # }}}
     
@@ -85,8 +98,7 @@ def test_fsm():
 
 @pytest.mark.local
 def test_splitPhenos():
-    req_files = ["phenos.tsv"]
-    runStep("splitPhenos", req_files, "phenos.dir", "", local=True)
+    runStep("splitPhenos", local=True)
 
 @pytest.mark.cluster
 def test_prokka():
