@@ -106,7 +106,7 @@ def roary(infile, outfile):
 @transform(
     roary,
     regex(".*"),
-    "distance.tsv"
+    "distances.tsv"
     )
 def distanceFromTree(infile, outfile):
     
