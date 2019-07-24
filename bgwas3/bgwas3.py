@@ -11,33 +11,24 @@ P.get_parameters(
   "pipeline.yml"])
 
 # assembly {{{
+@follows(
+    mkdir("fastq.dir"),
+    )
 @transform(
     "fastq.dir",
     regex("fastq\.dir"),
     "contigs.dir"
     )
 def assembly(infile, outfile):
+
     ''' Contig assembly '''
+
     pass
+    #statement = '''
+    #mkdir %(outfile)s
+    #'''
 
-# }}}
-# listContigs {{{
-@follows (
-    assembly
-    )
-@transform(
-    "contigs.dir",
-    regex("contigs\.dir"),
-    "contig_list.txt"
-    )
-def listContigs(infile, outfile):
-
-    ''' Test step that lists the contigs '''
-
-    statement = '''
-    ls %(infile)s | awk -F. '{print $1 "\t" $0}' > %(outfile)s
-    '''
-    P.run(statement)
+    #P.run(statement)
 
 # }}}
 # fsm {{{
@@ -45,9 +36,9 @@ def listContigs(infile, outfile):
     assembly
     )
 @transform(
-    assembly,
+    "contigs.dir",
     regex("contigs\.dir"),
-    "kmers.gz"
+    "fsm.dir"
     )
 def fsm(infile, outfile):
 
@@ -56,10 +47,10 @@ def fsm(infile, outfile):
     to_cluster = True
 
     statement = '''
+    mkdir fsm.dir &&
     ls %(infile)s | awk -F. '{print $1 "\t" $0}' > contig_list.txt &&
     cd %(infile)s &&
-    ls &&
-    fsm-lite -l ../contig_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
+    fsm-lite -l ../contig_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s/kmers.gz
     '''
 
     P.run(statement)
@@ -91,11 +82,11 @@ def prokka(infile, outfile, idd):
 # }}}
 # roary {{{
 @follows(
-    prokka,
+    prokka
     )
 @transform(
     "annotations.dir",
-    regex(r"annotations\.dir"),
+    regex("annotations\.dir"),
     "roary.dir"
     )
 def roary(infile, outfile):
@@ -105,7 +96,7 @@ def roary(infile, outfile):
     to_cluster = True
 
     statement = '''
-    roary -f %(outfile)s -e -n -v -r %(infiles)/*.gff 
+    roary -f %(outfile)s -e -n -v -r %(infile)s/*.gff 
     '''
 
     P.run(statement)
@@ -116,7 +107,7 @@ def roary(infile, outfile):
 @follows(roary)
 @transform(
     "roary.dir/*",
-    regex(r"roary.dir/(.*)\.(tree|newick)"),
+    suffix(".newick"),
     "distance.tsv"
     )
 def distanceFromTree(infile, outfile):
@@ -135,22 +126,27 @@ def distanceFromTree(infile, outfile):
 
 # }}}
 # splitPhenos {{{
-@transform(
+@follows(
+    mkdir("phenos.dir")
+    )
+@split(
     "phenos.tsv",
-    regex("phenos\.tsv"),
-    "phenos.dir"
+    "phenos.dir/*.tsv"
     )
 def splitPhenos(infile, outfile):
     ''' split a tsv file into multiple tsv files by column '''
 
     statement = '''
-    mkdir %(outfile)s &&
-    cd %(outfile)s &&
-    cols=`awk -F"\\t" '{print NF; exit}' ../%(infile)s` &&
+    cols=`awk -F"\\t" '{print NF; exit}' %(infile)s` &&
     for col in $(seq 2 $cols); do
-        pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' ../%(infile)s` &&
-        awk -F"\\t" -v col=$col '{print $1"\\t"$col}' ../%(infile)s > ${pheno}.tsv;
+        pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' %(infile)s` &&
+        awk -F"\\t" -v col=$col '{print $1"\\t"$col}' %(infile)s > phenos.dir/${pheno}.tsv;
     done
+    '''
+
+    statement = '''
+    echo %(infile)s &&
+    echo %(outfile)s
     '''
 
     P.run(statement)
@@ -165,9 +161,8 @@ def splitPhenos(infile, outfile):
 @transform(
     "phenos.dir/*",
     regex("phenos/(.*)\.tsv"),
-    r"pyseer.dir/\1\.assoc",
-    r"\1",
-    add_inputs = [distanceFromTree, fsm]
+    r"pyseer.dir/\1.assoc",
+    extras = [distanceFromTree, fsm, r"\1"]
     )
 def pyseer(infiles, outfile, idd):
 

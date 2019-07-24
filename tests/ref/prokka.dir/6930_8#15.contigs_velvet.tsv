@@ -1,0 +1,4077 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+NELDDEBG_00001	CDS	696	ygaZ		COG1296	Inner membrane protein YgaZ
+NELDDEBG_00001	gene	696	ygaZ			
+NELDDEBG_00002	CDS	324				hypothetical protein
+NELDDEBG_00002	gene	324				
+NELDDEBG_00003	CDS	831	tcyA		COG0834	L-cystine-binding protein TcyA
+NELDDEBG_00003	gene	831	tcyA			
+NELDDEBG_00004	CDS	855	metQ		COG1464	D-methionine-binding lipoprotein MetQ
+NELDDEBG_00004	gene	855	metQ			
+NELDDEBG_00005	CDS	1374	dapE	3.5.1.18		Succinyl-diaminopimelate desuccinylase
+NELDDEBG_00005	gene	1374	dapE			
+NELDDEBG_00006	CDS	1062	metN	3.6.3.-	COG1135	Methionine import ATP-binding protein MetN
+NELDDEBG_00006	gene	1062	metN			
+NELDDEBG_00007	CDS	693	metP		COG2011	Methionine import system permease protein MetP
+NELDDEBG_00007	gene	693	metP			
+NELDDEBG_00008	CDS	570				hypothetical protein
+NELDDEBG_00008	gene	570				
+NELDDEBG_00009	CDS	615				hypothetical protein
+NELDDEBG_00009	gene	615				
+NELDDEBG_00010	CDS	1683				hypothetical protein
+NELDDEBG_00010	gene	1683				
+NELDDEBG_00011	CDS	1287	cheB	3.1.1.61		Chemotaxis response regulator protein-glutamate methylesterase
+NELDDEBG_00011	gene	1287	cheB			
+NELDDEBG_00012	CDS	534				hypothetical protein
+NELDDEBG_00012	gene	534				
+NELDDEBG_00013	CDS	471			COG1780	Putative NrdI-like protein
+NELDDEBG_00013	gene	471				
+NELDDEBG_00014	CDS	1263				hypothetical protein
+NELDDEBG_00014	gene	1263				
+NELDDEBG_00015	CDS	459				hypothetical protein
+NELDDEBG_00015	gene	459				
+NELDDEBG_00016	CDS	441			COG3279	putative HTH-type transcriptional regulator
+NELDDEBG_00016	gene	441				
+NELDDEBG_00017	CDS	1950	mutL		COG0323	DNA mismatch repair protein MutL
+NELDDEBG_00017	gene	1950	mutL			
+NELDDEBG_00018	CDS	468	ribH	2.5.1.78	COG0054	6,7-dimethyl-8-ribityllumazine synthase
+NELDDEBG_00018	gene	468	ribH			
+NELDDEBG_00019	CDS	1206	ribBA		COG0108	Riboflavin biosynthesis protein RibBA
+NELDDEBG_00019	gene	1206	ribBA			
+NELDDEBG_00020	CDS	636	ribE	2.5.1.9	COG0307	Riboflavin synthase
+NELDDEBG_00020	gene	636	ribE			
+NELDDEBG_00021	CDS	1101	ribD		COG0117	Riboflavin biosynthesis protein RibD
+NELDDEBG_00021	gene	1101	ribD			
+NELDDEBG_00022	CDS	594	ruvA	3.6.4.12	COG0632	Holliday junction ATP-dependent DNA helicase RuvA
+NELDDEBG_00022	gene	594	ruvA			
+NELDDEBG_00023	CDS	564	tag	3.2.2.20	COG2818	DNA-3-methyladenine glycosylase 1
+NELDDEBG_00023	gene	564	tag			
+NELDDEBG_00024	CDS	678				hypothetical protein
+NELDDEBG_00024	gene	678				
+NELDDEBG_00025	CDS	1032	ykfA	3.4.16.-	COG1619	putative murein peptide carboxypeptidase
+NELDDEBG_00025	gene	1032	ykfA			
+NELDDEBG_00026	CDS	684				hypothetical protein
+NELDDEBG_00026	gene	684				
+NELDDEBG_00027	CDS	945				hypothetical protein
+NELDDEBG_00027	gene	945				
+NELDDEBG_00028	CDS	2832	uvrA			UvrABC system protein A
+NELDDEBG_00028	gene	2832	uvrA			
+NELDDEBG_00029	CDS	1062	ypdF	3.4.11.-	COG0006	Aminopeptidase YpdF
+NELDDEBG_00029	gene	1062	ypdF			
+NELDDEBG_00030	CDS	399	spxA_1		COG1393	Regulatory protein Spx
+NELDDEBG_00030	gene	399	spxA_1			
+NELDDEBG_00031	CDS	570				hypothetical protein
+NELDDEBG_00031	gene	570				
+NELDDEBG_00032	CDS	267				hypothetical protein
+NELDDEBG_00032	gene	267				
+NELDDEBG_00033	CDS	420	yrrK	3.1.-.-	COG0816	Putative pre-16S rRNA nuclease
+NELDDEBG_00033	gene	420	yrrK			
+NELDDEBG_00034	CDS	306				hypothetical protein
+NELDDEBG_00034	gene	306				
+NELDDEBG_00035	CDS	1251	fpgS_1	6.3.2.17		Folylpolyglutamate synthase
+NELDDEBG_00035	gene	1251	fpgS_1			
+NELDDEBG_00036	CDS	456				hypothetical protein
+NELDDEBG_00036	gene	456				
+NELDDEBG_00037	CDS	1533	cls	2.7.8.-		Cardiolipin synthase
+NELDDEBG_00037	gene	1533	cls			
+NELDDEBG_00038	CDS	144				hypothetical protein
+NELDDEBG_00038	gene	144				
+NELDDEBG_00039	CDS	1539				hypothetical protein
+NELDDEBG_00039	gene	1539				
+NELDDEBG_00040	CDS	2208	nrdD	1.1.98.6	COG1328	Anaerobic ribonucleoside-triphosphate reductase
+NELDDEBG_00040	gene	2208	nrdD			
+NELDDEBG_00041	CDS	507				hypothetical protein
+NELDDEBG_00041	gene	507				
+NELDDEBG_00042	CDS	591				hypothetical protein
+NELDDEBG_00042	gene	591				
+NELDDEBG_00043	CDS	618	udk_1	2.7.1.48		Uridine kinase
+NELDDEBG_00043	gene	618	udk_1			
+NELDDEBG_00044	CDS	309	rpsJ		COG0051	30S ribosomal protein S10
+NELDDEBG_00044	gene	309	rpsJ			
+NELDDEBG_00045	CDS	627	rplC		COG0087	50S ribosomal protein L3
+NELDDEBG_00045	gene	627	rplC			
+NELDDEBG_00046	CDS	624	rplD		COG0088	50S ribosomal protein L4
+NELDDEBG_00046	gene	624	rplD			
+NELDDEBG_00047	CDS	297	rplW			50S ribosomal protein L23
+NELDDEBG_00047	gene	297	rplW			
+NELDDEBG_00048	CDS	834	rplB		COG0090	50S ribosomal protein L2
+NELDDEBG_00048	gene	834	rplB			
+NELDDEBG_00049	CDS	282	rpsS		COG0185	30S ribosomal protein S19
+NELDDEBG_00049	gene	282	rpsS			
+NELDDEBG_00050	CDS	345	rplV		COG0091	50S ribosomal protein L22
+NELDDEBG_00050	gene	345	rplV			
+NELDDEBG_00051	CDS	654	rpsC		COG0092	30S ribosomal protein S3
+NELDDEBG_00051	gene	654	rpsC			
+NELDDEBG_00052	CDS	414	rplP		COG0197	50S ribosomal protein L16
+NELDDEBG_00052	gene	414	rplP			
+NELDDEBG_00053	CDS	207	rpmC		COG0255	50S ribosomal protein L29
+NELDDEBG_00053	gene	207	rpmC			
+NELDDEBG_00054	CDS	261	rpsQ		COG0186	30S ribosomal protein S17
+NELDDEBG_00054	gene	261	rpsQ			
+NELDDEBG_00055	CDS	369	rplN		COG0093	50S ribosomal protein L14
+NELDDEBG_00055	gene	369	rplN			
+NELDDEBG_00056	CDS	306	rplX		COG0198	50S ribosomal protein L24
+NELDDEBG_00056	gene	306	rplX			
+NELDDEBG_00057	CDS	543	rplE		COG0094	50S ribosomal protein L5
+NELDDEBG_00057	gene	543	rplE			
+NELDDEBG_00058	CDS	270	rpsN2		COG0199	Alternate 30S ribosomal protein S14
+NELDDEBG_00058	gene	270	rpsN2			
+NELDDEBG_00059	CDS	399	rpsH		COG0096	30S ribosomal protein S8
+NELDDEBG_00059	gene	399	rpsH			
+NELDDEBG_00060	CDS	537	rplF		COG0097	50S ribosomal protein L6
+NELDDEBG_00060	gene	537	rplF			
+NELDDEBG_00061	CDS	192	rplR		COG0256	50S ribosomal protein L18
+NELDDEBG_00061	gene	192	rplR			
+NELDDEBG_00062	CDS	495	rpsE			30S ribosomal protein S5
+NELDDEBG_00062	gene	495	rpsE			
+NELDDEBG_00063	CDS	183	rpmD		COG1841	50S ribosomal protein L30
+NELDDEBG_00063	gene	183	rpmD			
+NELDDEBG_00064	CDS	441	rplO		COG0200	50S ribosomal protein L15
+NELDDEBG_00064	gene	441	rplO			
+NELDDEBG_00065	CDS	1311	secY			Protein translocase subunit SecY
+NELDDEBG_00065	gene	1311	secY			
+NELDDEBG_00066	CDS	639	adk	2.7.4.3	COG0563	Adenylate kinase
+NELDDEBG_00066	gene	639	adk			
+NELDDEBG_00067	CDS	219	infA		COG0361	Translation initiation factor IF-1
+NELDDEBG_00067	gene	219	infA			
+NELDDEBG_00068	CDS	117	rpmJ		COG0257	50S ribosomal protein L36
+NELDDEBG_00068	gene	117	rpmJ			
+NELDDEBG_00069	CDS	366	rpsM		COG0099	30S ribosomal protein S13
+NELDDEBG_00069	gene	366	rpsM			
+NELDDEBG_00070	CDS	384	rpsK		COG0100	30S ribosomal protein S11
+NELDDEBG_00070	gene	384	rpsK			
+NELDDEBG_00071	CDS	936	rpoA	2.7.7.6	COG0202	DNA-directed RNA polymerase subunit alpha
+NELDDEBG_00071	gene	936	rpoA			
+NELDDEBG_00072	CDS	387	rplQ		COG0203	50S ribosomal protein L17
+NELDDEBG_00072	gene	387	rplQ			
+NELDDEBG_00073	CDS	267				hypothetical protein
+NELDDEBG_00073	gene	267				
+NELDDEBG_00074	CDS	1338				hypothetical protein
+NELDDEBG_00074	gene	1338				
+NELDDEBG_00075	CDS	693	gpmA_1	5.4.2.11		2,3-bisphosphoglycerate-dependent phosphoglycerate mutase
+NELDDEBG_00075	gene	693	gpmA_1			
+NELDDEBG_00076	CDS	993				hypothetical protein
+NELDDEBG_00076	gene	993				
+NELDDEBG_00077	CDS	300				hypothetical protein
+NELDDEBG_00077	gene	300				
+NELDDEBG_00078	CDS	306				hypothetical protein
+NELDDEBG_00078	gene	306				
+NELDDEBG_00079	CDS	801	malK	3.6.3.19	COG3839	Maltose/maltodextrin import ATP-binding protein MalK
+NELDDEBG_00079	gene	801	malK			
+NELDDEBG_00080	CDS	450				hypothetical protein
+NELDDEBG_00080	gene	450				
+NELDDEBG_00081	CDS	609			COG1840	putative protein
+NELDDEBG_00081	gene	609				
+NELDDEBG_00082	CDS	777	hpdA	1.97.1.-	COG1180	4-hydroxyphenylacetate decarboxylase activating enzyme
+NELDDEBG_00082	gene	777	hpdA			
+NELDDEBG_00083	CDS	747	ydjF		COG1349	putative HTH-type transcriptional regulator YdjF
+NELDDEBG_00083	gene	747	ydjF			
+NELDDEBG_00084	CDS	981	sorC_1		COG2390	Sorbitol operon regulator
+NELDDEBG_00084	gene	981	sorC_1			
+NELDDEBG_00085	CDS	321	licA		COG1447	Lichenan-specific phosphotransferase enzyme IIA component
+NELDDEBG_00085	gene	321	licA			
+NELDDEBG_00086	CDS	309	gmuB	2.7.1.205	COG1440	PTS system oligo-beta-mannoside-specific EIIB component
+NELDDEBG_00086	gene	309	gmuB			
+NELDDEBG_00087	CDS	1299	licC_1		COG1455	Lichenan permease IIC component
+NELDDEBG_00087	gene	1299	licC_1			
+NELDDEBG_00088	CDS	2439	cutC_1	4.3.99.4	COG1882	Choline trimethylamine-lyase
+NELDDEBG_00088	gene	2439	cutC_1			
+NELDDEBG_00089	CDS	669	fsaA	4.1.2.-	COG0176	Fructose-6-phosphate aldolase 1
+NELDDEBG_00089	gene	669	fsaA			
+NELDDEBG_00090	CDS	1089	gldA	1.1.1.6		Glycerol dehydrogenase
+NELDDEBG_00090	gene	1089	gldA			
+NELDDEBG_00091	CDS	2502	leuS	6.1.1.4		Leucine--tRNA ligase
+NELDDEBG_00091	gene	2502	leuS			
+NELDDEBG_00092	CDS	696				hypothetical protein
+NELDDEBG_00092	gene	696				
+NELDDEBG_00093	CDS	417				hypothetical protein
+NELDDEBG_00093	gene	417				
+NELDDEBG_00094	CDS	975	ruvB_1	3.6.4.12	COG2255	Holliday junction ATP-dependent DNA helicase RuvB
+NELDDEBG_00094	gene	975	ruvB_1			
+NELDDEBG_00095	CDS	573				hypothetical protein
+NELDDEBG_00095	gene	573				
+NELDDEBG_00096	CDS	759	uppS	2.5.1.-	COG0020	Isoprenyl transferase
+NELDDEBG_00096	gene	759	uppS			
+NELDDEBG_00097	CDS	804				hypothetical protein
+NELDDEBG_00097	gene	804				
+NELDDEBG_00098	CDS	1260		3.4.24.-		Putative zinc metalloprotease
+NELDDEBG_00098	gene	1260				
+NELDDEBG_00099	CDS	1854	proS	6.1.1.15	COG0442	Proline--tRNA ligase
+NELDDEBG_00099	gene	1854	proS			
+NELDDEBG_00100	CDS	1380	gmuD_1	3.2.1.86	COG2723	6-phospho-beta-glucosidase GmuD
+NELDDEBG_00100	gene	1380	gmuD_1			
+NELDDEBG_00101	CDS	1809	glmS	2.6.1.16	COG0449	Glutamine--fructose-6-phosphate aminotransferase [isomerizing]
+NELDDEBG_00101	gene	1809	glmS			
+NELDDEBG_00102	CDS	1050	ssuD	1.14.14.5		Alkanesulfonate monooxygenase
+NELDDEBG_00102	gene	1050	ssuD			
+NELDDEBG_00103	CDS	3798	glgX_1	3.2.1.-		Glycogen debranching enzyme
+NELDDEBG_00103	gene	3798	glgX_1			
+NELDDEBG_00104	CDS	414	rpsL		COG0048	30S ribosomal protein S12
+NELDDEBG_00104	gene	414	rpsL			
+NELDDEBG_00105	CDS	471	rpsG		COG0049	30S ribosomal protein S7
+NELDDEBG_00105	gene	471	rpsG			
+NELDDEBG_00106	CDS	2082	fus			Elongation factor G
+NELDDEBG_00106	gene	2082	fus			
+NELDDEBG_00107	CDS	4392	polC_1	2.7.7.7	COG2176	DNA polymerase III PolC-type
+NELDDEBG_00107	gene	4392	polC_1			
+NELDDEBG_00108	CDS	264				hypothetical protein
+NELDDEBG_00108	gene	264				
+NELDDEBG_00109	CDS	279	yafQ	3.1.-.-		mRNA interferase toxin YafQ
+NELDDEBG_00109	gene	279	yafQ			
+NELDDEBG_00110	CDS	153				hypothetical protein
+NELDDEBG_00110	gene	153				
+NELDDEBG_00111	CDS	1242	pepS	3.4.11.-	COG2309	Aminopeptidase PepS
+NELDDEBG_00111	gene	1242	pepS			
+NELDDEBG_00112	CDS	231				hypothetical protein
+NELDDEBG_00112	gene	231				
+NELDDEBG_00113	CDS	723	rsuA_1	5.4.99.19	COG1187	Ribosomal small subunit pseudouridine synthase A
+NELDDEBG_00113	gene	723	rsuA_1			
+NELDDEBG_00114	CDS	1335	pepC	3.4.22.40	COG3579	Aminopeptidase C
+NELDDEBG_00114	gene	1335	pepC			
+NELDDEBG_00115	CDS	912	manZ_1		COG3716	PTS system mannose-specific EIID component
+NELDDEBG_00115	gene	912	manZ_1			
+NELDDEBG_00116	CDS	804	sorA		COG3715	PTS system sorbose-specific EIIC component
+NELDDEBG_00116	gene	804	sorA			
+NELDDEBG_00117	CDS	990	manX_1	2.7.1.191		PTS system mannose-specific EIIAB component
+NELDDEBG_00117	gene	990	manX_1			
+NELDDEBG_00118	CDS	1020	adhA	1.1.1.1		Alcohol dehydrogenase 1
+NELDDEBG_00118	gene	1020	adhA			
+NELDDEBG_00119	CDS	813	yitU	3.1.3.104	COG0561	5-amino-6-(5-phospho-D-ribitylamino)uracil phosphatase YitU
+NELDDEBG_00119	gene	813	yitU			
+NELDDEBG_00120	CDS	1419	pbuO		COG2252	Guanine/hypoxanthine permease PbuO
+NELDDEBG_00120	gene	1419	pbuO			
+NELDDEBG_00121	CDS	708				hypothetical protein
+NELDDEBG_00121	gene	708				
+NELDDEBG_00122	CDS	945	sulA	2.5.1.15	COG0294	Dihydropteroate synthase
+NELDDEBG_00122	gene	945	sulA			
+NELDDEBG_00123	CDS	1323	fpgS_2	6.3.2.17		Folylpolyglutamate synthase
+NELDDEBG_00123	gene	1323	fpgS_2			
+NELDDEBG_00124	CDS	555	folE	3.5.4.16	COG0302	GTP cyclohydrolase 1
+NELDDEBG_00124	gene	555	folE			
+NELDDEBG_00125	CDS	813	sulD		COG0801	Bifunctional folate synthesis protein
+NELDDEBG_00125	gene	813	sulD			
+NELDDEBG_00126	CDS	318				hypothetical protein
+NELDDEBG_00126	gene	318				
+NELDDEBG_00127	CDS	447	rplM		COG0102	50S ribosomal protein L13
+NELDDEBG_00127	gene	447	rplM			
+NELDDEBG_00128	CDS	393	rpsI		COG0103	30S ribosomal protein S9
+NELDDEBG_00128	gene	393	rpsI			
+NELDDEBG_00129	CDS	339				hypothetical protein
+NELDDEBG_00129	gene	339				
+NELDDEBG_00130	CDS	1437	bglA_1	3.2.1.86	COG2723	6-phospho-beta-glucosidase BglA
+NELDDEBG_00130	gene	1437	bglA_1			
+NELDDEBG_00131	CDS	240			COG4095	Sugar transporter SemiSWEET
+NELDDEBG_00131	gene	240				
+NELDDEBG_00132	CDS	315				hypothetical protein
+NELDDEBG_00132	gene	315				
+NELDDEBG_00133	CDS	1974	licR_1		COG1762	putative licABCH operon regulator
+NELDDEBG_00133	gene	1974	licR_1			
+NELDDEBG_00134	CDS	315	lacF_1		COG1447	PTS system lactose-specific EIIA component
+NELDDEBG_00134	gene	315	lacF_1			
+NELDDEBG_00135	CDS	507				hypothetical protein
+NELDDEBG_00135	gene	507				
+NELDDEBG_00136	CDS	1347	licC_2		COG1455	Lichenan permease IIC component
+NELDDEBG_00136	gene	1347	licC_2			
+NELDDEBG_00137	CDS	177				hypothetical protein
+NELDDEBG_00137	gene	177				
+NELDDEBG_00138	CDS	126				hypothetical protein
+NELDDEBG_00138	gene	126				
+NELDDEBG_00139	CDS	2214				hypothetical protein
+NELDDEBG_00139	gene	2214				
+NELDDEBG_00140	CDS	477	bsaA			Glutathione peroxidase BsaA
+NELDDEBG_00140	gene	477	bsaA			
+NELDDEBG_00141	CDS	3204		4.2.2.1		Hyaluronate lyase
+NELDDEBG_00141	gene	3204				
+NELDDEBG_00142	CDS	216				IS200/IS605 family transposase ISStin10
+NELDDEBG_00142	gene	216				
+NELDDEBG_00143	CDS	630	kdgA		COG0800	KHG/KDPG aldolase
+NELDDEBG_00143	gene	630	kdgA			
+NELDDEBG_00144	CDS	1002	kdgK	2.7.1.45		2-dehydro-3-deoxygluconokinase
+NELDDEBG_00144	gene	1002	kdgK			
+NELDDEBG_00145	CDS	642				hypothetical protein
+NELDDEBG_00145	gene	642				
+NELDDEBG_00146	CDS	816	idnO	1.1.1.69		5-keto-D-gluconate 5-reductase
+NELDDEBG_00146	gene	816	idnO			
+NELDDEBG_00147	CDS	435				hypothetical protein
+NELDDEBG_00147	gene	435				
+NELDDEBG_00148	CDS	1191	ugl	3.2.1.180		Unsaturated chondroitin disaccharide hydrolase
+NELDDEBG_00148	gene	1191	ugl			
+NELDDEBG_00149	CDS	492	levE_1	2.7.1.202	COG3444	PTS system fructose-specific EIIB component
+NELDDEBG_00149	gene	492	levE_1			
+NELDDEBG_00150	CDS	780	agaC		COG3715	N-acetylgalactosamine permease IIC component 1
+NELDDEBG_00150	gene	780	agaC			
+NELDDEBG_00151	CDS	819	manZ_2		COG3716	PTS system mannose-specific EIID component
+NELDDEBG_00151	gene	819	manZ_2			
+NELDDEBG_00152	CDS	294				hypothetical protein
+NELDDEBG_00152	gene	294				
+NELDDEBG_00153	CDS	1902				hypothetical protein
+NELDDEBG_00153	gene	1902				
+NELDDEBG_00154	CDS	1002	kdgR		COG1609	HTH-type transcriptional regulator KdgR
+NELDDEBG_00154	gene	1002	kdgR			
+NELDDEBG_00155	CDS	336				hypothetical protein
+NELDDEBG_00155	gene	336				
+NELDDEBG_00156	CDS	243				hypothetical protein
+NELDDEBG_00156	gene	243				
+NELDDEBG_00157	CDS	543				hypothetical protein
+NELDDEBG_00157	gene	543				
+NELDDEBG_00158	CDS	195				hypothetical protein
+NELDDEBG_00158	gene	195				
+NELDDEBG_00159	CDS	951	rsmH	2.1.1.199		Ribosomal RNA small subunit methyltransferase H
+NELDDEBG_00159	gene	951	rsmH			
+NELDDEBG_00160	CDS	318	ftsL			Cell division protein FtsL
+NELDDEBG_00160	gene	318	ftsL			
+NELDDEBG_00161	CDS	2253	pbpX		COG0768	Penicillin-binding protein 2X
+NELDDEBG_00161	gene	2253	pbpX			
+NELDDEBG_00162	CDS	981	mraY	2.7.8.13	COG0472	Phospho-N-acetylmuramoyl-pentapeptide-transferase
+NELDDEBG_00162	gene	981	mraY			
+NELDDEBG_00163	CDS	90				hypothetical protein
+NELDDEBG_00163	gene	90				
+NELDDEBG_00164	CDS	2106	clpC_1			putative ATP-dependent Clp protease ATP-binding subunit
+NELDDEBG_00164	gene	2106	clpC_1			
+NELDDEBG_00165	CDS	483	luxS	4.4.1.21	COG1854	S-ribosylhomocysteine lyase
+NELDDEBG_00165	gene	483	luxS			
+NELDDEBG_00166	CDS	1485				hypothetical protein
+NELDDEBG_00166	gene	1485				
+NELDDEBG_00167	CDS	1608	dexB	3.2.1.70	COG0366	Glucan 1,6-alpha-glucosidase
+NELDDEBG_00167	gene	1608	dexB			
+NELDDEBG_00168	CDS	450				hypothetical protein
+NELDDEBG_00168	gene	450				
+NELDDEBG_00169	CDS	90				hypothetical protein
+NELDDEBG_00169	gene	90				
+NELDDEBG_00170	CDS	456				hypothetical protein
+NELDDEBG_00170	gene	456				
+NELDDEBG_00171	CDS	1461				hypothetical protein
+NELDDEBG_00171	gene	1461				
+NELDDEBG_00172	CDS	1578				hypothetical protein
+NELDDEBG_00172	gene	1578				
+NELDDEBG_00173	CDS	1440				hypothetical protein
+NELDDEBG_00173	gene	1440				
+NELDDEBG_00174	CDS	930	araQ_1		COG0395	L-arabinose transport system permease protein AraQ
+NELDDEBG_00174	gene	930	araQ_1			
+NELDDEBG_00175	CDS	933	yteP_1		COG4209	putative multiple-sugar transport system permease YteP
+NELDDEBG_00175	gene	933	yteP_1			
+NELDDEBG_00176	CDS	687	nanE_1	5.1.3.9	COG3010	Putative N-acetylmannosamine-6-phosphate 2-epimerase
+NELDDEBG_00176	gene	687	nanE_1			
+NELDDEBG_00177	CDS	612	ybbH_1		COG1737	putative HTH-type transcriptional regulator YbbH
+NELDDEBG_00177	gene	612	ybbH_1			
+NELDDEBG_00178	CDS	609				hypothetical protein
+NELDDEBG_00178	gene	609				
+NELDDEBG_00179	CDS	840				IS3 family transposase ISSpn4
+NELDDEBG_00179	gene	840				
+NELDDEBG_00180	CDS	537				hypothetical protein
+NELDDEBG_00180	gene	537				
+NELDDEBG_00181	CDS	138				hypothetical protein
+NELDDEBG_00181	gene	138				
+NELDDEBG_00182	CDS	1320				hypothetical protein
+NELDDEBG_00182	gene	1320				
+NELDDEBG_00183	CDS	741	yxdL_1		COG1136	ABC transporter ATP-binding protein YxdL
+NELDDEBG_00183	gene	741	yxdL_1			
+NELDDEBG_00184	CDS	1608				hypothetical protein
+NELDDEBG_00184	gene	1608				
+NELDDEBG_00185	CDS	1941				hypothetical protein
+NELDDEBG_00185	gene	1941				
+NELDDEBG_00186	CDS	2610				hypothetical protein
+NELDDEBG_00186	gene	2610				
+NELDDEBG_00187	CDS	138				hypothetical protein
+NELDDEBG_00187	gene	138				
+NELDDEBG_00188	CDS	588				hypothetical protein
+NELDDEBG_00188	gene	588				
+NELDDEBG_00189	CDS	144				hypothetical protein
+NELDDEBG_00189	gene	144				
+NELDDEBG_00190	CDS	381				hypothetical protein
+NELDDEBG_00190	gene	381				
+NELDDEBG_00191	CDS	252				hypothetical protein
+NELDDEBG_00191	gene	252				
+NELDDEBG_00192	CDS	255				hypothetical protein
+NELDDEBG_00192	gene	255				
+NELDDEBG_00193	CDS	171				hypothetical protein
+NELDDEBG_00193	gene	171				
+NELDDEBG_00194	CDS	369	rplL		COG0222	50S ribosomal protein L7/L12
+NELDDEBG_00194	gene	369	rplL			
+NELDDEBG_00195	CDS	501	rplJ			50S ribosomal protein L10
+NELDDEBG_00195	gene	501	rplJ			
+NELDDEBG_00196	CDS	1260	mtaD	3.5.4.28	COG0402	5-methylthioadenosine/S-adenosylhomocysteine deaminase
+NELDDEBG_00196	gene	1260	mtaD			
+NELDDEBG_00197	CDS	1749			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_00197	gene	1749				
+NELDDEBG_00198	CDS	1725			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_00198	gene	1725				
+NELDDEBG_00199	CDS	939	msrAB1		COG0225	Peptide methionine sulfoxide reductase MsrA/MsrB 1
+NELDDEBG_00199	gene	939	msrAB1			
+NELDDEBG_00200	CDS	870	thrB	2.7.1.39	COG0083	Homoserine kinase
+NELDDEBG_00200	gene	870	thrB			
+NELDDEBG_00201	CDS	1287	hom	1.1.1.3	COG0460	Homoserine dehydrogenase
+NELDDEBG_00201	gene	1287	hom			
+NELDDEBG_00202	CDS	738	mecA		COG4862	Adapter protein MecA
+NELDDEBG_00202	gene	738	mecA			
+NELDDEBG_00203	CDS	1035				hypothetical protein
+NELDDEBG_00203	gene	1035				
+NELDDEBG_00204	CDS	1434				hypothetical protein
+NELDDEBG_00204	gene	1434				
+NELDDEBG_00205	CDS	987	arnC_1	2.4.2.53		Undecaprenyl-phosphate 4-deoxy-4-formamido-L-arabinose transferase
+NELDDEBG_00205	gene	987	arnC_1			
+NELDDEBG_00206	CDS	1104	pglJ	2.4.1.291	COG0438	N-acetylgalactosamine-N,N'-diacetylbacillosaminyl-diphospho-undecaprenol 4-alpha-N-acetylgalactosaminyltransferase
+NELDDEBG_00206	gene	1104	pglJ			
+NELDDEBG_00207	CDS	837				hypothetical protein
+NELDDEBG_00207	gene	837				
+NELDDEBG_00208	CDS	1275	lytR_1			Transcriptional regulator LytR
+NELDDEBG_00208	gene	1275	lytR_1			
+NELDDEBG_00209	CDS	849	pheA	4.2.1.51		Prephenate dehydratase
+NELDDEBG_00209	gene	849	pheA			
+NELDDEBG_00210	CDS	477	aroL	2.7.1.71		Shikimate kinase 2
+NELDDEBG_00210	gene	477	aroL			
+NELDDEBG_00211	CDS	1284	aroA	2.5.1.19	COG0128	3-phosphoshikimate 1-carboxyvinyltransferase
+NELDDEBG_00211	gene	1284	aroA			
+NELDDEBG_00212	CDS	339				hypothetical protein
+NELDDEBG_00212	gene	339				
+NELDDEBG_00213	CDS	1104				hypothetical protein
+NELDDEBG_00213	gene	1104				
+NELDDEBG_00214	CDS	1167	aroC	4.2.3.5	COG0082	Chorismate synthase
+NELDDEBG_00214	gene	1167	aroC			
+NELDDEBG_00215	CDS	1068	aroB	4.2.3.4	COG0337	3-dehydroquinate synthase
+NELDDEBG_00215	gene	1068	aroB			
+NELDDEBG_00216	CDS	855	aroE	1.1.1.25	COG0169	Shikimate dehydrogenase (NADP(+))
+NELDDEBG_00216	gene	855	aroE			
+NELDDEBG_00217	CDS	678	aroD	4.2.1.10	COG0710	3-dehydroquinate dehydratase
+NELDDEBG_00217	gene	678	aroD			
+NELDDEBG_00218	CDS	1164	rlmI	2.1.1.191	COG1092	Ribosomal RNA large subunit methyltransferase I
+NELDDEBG_00218	gene	1164	rlmI			
+NELDDEBG_00219	CDS	1635				hypothetical protein
+NELDDEBG_00219	gene	1635				
+NELDDEBG_00220	CDS	750	ecsA_1		COG1131	ABC-type transporter ATP-binding protein EcsA
+NELDDEBG_00220	gene	750	ecsA_1			
+NELDDEBG_00221	CDS	1455	amyS	3.2.1.1		Alpha-amylase
+NELDDEBG_00221	gene	1455	amyS			
+NELDDEBG_00222	CDS	2619	alaS	6.1.1.7		Alanine--tRNA ligase
+NELDDEBG_00222	gene	2619	alaS			
+NELDDEBG_00223	CDS	486				hypothetical protein
+NELDDEBG_00223	gene	486				
+NELDDEBG_00224	CDS	1071	potD		COG0687	Spermidine/putrescine-binding periplasmic protein
+NELDDEBG_00224	gene	1071	potD			
+NELDDEBG_00225	CDS	774	ydcV			Inner membrane ABC transporter permease protein YdcV
+NELDDEBG_00225	gene	774	ydcV			
+NELDDEBG_00226	CDS	807	potB		COG1176	Spermidine/putrescine transport system permease protein PotB
+NELDDEBG_00226	gene	807	potB			
+NELDDEBG_00227	CDS	1158	potA	3.6.3.31		Spermidine/putrescine import ATP-binding protein PotA
+NELDDEBG_00227	gene	1158	potA			
+NELDDEBG_00228	CDS	906	murB	1.3.1.98		UDP-N-acetylenolpyruvoylglucosamine reductase
+NELDDEBG_00228	gene	906	murB			
+NELDDEBG_00229	CDS	753				hypothetical protein
+NELDDEBG_00229	gene	753				
+NELDDEBG_00230	CDS	672	aldC	4.1.1.5	COG3527	Alpha-acetolactate decarboxylase
+NELDDEBG_00230	gene	672	aldC			
+NELDDEBG_00231	CDS	1272	gabR		COG1167	HTH-type transcriptional regulatory protein GabR
+NELDDEBG_00231	gene	1272	gabR			
+NELDDEBG_00232	CDS	816	glnH_1		COG0834	Glutamine-binding periplasmic protein
+NELDDEBG_00232	gene	816	glnH_1			
+NELDDEBG_00233	CDS	654	phoU_1		COG0704	Phosphate-specific transport system accessory protein PhoU 
+NELDDEBG_00233	gene	654	phoU_1			
+NELDDEBG_00234	CDS	759	pstB3_1	3.6.3.27	COG1117	Phosphate import ATP-binding protein PstB 3
+NELDDEBG_00234	gene	759	pstB3_1			
+NELDDEBG_00235	CDS	804	pstB3_2	3.6.3.27	COG1117	Phosphate import ATP-binding protein PstB 3
+NELDDEBG_00235	gene	804	pstB3_2			
+NELDDEBG_00236	CDS	885				hypothetical protein
+NELDDEBG_00236	gene	885				
+NELDDEBG_00237	CDS	918	pstC		COG0573	Phosphate transport system permease protein PstC
+NELDDEBG_00237	gene	918	pstC			
+NELDDEBG_00238	CDS	879	pstS1		COG0226	Phosphate-binding protein PstS 1
+NELDDEBG_00238	gene	879	pstS1			
+NELDDEBG_00239	CDS	114				hypothetical protein
+NELDDEBG_00239	gene	114				
+NELDDEBG_00240	CDS	1305	rsmF	2.1.1.-	COG0144	Ribosomal RNA small subunit methyltransferase F
+NELDDEBG_00240	gene	1305	rsmF			
+NELDDEBG_00241	CDS	774	suhB	3.1.3.11	COG0483	Fructose-1,6-bisphosphatase/inositol-1-monophosphatase
+NELDDEBG_00241	gene	774	suhB			
+NELDDEBG_00242	CDS	279				hypothetical protein
+NELDDEBG_00242	gene	279				
+NELDDEBG_00243	CDS	402	spxA_2		COG1393	Regulatory protein Spx
+NELDDEBG_00243	gene	402	spxA_2			
+NELDDEBG_00244	CDS	618				hypothetical protein
+NELDDEBG_00244	gene	618				
+NELDDEBG_00245	CDS	774	yutF	3.1.3.-	COG0647	Acid sugar phosphatase
+NELDDEBG_00245	gene	774	yutF			
+NELDDEBG_00246	CDS	738				hypothetical protein
+NELDDEBG_00246	gene	738				
+NELDDEBG_00247	CDS	1131	hemN	1.3.99.-	COG0635	Oxygen-independent coproporphyrinogen-III oxidase-like protein
+NELDDEBG_00247	gene	1131	hemN			
+NELDDEBG_00248	CDS	390				hypothetical protein
+NELDDEBG_00248	gene	390				
+NELDDEBG_00249	CDS	384				hypothetical protein
+NELDDEBG_00249	gene	384				
+NELDDEBG_00250	CDS	789	lgt	2.4.99.-	COG0682	Prolipoprotein diacylglyceryl transferase
+NELDDEBG_00250	gene	789	lgt			
+NELDDEBG_00251	CDS	936	hprK	2.7.11.-	COG1493	HPr kinase/phosphorylase
+NELDDEBG_00251	gene	936	hprK			
+NELDDEBG_00252	CDS	177	rpsU		COG0828	30S ribosomal protein S21
+NELDDEBG_00252	gene	177	rpsU			
+NELDDEBG_00253	CDS	708	nagB	3.5.99.6	COG0363	Glucosamine-6-phosphate deaminase
+NELDDEBG_00253	gene	708	nagB			
+NELDDEBG_00254	CDS	1029	queA	2.4.99.17	COG0809	S-adenosylmethionine:tRNA ribosyltransferase-isomerase
+NELDDEBG_00254	gene	1029	queA			
+NELDDEBG_00255	CDS	390				hypothetical protein
+NELDDEBG_00255	gene	390				
+NELDDEBG_00256	CDS	102				hypothetical protein
+NELDDEBG_00256	gene	102				
+NELDDEBG_00257	CDS	552				hypothetical protein
+NELDDEBG_00257	gene	552				
+NELDDEBG_00258	CDS	825	nadE	6.3.1.5	COG0171	NH(3)-dependent NAD(+) synthetase
+NELDDEBG_00258	gene	825	nadE			
+NELDDEBG_00259	CDS	1461	pncB2	6.3.4.21		Nicotinate phosphoribosyltransferase pncB2
+NELDDEBG_00259	gene	1461	pncB2			
+NELDDEBG_00260	CDS	489				hypothetical protein
+NELDDEBG_00260	gene	489				
+NELDDEBG_00261	CDS	210				hypothetical protein
+NELDDEBG_00261	gene	210				
+NELDDEBG_00262	CDS	729				hypothetical protein
+NELDDEBG_00262	gene	729				
+NELDDEBG_00263	CDS	720	btuD_1	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_00263	gene	720	btuD_1			
+NELDDEBG_00264	CDS	1287				hypothetical protein
+NELDDEBG_00264	gene	1287				
+NELDDEBG_00265	CDS	183				hypothetical protein
+NELDDEBG_00265	gene	183				
+NELDDEBG_00266	CDS	192				hypothetical protein
+NELDDEBG_00266	gene	192				
+NELDDEBG_00267	CDS	1179				hypothetical protein
+NELDDEBG_00267	gene	1179				
+NELDDEBG_00268	CDS	993	rhaR			HTH-type transcriptional activator RhaR
+NELDDEBG_00268	gene	993	rhaR			
+NELDDEBG_00269	CDS	1755	btuD_2	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_00269	gene	1755	btuD_2			
+NELDDEBG_00270	CDS	1722			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_00270	gene	1722				
+NELDDEBG_00271	CDS	585				hypothetical protein
+NELDDEBG_00271	gene	585				
+NELDDEBG_00272	CDS	696				hypothetical protein
+NELDDEBG_00272	gene	696				
+NELDDEBG_00273	CDS	1365	ykoD_1	3.6.3.-	COG1122	Putative HMP/thiamine import ATP-binding protein YkoD
+NELDDEBG_00273	gene	1365	ykoD_1			
+NELDDEBG_00274	CDS	267				IS630 family transposase ISSpn2
+NELDDEBG_00274	gene	267				
+NELDDEBG_00275	CDS	1083	yfmL	3.6.4.13	COG0513	putative ATP-dependent RNA helicase YfmL
+NELDDEBG_00275	gene	1083	yfmL			
+NELDDEBG_00276	CDS	978	iolU	1.1.1.371	COG0673	scyllo-inositol 2-dehydrogenase (NADP(+)) IolU
+NELDDEBG_00276	gene	978	iolU			
+NELDDEBG_00277	CDS	378				hypothetical protein
+NELDDEBG_00277	gene	378				
+NELDDEBG_00278	CDS	1443	pgdA	3.5.1.104	COG0726	Peptidoglycan-N-acetylglucosamine deacetylase
+NELDDEBG_00278	gene	1443	pgdA			
+NELDDEBG_00279	CDS	843	yvgN	1.1.1.-	COG0656	Glyoxal reductase
+NELDDEBG_00279	gene	843	yvgN			
+NELDDEBG_00280	CDS	762				hypothetical protein
+NELDDEBG_00280	gene	762				
+NELDDEBG_00281	CDS	918	glyQ	6.1.1.14	COG0752	Glycine--tRNA ligase alpha subunit
+NELDDEBG_00281	gene	918	glyQ			
+NELDDEBG_00282	CDS	2037	glyS	6.1.1.14	COG0751	Glycine--tRNA ligase beta subunit
+NELDDEBG_00282	gene	2037	glyS			
+NELDDEBG_00283	CDS	258				hypothetical protein
+NELDDEBG_00283	gene	258				
+NELDDEBG_00284	CDS	1245				hypothetical protein
+NELDDEBG_00284	gene	1245				
+NELDDEBG_00285	CDS	606	nfr2	1.5.1.36	COG0431	NADH-dependent flavin reductase subunit 2
+NELDDEBG_00285	gene	606	nfr2			
+NELDDEBG_00286	CDS	924	apbE	2.7.1.180	COG1477	FAD:protein FMN transferase
+NELDDEBG_00286	gene	924	apbE			
+NELDDEBG_00287	CDS	1380		1.6.99.3		putative NADH oxidase
+NELDDEBG_00287	gene	1380				
+NELDDEBG_00288	CDS	876	pdxS	4.3.3.6	COG0214	Pyridoxal 5'-phosphate synthase subunit PdxS
+NELDDEBG_00288	gene	876	pdxS			
+NELDDEBG_00289	CDS	582	pdxT	4.3.3.6		Pyridoxal 5'-phosphate synthase subunit PdxT
+NELDDEBG_00289	gene	582	pdxT			
+NELDDEBG_00290	CDS	648				hypothetical protein
+NELDDEBG_00290	gene	648				
+NELDDEBG_00291	CDS	447				hypothetical protein
+NELDDEBG_00291	gene	447				
+NELDDEBG_00292	CDS	495				hypothetical protein
+NELDDEBG_00292	gene	495				
+NELDDEBG_00293	CDS	531	ogt	2.1.1.63		Methylated-DNA--protein-cysteine methyltransferase
+NELDDEBG_00293	gene	531	ogt			
+NELDDEBG_00294	CDS	357	mgsR		COG1393	Regulatory protein MgsR
+NELDDEBG_00294	gene	357	mgsR			
+NELDDEBG_00295	CDS	801	yxeN			putative amino-acid permease protein YxeN
+NELDDEBG_00295	gene	801	yxeN			
+NELDDEBG_00296	CDS	744	tcyN	3.6.3.-	COG1126	L-cystine import ATP-binding protein TcyN
+NELDDEBG_00296	gene	744	tcyN			
+NELDDEBG_00297	CDS	225				hypothetical protein
+NELDDEBG_00297	gene	225				
+NELDDEBG_00298	CDS	912	trxB	1.8.1.9	COG0492	Thioredoxin reductase
+NELDDEBG_00298	gene	912	trxB			
+NELDDEBG_00299	CDS	729		2.1.1.-		Putative TrmH family tRNA/rRNA methyltransferase
+NELDDEBG_00299	gene	729				
+NELDDEBG_00300	CDS	612	def_1	3.5.1.88	COG0242	Peptide deformylase
+NELDDEBG_00300	gene	612	def_1			
+NELDDEBG_00301	CDS	717	capA			Capsule biosynthesis protein CapA
+NELDDEBG_00301	gene	717	capA			
+NELDDEBG_00302	CDS	255				hypothetical protein
+NELDDEBG_00302	gene	255				
+NELDDEBG_00303	CDS	828	ybiV	3.1.3.23	COG0561	Sugar phosphatase YbiV
+NELDDEBG_00303	gene	828	ybiV			
+NELDDEBG_00304	CDS	636				hypothetical protein
+NELDDEBG_00304	gene	636				
+NELDDEBG_00305	CDS	726				hypothetical protein
+NELDDEBG_00305	gene	726				
+NELDDEBG_00306	CDS	936				hypothetical protein
+NELDDEBG_00306	gene	936				
+NELDDEBG_00307	CDS	897	yicL_1		COG0697	putative inner membrane transporter YicL
+NELDDEBG_00307	gene	897	yicL_1			
+NELDDEBG_00308	CDS	699	yvoA		COG2188	HTH-type transcriptional repressor YvoA
+NELDDEBG_00308	gene	699	yvoA			
+NELDDEBG_00309	CDS	1563	guaA	6.3.5.2		GMP synthase [glutamine-hydrolyzing]
+NELDDEBG_00309	gene	1563	guaA			
+NELDDEBG_00310	CDS	186				hypothetical protein
+NELDDEBG_00310	gene	186				
+NELDDEBG_00311	CDS	324				hypothetical protein
+NELDDEBG_00311	gene	324				
+NELDDEBG_00312	CDS	450				hypothetical protein
+NELDDEBG_00312	gene	450				
+NELDDEBG_00313	CDS	759	yjjP		COG2966	Inner membrane protein YjjP
+NELDDEBG_00313	gene	759	yjjP			
+NELDDEBG_00314	CDS	1980	stkP	2.7.11.1	COG0515	Serine/threonine-protein kinase StkP
+NELDDEBG_00314	gene	1980	stkP			
+NELDDEBG_00315	CDS	741	phpP	3.1.3.16	COG0631	Protein phosphatase PhpP
+NELDDEBG_00315	gene	741	phpP			
+NELDDEBG_00316	CDS	1314	rsmB	2.1.1.176	COG0144	Ribosomal RNA small subunit methyltransferase B
+NELDDEBG_00316	gene	1314	rsmB			
+NELDDEBG_00317	CDS	936	fmt	2.1.2.9		Methionyl-tRNA formyltransferase
+NELDDEBG_00317	gene	936	fmt			
+NELDDEBG_00318	CDS	2397	priA	3.6.4.-		primosomal protein N'
+NELDDEBG_00318	gene	2397	priA			
+NELDDEBG_00319	CDS	315	rpoZ	2.7.7.6		DNA-directed RNA polymerase subunit omega
+NELDDEBG_00319	gene	315	rpoZ			
+NELDDEBG_00320	CDS	627	gmk	2.7.4.8		Guanylate kinase
+NELDDEBG_00320	gene	627	gmk			
+NELDDEBG_00321	CDS	1614	rny	3.1.-.-	COG1418	Ribonuclease Y
+NELDDEBG_00321	gene	1614	rny			
+NELDDEBG_00322	CDS	255	yoeB	3.1.-.-	COG4115	Toxin YoeB
+NELDDEBG_00322	gene	255	yoeB			
+NELDDEBG_00323	CDS	255				hypothetical protein
+NELDDEBG_00323	gene	255				
+NELDDEBG_00324	CDS	1098				hypothetical protein
+NELDDEBG_00324	gene	1098				
+NELDDEBG_00325	CDS	1812				hypothetical protein
+NELDDEBG_00325	gene	1812				
+NELDDEBG_00326	CDS	741	ubiE_1	2.1.1.163		Ubiquinone/menaquinone biosynthesis C-methyltransferase UbiE
+NELDDEBG_00326	gene	741	ubiE_1			
+NELDDEBG_00327	CDS	354	rsfS		COG0799	Ribosomal silencing factor RsfS
+NELDDEBG_00327	gene	354	rsfS			
+NELDDEBG_00328	CDS	501	sttH	3.5.2.19		Streptothricin hydrolase
+NELDDEBG_00328	gene	501	sttH			
+NELDDEBG_00329	CDS	594				hypothetical protein
+NELDDEBG_00329	gene	594				
+NELDDEBG_00330	CDS	630	nadD	2.7.7.18	COG1057	Nicotinate-nucleotide adenylyltransferase
+NELDDEBG_00330	gene	630	nadD			
+NELDDEBG_00331	CDS	312	yhbY		COG1534	RNA-binding protein YhbY
+NELDDEBG_00331	gene	312	yhbY			
+NELDDEBG_00332	CDS	1107	yqeH		COG1161	putative protein YqeH
+NELDDEBG_00332	gene	1107	yqeH			
+NELDDEBG_00333	CDS	528	gph_1	3.1.3.18		Phosphoglycolate phosphatase
+NELDDEBG_00333	gene	528	gph_1			
+NELDDEBG_00334	CDS	909				hypothetical protein
+NELDDEBG_00334	gene	909				
+NELDDEBG_00335	CDS	561	ykuT		COG0668	putative MscS family protein YkuT
+NELDDEBG_00335	gene	561	ykuT			
+NELDDEBG_00336	CDS	960	sstT		COG3633	Serine/threonine transporter SstT
+NELDDEBG_00336	gene	960	sstT			
+NELDDEBG_00337	CDS	954				hypothetical protein
+NELDDEBG_00337	gene	954				
+NELDDEBG_00338	CDS	381				hypothetical protein
+NELDDEBG_00338	gene	381				
+NELDDEBG_00339	CDS	222				hypothetical protein
+NELDDEBG_00339	gene	222				
+NELDDEBG_00340	CDS	315	trxA		COG0526	Thioredoxin
+NELDDEBG_00340	gene	315	trxA			
+NELDDEBG_00341	CDS	534	queF	1.7.1.13		NADPH-dependent 7-cyano-7-deazaguanine reductase
+NELDDEBG_00341	gene	534	queF			
+NELDDEBG_00342	CDS	669	aqpZ2			Aquaporin Z 2
+NELDDEBG_00342	gene	669	aqpZ2			
+NELDDEBG_00343	CDS	555				hypothetical protein
+NELDDEBG_00343	gene	555				
+NELDDEBG_00344	CDS	156				hypothetical protein
+NELDDEBG_00344	gene	156				
+NELDDEBG_00345	CDS	1797	pepF1_1	3.4.24.-		Oligoendopeptidase F, plasmid
+NELDDEBG_00345	gene	1797	pepF1_1			
+NELDDEBG_00346	CDS	744	rsmE	2.1.1.193	COG1385	Ribosomal RNA small subunit methyltransferase E
+NELDDEBG_00346	gene	744	rsmE			
+NELDDEBG_00347	CDS	954	prmA	2.1.1.-	COG2264	Ribosomal protein L11 methyltransferase
+NELDDEBG_00347	gene	954	prmA			
+NELDDEBG_00348	CDS	429				hypothetical protein
+NELDDEBG_00348	gene	429				
+NELDDEBG_00349	CDS	1089				hypothetical protein
+NELDDEBG_00349	gene	1089				
+NELDDEBG_00350	CDS	471				hypothetical protein
+NELDDEBG_00350	gene	471				
+NELDDEBG_00351	CDS	453				hypothetical protein
+NELDDEBG_00351	gene	453				
+NELDDEBG_00352	CDS	180				hypothetical protein
+NELDDEBG_00352	gene	180				
+NELDDEBG_00353	CDS	240				hypothetical protein
+NELDDEBG_00353	gene	240				
+NELDDEBG_00354	CDS	1272			COG2256	putative AAA domain-containing protein
+NELDDEBG_00354	gene	1272				
+NELDDEBG_00355	tRNA	75				tRNA-Lys(ctt)
+NELDDEBG_00355	gene	75				
+NELDDEBG_00356	CDS	867	xerD_1			Tyrosine recombinase XerD
+NELDDEBG_00356	gene	867	xerD_1			
+NELDDEBG_00357	CDS	264				hypothetical protein
+NELDDEBG_00357	gene	264				
+NELDDEBG_00358	CDS	183				hypothetical protein
+NELDDEBG_00358	gene	183				
+NELDDEBG_00359	CDS	1020				hypothetical protein
+NELDDEBG_00359	gene	1020				
+NELDDEBG_00360	CDS	450				hypothetical protein
+NELDDEBG_00360	gene	450				
+NELDDEBG_00361	CDS	138				hypothetical protein
+NELDDEBG_00361	gene	138				
+NELDDEBG_00362	CDS	1347				hypothetical protein
+NELDDEBG_00362	gene	1347				
+NELDDEBG_00363	CDS	210				hypothetical protein
+NELDDEBG_00363	gene	210				
+NELDDEBG_00364	CDS	222				hypothetical protein
+NELDDEBG_00364	gene	222				
+NELDDEBG_00365	CDS	519				hypothetical protein
+NELDDEBG_00365	gene	519				
+NELDDEBG_00366	CDS	480				hypothetical protein
+NELDDEBG_00366	gene	480				
+NELDDEBG_00367	CDS	1320	sacA	3.2.1.26		Sucrose-6-phosphate hydrolase
+NELDDEBG_00367	gene	1320	sacA			
+NELDDEBG_00368	CDS	1617				hypothetical protein
+NELDDEBG_00368	gene	1617				
+NELDDEBG_00369	CDS	891	ycjP_1		COG0395	Inner membrane ABC transporter permease protein YcjP
+NELDDEBG_00369	gene	891	ycjP_1			
+NELDDEBG_00370	CDS	918	yteP_2		COG4209	putative multiple-sugar transport system permease YteP
+NELDDEBG_00370	gene	918	yteP_2			
+NELDDEBG_00371	CDS	1002	rbsR		COG1609	Ribose operon repressor
+NELDDEBG_00371	gene	1002	rbsR			
+NELDDEBG_00372	CDS	1482				Putative trans-acting regulator
+NELDDEBG_00372	gene	1482				
+NELDDEBG_00373	CDS	165				hypothetical protein
+NELDDEBG_00373	gene	165				
+NELDDEBG_00374	CDS	567				hypothetical protein
+NELDDEBG_00374	gene	567				
+NELDDEBG_00375	CDS	171				hypothetical protein
+NELDDEBG_00375	gene	171				
+NELDDEBG_00376	CDS	609				hypothetical protein
+NELDDEBG_00376	gene	609				
+NELDDEBG_00377	CDS	204				hypothetical protein
+NELDDEBG_00377	gene	204				
+NELDDEBG_00378	CDS	447				hypothetical protein
+NELDDEBG_00378	gene	447				
+NELDDEBG_00379	CDS	660				hypothetical protein
+NELDDEBG_00379	gene	660				
+NELDDEBG_00380	CDS	1152				hypothetical protein
+NELDDEBG_00380	gene	1152				
+NELDDEBG_00381	CDS	732				hypothetical protein
+NELDDEBG_00381	gene	732				
+NELDDEBG_00382	CDS	777	trpA	4.2.1.20	COG0159	Tryptophan synthase alpha chain
+NELDDEBG_00382	gene	777	trpA			
+NELDDEBG_00383	CDS	1224	trpB	4.2.1.20	COG0133	Tryptophan synthase beta chain
+NELDDEBG_00383	gene	1224	trpB			
+NELDDEBG_00384	CDS	600	trpF	5.3.1.24	COG0135	N-(5'-phosphoribosyl)anthranilate isomerase
+NELDDEBG_00384	gene	600	trpF			
+NELDDEBG_00385	CDS	768	trpC	4.1.1.48		Indole-3-glycerol phosphate synthase
+NELDDEBG_00385	gene	768	trpC			
+NELDDEBG_00386	CDS	1005	trpD	2.4.2.18	COG0547	Anthranilate phosphoribosyltransferase
+NELDDEBG_00386	gene	1005	trpD			
+NELDDEBG_00387	CDS	567	pabA	2.6.1.85	COG0512	Aminodeoxychorismate/anthranilate synthase component 2
+NELDDEBG_00387	gene	567	pabA			
+NELDDEBG_00388	CDS	1362	trpE	4.1.3.27	COG0147	Anthranilate synthase component 1
+NELDDEBG_00388	gene	1362	trpE			
+NELDDEBG_00389	CDS	1002	ccpA_1		COG1609	Catabolite control protein A
+NELDDEBG_00389	gene	1002	ccpA_1			
+NELDDEBG_00390	CDS	369				hypothetical protein
+NELDDEBG_00390	gene	369				
+NELDDEBG_00391	CDS	711				hypothetical protein
+NELDDEBG_00391	gene	711				
+NELDDEBG_00392	CDS	1692				hypothetical protein
+NELDDEBG_00392	gene	1692				
+NELDDEBG_00393	CDS	1011	btuD_3	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_00393	gene	1011	btuD_3			
+NELDDEBG_00394	CDS	1068				hypothetical protein
+NELDDEBG_00394	gene	1068				
+NELDDEBG_00395	CDS	660				hypothetical protein
+NELDDEBG_00395	gene	660				
+NELDDEBG_00396	CDS	981	galE_1	5.1.3.2	COG1087	UDP-glucose 4-epimerase
+NELDDEBG_00396	gene	981	galE_1			
+NELDDEBG_00397	CDS	1476	galT_1	2.7.7.12		Galactose-1-phosphate uridylyltransferase
+NELDDEBG_00397	gene	1476	galT_1			
+NELDDEBG_00398	CDS	642	phoU_2		COG0704	Phosphate-specific transport system accessory protein PhoU 
+NELDDEBG_00398	gene	642	phoU_2			
+NELDDEBG_00399	CDS	402				hypothetical protein
+NELDDEBG_00399	gene	402				
+NELDDEBG_00400	CDS	297				hypothetical protein
+NELDDEBG_00400	gene	297				
+NELDDEBG_00401	CDS	2127	pfbA		COG5434	Plasmin and fibronectin-binding protein A
+NELDDEBG_00401	gene	2127	pfbA			
+NELDDEBG_00402	CDS	1227	arnB	2.6.1.87		UDP-4-amino-4-deoxy-L-arabinose--oxoglutarate aminotransferase
+NELDDEBG_00402	gene	1227	arnB			
+NELDDEBG_00403	CDS	693	wcaJ	2.7.8.31	COG2148	UDP-glucose:undecaprenyl-phosphate glucose-1-phosphate transferase
+NELDDEBG_00403	gene	693	wcaJ			
+NELDDEBG_00404	CDS	1752	yheH	3.6.3.-	COG1132	putative multidrug resistance ABC transporter ATP-binding/permease protein YheH
+NELDDEBG_00404	gene	1752	yheH			
+NELDDEBG_00405	CDS	1746	yheI	3.6.3.-	COG1132	putative multidrug resistance ABC transporter ATP-binding/permease protein YheI
+NELDDEBG_00405	gene	1746	yheI			
+NELDDEBG_00406	CDS	531				hypothetical protein
+NELDDEBG_00406	gene	531				
+NELDDEBG_00407	CDS	270				hypothetical protein
+NELDDEBG_00407	gene	270				
+NELDDEBG_00408	CDS	156				hypothetical protein
+NELDDEBG_00408	gene	156				
+NELDDEBG_00409	CDS	828	exoA	3.1.11.2	COG0708	Exodeoxyribonuclease
+NELDDEBG_00409	gene	828	exoA			
+NELDDEBG_00410	CDS	144				hypothetical protein
+NELDDEBG_00410	gene	144				
+NELDDEBG_00411	CDS	105				hypothetical protein
+NELDDEBG_00411	gene	105				
+NELDDEBG_00412	CDS	582	xpt	2.4.2.22	COG0503	Xanthine phosphoribosyltransferase
+NELDDEBG_00412	gene	582	xpt			
+NELDDEBG_00413	CDS	1263	pucK		COG2233	Uric acid permease PucK
+NELDDEBG_00413	gene	1263	pucK			
+NELDDEBG_00414	CDS	462				hypothetical protein
+NELDDEBG_00414	gene	462				
+NELDDEBG_00415	CDS	765	dpnC	3.1.21.4		Type-2 restriction enzyme DpnI
+NELDDEBG_00415	gene	765	dpnC			
+NELDDEBG_00416	CDS	405	paaI	3.1.2.-	COG2050	Acyl-coenzyme A thioesterase PaaI
+NELDDEBG_00416	gene	405	paaI			
+NELDDEBG_00417	CDS	1482	galT_2	2.7.7.12		Galactose-1-phosphate uridylyltransferase
+NELDDEBG_00417	gene	1482	galT_2			
+NELDDEBG_00418	CDS	1179	galK_1	2.7.1.6	COG0153	Galactokinase
+NELDDEBG_00418	gene	1179	galK_1			
+NELDDEBG_00419	CDS	1008	lacR_1		COG1609	HTH-type transcriptional regulator LacR
+NELDDEBG_00419	gene	1008	lacR_1			
+NELDDEBG_00420	CDS	1038	adh_1	1.1.1.1	COG1063	Alcohol dehydrogenase
+NELDDEBG_00420	gene	1038	adh_1			
+NELDDEBG_00421	CDS	354	adhR		COG0789	HTH-type transcriptional regulator AdhR
+NELDDEBG_00421	gene	354	adhR			
+NELDDEBG_00422	CDS	891	czcD		COG1230	Cadmium, cobalt and zinc/H(+)-K(+) antiporter
+NELDDEBG_00422	gene	891	czcD			
+NELDDEBG_00423	CDS	537	kstR2			HTH-type transcriptional repressor KstR2
+NELDDEBG_00423	gene	537	kstR2			
+NELDDEBG_00424	CDS	807				hypothetical protein
+NELDDEBG_00424	gene	807				
+NELDDEBG_00425	CDS	1521				hypothetical protein
+NELDDEBG_00425	gene	1521				
+NELDDEBG_00426	CDS	729	opuCA	3.6.3.32		Carnitine transport ATP-binding protein OpuCA
+NELDDEBG_00426	gene	729	opuCA			
+NELDDEBG_00427	CDS	765				hypothetical protein
+NELDDEBG_00427	gene	765				
+NELDDEBG_00428	CDS	444				hypothetical protein
+NELDDEBG_00428	gene	444				
+NELDDEBG_00429	CDS	297				hypothetical protein
+NELDDEBG_00429	gene	297				
+NELDDEBG_00430	CDS	1065	pepA_1	3.4.11.7	COG1363	Glutamyl aminopeptidase
+NELDDEBG_00430	gene	1065	pepA_1			
+NELDDEBG_00431	CDS	702	galE_2	5.1.3.2	COG1087	UDP-glucose 4-epimerase
+NELDDEBG_00431	gene	702	galE_2			
+NELDDEBG_00432	CDS	366	btuC			Vitamin B12 import system permease protein BtuC
+NELDDEBG_00432	gene	366	btuC			
+NELDDEBG_00433	CDS	558	fatD			Ferric-anguibactin transport system permease protein FatD
+NELDDEBG_00433	gene	558	fatD			
+NELDDEBG_00434	CDS	957	fatC			Ferric-anguibactin transport system permease protein FatC
+NELDDEBG_00434	gene	957	fatC			
+NELDDEBG_00435	CDS	753	fhuC	3.6.3.34	COG1120	Iron(3+)-hydroxamate import ATP-binding protein FhuC
+NELDDEBG_00435	gene	753	fhuC			
+NELDDEBG_00436	CDS	966	yclQ		COG4607	putative ABC transporter solute-binding protein YclQ
+NELDDEBG_00436	gene	966	yclQ			
+NELDDEBG_00437	CDS	243			COG0759	Putative membrane protein insertion efficiency factor
+NELDDEBG_00437	gene	243				
+NELDDEBG_00438	CDS	723	rluB	5.4.99.22	COG1187	Ribosomal large subunit pseudouridine synthase B
+NELDDEBG_00438	gene	723	rluB			
+NELDDEBG_00439	CDS	570	scpB		COG1386	Segregation and condensation protein B
+NELDDEBG_00439	gene	570	scpB			
+NELDDEBG_00440	CDS	729	scpA		COG1354	Segregation and condensation protein A
+NELDDEBG_00440	gene	729	scpA			
+NELDDEBG_00441	CDS	735			COG0582	Tyrosine recombinase XerD-like protein
+NELDDEBG_00441	gene	735				
+NELDDEBG_00442	CDS	462				hypothetical protein
+NELDDEBG_00442	gene	462				
+NELDDEBG_00443	CDS	522				hypothetical protein
+NELDDEBG_00443	gene	522				
+NELDDEBG_00444	CDS	972	rdgB	3.6.1.19		dITP/XTP pyrophosphatase
+NELDDEBG_00444	gene	972	rdgB			
+NELDDEBG_00445	CDS	795	murI	5.1.1.3	COG0796	Glutamate racemase
+NELDDEBG_00445	gene	795	murI			
+NELDDEBG_00446	CDS	249				hypothetical protein
+NELDDEBG_00446	gene	249				
+NELDDEBG_00447	CDS	1626	treA	3.2.1.93	COG0366	Trehalose-6-phosphate hydrolase
+NELDDEBG_00447	gene	1626	treA			
+NELDDEBG_00448	CDS	1968				hypothetical protein
+NELDDEBG_00448	gene	1968				
+NELDDEBG_00449	CDS	711	treR		COG2188	HTH-type transcriptional regulator TreR
+NELDDEBG_00449	gene	711	treR			
+NELDDEBG_00450	CDS	198				hypothetical protein
+NELDDEBG_00450	gene	198				
+NELDDEBG_00451	CDS	1173	mvaS	2.3.3.10	COG3425	Hydroxymethylglutaryl-CoA synthase
+NELDDEBG_00451	gene	1173	mvaS			
+NELDDEBG_00452	CDS	1275	mvaA	1.1.1.88		3-hydroxy-3-methylglutaryl-coenzyme A reductase
+NELDDEBG_00452	gene	1275	mvaA			
+NELDDEBG_00453	CDS	966	degA		COG1609	HTH-type transcriptional regulator DegA
+NELDDEBG_00453	gene	966	degA			
+NELDDEBG_00454	CDS	1455	scrB	3.2.1.26		Sucrose-6-phosphate hydrolase
+NELDDEBG_00454	gene	1455	scrB			
+NELDDEBG_00455	CDS	1884				hypothetical protein
+NELDDEBG_00455	gene	1884				
+NELDDEBG_00456	CDS	888	gmuE	2.7.1.4	COG1940	Putative fructokinase
+NELDDEBG_00456	gene	888	gmuE			
+NELDDEBG_00457	CDS	618				hypothetical protein
+NELDDEBG_00457	gene	618				
+NELDDEBG_00458	CDS	894	btuD_4	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_00458	gene	894	btuD_4			
+NELDDEBG_00459	CDS	1200	yhaP		COG1668	putative protein YhaP
+NELDDEBG_00459	gene	1200	yhaP			
+NELDDEBG_00460	CDS	768				hypothetical protein
+NELDDEBG_00460	gene	768				
+NELDDEBG_00461	CDS	696	skfE	3.6.3.25	COG1131	SkfA peptide export ATP-binding protein SkfE
+NELDDEBG_00461	gene	696	skfE			
+NELDDEBG_00462	CDS	366	ytrA		COG1725	HTH-type transcriptional repressor YtrA
+NELDDEBG_00462	gene	366	ytrA			
+NELDDEBG_00463	CDS	474	nrdR		COG1327	Transcriptional repressor NrdR
+NELDDEBG_00463	gene	474	nrdR			
+NELDDEBG_00464	CDS	1170				hypothetical protein
+NELDDEBG_00464	gene	1170				
+NELDDEBG_00465	CDS	897	dnaI		COG1484	Primosomal protein DnaI
+NELDDEBG_00465	gene	897	dnaI			
+NELDDEBG_00466	CDS	714	nfrA2	1.5.1.39	COG0778	FMN reductase [NAD(P)H]
+NELDDEBG_00466	gene	714	nfrA2			
+NELDDEBG_00467	CDS	1311	der		COG1160	GTPase Der
+NELDDEBG_00467	gene	1311	der			
+NELDDEBG_00468	CDS	345				hypothetical protein
+NELDDEBG_00468	gene	345				
+NELDDEBG_00469	CDS	351				hypothetical protein
+NELDDEBG_00469	gene	351				
+NELDDEBG_00470	CDS	852				hypothetical protein
+NELDDEBG_00470	gene	852				
+NELDDEBG_00471	CDS	576				hypothetical protein
+NELDDEBG_00471	gene	576				
+NELDDEBG_00472	CDS	288				hypothetical protein
+NELDDEBG_00472	gene	288				
+NELDDEBG_00473	CDS	2514	secA		COG0653	Protein translocase subunit SecA
+NELDDEBG_00473	gene	2514	secA			
+NELDDEBG_00474	CDS	1032	aroG	2.5.1.54	COG0722	Phospho-2-dehydro-3-deoxyheptonate aldolase, Phe-sensitive
+NELDDEBG_00474	gene	1032	aroG			
+NELDDEBG_00475	CDS	1032	aroF	2.5.1.54	COG0722	Phospho-2-dehydro-3-deoxyheptonate aldolase, Tyr-sensitive
+NELDDEBG_00475	gene	1032	aroF			
+NELDDEBG_00476	CDS	369	acpS	2.7.8.7	COG0736	Holo-[acyl-carrier-protein] synthase
+NELDDEBG_00476	gene	369	acpS			
+NELDDEBG_00477	CDS	1104	alr	5.1.1.1	COG0787	Alanine racemase
+NELDDEBG_00477	gene	1104	alr			
+NELDDEBG_00478	CDS	2016	recG	3.6.4.12		ATP-dependent DNA helicase RecG
+NELDDEBG_00478	gene	2016	recG			
+NELDDEBG_00479	CDS	981	axeA	3.1.1.41	COG3458	Cephalosporin-C deacetylase
+NELDDEBG_00479	gene	981	axeA			
+NELDDEBG_00480	CDS	228				hypothetical protein
+NELDDEBG_00480	gene	228				
+NELDDEBG_00481	CDS	2898	nanA_1	3.2.1.18	COG4409	Sialidase A
+NELDDEBG_00481	gene	2898	nanA_1			
+NELDDEBG_00482	CDS	96				hypothetical protein
+NELDDEBG_00482	gene	96				
+NELDDEBG_00483	CDS	453				hypothetical protein
+NELDDEBG_00483	gene	453				
+NELDDEBG_00484	CDS	1338	yesO		COG1653	Putative ABC transporter substrate-binding protein YesO
+NELDDEBG_00484	gene	1338	yesO			
+NELDDEBG_00485	CDS	885	ycjO		COG1175	Inner membrane ABC transporter permease protein YcjO
+NELDDEBG_00485	gene	885	ycjO			
+NELDDEBG_00486	CDS	834	ycjP_2		COG0395	Inner membrane ABC transporter permease protein YcjP
+NELDDEBG_00486	gene	834	ycjP_2			
+NELDDEBG_00487	CDS	2094	nanB	3.2.1.18	COG4409	Sialidase B
+NELDDEBG_00487	gene	2094	nanB			
+NELDDEBG_00488	CDS	1104	yjhC	1.-.-.-	COG0673	putative oxidoreductase YjhC
+NELDDEBG_00488	gene	1104	yjhC			
+NELDDEBG_00489	CDS	699	nanE_2	5.1.3.9	COG3010	Putative N-acetylmannosamine-6-phosphate 2-epimerase
+NELDDEBG_00489	gene	699	nanE_2			
+NELDDEBG_00490	CDS	1518	ptsG_1	2.7.1.199	COG1263	PTS system glucose-specific EIICBA component
+NELDDEBG_00490	gene	1518	ptsG_1			
+NELDDEBG_00491	CDS	1329				hypothetical protein
+NELDDEBG_00491	gene	1329				
+NELDDEBG_00492	CDS	888	lacF_2			Lactose transport system permease protein LacF
+NELDDEBG_00492	gene	888	lacF_2			
+NELDDEBG_00493	CDS	840	araQ_2		COG0395	L-arabinose transport system permease protein AraQ
+NELDDEBG_00493	gene	840	araQ_2			
+NELDDEBG_00494	CDS	453	tabA		COG2731	Toxin-antitoxin biofilm protein TabA
+NELDDEBG_00494	gene	453	tabA			
+NELDDEBG_00495	CDS	345				hypothetical protein
+NELDDEBG_00495	gene	345				
+NELDDEBG_00496	CDS	645				hypothetical protein
+NELDDEBG_00496	gene	645				
+NELDDEBG_00497	CDS	918	nanA_2	4.1.3.3	COG0329	N-acetylneuraminate lyase
+NELDDEBG_00497	gene	918	nanA_2			
+NELDDEBG_00498	CDS	885	bglK_1	2.7.1.85	COG1940	Beta-glucoside kinase
+NELDDEBG_00498	gene	885	bglK_1			
+NELDDEBG_00499	CDS	852	ybbH_2		COG1737	putative HTH-type transcriptional regulator YbbH
+NELDDEBG_00499	gene	852	ybbH_2			
+NELDDEBG_00500	CDS	2043	penA		COG0768	Penicillin-binding protein 2B
+NELDDEBG_00500	gene	2043	penA			
+NELDDEBG_00501	CDS	597	recR		COG0353	Recombination protein RecR
+NELDDEBG_00501	gene	597	recR			
+NELDDEBG_00502	CDS	1044	ddl	6.3.2.4	COG1181	D-alanine--D-alanine ligase
+NELDDEBG_00502	gene	1044	ddl			
+NELDDEBG_00503	CDS	1374	murF_1	6.3.2.10	COG0770	UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase
+NELDDEBG_00503	gene	1374	murF_1			
+NELDDEBG_00504	CDS	705				hypothetical protein
+NELDDEBG_00504	gene	705				
+NELDDEBG_00505	CDS	1374	ftsA		COG0849	Cell division protein FtsA
+NELDDEBG_00505	gene	1374	ftsA			
+NELDDEBG_00506	CDS	1260	ftsZ		COG0206	Cell division protein FtsZ
+NELDDEBG_00506	gene	1260	ftsZ			
+NELDDEBG_00507	CDS	672			COG0325	Pyridoxal phosphate homeostasis protein
+NELDDEBG_00507	gene	672				
+NELDDEBG_00508	CDS	540	sepF		COG1799	Cell division protein SepF
+NELDDEBG_00508	gene	540	sepF			
+NELDDEBG_00509	CDS	264				hypothetical protein
+NELDDEBG_00509	gene	264				
+NELDDEBG_00510	CDS	627				hypothetical protein
+NELDDEBG_00510	gene	627				
+NELDDEBG_00511	CDS	789	divIVA		COG3599	Cell division protein DivIVA
+NELDDEBG_00511	gene	789	divIVA			
+NELDDEBG_00512	CDS	2793	ileS	6.1.1.5	COG0060	Isoleucine--tRNA ligase
+NELDDEBG_00512	gene	2793	ileS			
+NELDDEBG_00513	CDS	363				hypothetical protein
+NELDDEBG_00513	gene	363				
+NELDDEBG_00514	CDS	189				hypothetical protein
+NELDDEBG_00514	gene	189				
+NELDDEBG_00515	CDS	693	gpmA_2	5.4.2.11		2,3-bisphosphoglycerate-dependent phosphoglycerate mutase
+NELDDEBG_00515	gene	693	gpmA_2			
+NELDDEBG_00516	CDS	2412				hypothetical protein
+NELDDEBG_00516	gene	2412				
+NELDDEBG_00517	CDS	702			COG1136	putative ABC transporter ATP-binding protein
+NELDDEBG_00517	gene	702				
+NELDDEBG_00518	CDS	2709				hypothetical protein
+NELDDEBG_00518	gene	2709				
+NELDDEBG_00519	CDS	492	tpx	1.11.1.15	COG2077	Thiol peroxidase
+NELDDEBG_00519	gene	492	tpx			
+NELDDEBG_00520	CDS	930	psaA		COG0803	Manganese ABC transporter substrate-binding lipoprotein
+NELDDEBG_00520	gene	930	psaA			
+NELDDEBG_00521	CDS	849	mntB			Manganese transport system membrane protein MntB
+NELDDEBG_00521	gene	849	mntB			
+NELDDEBG_00522	CDS	723	fecE		COG1120	Fe(3+) dicitrate transport ATP-binding protein FecE
+NELDDEBG_00522	gene	723	fecE			
+NELDDEBG_00523	CDS	1893	pepO	3.4.24.-	COG3590	Neutral endopeptidase
+NELDDEBG_00523	gene	1893	pepO			
+NELDDEBG_00524	CDS	630		3.-.-.-		putative metallo-hydrolase
+NELDDEBG_00524	gene	630				
+NELDDEBG_00525	CDS	2223	relA			Bifunctional (p)ppGpp synthase/hydrolase RelA
+NELDDEBG_00525	gene	2223	relA			
+NELDDEBG_00526	CDS	444	dtd	3.1.1.96	COG1490	D-aminoacyl-tRNA deacylase
+NELDDEBG_00526	gene	444	dtd			
+NELDDEBG_00527	CDS	114				hypothetical protein
+NELDDEBG_00527	gene	114				
+NELDDEBG_00528	CDS	414				hypothetical protein
+NELDDEBG_00528	gene	414				
+NELDDEBG_00529	CDS	678				hypothetical protein
+NELDDEBG_00529	gene	678				
+NELDDEBG_00530	CDS	651	ideR		COG1321	Iron-dependent repressor IdeR
+NELDDEBG_00530	gene	651	ideR			
+NELDDEBG_00531	CDS	843				hypothetical protein
+NELDDEBG_00531	gene	843				
+NELDDEBG_00532	CDS	438	ywnA		COG1959	Putative HTH-type transcriptional regulator YwnA
+NELDDEBG_00532	gene	438	ywnA			
+NELDDEBG_00533	CDS	303				hypothetical protein
+NELDDEBG_00533	gene	303				
+NELDDEBG_00534	CDS	1074				hypothetical protein
+NELDDEBG_00534	gene	1074				
+NELDDEBG_00535	CDS	678	graR		COG0745	Response regulator protein GraR
+NELDDEBG_00535	gene	678	graR			
+NELDDEBG_00536	CDS	975	graS	2.7.13.3	COG0642	Sensor histidine kinase GraS
+NELDDEBG_00536	gene	975	graS			
+NELDDEBG_00537	CDS	1944	thrS	6.1.1.3	COG0441	Threonine--tRNA ligase
+NELDDEBG_00537	gene	1944	thrS			
+NELDDEBG_00538	CDS	141				hypothetical protein
+NELDDEBG_00538	gene	141				
+NELDDEBG_00539	CDS	201				hypothetical protein
+NELDDEBG_00539	gene	201				
+NELDDEBG_00540	CDS	630				hypothetical protein
+NELDDEBG_00540	gene	630				
+NELDDEBG_00541	CDS	270	rpsO		COG0184	30S ribosomal protein S15
+NELDDEBG_00541	gene	270	rpsO			
+NELDDEBG_00542	CDS	615				hypothetical protein
+NELDDEBG_00542	gene	615				
+NELDDEBG_00543	CDS	750	plsC	2.3.1.-	COG0204	1-acyl-sn-glycerol-3-phosphate acyltransferase
+NELDDEBG_00543	gene	750	plsC			
+NELDDEBG_00544	CDS	2337	ctpE	3.6.3.-	COG0474	putative cation-transporting ATPase E
+NELDDEBG_00544	gene	2337	ctpE			
+NELDDEBG_00545	CDS	678	trmK	2.1.1.217	COG2384	tRNA (adenine(22)-N(1))-methyltransferase
+NELDDEBG_00545	gene	678	trmK			
+NELDDEBG_00546	CDS	798			COG0327	GTP cyclohydrolase 1 type 2 
+NELDDEBG_00546	gene	798				
+NELDDEBG_00547	CDS	1104	thiO	1.4.3.19		Glycine oxidase
+NELDDEBG_00547	gene	1104	thiO			
+NELDDEBG_00548	CDS	1020	lnpD	5.1.3.2		UDP-glucose 4-epimerase
+NELDDEBG_00548	gene	1020	lnpD			
+NELDDEBG_00549	CDS	984	csbB	2.4.-.-	COG0463	Putative glycosyltransferase CsbB
+NELDDEBG_00549	gene	984	csbB			
+NELDDEBG_00550	CDS	213				hypothetical protein
+NELDDEBG_00550	gene	213				
+NELDDEBG_00551	CDS	477				hypothetical protein
+NELDDEBG_00551	gene	477				
+NELDDEBG_00552	CDS	672	cmk	2.7.4.25	COG0283	Cytidylate kinase
+NELDDEBG_00552	gene	672	cmk			
+NELDDEBG_00553	CDS	339				hypothetical protein
+NELDDEBG_00553	gene	339				
+NELDDEBG_00554	CDS	630				hypothetical protein
+NELDDEBG_00554	gene	630				
+NELDDEBG_00555	CDS	1152				hypothetical protein
+NELDDEBG_00555	gene	1152				
+NELDDEBG_00556	CDS	750	truA	5.4.99.12	COG0101	tRNA pseudouridine synthase A
+NELDDEBG_00556	gene	750	truA			
+NELDDEBG_00557	CDS	774	pdxK	2.7.1.35	COG0351	Pyridoxine kinase
+NELDDEBG_00557	gene	774	pdxK			
+NELDDEBG_00558	CDS	462	hmpT		COG4720	Thiamine precursor transporter HmpT
+NELDDEBG_00558	gene	462	hmpT			
+NELDDEBG_00559	CDS	342				IS3 family transposase ISSpn1
+NELDDEBG_00559	gene	342				
+NELDDEBG_00560	CDS	1083	pepQ	3.4.13.9	COG0006	Xaa-Pro dipeptidase
+NELDDEBG_00560	gene	1083	pepQ			
+NELDDEBG_00561	CDS	783	cobQ			Cobyric acid synthase
+NELDDEBG_00561	gene	783	cobQ			
+NELDDEBG_00562	CDS	1344	murF_2	6.3.2.10		UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase
+NELDDEBG_00562	gene	1344	murF_2			
+NELDDEBG_00563	CDS	1317	rclA		COG1249	putative pyridine nucleotide-disulfide oxidoreductase RclA
+NELDDEBG_00563	gene	1317	rclA			
+NELDDEBG_00564	CDS	1227	yhjX			putative MFS-type transporter YhjX
+NELDDEBG_00564	gene	1227	yhjX			
+NELDDEBG_00565	CDS	1524	cshA	3.6.4.13	COG0513	ATP-dependent RNA helicase CshA
+NELDDEBG_00565	gene	1524	cshA			
+NELDDEBG_00566	CDS	789	codY		COG4465	GTP-sensing transcriptional pleiotropic repressor CodY
+NELDDEBG_00566	gene	789	codY			
+NELDDEBG_00567	CDS	576				hypothetical protein
+NELDDEBG_00567	gene	576				
+NELDDEBG_00568	tRNA	86				tRNA-Leu(aag)
+NELDDEBG_00568	gene	86				
+NELDDEBG_00569	CDS	1131	sugC	3.6.3.-	COG3839	Trehalose import ATP-binding protein SugC
+NELDDEBG_00569	gene	1131	sugC			
+NELDDEBG_00570	CDS	759	ubiE_2	2.1.1.163		Ubiquinone/menaquinone biosynthesis C-methyltransferase UbiE
+NELDDEBG_00570	gene	759	ubiE_2			
+NELDDEBG_00571	CDS	513	apt	2.4.2.7	COG0503	Adenine phosphoribosyltransferase
+NELDDEBG_00571	gene	513	apt			
+NELDDEBG_00572	CDS	945	metAA	2.3.1.31	COG1897	Homoserine O-acetyltransferase
+NELDDEBG_00572	gene	945	metAA			
+NELDDEBG_00573	CDS	678	dnaD		COG3935	DNA replication protein DnaD
+NELDDEBG_00573	gene	678	dnaD			
+NELDDEBG_00574	CDS	759	tpiA	5.3.1.1	COG0149	Triosephosphate isomerase
+NELDDEBG_00574	gene	759	tpiA			
+NELDDEBG_00575	CDS	1506				hypothetical protein
+NELDDEBG_00575	gene	1506				
+NELDDEBG_00576	CDS	519	dps	1.16.-.-	COG0783	DNA protection during starvation protein
+NELDDEBG_00576	gene	519	dps			
+NELDDEBG_00577	CDS	507	dhfR	1.5.1.3	COG0262	Dihydrofolate reductase
+NELDDEBG_00577	gene	507	dhfR			
+NELDDEBG_00578	CDS	171				hypothetical protein
+NELDDEBG_00578	gene	171				
+NELDDEBG_00579	CDS	1233	clpX			ATP-dependent Clp protease ATP-binding subunit ClpX
+NELDDEBG_00579	gene	1233	clpX			
+NELDDEBG_00580	CDS	588	engB		COG0218	putative GTP-binding protein EngB
+NELDDEBG_00580	gene	588	engB			
+NELDDEBG_00581	CDS	381	yabJ	3.5.99.10	COG0251	2-iminobutanoate/2-iminopropanoate deaminase
+NELDDEBG_00581	gene	381	yabJ			
+NELDDEBG_00582	CDS	891	yvcJ		COG1660	Nucleotide-binding protein YvcJ
+NELDDEBG_00582	gene	891	yvcJ			
+NELDDEBG_00583	CDS	978			COG0391	Putative gluconeogenesis factor
+NELDDEBG_00583	gene	978				
+NELDDEBG_00584	CDS	912	whiA		COG1481	Putative sporulation transcription regulator WhiA
+NELDDEBG_00584	gene	912	whiA			
+NELDDEBG_00585	CDS	966	yumC	1.18.1.2	COG0492	Ferredoxin--NADP reductase 2
+NELDDEBG_00585	gene	966	yumC			
+NELDDEBG_00586	CDS	858	cdaA	2.7.7.85	COG1624	Cyclic di-AMP synthase CdaA
+NELDDEBG_00586	gene	858	cdaA			
+NELDDEBG_00587	CDS	780				hypothetical protein
+NELDDEBG_00587	gene	780				
+NELDDEBG_00588	CDS	1353	glmM	5.4.2.10	COG1109	Phosphoglucosamine mutase
+NELDDEBG_00588	gene	1353	glmM			
+NELDDEBG_00589	CDS	375				hypothetical protein
+NELDDEBG_00589	gene	375				
+NELDDEBG_00590	CDS	849				DegV domain-containing protein
+NELDDEBG_00590	gene	849				
+NELDDEBG_00591	CDS	768	dapB	1.17.1.8	COG0289	4-hydroxy-tetrahydrodipicolinate reductase
+NELDDEBG_00591	gene	768	dapB			
+NELDDEBG_00592	CDS	1185	cca	2.7.7.72		CCA-adding enzyme
+NELDDEBG_00592	gene	1185	cca			
+NELDDEBG_00593	CDS	1872	ettA_1		COG0488	Energy-dependent translational throttle protein EttA
+NELDDEBG_00593	gene	1872	ettA_1			
+NELDDEBG_00594	CDS	1185	fieF			Ferrous-iron efflux pump FieF
+NELDDEBG_00594	gene	1185	fieF			
+NELDDEBG_00595	CDS	2697		3.6.3.8		Calcium-transporting ATPase 1
+NELDDEBG_00595	gene	2697				
+NELDDEBG_00596	CDS	792	yghU	1.8.4.-	COG0625	Disulfide-bond oxidoreductase YghU
+NELDDEBG_00596	gene	792	yghU			
+NELDDEBG_00597	CDS	411	def_2	3.5.1.88	COG0242	Peptide deformylase
+NELDDEBG_00597	gene	411	def_2			
+NELDDEBG_00598	CDS	1596				hypothetical protein
+NELDDEBG_00598	gene	1596				
+NELDDEBG_00599	CDS	165				hypothetical protein
+NELDDEBG_00599	gene	165				
+NELDDEBG_00600	CDS	729				hypothetical protein
+NELDDEBG_00600	gene	729				
+NELDDEBG_00601	CDS	1485				Putative trans-acting regulator
+NELDDEBG_00601	gene	1485				
+NELDDEBG_00602	CDS	6927				hypothetical protein
+NELDDEBG_00602	gene	6927				
+NELDDEBG_00603	CDS	549				hypothetical protein
+NELDDEBG_00603	gene	549				
+NELDDEBG_00604	CDS	432				hypothetical protein
+NELDDEBG_00604	gene	432				
+NELDDEBG_00605	CDS	1188	aspB	2.6.1.14	COG0436	Asparagine--oxo-acid transaminase
+NELDDEBG_00605	gene	1188	aspB			
+NELDDEBG_00606	CDS	366				hypothetical protein
+NELDDEBG_00606	gene	366				
+NELDDEBG_00607	CDS	1344	asnS	6.1.1.22	COG0017	Asparagine--tRNA ligase
+NELDDEBG_00607	gene	1344	asnS			
+NELDDEBG_00608	CDS	291	rpsF		COG0360	30S ribosomal protein S6
+NELDDEBG_00608	gene	291	rpsF			
+NELDDEBG_00609	CDS	471	ssb_1		COG0629	Single-stranded DNA-binding protein
+NELDDEBG_00609	gene	471	ssb_1			
+NELDDEBG_00610	CDS	240	rpsR		COG0238	30S ribosomal protein S18
+NELDDEBG_00610	gene	240	rpsR			
+NELDDEBG_00611	CDS	1401				Putative bifunctional phosphatase/peptidyl-prolyl cis-trans isomerase
+NELDDEBG_00611	gene	1401				
+NELDDEBG_00612	CDS	360	yugI		COG1098	General stress protein 13
+NELDDEBG_00612	gene	360	yugI			
+NELDDEBG_00613	CDS	750	yfiC	2.1.1.223		tRNA1(Val) (adenine(37)-N6)-methyltransferase
+NELDDEBG_00613	gene	750	yfiC			
+NELDDEBG_00614	CDS	300				hypothetical protein
+NELDDEBG_00614	gene	300				
+NELDDEBG_00615	CDS	936	ppaC	3.6.1.1	COG1227	putative manganese-dependent inorganic pyrophosphatase
+NELDDEBG_00615	gene	936	ppaC			
+NELDDEBG_00616	CDS	513				hypothetical protein
+NELDDEBG_00616	gene	513				
+NELDDEBG_00617	CDS	597				hypothetical protein
+NELDDEBG_00617	gene	597				
+NELDDEBG_00618	CDS	195				hypothetical protein
+NELDDEBG_00618	gene	195				
+NELDDEBG_00619	CDS	1446	murE	6.3.2.7	COG0769	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L-lysine ligase
+NELDDEBG_00619	gene	1446	murE			
+NELDDEBG_00620	CDS	1623	murJ		COG2244	Lipid II flippase MurJ
+NELDDEBG_00620	gene	1623	murJ			
+NELDDEBG_00621	CDS	1959	sarA_1		COG4166	Oligopeptide-binding protein SarA
+NELDDEBG_00621	gene	1959	sarA_1			
+NELDDEBG_00622	CDS	1683	lmrA	3.6.3.44	COG1132	Multidrug resistance ABC transporter ATP-binding and permease protein
+NELDDEBG_00622	gene	1683	lmrA			
+NELDDEBG_00623	CDS	1095	metI	2.5.1.-	COG0626	Cystathionine gamma-synthase/O-acetylhomoserine (thiol)-lyase
+NELDDEBG_00623	gene	1095	metI			
+NELDDEBG_00624	CDS	1167	patB	4.4.1.8	COG1168	Cystathionine beta-lyase PatB
+NELDDEBG_00624	gene	1167	patB			
+NELDDEBG_00625	CDS	3099	rapA	3.6.4.-		RNA polymerase-associated protein RapA
+NELDDEBG_00625	gene	3099	rapA			
+NELDDEBG_00626	CDS	618				hypothetical protein
+NELDDEBG_00626	gene	618				
+NELDDEBG_00627	CDS	1335	murC	6.3.2.8		UDP-N-acetylmuramate--L-alanine ligase
+NELDDEBG_00627	gene	1335	murC			
+NELDDEBG_00628	CDS	465				hypothetical protein
+NELDDEBG_00628	gene	465				
+NELDDEBG_00629	CDS	495				hypothetical protein
+NELDDEBG_00629	gene	495				
+NELDDEBG_00630	CDS	1587	mltG	4.2.2.-		Endolytic murein transglycosylase
+NELDDEBG_00630	gene	1587	mltG			
+NELDDEBG_00631	CDS	483	greA			Transcription elongation factor GreA
+NELDDEBG_00631	gene	483	greA			
+NELDDEBG_00632	CDS	429				hypothetical protein
+NELDDEBG_00632	gene	429				
+NELDDEBG_00633	CDS	498				hypothetical protein
+NELDDEBG_00633	gene	498				
+NELDDEBG_00634	CDS	201	atpE		COG0636	ATP synthase subunit c
+NELDDEBG_00634	gene	201	atpE			
+NELDDEBG_00635	CDS	717	atpB		COG0356	ATP synthase subunit a
+NELDDEBG_00635	gene	717	atpB			
+NELDDEBG_00636	CDS	495	atpF		COG0711	ATP synthase subunit b
+NELDDEBG_00636	gene	495	atpF			
+NELDDEBG_00637	CDS	537	atpH		COG0712	ATP synthase subunit delta
+NELDDEBG_00637	gene	537	atpH			
+NELDDEBG_00638	CDS	1506	atpA	3.6.3.14	COG0056	ATP synthase subunit alpha
+NELDDEBG_00638	gene	1506	atpA			
+NELDDEBG_00639	CDS	879	atpG		COG0224	ATP synthase gamma chain
+NELDDEBG_00639	gene	879	atpG			
+NELDDEBG_00640	CDS	1407	atpD	3.6.3.14	COG0055	ATP synthase subunit beta
+NELDDEBG_00640	gene	1407	atpD			
+NELDDEBG_00641	CDS	420	atpC		COG0355	ATP synthase epsilon chain
+NELDDEBG_00641	gene	420	atpC			
+NELDDEBG_00642	CDS	1014	pgl	3.1.1.31	COG2706	6-phosphogluconolactonase
+NELDDEBG_00642	gene	1014	pgl			
+NELDDEBG_00643	CDS	1167			COG0628	Putative transport protein
+NELDDEBG_00643	gene	1167				
+NELDDEBG_00644	CDS	1230	bepA	3.4.-.-		Beta-barrel assembly-enhancing protease
+NELDDEBG_00644	gene	1230	bepA			
+NELDDEBG_00645	CDS	642	yecS_1		COG0765	L-cystine transport system permease protein YecS
+NELDDEBG_00645	gene	642	yecS_1			
+NELDDEBG_00646	CDS	630	glnQ_1		COG1126	Glutamine transport ATP-binding protein GlnQ
+NELDDEBG_00646	gene	630	glnQ_1			
+NELDDEBG_00647	CDS	837	artP		COG0834	Arginine-binding extracellular protein ArtP
+NELDDEBG_00647	gene	837	artP			
+NELDDEBG_00648	CDS	348				hypothetical protein
+NELDDEBG_00648	gene	348				
+NELDDEBG_00649	CDS	1719	pgcA	5.4.2.2		Phosphoglucomutase
+NELDDEBG_00649	gene	1719	pgcA			
+NELDDEBG_00650	CDS	534				IS630 family transposase IS630-Spn1
+NELDDEBG_00650	gene	534				
+NELDDEBG_00651	CDS	255				hypothetical protein
+NELDDEBG_00651	gene	255				
+NELDDEBG_00652	CDS	1092				hypothetical protein
+NELDDEBG_00652	gene	1092				
+NELDDEBG_00653	CDS	678				hypothetical protein
+NELDDEBG_00653	gene	678				
+NELDDEBG_00654	CDS	870	gla		COG0580	Glycerol facilitator-aquaporin gla
+NELDDEBG_00654	gene	870	gla			
+NELDDEBG_00655	CDS	1197	tuf			Elongation factor Tu
+NELDDEBG_00655	gene	1197	tuf			
+NELDDEBG_00656	CDS	804				hypothetical protein
+NELDDEBG_00656	gene	804				
+NELDDEBG_00657	CDS	756				hypothetical protein
+NELDDEBG_00657	gene	756				
+NELDDEBG_00658	CDS	2652	valS	6.1.1.9	COG0525	Valine--tRNA ligase
+NELDDEBG_00658	gene	2652	valS			
+NELDDEBG_00659	CDS	963				hypothetical protein
+NELDDEBG_00659	gene	963				
+NELDDEBG_00660	CDS	558				hypothetical protein
+NELDDEBG_00660	gene	558				
+NELDDEBG_00661	CDS	450				hypothetical protein
+NELDDEBG_00661	gene	450				
+NELDDEBG_00662	CDS	396				hypothetical protein
+NELDDEBG_00662	gene	396				
+NELDDEBG_00663	CDS	255				hypothetical protein
+NELDDEBG_00663	gene	255				
+NELDDEBG_00664	CDS	1335				hypothetical protein
+NELDDEBG_00664	gene	1335				
+NELDDEBG_00665	CDS	234				hypothetical protein
+NELDDEBG_00665	gene	234				
+NELDDEBG_00666	CDS	183				hypothetical protein
+NELDDEBG_00666	gene	183				
+NELDDEBG_00667	CDS	780				hypothetical protein
+NELDDEBG_00667	gene	780				
+NELDDEBG_00668	CDS	351	rbfA			Ribosome-binding factor A
+NELDDEBG_00668	gene	351	rbfA			
+NELDDEBG_00669	CDS	2793	lepA_1			Elongation factor 4
+NELDDEBG_00669	gene	2793	lepA_1			
+NELDDEBG_00670	CDS	300	rplGA		COG1358	putative ribosomal protein YlxQ
+NELDDEBG_00670	gene	300	rplGA			
+NELDDEBG_00671	CDS	294				hypothetical protein
+NELDDEBG_00671	gene	294				
+NELDDEBG_00672	CDS	1125	nusA		COG0195	Transcription termination/antitermination protein NusA
+NELDDEBG_00672	gene	1125	nusA			
+NELDDEBG_00673	CDS	480	rimP		COG0779	Ribosome maturation factor RimP
+NELDDEBG_00673	gene	480	rimP			
+NELDDEBG_00674	CDS	636	trmB	2.1.1.33	COG0220	tRNA (guanine-N(7)-)-methyltransferase
+NELDDEBG_00674	gene	636	trmB			
+NELDDEBG_00675	CDS	795				hypothetical protein
+NELDDEBG_00675	gene	795				
+NELDDEBG_00676	CDS	612				hypothetical protein
+NELDDEBG_00676	gene	612				
+NELDDEBG_00677	CDS	234				hypothetical protein
+NELDDEBG_00677	gene	234				
+NELDDEBG_00678	CDS	690				hypothetical protein
+NELDDEBG_00678	gene	690				
+NELDDEBG_00679	CDS	384				hypothetical protein
+NELDDEBG_00679	gene	384				
+NELDDEBG_00680	CDS	138				hypothetical protein
+NELDDEBG_00680	gene	138				
+NELDDEBG_00681	CDS	249				hypothetical protein
+NELDDEBG_00681	gene	249				
+NELDDEBG_00682	CDS	270				hypothetical protein
+NELDDEBG_00682	gene	270				
+NELDDEBG_00683	CDS	198				hypothetical protein
+NELDDEBG_00683	gene	198				
+NELDDEBG_00684	CDS	588				hypothetical protein
+NELDDEBG_00684	gene	588				
+NELDDEBG_00685	CDS	1626	lagD_1	3.4.22.-		Lactococcin-G-processing and transport ATP-binding protein LagD
+NELDDEBG_00685	gene	1626	lagD_1			
+NELDDEBG_00686	CDS	336	lcnD_1			Lactococcin A secretion protein LcnD
+NELDDEBG_00686	gene	336	lcnD_1			
+NELDDEBG_00687	CDS	1008	lcnD_2			Lactococcin A secretion protein LcnD
+NELDDEBG_00687	gene	1008	lcnD_2			
+NELDDEBG_00688	CDS	156				hypothetical protein
+NELDDEBG_00688	gene	156				
+NELDDEBG_00689	CDS	1341				hypothetical protein
+NELDDEBG_00689	gene	1341				
+NELDDEBG_00690	CDS	738	agrA_1		COG3279	Accessory gene regulator A
+NELDDEBG_00690	gene	738	agrA_1			
+NELDDEBG_00691	CDS	339				hypothetical protein
+NELDDEBG_00691	gene	339				
+NELDDEBG_00692	CDS	330				hypothetical protein
+NELDDEBG_00692	gene	330				
+NELDDEBG_00693	CDS	1050				hypothetical protein
+NELDDEBG_00693	gene	1050				
+NELDDEBG_00694	CDS	732	ecsA_2		COG1131	ABC-type transporter ATP-binding protein EcsA
+NELDDEBG_00694	gene	732	ecsA_2			
+NELDDEBG_00695	CDS	411	hit		COG0537	Protein hit
+NELDDEBG_00695	gene	411	hit			
+NELDDEBG_00696	CDS	288				hypothetical protein
+NELDDEBG_00696	gene	288				
+NELDDEBG_00697	CDS	1137	dnaJ		COG0484	Chaperone protein DnaJ
+NELDDEBG_00697	gene	1137	dnaJ			
+NELDDEBG_00698	CDS	357				hypothetical protein
+NELDDEBG_00698	gene	357				
+NELDDEBG_00699	CDS	1824	dnaK			Chaperone protein DnaK
+NELDDEBG_00699	gene	1824	dnaK			
+NELDDEBG_00700	CDS	525	grpE		COG0576	Protein GrpE
+NELDDEBG_00700	gene	525	grpE			
+NELDDEBG_00701	CDS	1035	hrcA		COG1420	Heat-inducible transcription repressor HrcA
+NELDDEBG_00701	gene	1035	hrcA			
+NELDDEBG_00702	CDS	438				hypothetical protein
+NELDDEBG_00702	gene	438				
+NELDDEBG_00703	CDS	2334				hypothetical protein
+NELDDEBG_00703	gene	2334				
+NELDDEBG_00704	CDS	1464		2.1.1.72	COG0286	putative type I restriction enzymeP M protein
+NELDDEBG_00704	gene	1464				
+NELDDEBG_00705	CDS	1560				hypothetical protein
+NELDDEBG_00705	gene	1560				
+NELDDEBG_00706	CDS	300				hypothetical protein
+NELDDEBG_00706	gene	300				
+NELDDEBG_00707	CDS	798	xerD_2			Tyrosine recombinase XerD
+NELDDEBG_00707	gene	798	xerD_2			
+NELDDEBG_00708	CDS	1281				hypothetical protein
+NELDDEBG_00708	gene	1281				
+NELDDEBG_00709	CDS	150				hypothetical protein
+NELDDEBG_00709	gene	150				
+NELDDEBG_00710	CDS	1347	glnA	6.3.1.2	COG0174	Glutamine synthetase
+NELDDEBG_00710	gene	1347	glnA			
+NELDDEBG_00711	CDS	357	glnR		COG0789	HTH-type transcriptional regulator GlnR
+NELDDEBG_00711	gene	357	glnR			
+NELDDEBG_00712	CDS	528				hypothetical protein
+NELDDEBG_00712	gene	528				
+NELDDEBG_00713	CDS	1197	pgk	2.7.2.3	COG0126	Phosphoglycerate kinase
+NELDDEBG_00713	gene	1197	pgk			
+NELDDEBG_00714	CDS	4941				hypothetical protein
+NELDDEBG_00714	gene	4941				
+NELDDEBG_00715	CDS	1632				hypothetical protein
+NELDDEBG_00715	gene	1632				
+NELDDEBG_00716	CDS	1608	pyrG	6.3.4.2	COG0504	CTP synthase
+NELDDEBG_00716	gene	1608	pyrG			
+NELDDEBG_00717	CDS	588	rpoE			putative DNA-directed RNA polymerase subunit delta
+NELDDEBG_00717	gene	588	rpoE			
+NELDDEBG_00718	CDS	417				hypothetical protein
+NELDDEBG_00718	gene	417				
+NELDDEBG_00719	CDS	651				hypothetical protein
+NELDDEBG_00719	gene	651				
+NELDDEBG_00720	CDS	564	ribU		COG3601	Riboflavin transporter RibU
+NELDDEBG_00720	gene	564	ribU			
+NELDDEBG_00721	CDS	504	trmL	2.1.1.207	COG0219	tRNA (cytidine(34)-2'-O)-methyltransferase
+NELDDEBG_00721	gene	504	trmL			
+NELDDEBG_00722	CDS	831	ecfT_1		COG0619	Energy-coupling factor transporter transmembrane protein EcfT
+NELDDEBG_00722	gene	831	ecfT_1			
+NELDDEBG_00723	CDS	1683	ykoD_2	3.6.3.-	COG1122	Putative HMP/thiamine import ATP-binding protein YkoD
+NELDDEBG_00723	gene	1683	ykoD_2			
+NELDDEBG_00724	CDS	621				hypothetical protein
+NELDDEBG_00724	gene	621				
+NELDDEBG_00725	CDS	849	salL	2.5.1.94	COG1912	Adenosyl-chloride synthase
+NELDDEBG_00725	gene	849	salL			
+NELDDEBG_00726	CDS	1350	trkA		COG0569	Trk system potassium uptake protein TrkA
+NELDDEBG_00726	gene	1350	trkA			
+NELDDEBG_00727	CDS	1440	trkG		COG0168	Trk system potassium uptake protein TrkG
+NELDDEBG_00727	gene	1440	trkG			
+NELDDEBG_00728	CDS	1680	lacE_1			PTS system lactose-specific EIICB component
+NELDDEBG_00728	gene	1680	lacE_1			
+NELDDEBG_00729	CDS	1413	lacG_1	3.2.1.85		6-phospho-beta-galactosidase
+NELDDEBG_00729	gene	1413	lacG_1			
+NELDDEBG_00730	CDS	345	lacF_3		COG1447	PTS system lactose-specific EIIA component
+NELDDEBG_00730	gene	345	lacF_3			
+NELDDEBG_00731	CDS	1887				hypothetical protein
+NELDDEBG_00731	gene	1887				
+NELDDEBG_00732	CDS	1323	licC_3		COG1455	Lichenan permease IIC component
+NELDDEBG_00732	gene	1323	licC_3			
+NELDDEBG_00733	CDS	1224	nagC		COG1940	N-acetylglucosamine repressor
+NELDDEBG_00733	gene	1224	nagC			
+NELDDEBG_00734	CDS	171				hypothetical protein
+NELDDEBG_00734	gene	171				
+NELDDEBG_00735	CDS	285				hypothetical protein
+NELDDEBG_00735	gene	285				
+NELDDEBG_00736	CDS	219				hypothetical protein
+NELDDEBG_00736	gene	219				
+NELDDEBG_00737	CDS	2325	pflB	2.3.1.54	COG1882	Formate acetyltransferase
+NELDDEBG_00737	gene	2325	pflB			
+NELDDEBG_00738	CDS	1062	dinB	2.7.7.7	COG0389	DNA polymerase IV
+NELDDEBG_00738	gene	1062	dinB			
+NELDDEBG_00739	CDS	846	uppP	3.6.1.27	COG1968	Undecaprenyl-diphosphatase
+NELDDEBG_00739	gene	846	uppP			
+NELDDEBG_00740	CDS	123				hypothetical protein
+NELDDEBG_00740	gene	123				
+NELDDEBG_00741	CDS	549				hypothetical protein
+NELDDEBG_00741	gene	549				
+NELDDEBG_00742	CDS	1890				hypothetical protein
+NELDDEBG_00742	gene	1890				
+NELDDEBG_00743	CDS	1566				hypothetical protein
+NELDDEBG_00743	gene	1566				
+NELDDEBG_00744	CDS	741	glnQ_2			Glutamine transport ATP-binding protein GlnQ
+NELDDEBG_00744	gene	741	glnQ_2			
+NELDDEBG_00745	CDS	216				hypothetical protein
+NELDDEBG_00745	gene	216				
+NELDDEBG_00746	CDS	1251	ilvA	4.3.1.19	COG1171	L-threonine dehydratase biosynthetic IlvA
+NELDDEBG_00746	gene	1251	ilvA			
+NELDDEBG_00747	CDS	357				hypothetical protein
+NELDDEBG_00747	gene	357				
+NELDDEBG_00748	CDS	237				hypothetical protein
+NELDDEBG_00748	gene	237				
+NELDDEBG_00749	CDS	1023	ilvC	1.1.1.86	COG0059	Ketol-acid reductoisomerase (NADP(+))
+NELDDEBG_00749	gene	1023	ilvC			
+NELDDEBG_00750	CDS	477	ilvH	2.2.1.6	COG0440	Putative acetolactate synthase small subunit
+NELDDEBG_00750	gene	477	ilvH			
+NELDDEBG_00751	CDS	1701	ilvB	2.2.1.6	COG0028	Acetolactate synthase large subunit
+NELDDEBG_00751	gene	1701	ilvB			
+NELDDEBG_00752	CDS	306	lytA_1	3.5.1.28		Autolysin
+NELDDEBG_00752	gene	306	lytA_1			
+NELDDEBG_00753	CDS	981	dus	1.3.1.-	COG0042	putative tRNA-dihydrouridine synthase
+NELDDEBG_00753	gene	981	dus			
+NELDDEBG_00754	CDS	873	hslO			33 kDa chaperonin
+NELDDEBG_00754	gene	873	hslO			
+NELDDEBG_00755	CDS	1410				hypothetical protein
+NELDDEBG_00755	gene	1410				
+NELDDEBG_00756	CDS	1509	glpK	2.7.1.30	COG0554	Glycerol kinase
+NELDDEBG_00756	gene	1509	glpK			
+NELDDEBG_00757	CDS	1827	glpO	1.1.3.21	COG0578	Alpha-glycerophosphate oxidase
+NELDDEBG_00757	gene	1827	glpO			
+NELDDEBG_00758	CDS	705	glpF		COG0580	putative glycerol uptake facilitator protein
+NELDDEBG_00758	gene	705	glpF			
+NELDDEBG_00759	CDS	660				hypothetical protein
+NELDDEBG_00759	gene	660				
+NELDDEBG_00760	CDS	282				hypothetical protein
+NELDDEBG_00760	gene	282				
+NELDDEBG_00761	CDS	993				hypothetical protein
+NELDDEBG_00761	gene	993				
+NELDDEBG_00762	CDS	1278				hypothetical protein
+NELDDEBG_00762	gene	1278				
+NELDDEBG_00763	CDS	648			COG1136	putative ABC transporter ATP-binding protein
+NELDDEBG_00763	gene	648				
+NELDDEBG_00764	CDS	1380				hypothetical protein
+NELDDEBG_00764	gene	1380				
+NELDDEBG_00765	CDS	657	regX3		COG0745	Sensory transduction protein regX3
+NELDDEBG_00765	gene	657	regX3			
+NELDDEBG_00766	CDS	1329				hypothetical protein
+NELDDEBG_00766	gene	1329				
+NELDDEBG_00767	CDS	882	fba	4.1.2.13	COG0191	Fructose-bisphosphate aldolase
+NELDDEBG_00767	gene	882	fba			
+NELDDEBG_00768	CDS	1191	pyrK_1			Dihydroorotate dehydrogenase B (NAD(+)), electron transfer subunit
+NELDDEBG_00768	gene	1191	pyrK_1			
+NELDDEBG_00769	CDS	660	glnP		COG0765	putative glutamine ABC transporter permease protein GlnP
+NELDDEBG_00769	gene	660	glnP			
+NELDDEBG_00770	CDS	678	glnM_1		COG0765	putative glutamine ABC transporter permease protein GlnM
+NELDDEBG_00770	gene	678	glnM_1			
+NELDDEBG_00771	CDS	795	peb1A		COG0834	Major cell-binding factor
+NELDDEBG_00771	gene	795	peb1A			
+NELDDEBG_00772	CDS	759	glnQ_3			Glutamine transport ATP-binding protein GlnQ
+NELDDEBG_00772	gene	759	glnQ_3			
+NELDDEBG_00773	CDS	2223				hypothetical protein
+NELDDEBG_00773	gene	2223				
+NELDDEBG_00774	CDS	1662	rnj2	3.1.-.-		Ribonuclease J 2
+NELDDEBG_00774	gene	1662	rnj2			
+NELDDEBG_00775	CDS	780	axe1-6A		COG2382	Carbohydrate acetyl esterase/feruloyl esterase
+NELDDEBG_00775	gene	780	axe1-6A			
+NELDDEBG_00776	CDS	1221	femX	2.3.2.16	COG2348	Lipid II:glycine glycyltransferase
+NELDDEBG_00776	gene	1221	femX			
+NELDDEBG_00777	CDS	1233	femA	2.3.2.17		Aminoacyltransferase FemA
+NELDDEBG_00777	gene	1233	femA			
+NELDDEBG_00778	CDS	702				hypothetical protein
+NELDDEBG_00778	gene	702				
+NELDDEBG_00779	CDS	1845	uvrC		COG0322	UvrABC system protein C
+NELDDEBG_00779	gene	1845	uvrC			
+NELDDEBG_00780	CDS	834				hypothetical protein
+NELDDEBG_00780	gene	834				
+NELDDEBG_00781	CDS	801	tcyJ		COG0834	L-cystine-binding protein TcyJ
+NELDDEBG_00781	gene	801	tcyJ			
+NELDDEBG_00782	CDS	606		1.-.-.-		Putative NAD(P)H nitroreductase
+NELDDEBG_00782	gene	606				
+NELDDEBG_00783	CDS	1401	pepV	3.4.13.-		Beta-Ala-Xaa dipeptidase
+NELDDEBG_00783	gene	1401	pepV			
+NELDDEBG_00784	CDS	579				hypothetical protein
+NELDDEBG_00784	gene	579				
+NELDDEBG_00785	CDS	153				hypothetical protein
+NELDDEBG_00785	gene	153				
+NELDDEBG_00786	CDS	1326	brnQ		COG1114	Branched-chain amino acid transport system 2 carrier protein
+NELDDEBG_00786	gene	1326	brnQ			
+NELDDEBG_00787	CDS	1038	pepA_2	3.4.11.7	COG1363	Glutamyl aminopeptidase
+NELDDEBG_00787	gene	1038	pepA_2			
+NELDDEBG_00788	CDS	471				hypothetical protein
+NELDDEBG_00788	gene	471				
+NELDDEBG_00789	CDS	717	yodJ	3.4.-.-	COG1876	Putative carboxypeptidase YodJ
+NELDDEBG_00789	gene	717	yodJ			
+NELDDEBG_00790	CDS	426	rplK			50S ribosomal protein L11
+NELDDEBG_00790	gene	426	rplK			
+NELDDEBG_00791	CDS	690	rplA			50S ribosomal protein L1
+NELDDEBG_00791	gene	690	rplA			
+NELDDEBG_00792	CDS	363				hypothetical protein
+NELDDEBG_00792	gene	363				
+NELDDEBG_00793	CDS	993	btuD_5	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_00793	gene	993	btuD_5			
+NELDDEBG_00794	CDS	819				hypothetical protein
+NELDDEBG_00794	gene	819				
+NELDDEBG_00795	CDS	786				hypothetical protein
+NELDDEBG_00795	gene	786				
+NELDDEBG_00796	CDS	282				hypothetical protein
+NELDDEBG_00796	gene	282				
+NELDDEBG_00797	CDS	6420				hypothetical protein
+NELDDEBG_00797	gene	6420				
+NELDDEBG_00798	CDS	477				hypothetical protein
+NELDDEBG_00798	gene	477				
+NELDDEBG_00799	CDS	306				hypothetical protein
+NELDDEBG_00799	gene	306				
+NELDDEBG_00800	CDS	1476	gatC_1		COG3775	PTS system galactitol-specific EIIC component
+NELDDEBG_00800	gene	1476	gatC_1			
+NELDDEBG_00801	CDS	6678	lacZ	3.2.1.23		Beta-galactosidase
+NELDDEBG_00801	gene	6678	lacZ			
+NELDDEBG_00802	CDS	231				hypothetical protein
+NELDDEBG_00802	gene	231				
+NELDDEBG_00803	CDS	228				hypothetical protein
+NELDDEBG_00803	gene	228				
+NELDDEBG_00804	CDS	246				hypothetical protein
+NELDDEBG_00804	gene	246				
+NELDDEBG_00805	CDS	660				hypothetical protein
+NELDDEBG_00805	gene	660				
+NELDDEBG_00806	CDS	447				hypothetical protein
+NELDDEBG_00806	gene	447				
+NELDDEBG_00807	CDS	558				hypothetical protein
+NELDDEBG_00807	gene	558				
+NELDDEBG_00808	CDS	255				hypothetical protein
+NELDDEBG_00808	gene	255				
+NELDDEBG_00809	CDS	2055				hypothetical protein
+NELDDEBG_00809	gene	2055				
+NELDDEBG_00810	CDS	861				hypothetical protein
+NELDDEBG_00810	gene	861				
+NELDDEBG_00811	CDS	711	dsbD_1	1.8.1.8		Thiol:disulfide interchange protein DsbD
+NELDDEBG_00811	gene	711	dsbD_1			
+NELDDEBG_00812	CDS	567	resA_1			Thiol-disulfide oxidoreductase ResA
+NELDDEBG_00812	gene	567	resA_1			
+NELDDEBG_00813	CDS	1113	msrAB		COG0225	Peptide methionine sulfoxide reductase MsrA/MsrB
+NELDDEBG_00813	gene	1113	msrAB			
+NELDDEBG_00814	CDS	738			COG4753	putative response regulatory protein
+NELDDEBG_00814	gene	738				
+NELDDEBG_00815	CDS	1692				hypothetical protein
+NELDDEBG_00815	gene	1692				
+NELDDEBG_00816	CDS	564				hypothetical protein
+NELDDEBG_00816	gene	564				
+NELDDEBG_00817	CDS	5469				hypothetical protein
+NELDDEBG_00817	gene	5469				
+NELDDEBG_00818	CDS	1722	menF	5.4.4.2		Isochorismate synthase MenF
+NELDDEBG_00818	gene	1722	menF			
+NELDDEBG_00819	CDS	618	menH	4.2.99.20		2-succinyl-6-hydroxy-2,4-cyclohexadiene-1-carboxylate synthase
+NELDDEBG_00819	gene	618	menH			
+NELDDEBG_00820	CDS	759				hypothetical protein
+NELDDEBG_00820	gene	759				
+NELDDEBG_00821	CDS	960	glcK	2.7.1.2	COG1940	Glucokinase
+NELDDEBG_00821	gene	960	glcK			
+NELDDEBG_00822	CDS	840	thyA	2.1.1.45	COG0207	Thymidylate synthase
+NELDDEBG_00822	gene	840	thyA			
+NELDDEBG_00823	CDS	171				hypothetical protein
+NELDDEBG_00823	gene	171				
+NELDDEBG_00824	CDS	213	miaA_1	2.5.1.75	COG0324	tRNA dimethylallyltransferase
+NELDDEBG_00824	gene	213	miaA_1			
+NELDDEBG_00825	CDS	639	miaA_2	2.5.1.75	COG0324	tRNA dimethylallyltransferase
+NELDDEBG_00825	gene	639	miaA_2			
+NELDDEBG_00826	CDS	1239	hflX		COG2262	GTPase HflX
+NELDDEBG_00826	gene	1239	hflX			
+NELDDEBG_00827	CDS	624				hypothetical protein
+NELDDEBG_00827	gene	624				
+NELDDEBG_00828	CDS	930	rnz	3.1.26.11	COG1234	Ribonuclease Z
+NELDDEBG_00828	gene	930	rnz			
+NELDDEBG_00829	CDS	756		1.-.-.-		putative oxidoreductase
+NELDDEBG_00829	gene	756				
+NELDDEBG_00830	CDS	969	hdfR			HTH-type transcriptional regulator HdfR
+NELDDEBG_00830	gene	969	hdfR			
+NELDDEBG_00831	CDS	270				hypothetical protein
+NELDDEBG_00831	gene	270				
+NELDDEBG_00832	CDS	369	glpE	2.8.1.1		Thiosulfate sulfurtransferase GlpE
+NELDDEBG_00832	gene	369	glpE			
+NELDDEBG_00833	CDS	303				hypothetical protein
+NELDDEBG_00833	gene	303				
+NELDDEBG_00834	CDS	390				hypothetical protein
+NELDDEBG_00834	gene	390				
+NELDDEBG_00835	CDS	1824	lepA_2	3.6.5.-		Elongation factor 4
+NELDDEBG_00835	gene	1824	lepA_2			
+NELDDEBG_00836	CDS	729	apaH_1	3.6.1.41		Bis(5'-nucleosyl)-tetraphosphatase, symmetrical
+NELDDEBG_00836	gene	729	apaH_1			
+NELDDEBG_00837	CDS	1668	recN		COG0497	DNA repair protein RecN
+NELDDEBG_00837	gene	1668	recN			
+NELDDEBG_00838	CDS	432	argR_1		COG1438	Arginine repressor
+NELDDEBG_00838	gene	432	argR_1			
+NELDDEBG_00839	CDS	816	tlyA		COG1189	Hemolysin A
+NELDDEBG_00839	gene	816	tlyA			
+NELDDEBG_00840	CDS	876		2.5.1.10		Farnesyl diphosphate synthase
+NELDDEBG_00840	gene	876				
+NELDDEBG_00841	CDS	213	xseB	3.1.11.6		Exodeoxyribonuclease 7 small subunit
+NELDDEBG_00841	gene	213	xseB			
+NELDDEBG_00842	CDS	1341	xseA	3.1.11.6	COG1570	Exodeoxyribonuclease 7 large subunit
+NELDDEBG_00842	gene	1341	xseA			
+NELDDEBG_00843	CDS	639	udk_2	2.7.1.48	COG0572	Uridine kinase
+NELDDEBG_00843	gene	639	udk_2			
+NELDDEBG_00844	CDS	303				hypothetical protein
+NELDDEBG_00844	gene	303				
+NELDDEBG_00845	CDS	96				hypothetical protein
+NELDDEBG_00845	gene	96				
+NELDDEBG_00846	CDS	879	truB	5.4.99.25	COG0130	tRNA pseudouridine synthase B
+NELDDEBG_00846	gene	879	truB			
+NELDDEBG_00847	CDS	1275				hypothetical protein
+NELDDEBG_00847	gene	1275				
+NELDDEBG_00848	CDS	390	mgl	4.4.1.11	COG0626	L-methionine gamma-lyase
+NELDDEBG_00848	gene	390	mgl			
+NELDDEBG_00849	CDS	738	metZ	2.5.1.-	COG0626	O-succinylhomoserine sulfhydrylase
+NELDDEBG_00849	gene	738	metZ			
+NELDDEBG_00850	CDS	123				hypothetical protein
+NELDDEBG_00850	gene	123				
+NELDDEBG_00851	CDS	798				hypothetical protein
+NELDDEBG_00851	gene	798				
+NELDDEBG_00852	CDS	744				hypothetical protein
+NELDDEBG_00852	gene	744				
+NELDDEBG_00853	CDS	2469	gyrA	5.99.1.3	COG0188	DNA gyrase subunit A
+NELDDEBG_00853	gene	2469	gyrA			
+NELDDEBG_00854	CDS	987	ldh	1.1.1.27	COG0039	L-lactate dehydrogenase
+NELDDEBG_00854	gene	987	ldh			
+NELDDEBG_00855	CDS	774				hypothetical protein
+NELDDEBG_00855	gene	774				
+NELDDEBG_00856	CDS	264				hypothetical protein
+NELDDEBG_00856	gene	264				
+NELDDEBG_00857	CDS	243				hypothetical protein
+NELDDEBG_00857	gene	243				
+NELDDEBG_00858	CDS	810	yycJ	3.-.-.-	COG1235	Putative metallo-hydrolase YycJ
+NELDDEBG_00858	gene	810	yycJ			
+NELDDEBG_00859	CDS	1350	walK	2.7.13.3		Sensor histidine kinase WalK
+NELDDEBG_00859	gene	1350	walK			
+NELDDEBG_00860	CDS	705	walR		COG0745	Transcriptional regulatory protein WalR
+NELDDEBG_00860	gene	705	walR			
+NELDDEBG_00861	CDS	1176	mutY	3.2.2.-		Adenine DNA glycosylase
+NELDDEBG_00861	gene	1176	mutY			
+NELDDEBG_00862	CDS	1671	fhs1	6.3.4.3		Formate--tetrahydrofolate ligase 1
+NELDDEBG_00862	gene	1671	fhs1			
+NELDDEBG_00863	CDS	690	coaBC_1		COG0452	Coenzyme A biosynthesis bifunctional protein CoaBC
+NELDDEBG_00863	gene	690	coaBC_1			
+NELDDEBG_00864	CDS	552	coaBC_2		COG0452	Coenzyme A biosynthesis bifunctional protein CoaBC
+NELDDEBG_00864	gene	552	coaBC_2			
+NELDDEBG_00865	CDS	564	panT		COG4684	Pantothenic acid transporter PanT
+NELDDEBG_00865	gene	564	panT			
+NELDDEBG_00866	CDS	528	niaX			Niacin transporter NiaX
+NELDDEBG_00866	gene	528	niaX			
+NELDDEBG_00867	CDS	516	niaR		COG1827	putative transcription repressor NiaR
+NELDDEBG_00867	gene	516	niaR			
+NELDDEBG_00868	CDS	468	nudC	3.6.1.22		NADH pyrophosphatase
+NELDDEBG_00868	gene	468	nudC			
+NELDDEBG_00869	CDS	489	mshD_1	2.3.1.189		Mycothiol acetyltransferase
+NELDDEBG_00869	gene	489	mshD_1			
+NELDDEBG_00870	CDS	528				hypothetical protein
+NELDDEBG_00870	gene	528				
+NELDDEBG_00871	CDS	1989	uvrB			UvrABC system protein B
+NELDDEBG_00871	gene	1989	uvrB			
+NELDDEBG_00872	CDS	954				hypothetical protein
+NELDDEBG_00872	gene	954				
+NELDDEBG_00873	CDS	2166	mltF			Membrane-bound lytic murein transglycosylase F
+NELDDEBG_00873	gene	2166	mltF			
+NELDDEBG_00874	CDS	741	artM_1		COG1126	Arginine transport ATP-binding protein ArtM
+NELDDEBG_00874	gene	741	artM_1			
+NELDDEBG_00875	CDS	1488	zwf	1.1.1.49	COG0364	Glucose-6-phosphate 1-dehydrogenase
+NELDDEBG_00875	gene	1488	zwf			
+NELDDEBG_00876	CDS	1278	ftsY			Signal recognition particle receptor FtsY
+NELDDEBG_00876	gene	1278	ftsY			
+NELDDEBG_00877	CDS	819	yidA_1	3.1.3.23	COG0561	Sugar phosphatase YidA
+NELDDEBG_00877	gene	819	yidA_1			
+NELDDEBG_00878	CDS	795	ybjI	3.1.3.104	COG0561	5-amino-6-(5-phospho-D-ribitylamino)uracil phosphatase YbjI
+NELDDEBG_00878	gene	795	ybjI			
+NELDDEBG_00879	CDS	3540	smc		COG1196	Chromosome partition protein Smc
+NELDDEBG_00879	gene	3540	smc			
+NELDDEBG_00880	CDS	699	rnc	3.1.26.3	COG0571	Ribonuclease 3
+NELDDEBG_00880	gene	699	rnc			
+NELDDEBG_00881	tRNA	74				tRNA-Arg(ccg)
+NELDDEBG_00881	gene	74				
+NELDDEBG_00882	CDS	987	guaC	1.7.1.7	COG0516	GMP reductase
+NELDDEBG_00882	gene	987	guaC			
+NELDDEBG_00883	CDS	1344				hypothetical protein
+NELDDEBG_00883	gene	1344				
+NELDDEBG_00884	CDS	1932				hypothetical protein
+NELDDEBG_00884	gene	1932				
+NELDDEBG_00885	CDS	171				hypothetical protein
+NELDDEBG_00885	gene	171				
+NELDDEBG_00886	CDS	360	leuD	4.2.1.33	COG0066	3-isopropylmalate dehydratase small subunit
+NELDDEBG_00886	gene	360	leuD			
+NELDDEBG_00887	CDS	270				hypothetical protein
+NELDDEBG_00887	gene	270				
+NELDDEBG_00888	CDS	768	leuB_1	1.1.1.85	COG0473	3-isopropylmalate dehydrogenase
+NELDDEBG_00888	gene	768	leuB_1			
+NELDDEBG_00889	CDS	156	leuB_2	1.1.1.85		3-isopropylmalate dehydrogenase
+NELDDEBG_00889	gene	156	leuB_2			
+NELDDEBG_00890	CDS	1095	leuA	2.3.3.13		2-isopropylmalate synthase
+NELDDEBG_00890	gene	1095	leuA			
+NELDDEBG_00891	CDS	657				hypothetical protein
+NELDDEBG_00891	gene	657				
+NELDDEBG_00892	CDS	633	cutC_2		COG3142	Copper homeostasis protein CutC
+NELDDEBG_00892	gene	633	cutC_2			
+NELDDEBG_00893	CDS	360	ybaN		COG2832	Inner membrane protein YbaN
+NELDDEBG_00893	gene	360	ybaN			
+NELDDEBG_00894	CDS	2088	topA	5.99.1.2		DNA topoisomerase 1
+NELDDEBG_00894	gene	2088	topA			
+NELDDEBG_00895	CDS	1044				hypothetical protein
+NELDDEBG_00895	gene	1044				
+NELDDEBG_00896	CDS	849	dprA		COG0758	DNA processing protein DprA
+NELDDEBG_00896	gene	849	dprA			
+NELDDEBG_00897	CDS	690				hypothetical protein
+NELDDEBG_00897	gene	690				
+NELDDEBG_00898	CDS	879				hypothetical protein
+NELDDEBG_00898	gene	879				
+NELDDEBG_00899	CDS	870				hypothetical protein
+NELDDEBG_00899	gene	870				
+NELDDEBG_00900	CDS	1023	tarJ	1.1.1.405	COG1063	Ribulose-5-phosphate reductase
+NELDDEBG_00900	gene	1023	tarJ			
+NELDDEBG_00901	CDS	708	tarI	2.7.7.40	COG1211	Ribitol-5-phosphate cytidylyltransferase
+NELDDEBG_00901	gene	708	tarI			
+NELDDEBG_00902	CDS	1488				hypothetical protein
+NELDDEBG_00902	gene	1488				
+NELDDEBG_00903	CDS	804				hypothetical protein
+NELDDEBG_00903	gene	804				
+NELDDEBG_00904	CDS	810				hypothetical protein
+NELDDEBG_00904	gene	810				
+NELDDEBG_00905	CDS	3177	carB	6.3.5.5	COG0458	Carbamoyl-phosphate synthase large chain
+NELDDEBG_00905	gene	3177	carB			
+NELDDEBG_00906	CDS	1080	carA	6.3.5.5		Carbamoyl-phosphate synthase small chain
+NELDDEBG_00906	gene	1080	carA			
+NELDDEBG_00907	CDS	924	pyrB	2.1.3.2		Aspartate carbamoyltransferase
+NELDDEBG_00907	gene	924	pyrB			
+NELDDEBG_00908	CDS	522	pyrR		COG2065	Bifunctional protein PyrR
+NELDDEBG_00908	gene	522	pyrR			
+NELDDEBG_00909	CDS	630	pdg			Ultraviolet N-glycosylase/AP lyase
+NELDDEBG_00909	gene	630	pdg			
+NELDDEBG_00910	CDS	543				hypothetical protein
+NELDDEBG_00910	gene	543				
+NELDDEBG_00911	CDS	318				hypothetical protein
+NELDDEBG_00911	gene	318				
+NELDDEBG_00912	CDS	1560	yheS		COG0488	putative ABC transporter ATP-binding protein YheS
+NELDDEBG_00912	gene	1560	yheS			
+NELDDEBG_00913	CDS	900	htpX	3.4.24.-	COG0501	Protease HtpX 
+NELDDEBG_00913	gene	900	htpX			
+NELDDEBG_00914	CDS	561	lemA		COG1704	Protein LemA
+NELDDEBG_00914	gene	561	lemA			
+NELDDEBG_00915	CDS	714	rsmG	2.1.1.-	COG0357	Ribosomal RNA small subunit methyltransferase G
+NELDDEBG_00915	gene	714	rsmG			
+NELDDEBG_00916	CDS	1284	pyrP			Uracil permease
+NELDDEBG_00916	gene	1284	pyrP			
+NELDDEBG_00917	CDS	1572	ffh		COG0541	Signal recognition particle protein
+NELDDEBG_00917	gene	1572	ffh			
+NELDDEBG_00918	CDS	333				hypothetical protein
+NELDDEBG_00918	gene	333				
+NELDDEBG_00919	CDS	378				hypothetical protein
+NELDDEBG_00919	gene	378				
+NELDDEBG_00920	CDS	1305				hypothetical protein
+NELDDEBG_00920	gene	1305				
+NELDDEBG_00921	CDS	807		3.1.3.-		Putative phosphatase
+NELDDEBG_00921	gene	807				
+NELDDEBG_00922	tRNA	72				tRNA-Arg(cct)
+NELDDEBG_00922	gene	72				
+NELDDEBG_00923	CDS	348	rplS		COG0335	50S ribosomal protein L19
+NELDDEBG_00923	gene	348	rplS			
+NELDDEBG_00924	CDS	330	crcB_1			Putative fluoride ion transporter CrcB
+NELDDEBG_00924	gene	330	crcB_1			
+NELDDEBG_00925	CDS	375	crcB_2			Putative fluoride ion transporter CrcB
+NELDDEBG_00925	gene	375	crcB_2			
+NELDDEBG_00926	CDS	267				hypothetical protein
+NELDDEBG_00926	gene	267				
+NELDDEBG_00927	CDS	444				Flavodoxin
+NELDDEBG_00927	gene	444				
+NELDDEBG_00928	CDS	936	nrnA	3.1.-.-	COG0618	putative bifunctional oligoribonuclease and PAP phosphatase NrnA
+NELDDEBG_00928	gene	936	nrnA			
+NELDDEBG_00929	CDS	243	rpmE2		COG0254	50S ribosomal protein L31 type B
+NELDDEBG_00929	gene	243	rpmE2			
+NELDDEBG_00930	CDS	579				hypothetical protein
+NELDDEBG_00930	gene	579				
+NELDDEBG_00931	CDS	1005	efeN	1.11.1.-	COG2837	putative deferrochelatase/peroxidase EfeN
+NELDDEBG_00931	gene	1005	efeN			
+NELDDEBG_00932	CDS	123				hypothetical protein
+NELDDEBG_00932	gene	123				
+NELDDEBG_00933	CDS	861	speE	2.5.1.16	COG0421	Polyamine aminopropyltransferase
+NELDDEBG_00933	gene	861	speE			
+NELDDEBG_00934	CDS	1260		1.5.1.43	COG1748	Carboxynorspermidine synthase
+NELDDEBG_00934	gene	1260				
+NELDDEBG_00935	CDS	1128	nspC	4.1.1.96		Carboxynorspermidine/carboxyspermidine decarboxylase
+NELDDEBG_00935	gene	1128	nspC			
+NELDDEBG_00936	CDS	1086	aguA	3.5.3.12	COG2957	Agmatine deiminase
+NELDDEBG_00936	gene	1086	aguA			
+NELDDEBG_00937	CDS	876		3.5.1.77		N-carbamoyl-D-amino acid hydrolase
+NELDDEBG_00937	gene	876				
+NELDDEBG_00938	CDS	810	yidA_2	3.1.3.23	COG0561	Sugar phosphatase YidA
+NELDDEBG_00938	gene	810	yidA_2			
+NELDDEBG_00939	CDS	222				hypothetical protein
+NELDDEBG_00939	gene	222				
+NELDDEBG_00940	CDS	672				hypothetical protein
+NELDDEBG_00940	gene	672				
+NELDDEBG_00941	CDS	909				hypothetical protein
+NELDDEBG_00941	gene	909				
+NELDDEBG_00942	CDS	462	lspA	3.4.23.36	COG0597	Lipoprotein signal peptidase
+NELDDEBG_00942	gene	462	lspA			
+NELDDEBG_00943	CDS	888	rluD_1	5.4.99.23	COG0564	Ribosomal large subunit pseudouridine synthase D
+NELDDEBG_00943	gene	888	rluD_1			
+NELDDEBG_00944	CDS	1884				hypothetical protein
+NELDDEBG_00944	gene	1884				
+NELDDEBG_00945	CDS	1110	proB	2.7.2.11	COG0263	Glutamate 5-kinase 1
+NELDDEBG_00945	gene	1110	proB			
+NELDDEBG_00946	CDS	1263	proA	1.2.1.41	COG0014	Gamma-glutamyl phosphate reductase
+NELDDEBG_00946	gene	1263	proA			
+NELDDEBG_00947	CDS	798	proC	1.5.1.2	COG0345	Pyrroline-5-carboxylate reductase
+NELDDEBG_00947	gene	798	proC			
+NELDDEBG_00948	CDS	639	tmk	2.7.4.9	COG0125	Thymidylate kinase
+NELDDEBG_00948	gene	639	tmk			
+NELDDEBG_00949	CDS	891				hypothetical protein
+NELDDEBG_00949	gene	891				
+NELDDEBG_00950	CDS	318	yabA		COG4467	Initiation-control protein YabA
+NELDDEBG_00950	gene	318	yabA			
+NELDDEBG_00951	CDS	870	rsmI	2.1.1.198	COG0313	Ribosomal RNA small subunit methyltransferase I
+NELDDEBG_00951	gene	870	rsmI			
+NELDDEBG_00952	CDS	1056	bspRIM	2.1.1.37		Modification methylase BspRI
+NELDDEBG_00952	gene	1056	bspRIM			
+NELDDEBG_00953	CDS	1401				hypothetical protein
+NELDDEBG_00953	gene	1401				
+NELDDEBG_00954	CDS	1041				IS1595 family transposase ISCco3
+NELDDEBG_00954	gene	1041				
+NELDDEBG_00955	CDS	795				hypothetical protein
+NELDDEBG_00955	gene	795				
+NELDDEBG_00956	CDS	564				hypothetical protein
+NELDDEBG_00956	gene	564				
+NELDDEBG_00957	CDS	1323				hypothetical protein
+NELDDEBG_00957	gene	1323				
+NELDDEBG_00958	CDS	1335	trmFO	2.1.1.74	COG1206	Methylenetetrahydrofolate--tRNA-(uracil-5-)-methyltransferase TrmFO
+NELDDEBG_00958	gene	1335	trmFO			
+NELDDEBG_00959	CDS	738	pyrH	2.7.4.22	COG0528	Uridylate kinase
+NELDDEBG_00959	gene	738	pyrH			
+NELDDEBG_00960	CDS	558	frr			Ribosome-recycling factor
+NELDDEBG_00960	gene	558	frr			
+NELDDEBG_00961	CDS	855	cvfB			Conserved virulence factor B
+NELDDEBG_00961	gene	855	cvfB			
+NELDDEBG_00962	CDS	216				hypothetical protein
+NELDDEBG_00962	gene	216				
+NELDDEBG_00963	CDS	969			COG1702	PhoH-like protein
+NELDDEBG_00963	gene	969				
+NELDDEBG_00964	CDS	501				hypothetical protein
+NELDDEBG_00964	gene	501				
+NELDDEBG_00965	CDS	144				hypothetical protein
+NELDDEBG_00965	gene	144				
+NELDDEBG_00966	CDS	276	ald_1	1.4.1.1	COG0686	Alanine dehydrogenase
+NELDDEBG_00966	gene	276	ald_1			
+NELDDEBG_00967	CDS	426	ald_2	1.4.1.1	COG0686	Alanine dehydrogenase
+NELDDEBG_00967	gene	426	ald_2			
+NELDDEBG_00968	CDS	570				hypothetical protein
+NELDDEBG_00968	gene	570				
+NELDDEBG_00969	CDS	651	comEA		COG1555	ComE operon protein 1
+NELDDEBG_00969	gene	651	comEA			
+NELDDEBG_00970	CDS	2241	comEC		COG0658	ComE operon protein 3
+NELDDEBG_00970	gene	2241	comEC			
+NELDDEBG_00971	CDS	225				hypothetical protein
+NELDDEBG_00971	gene	225				
+NELDDEBG_00972	CDS	588	natA_1		COG4555	ABC transporter ATP-binding protein NatA
+NELDDEBG_00972	gene	588	natA_1			
+NELDDEBG_00973	CDS	1182				hypothetical protein
+NELDDEBG_00973	gene	1182				
+NELDDEBG_00974	CDS	558	infC		COG0290	Translation initiation factor IF-3
+NELDDEBG_00974	gene	558	infC			
+NELDDEBG_00975	CDS	201	rpmI		COG0291	50S ribosomal protein L35
+NELDDEBG_00975	gene	201	rpmI			
+NELDDEBG_00976	CDS	360	rplT		COG0292	50S ribosomal protein L20
+NELDDEBG_00976	gene	360	rplT			
+NELDDEBG_00977	CDS	381	gloA	4.4.1.5	COG0346	Lactoylglutathione lyase
+NELDDEBG_00977	gene	381	gloA			
+NELDDEBG_00978	CDS	801	pyrK_2		COG0543	Dihydroorotate dehydrogenase B (NAD(+)), electron transfer subunit
+NELDDEBG_00978	gene	801	pyrK_2			
+NELDDEBG_00979	CDS	939	pyrDB	1.3.1.14	COG0167	Dihydroorotate dehydrogenase B (NAD(+)), catalytic subunit
+NELDDEBG_00979	gene	939	pyrDB			
+NELDDEBG_00980	CDS	1713	lytB_1	3.2.1.96	COG4193	Putative endo-beta-N-acetylglucosaminidase
+NELDDEBG_00980	gene	1713	lytB_1			
+NELDDEBG_00981	CDS	1656	yloA		COG1293	putative protein YloA
+NELDDEBG_00981	gene	1656	yloA			
+NELDDEBG_00982	CDS	498	ybeY	3.1.-.-		Endoribonuclease YbeY
+NELDDEBG_00982	gene	498	ybeY			
+NELDDEBG_00983	CDS	396	dgkA	2.7.1.66	COG0818	Undecaprenol kinase
+NELDDEBG_00983	gene	396	dgkA			
+NELDDEBG_00984	CDS	900	era		COG1159	GTPase Era
+NELDDEBG_00984	gene	900	era			
+NELDDEBG_00985	CDS	825	mutM	3.2.2.23	COG0266	Formamidopyrimidine-DNA glycosylase
+NELDDEBG_00985	gene	825	mutM			
+NELDDEBG_00986	CDS	606	coaE	2.7.1.24		Dephospho-CoA kinase
+NELDDEBG_00986	gene	606	coaE			
+NELDDEBG_00987	CDS	1200	yjhB			Putative metabolite transport protein YjhB
+NELDDEBG_00987	gene	1200	yjhB			
+NELDDEBG_00988	CDS	234	secG		COG1314	putative protein-export membrane protein SecG
+NELDDEBG_00988	gene	234	secG			
+NELDDEBG_00989	CDS	2355	rnr	3.1.13.1	COG0557	Ribonuclease R
+NELDDEBG_00989	gene	2355	rnr			
+NELDDEBG_00990	CDS	468	smpB		COG0691	SsrA-binding protein
+NELDDEBG_00990	gene	468	smpB			
+NELDDEBG_00991	CDS	861	tehB	2.1.1.-	COG0500	putative S-adenosyl-L-methionine-dependent methyltransferase TehB
+NELDDEBG_00991	gene	861	tehB			
+NELDDEBG_00992	CDS	954				hypothetical protein
+NELDDEBG_00992	gene	954				
+NELDDEBG_00993	CDS	1803	pepF1_2	3.4.24.-		Oligoendopeptidase F, plasmid
+NELDDEBG_00993	gene	1803	pepF1_2			
+NELDDEBG_00994	CDS	714	pcm	2.1.1.77		Protein-L-isoaspartate O-methyltransferase
+NELDDEBG_00994	gene	714	pcm			
+NELDDEBG_00995	CDS	942	prsA	5.2.1.8		Foldase protein PrsA
+NELDDEBG_00995	gene	942	prsA			
+NELDDEBG_00996	CDS	342				IS3 family transposase ISSpn1
+NELDDEBG_00996	gene	342				
+NELDDEBG_00997	CDS	192				hypothetical protein
+NELDDEBG_00997	gene	192				
+NELDDEBG_00998	CDS	621	pspB	3.1.3.3	COG0406	Putative phosphoserine phosphatase 2
+NELDDEBG_00998	gene	621	pspB			
+NELDDEBG_00999	CDS	483				hypothetical protein
+NELDDEBG_00999	gene	483				
+NELDDEBG_01000	CDS	843				hypothetical protein
+NELDDEBG_01000	gene	843				
+NELDDEBG_01001	CDS	750				hypothetical protein
+NELDDEBG_01001	gene	750				
+NELDDEBG_01002	CDS	1380	glmU		COG1207	Bifunctional protein GlmU
+NELDDEBG_01002	gene	1380	glmU			
+NELDDEBG_01003	CDS	546	nudF	3.6.1.13	COG0494	ADP-ribose pyrophosphatase
+NELDDEBG_01003	gene	546	nudF			
+NELDDEBG_01004	CDS	315				hypothetical protein
+NELDDEBG_01004	gene	315				
+NELDDEBG_01005	CDS	693	mtnN	3.2.2.9	COG0775	5'-methylthioadenosine/S-adenosylhomocysteine nucleosidase
+NELDDEBG_01005	gene	693	mtnN			
+NELDDEBG_01006	CDS	492				putative protein
+NELDDEBG_01006	gene	492				
+NELDDEBG_01007	CDS	591	polC_2	2.7.7.7		DNA polymerase III PolC-type
+NELDDEBG_01007	gene	591	polC_2			
+NELDDEBG_01008	CDS	1764				hypothetical protein
+NELDDEBG_01008	gene	1764				
+NELDDEBG_01009	CDS	591				hypothetical protein
+NELDDEBG_01009	gene	591				
+NELDDEBG_01010	CDS	1989	bceB		COG0577	Bacitracin export permease protein BceB
+NELDDEBG_01010	gene	1989	bceB			
+NELDDEBG_01011	CDS	759	bceA		COG1136	Bacitracin export ATP-binding protein BceA
+NELDDEBG_01011	gene	759	bceA			
+NELDDEBG_01012	CDS	111				hypothetical protein
+NELDDEBG_01012	gene	111				
+NELDDEBG_01013	CDS	192				hypothetical protein
+NELDDEBG_01013	gene	192				
+NELDDEBG_01014	CDS	273				hypothetical protein
+NELDDEBG_01014	gene	273				
+NELDDEBG_01015	CDS	450				Protein SprT-like protein
+NELDDEBG_01015	gene	450				
+NELDDEBG_01016	CDS	2130	yhgF		COG2183	Protein YhgF
+NELDDEBG_01016	gene	2130	yhgF			
+NELDDEBG_01017	CDS	1005				hypothetical protein
+NELDDEBG_01017	gene	1005				
+NELDDEBG_01018	CDS	318				hypothetical protein
+NELDDEBG_01018	gene	318				
+NELDDEBG_01019	CDS	132				hypothetical protein
+NELDDEBG_01019	gene	132				
+NELDDEBG_01020	CDS	906			COG0701	Putative two-component membrane permease complex subunit SMU_747c
+NELDDEBG_01020	gene	906				
+NELDDEBG_01021	CDS	816			COG3689	Putative two-component membrane permease complex subunit SMU_746c
+NELDDEBG_01021	gene	816				
+NELDDEBG_01022	CDS	717				hypothetical protein
+NELDDEBG_01022	gene	717				
+NELDDEBG_01023	CDS	312				hypothetical protein
+NELDDEBG_01023	gene	312				
+NELDDEBG_01024	CDS	189			COG3039	IS5 family transposase ISSpn7
+NELDDEBG_01024	gene	189				
+NELDDEBG_01025	CDS	261			COG3039	IS5 family transposase ISSpn7
+NELDDEBG_01025	gene	261				
+NELDDEBG_01026	CDS	873				hypothetical protein
+NELDDEBG_01026	gene	873				
+NELDDEBG_01027	CDS	1506	pyk	2.7.1.40	COG0469	Pyruvate kinase
+NELDDEBG_01027	gene	1506	pyk			
+NELDDEBG_01028	CDS	1008	pfkA	2.7.1.11		ATP-dependent 6-phosphofructokinase
+NELDDEBG_01028	gene	1008	pfkA			
+NELDDEBG_01029	CDS	3102	dnaE2	2.7.7.7		Error-prone DNA polymerase
+NELDDEBG_01029	gene	3102	dnaE2			
+NELDDEBG_01030	CDS	2274	pepX	3.4.14.11		Xaa-Pro dipeptidyl-peptidase
+NELDDEBG_01030	gene	2274	pepX			
+NELDDEBG_01031	CDS	471	argR_2		COG1438	Arginine regulator
+NELDDEBG_01031	gene	471	argR_2			
+NELDDEBG_01032	CDS	3351				hypothetical protein
+NELDDEBG_01032	gene	3351				
+NELDDEBG_01033	CDS	1047				hypothetical protein
+NELDDEBG_01033	gene	1047				
+NELDDEBG_01034	CDS	228				hypothetical protein
+NELDDEBG_01034	gene	228				
+NELDDEBG_01035	CDS	237				hypothetical protein
+NELDDEBG_01035	gene	237				
+NELDDEBG_01036	CDS	414				hypothetical protein
+NELDDEBG_01036	gene	414				
+NELDDEBG_01037	CDS	966	xerC_1		COG4974	Tyrosine recombinase XerC
+NELDDEBG_01037	gene	966	xerC_1			
+NELDDEBG_01038	CDS	1086				hypothetical protein
+NELDDEBG_01038	gene	1086				
+NELDDEBG_01039	CDS	1449	hsdM	2.1.1.72	COG0286	Type I restriction enzyme EcoKI M protein
+NELDDEBG_01039	gene	1449	hsdM			
+NELDDEBG_01040	CDS	1167				hypothetical protein
+NELDDEBG_01040	gene	1167				
+NELDDEBG_01041	CDS	408				hypothetical protein
+NELDDEBG_01041	gene	408				
+NELDDEBG_01042	CDS	336				hypothetical protein
+NELDDEBG_01042	gene	336				
+NELDDEBG_01043	CDS	825	ybbA		COG2819	putative protein YbbA
+NELDDEBG_01043	gene	825	ybbA			
+NELDDEBG_01044	CDS	1215	thiI	2.8.1.4	COG0301	putative tRNA sulfurtransferase
+NELDDEBG_01044	gene	1215	thiI			
+NELDDEBG_01045	CDS	1143	iscS_1	2.8.1.7	COG1104	Cysteine desulfurase IscS
+NELDDEBG_01045	gene	1143	iscS_1			
+NELDDEBG_01046	CDS	378				hypothetical protein
+NELDDEBG_01046	gene	378				
+NELDDEBG_01047	CDS	1641	btuD_6	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_01047	gene	1641	btuD_6			
+NELDDEBG_01048	CDS	417				hypothetical protein
+NELDDEBG_01048	gene	417				
+NELDDEBG_01049	CDS	2304	ftsK		COG1674	DNA translocase FtsK
+NELDDEBG_01049	gene	2304	ftsK			
+NELDDEBG_01050	CDS	1953	fruA		COG1299	PTS system fructose-specific EIIABC component
+NELDDEBG_01050	gene	1953	fruA			
+NELDDEBG_01051	CDS	912	lacC_1	2.7.1.144	COG1105	Tagatose-6-phosphate kinase
+NELDDEBG_01051	gene	912	lacC_1			
+NELDDEBG_01052	CDS	741	lacR_2			Lactose phosphotransferase system repressor
+NELDDEBG_01052	gene	741	lacR_2			
+NELDDEBG_01053	tRNA	91				tRNA-Ser(gga)
+NELDDEBG_01053	gene	91				
+NELDDEBG_01054	CDS	465				hypothetical protein
+NELDDEBG_01054	gene	465				
+NELDDEBG_01055	CDS	471				hypothetical protein
+NELDDEBG_01055	gene	471				
+NELDDEBG_01056	CDS	777				hypothetical protein
+NELDDEBG_01056	gene	777				
+NELDDEBG_01057	tmRNA	345	ssrA			transfer-messenger RNA, SsrA
+NELDDEBG_01057	gene	345	ssrA			
+NELDDEBG_01058	CDS	1110				hypothetical protein
+NELDDEBG_01058	gene	1110				
+NELDDEBG_01059	CDS	1242	dacA	3.4.16.4	COG1686	D-alanyl-D-alanine carboxypeptidase DacA
+NELDDEBG_01059	gene	1242	dacA			
+NELDDEBG_01060	CDS	1413				hypothetical protein
+NELDDEBG_01060	gene	1413				
+NELDDEBG_01061	CDS	432	iscU		COG0822	Iron-sulfur cluster assembly scaffold protein IscU
+NELDDEBG_01061	gene	432	iscU			
+NELDDEBG_01062	CDS	1227	sufS	2.8.1.7	COG0520	Cysteine desulfurase SufS
+NELDDEBG_01062	gene	1227	sufS			
+NELDDEBG_01063	CDS	1263				hypothetical protein
+NELDDEBG_01063	gene	1263				
+NELDDEBG_01064	CDS	771				putative ABC transporter ATP-binding protein
+NELDDEBG_01064	gene	771				
+NELDDEBG_01065	CDS	195				hypothetical protein
+NELDDEBG_01065	gene	195				
+NELDDEBG_01066	CDS	1656	ruvB_2	3.6.4.12		Holliday junction ATP-dependent DNA helicase RuvB
+NELDDEBG_01066	gene	1656	ruvB_2			
+NELDDEBG_01067	CDS	498	msrC	1.8.4.14	COG1956	Free methionine-R-sulfoxide reductase
+NELDDEBG_01067	gene	498	msrC			
+NELDDEBG_01068	CDS	1371	mepA			Multidrug export protein MepA
+NELDDEBG_01068	gene	1371	mepA			
+NELDDEBG_01069	CDS	1167	recA		COG0468	Protein RecA
+NELDDEBG_01069	gene	1167	recA			
+NELDDEBG_01070	CDS	1257	cinA		COG1058	Putative competence-damage inducible protein
+NELDDEBG_01070	gene	1257	cinA			
+NELDDEBG_01071	CDS	1017	brpA		COG1316	Biofilm regulatory protein A
+NELDDEBG_01071	gene	1017	brpA			
+NELDDEBG_01072	CDS	519				hypothetical protein
+NELDDEBG_01072	gene	519				
+NELDDEBG_01073	CDS	444	tsaE		COG0802	tRNA threonylcarbamoyladenosine biosynthesis protein TsaE
+NELDDEBG_01073	gene	444	tsaE			
+NELDDEBG_01074	CDS	621				hypothetical protein
+NELDDEBG_01074	gene	621				
+NELDDEBG_01075	CDS	864				hypothetical protein
+NELDDEBG_01075	gene	864				
+NELDDEBG_01076	CDS	171				hypothetical protein
+NELDDEBG_01076	gene	171				
+NELDDEBG_01077	CDS	225				hypothetical protein
+NELDDEBG_01077	gene	225				
+NELDDEBG_01078	CDS	189				hypothetical protein
+NELDDEBG_01078	gene	189				
+NELDDEBG_01079	CDS	2991				hypothetical protein
+NELDDEBG_01079	gene	2991				
+NELDDEBG_01080	CDS	705				hypothetical protein
+NELDDEBG_01080	gene	705				
+NELDDEBG_01081	CDS	930				hypothetical protein
+NELDDEBG_01081	gene	930				
+NELDDEBG_01082	CDS	2109	hlyB		COG2274	Alpha-hemolysin translocation ATP-binding protein HlyB
+NELDDEBG_01082	gene	2109	hlyB			
+NELDDEBG_01083	CDS	1689				hypothetical protein
+NELDDEBG_01083	gene	1689				
+NELDDEBG_01084	CDS	768				hypothetical protein
+NELDDEBG_01084	gene	768				
+NELDDEBG_01085	CDS	633	yknY_1	3.6.3.-	COG1136	putative ABC transporter ATP-binding protein YknY
+NELDDEBG_01085	gene	633	yknY_1			
+NELDDEBG_01086	CDS	162				hypothetical protein
+NELDDEBG_01086	gene	162				
+NELDDEBG_01087	CDS	90				hypothetical protein
+NELDDEBG_01087	gene	90				
+NELDDEBG_01088	CDS	414	ndk	2.7.4.6	COG0105	Nucleoside diphosphate kinase
+NELDDEBG_01088	gene	414	ndk			
+NELDDEBG_01089	CDS	3678	rpoC	2.7.7.6	COG0086	DNA-directed RNA polymerase subunit beta'
+NELDDEBG_01089	gene	3678	rpoC			
+NELDDEBG_01090	CDS	3612	rpoB	2.7.7.6	COG0085	DNA-directed RNA polymerase subunit beta
+NELDDEBG_01090	gene	3612	rpoB			
+NELDDEBG_01091	tRNA	74				tRNA-Cys(gca)
+NELDDEBG_01091	gene	74				
+NELDDEBG_01092	CDS	1332				hypothetical protein
+NELDDEBG_01092	gene	1332				
+NELDDEBG_01093	CDS	825	endA	3.1.30.-		DNA-entry nuclease
+NELDDEBG_01093	gene	825	endA			
+NELDDEBG_01094	CDS	195				hypothetical protein
+NELDDEBG_01094	gene	195				
+NELDDEBG_01095	CDS	1284	murA1_1	2.5.1.7	COG0766	UDP-N-acetylglucosamine 1-carboxyvinyltransferase 1
+NELDDEBG_01095	gene	1284	murA1_1			
+NELDDEBG_01096	CDS	1038	ylbL		COG3480	putative protein YlbL
+NELDDEBG_01096	gene	1038	ylbL			
+NELDDEBG_01097	CDS	489	coaD	2.7.7.3	COG0669	Phosphopantetheine adenylyltransferase
+NELDDEBG_01097	gene	489	coaD			
+NELDDEBG_01098	CDS	540	rsmD	2.1.1.171	COG0742	Ribosomal RNA small subunit methyltransferase D
+NELDDEBG_01098	gene	540	rsmD			
+NELDDEBG_01099	CDS	993	asnA	6.3.1.1	COG2502	Aspartate--ammonia ligase
+NELDDEBG_01099	gene	993	asnA			
+NELDDEBG_01100	CDS	684	ybhL		COG0670	Inner membrane protein YbhL
+NELDDEBG_01100	gene	684	ybhL			
+NELDDEBG_01101	CDS	741		2.1.1.-		Putative TrmH family tRNA/rRNA methyltransferase
+NELDDEBG_01101	gene	741				
+NELDDEBG_01102	CDS	279	acyP	3.6.1.7	COG1254	Acylphosphatase
+NELDDEBG_01102	gene	279	acyP			
+NELDDEBG_01103	CDS	927	yidC2		COG0706	Membrane protein insertase YidC 2
+NELDDEBG_01103	gene	927	yidC2			
+NELDDEBG_01104	CDS	795	pflA	1.97.1.4		Pyruvate formate-lyase-activating enzyme
+NELDDEBG_01104	gene	795	pflA			
+NELDDEBG_01105	CDS	1251	lysA	4.1.1.20	COG0019	Diaminopimelate decarboxylase
+NELDDEBG_01105	gene	1251	lysA			
+NELDDEBG_01106	CDS	828	purR		COG0503	Pur operon repressor
+NELDDEBG_01106	gene	828	purR			
+NELDDEBG_01107	CDS	942	yhaM	3.1.-.-	COG3481	3'-5' exoribonuclease YhaM
+NELDDEBG_01107	gene	942	yhaM			
+NELDDEBG_01108	CDS	1257				hypothetical protein
+NELDDEBG_01108	gene	1257				
+NELDDEBG_01109	CDS	663	thiN	2.7.6.2	COG1564	Thiamine pyrophosphokinase
+NELDDEBG_01109	gene	663	thiN			
+NELDDEBG_01110	CDS	657	rpe	5.1.3.1		Ribulose-phosphate 3-epimerase
+NELDDEBG_01110	gene	657	rpe			
+NELDDEBG_01111	CDS	879	rsgA	3.6.1.-	COG1162	Small ribosomal subunit biogenesis GTPase RsgA
+NELDDEBG_01111	gene	879	rsgA			
+NELDDEBG_01112	CDS	873	rsmA	2.1.1.182		Ribosomal RNA small subunit methyltransferase A
+NELDDEBG_01112	gene	873	rsmA			
+NELDDEBG_01113	CDS	309				hypothetical protein
+NELDDEBG_01113	gene	309				
+NELDDEBG_01114	CDS	642	yknY_2	3.6.3.-	COG1136	putative ABC transporter ATP-binding protein YknY
+NELDDEBG_01114	gene	642	yknY_2			
+NELDDEBG_01115	CDS	2031				hypothetical protein
+NELDDEBG_01115	gene	2031				
+NELDDEBG_01116	CDS	900				hypothetical protein
+NELDDEBG_01116	gene	900				
+NELDDEBG_01117	CDS	561	rnmV	3.1.26.8	COG1658	Ribonuclease M5
+NELDDEBG_01117	gene	561	rnmV			
+NELDDEBG_01118	CDS	774	ycfH	3.1.-.-	COG0084	putative metal-dependent hydrolase YcfH
+NELDDEBG_01118	gene	774	ycfH			
+NELDDEBG_01119	CDS	894				hypothetical protein
+NELDDEBG_01119	gene	894				
+NELDDEBG_01120	CDS	135	rpmH			50S ribosomal protein L34
+NELDDEBG_01120	gene	135	rpmH			
+NELDDEBG_01121	CDS	954			COG2826	IS30 family transposase ISSpn8
+NELDDEBG_01121	gene	954				
+NELDDEBG_01122	CDS	255				hypothetical protein
+NELDDEBG_01122	gene	255				
+NELDDEBG_01123	CDS	1842	typA		COG1217	GTP-binding protein TypA/BipA
+NELDDEBG_01123	gene	1842	typA			
+NELDDEBG_01124	CDS	726	rsuA_2	5.4.99.19	COG1187	Ribosomal small subunit pseudouridine synthase A
+NELDDEBG_01124	gene	726	rsuA_2			
+NELDDEBG_01125	CDS	486				hypothetical protein
+NELDDEBG_01125	gene	486				
+NELDDEBG_01126	CDS	708	phoP		COG0745	Alkaline phosphatase synthesis transcriptional regulatory protein PhoP
+NELDDEBG_01126	gene	708	phoP			
+NELDDEBG_01127	CDS	1332	sasA_1	2.7.-.-		Adaptive-response sensory-kinase SasA
+NELDDEBG_01127	gene	1332	sasA_1			
+NELDDEBG_01128	CDS	876	pstS2		COG0226	Phosphate-binding protein PstS 2
+NELDDEBG_01128	gene	876	pstS2			
+NELDDEBG_01129	CDS	864				hypothetical protein
+NELDDEBG_01129	gene	864				
+NELDDEBG_01130	CDS	816				hypothetical protein
+NELDDEBG_01130	gene	816				
+NELDDEBG_01131	CDS	753	pstB3_3	3.6.3.27	COG1117	Phosphate import ATP-binding protein PstB 3
+NELDDEBG_01131	gene	753	pstB3_3			
+NELDDEBG_01132	CDS	651	phoU_3		COG0704	Phosphate-specific transport system accessory protein PhoU 
+NELDDEBG_01132	gene	651	phoU_3			
+NELDDEBG_01133	CDS	426				IS1380 family transposase ISSpn5
+NELDDEBG_01133	gene	426				
+NELDDEBG_01134	CDS	441				hypothetical protein
+NELDDEBG_01134	gene	441				
+NELDDEBG_01135	CDS	1017	gpsA	1.1.1.94	COG0240	Glycerol-3-phosphate dehydrogenase [NAD(P)+]
+NELDDEBG_01135	gene	1017	gpsA			
+NELDDEBG_01136	CDS	900	gtaB	2.7.7.9	COG1210	UTP--glucose-1-phosphate uridylyltransferase
+NELDDEBG_01136	gene	900	gtaB			
+NELDDEBG_01137	CDS	678	gluP	3.4.21.105	COG0705	Rhomboid protease GluP
+NELDDEBG_01137	gene	678	gluP			
+NELDDEBG_01138	CDS	540	yqgN		COG0212	putative protein YqgN
+NELDDEBG_01138	gene	540	yqgN			
+NELDDEBG_01139	CDS	1131	ykuR	3.5.1.47	COG1473	N-acetyldiaminopimelate deacetylase
+NELDDEBG_01139	gene	1131	ykuR			
+NELDDEBG_01140	CDS	699	dapH	2.3.1.89	COG2171	2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-acetyltransferase
+NELDDEBG_01140	gene	699	dapH			
+NELDDEBG_01141	CDS	912	yicL_2		COG0697	putative inner membrane transporter YicL
+NELDDEBG_01141	gene	912	yicL_2			
+NELDDEBG_01142	CDS	2463	mtgA	2.4.2.-		Monofunctional biosynthetic peptidoglycan transglycosylase
+NELDDEBG_01142	gene	2463	mtgA			
+NELDDEBG_01143	CDS	1257	tyrS	6.1.1.1	COG0162	Tyrosine--tRNA ligase
+NELDDEBG_01143	gene	1257	tyrS			
+NELDDEBG_01144	CDS	2064	ctpC	3.6.3.-	COG2217	putative manganese/zinc-exporting P-type ATPase
+NELDDEBG_01144	gene	2064	ctpC			
+NELDDEBG_01145	CDS	279				hypothetical protein
+NELDDEBG_01145	gene	279				
+NELDDEBG_01146	CDS	792	rlmA	2.1.1.187	COG0500	23S rRNA (guanine(745)-N(1))-methyltransferase
+NELDDEBG_01146	gene	792	rlmA			
+NELDDEBG_01147	CDS	573				hypothetical protein
+NELDDEBG_01147	gene	573				
+NELDDEBG_01148	CDS	147				hypothetical protein
+NELDDEBG_01148	gene	147				
+NELDDEBG_01149	CDS	2259	malP	2.4.1.1	COG0058	Maltodextrin phosphorylase
+NELDDEBG_01149	gene	2259	malP			
+NELDDEBG_01150	CDS	1518	malQ	2.4.1.25	COG1640	4-alpha-glucanotransferase
+NELDDEBG_01150	gene	1518	malQ			
+NELDDEBG_01151	CDS	1272	malX		COG2182	Maltose/maltodextrin-binding protein
+NELDDEBG_01151	gene	1272	malX			
+NELDDEBG_01152	CDS	1293				hypothetical protein
+NELDDEBG_01152	gene	1293				
+NELDDEBG_01153	CDS	843	malG		COG3833	Maltose transport system permease protein MalG
+NELDDEBG_01153	gene	843	malG			
+NELDDEBG_01154	CDS	801				hypothetical protein
+NELDDEBG_01154	gene	801				
+NELDDEBG_01155	CDS	987	malR		COG1609	HTH-type transcriptional regulator MalR
+NELDDEBG_01155	gene	987	malR			
+NELDDEBG_01156	CDS	267				hypothetical protein
+NELDDEBG_01156	gene	267				
+NELDDEBG_01157	CDS	942				hypothetical protein
+NELDDEBG_01157	gene	942				
+NELDDEBG_01158	CDS	1764	aspS	6.1.1.12		Aspartate--tRNA ligase
+NELDDEBG_01158	gene	1764	aspS			
+NELDDEBG_01159	CDS	192				hypothetical protein
+NELDDEBG_01159	gene	192				
+NELDDEBG_01160	CDS	231				hypothetical protein
+NELDDEBG_01160	gene	231				
+NELDDEBG_01161	CDS	642				hypothetical protein
+NELDDEBG_01161	gene	642				
+NELDDEBG_01162	CDS	735				hypothetical protein
+NELDDEBG_01162	gene	735				
+NELDDEBG_01163	CDS	198				hypothetical protein
+NELDDEBG_01163	gene	198				
+NELDDEBG_01164	CDS	216				hypothetical protein
+NELDDEBG_01164	gene	216				
+NELDDEBG_01165	CDS	315				hypothetical protein
+NELDDEBG_01165	gene	315				
+NELDDEBG_01166	CDS	1290	hisS	6.1.1.21		Histidine--tRNA ligase
+NELDDEBG_01166	gene	1290	hisS			
+NELDDEBG_01167	CDS	1248				hypothetical protein
+NELDDEBG_01167	gene	1248				
+NELDDEBG_01168	CDS	852				hypothetical protein
+NELDDEBG_01168	gene	852				
+NELDDEBG_01169	CDS	342				hypothetical protein
+NELDDEBG_01169	gene	342				
+NELDDEBG_01170	CDS	1704	ilvD	4.2.1.9	COG0129	Dihydroxy-acid dehydratase
+NELDDEBG_01170	gene	1704	ilvD			
+NELDDEBG_01171	CDS	933	dxs	2.2.1.7	COG1154	1-deoxy-D-xylulose-5-phosphate synthase
+NELDDEBG_01171	gene	933	dxs			
+NELDDEBG_01172	CDS	858	tkt_1	2.2.1.1		Transketolase
+NELDDEBG_01172	gene	858	tkt_1			
+NELDDEBG_01173	CDS	1347	ulaA_1		COG3037	Ascorbate-specific PTS system EIIC component
+NELDDEBG_01173	gene	1347	ulaA_1			
+NELDDEBG_01174	CDS	285				hypothetical protein
+NELDDEBG_01174	gene	285				
+NELDDEBG_01175	CDS	2031				hypothetical protein
+NELDDEBG_01175	gene	2031				
+NELDDEBG_01176	CDS	1008				hypothetical protein
+NELDDEBG_01176	gene	1008				
+NELDDEBG_01177	CDS	201				hypothetical protein
+NELDDEBG_01177	gene	201				
+NELDDEBG_01178	CDS	183	rpmF		COG0333	50S ribosomal protein L32
+NELDDEBG_01178	gene	183	rpmF			
+NELDDEBG_01179	CDS	150	rpmGA			50S ribosomal protein L33 1
+NELDDEBG_01179	gene	150	rpmGA			
+NELDDEBG_01180	CDS	1626				hypothetical protein
+NELDDEBG_01180	gene	1626				
+NELDDEBG_01181	tRNA	76				tRNA-Ile(gat)
+NELDDEBG_01181	gene	76				
+NELDDEBG_01182	tRNA	90				tRNA-Ser(tga)
+NELDDEBG_01182	gene	90				
+NELDDEBG_01183	tRNA	74				tRNA-Met(cat)
+NELDDEBG_01183	gene	74				
+NELDDEBG_01184	tRNA	73				tRNA-Phe(gaa)
+NELDDEBG_01184	gene	73				
+NELDDEBG_01185	tRNA	83				tRNA-Tyr(gta)
+NELDDEBG_01185	gene	83				
+NELDDEBG_01186	tRNA	73				tRNA-Trp(cca)
+NELDDEBG_01186	gene	73				
+NELDDEBG_01187	tRNA	75				tRNA-His(gtg)
+NELDDEBG_01187	gene	75				
+NELDDEBG_01188	tRNA	74				tRNA-Gln(ttg)
+NELDDEBG_01188	gene	74				
+NELDDEBG_01189	tRNA	86				tRNA-Leu(caa)
+NELDDEBG_01189	gene	86				
+NELDDEBG_01190	CDS	732	apaH_2	3.6.1.41		Bis(5'-nucleosyl)-tetraphosphatase, symmetrical
+NELDDEBG_01190	gene	732	apaH_2			
+NELDDEBG_01191	CDS	237				hypothetical protein
+NELDDEBG_01191	gene	237				
+NELDDEBG_01192	CDS	438				hypothetical protein
+NELDDEBG_01192	gene	438				
+NELDDEBG_01193	CDS	834	intQ		COG0582	Putative defective protein IntQ
+NELDDEBG_01193	gene	834	intQ			
+NELDDEBG_01194	CDS	228				hypothetical protein
+NELDDEBG_01194	gene	228				
+NELDDEBG_01195	CDS	111				hypothetical protein
+NELDDEBG_01195	gene	111				
+NELDDEBG_01196	CDS	768				hypothetical protein
+NELDDEBG_01196	gene	768				
+NELDDEBG_01197	CDS	108				hypothetical protein
+NELDDEBG_01197	gene	108				
+NELDDEBG_01198	CDS	501				hypothetical protein
+NELDDEBG_01198	gene	501				
+NELDDEBG_01199	CDS	279				hypothetical protein
+NELDDEBG_01199	gene	279				
+NELDDEBG_01200	CDS	1278				hypothetical protein
+NELDDEBG_01200	gene	1278				
+NELDDEBG_01201	CDS	1485	thrC	4.2.3.1	COG0498	Threonine synthase
+NELDDEBG_01201	gene	1485	thrC			
+NELDDEBG_01202	CDS	1281	yeeO		COG0534	putative FMN/FAD exporter YeeO
+NELDDEBG_01202	gene	1281	yeeO			
+NELDDEBG_01203	CDS	624	gph_2	3.1.3.18		Phosphoglycolate phosphatase
+NELDDEBG_01203	gene	624	gph_2			
+NELDDEBG_01204	CDS	1179				hypothetical protein
+NELDDEBG_01204	gene	1179				
+NELDDEBG_01205	CDS	90				hypothetical protein
+NELDDEBG_01205	gene	90				
+NELDDEBG_01206	CDS	285				hypothetical protein
+NELDDEBG_01206	gene	285				
+NELDDEBG_01207	CDS	300				hypothetical protein
+NELDDEBG_01207	gene	300				
+NELDDEBG_01208	CDS	270	pcp_1	3.4.19.3		Pyrrolidone-carboxylate peptidase
+NELDDEBG_01208	gene	270	pcp_1			
+NELDDEBG_01209	CDS	213	pcp_2	3.4.19.3		Pyrrolidone-carboxylate peptidase
+NELDDEBG_01209	gene	213	pcp_2			
+NELDDEBG_01210	CDS	858				hypothetical protein
+NELDDEBG_01210	gene	858				
+NELDDEBG_01211	CDS	1143	tgt	2.4.2.29		Queuine tRNA-ribosyltransferase
+NELDDEBG_01211	gene	1143	tgt			
+NELDDEBG_01212	CDS	1818	oatA	2.3.1.-		O-acetyltransferase OatA
+NELDDEBG_01212	gene	1818	oatA			
+NELDDEBG_01213	CDS	1152	agaA_1	3.5.1.-	COG1820	N-acetylgalactosamine-6-phosphate deacetylase
+NELDDEBG_01213	gene	1152	agaA_1			
+NELDDEBG_01214	CDS	1059	adh_2	1.1.1.1	COG1063	Alcohol dehydrogenase
+NELDDEBG_01214	gene	1059	adh_2			
+NELDDEBG_01215	CDS	366				hypothetical protein
+NELDDEBG_01215	gene	366				
+NELDDEBG_01216	CDS	942	comGA		COG2804	ComG operon protein 1
+NELDDEBG_01216	gene	942	comGA			
+NELDDEBG_01217	CDS	873	gspF		COG1459	Putative type II secretion system protein F
+NELDDEBG_01217	gene	873	gspF			
+NELDDEBG_01218	CDS	327				hypothetical protein
+NELDDEBG_01218	gene	327				
+NELDDEBG_01219	CDS	405				hypothetical protein
+NELDDEBG_01219	gene	405				
+NELDDEBG_01220	CDS	303				hypothetical protein
+NELDDEBG_01220	gene	303				
+NELDDEBG_01221	CDS	462				hypothetical protein
+NELDDEBG_01221	gene	462				
+NELDDEBG_01222	CDS	411				hypothetical protein
+NELDDEBG_01222	gene	411				
+NELDDEBG_01223	CDS	219				hypothetical protein
+NELDDEBG_01223	gene	219				
+NELDDEBG_01224	CDS	363				hypothetical protein
+NELDDEBG_01224	gene	363				
+NELDDEBG_01225	CDS	954				hypothetical protein
+NELDDEBG_01225	gene	954				
+NELDDEBG_01226	CDS	1191	ackA	2.7.2.1	COG0282	Acetate kinase
+NELDDEBG_01226	gene	1191	ackA			
+NELDDEBG_01227	CDS	372	rnpA	3.1.26.5	COG0594	Ribonuclease P protein component
+NELDDEBG_01227	gene	372	rnpA			
+NELDDEBG_01228	CDS	831	misCA		COG0706	Membrane protein insertase MisCA
+NELDDEBG_01228	gene	831	misCA			
+NELDDEBG_01229	CDS	987				hypothetical protein
+NELDDEBG_01229	gene	987				
+NELDDEBG_01230	CDS	624				hypothetical protein
+NELDDEBG_01230	gene	624				
+NELDDEBG_01231	CDS	1458	ulaA_2		COG3037	Ascorbate-specific PTS system EIIC component
+NELDDEBG_01231	gene	1458	ulaA_2			
+NELDDEBG_01232	CDS	282	ulaB	2.7.1.194		Ascorbate-specific PTS system EIIB component
+NELDDEBG_01232	gene	282	ulaB			
+NELDDEBG_01233	CDS	486	ulaC		COG1762	Ascorbate-specific PTS system EIIA component
+NELDDEBG_01233	gene	486	ulaC			
+NELDDEBG_01234	CDS	666	ulaD	4.1.1.85	COG0269	3-keto-L-gulonate-6-phosphate decarboxylase UlaD
+NELDDEBG_01234	gene	666	ulaD			
+NELDDEBG_01235	CDS	864	ulaE	5.1.3.22	COG3623	L-ribulose-5-phosphate 3-epimerase UlaE
+NELDDEBG_01235	gene	864	ulaE			
+NELDDEBG_01236	CDS	705	araD	5.1.3.4	COG0235	L-ribulose-5-phosphate 4-epimerase AraD
+NELDDEBG_01236	gene	705	araD			
+NELDDEBG_01237	CDS	1674	licR_2		COG1762	putative licABCH operon regulator
+NELDDEBG_01237	gene	1674	licR_2			
+NELDDEBG_01238	CDS	1092	ulaG	3.1.1.-	COG2220	putative L-ascorbate-6-phosphate lactonase UlaG
+NELDDEBG_01238	gene	1092	ulaG			
+NELDDEBG_01239	CDS	1977	tkt_2	2.2.1.1		Transketolase
+NELDDEBG_01239	gene	1977	tkt_2			
+NELDDEBG_01240	CDS	300				hypothetical protein
+NELDDEBG_01240	gene	300				
+NELDDEBG_01241	CDS	429	yfkJ	3.1.3.48	COG0394	Low molecular weight protein-tyrosine-phosphatase YfkJ
+NELDDEBG_01241	gene	429	yfkJ			
+NELDDEBG_01242	CDS	411				hypothetical protein
+NELDDEBG_01242	gene	411				
+NELDDEBG_01243	CDS	2652	adhE		COG1012	Aldehyde-alcohol dehydrogenase
+NELDDEBG_01243	gene	2652	adhE			
+NELDDEBG_01244	CDS	309	gmuA		COG1447	PTS system oligo-beta-mannoside-specific EIIA component
+NELDDEBG_01244	gene	309	gmuA			
+NELDDEBG_01245	CDS	309	celA	2.7.1.205		PTS system cellobiose-specific EIIB component
+NELDDEBG_01245	gene	309	celA			
+NELDDEBG_01246	CDS	1296	licC_4		COG1455	Lichenan permease IIC component
+NELDDEBG_01246	gene	1296	licC_4			
+NELDDEBG_01247	CDS	1410	gmuD_2	3.2.1.86	COG2723	6-phospho-beta-glucosidase GmuD
+NELDDEBG_01247	gene	1410	gmuD_2			
+NELDDEBG_01248	CDS	729	gmuR		COG2188	HTH-type transcriptional regulator GmuR
+NELDDEBG_01248	gene	729	gmuR			
+NELDDEBG_01249	CDS	195				hypothetical protein
+NELDDEBG_01249	gene	195				
+NELDDEBG_01250	CDS	1311				hypothetical protein
+NELDDEBG_01250	gene	1311				
+NELDDEBG_01251	CDS	873	nadC	2.4.2.19	COG0157	putative nicotinate-nucleotide pyrophosphorylase [carboxylating]
+NELDDEBG_01251	gene	873	nadC			
+NELDDEBG_01252	CDS	549				hypothetical protein
+NELDDEBG_01252	gene	549				
+NELDDEBG_01253	CDS	876				hypothetical protein
+NELDDEBG_01253	gene	876				
+NELDDEBG_01254	CDS	1866				hypothetical protein
+NELDDEBG_01254	gene	1866				
+NELDDEBG_01255	CDS	366				hypothetical protein
+NELDDEBG_01255	gene	366				
+NELDDEBG_01256	CDS	360				hypothetical protein
+NELDDEBG_01256	gene	360				
+NELDDEBG_01257	CDS	357				putative protein
+NELDDEBG_01257	gene	357				
+NELDDEBG_01258	CDS	777				putative protein
+NELDDEBG_01258	gene	777				
+NELDDEBG_01259	CDS	762	pezT	2.7.1.176		Toxin PezT
+NELDDEBG_01259	gene	762	pezT			
+NELDDEBG_01260	CDS	477	pezA		COG1396	Antitoxin PezA
+NELDDEBG_01260	gene	477	pezA			
+NELDDEBG_01261	CDS	282				hypothetical protein
+NELDDEBG_01261	gene	282				
+NELDDEBG_01262	CDS	129				hypothetical protein
+NELDDEBG_01262	gene	129				
+NELDDEBG_01263	CDS	705	bbmA	3.2.1.-	COG0366	Intracellular maltogenic amylase
+NELDDEBG_01263	gene	705	bbmA			
+NELDDEBG_01264	CDS	885		2.7.1.-	COG1597	Putative lipid kinase
+NELDDEBG_01264	gene	885				
+NELDDEBG_01265	CDS	855				hypothetical protein
+NELDDEBG_01265	gene	855				
+NELDDEBG_01266	CDS	759				hypothetical protein
+NELDDEBG_01266	gene	759				
+NELDDEBG_01267	CDS	189				hypothetical protein
+NELDDEBG_01267	gene	189				
+NELDDEBG_01268	CDS	567				hypothetical protein
+NELDDEBG_01268	gene	567				
+NELDDEBG_01269	CDS	1680				hypothetical protein
+NELDDEBG_01269	gene	1680				
+NELDDEBG_01270	CDS	162				hypothetical protein
+NELDDEBG_01270	gene	162				
+NELDDEBG_01271	CDS	705				hypothetical protein
+NELDDEBG_01271	gene	705				
+NELDDEBG_01272	CDS	414				hypothetical protein
+NELDDEBG_01272	gene	414				
+NELDDEBG_01273	CDS	174				hypothetical protein
+NELDDEBG_01273	gene	174				
+NELDDEBG_01274	CDS	231				hypothetical protein
+NELDDEBG_01274	gene	231				
+NELDDEBG_01275	CDS	795	yusV		COG1120	putative siderophore transport system ATP-binding protein YusV
+NELDDEBG_01275	gene	795	yusV			
+NELDDEBG_01276	CDS	1008	yfhA		COG0609	putative siderophore transport system permease protein YfhA
+NELDDEBG_01276	gene	1008	yfhA			
+NELDDEBG_01277	CDS	1008	fepD		COG0609	Ferric enterobactin transport system permease protein FepD
+NELDDEBG_01277	gene	1008	fepD			
+NELDDEBG_01278	CDS	1026	yfmC		COG4594	Fe(3+)-citrate-binding protein YfmC
+NELDDEBG_01278	gene	1026	yfmC			
+NELDDEBG_01279	CDS	219				hypothetical protein
+NELDDEBG_01279	gene	219				
+NELDDEBG_01280	CDS	1632		2.1.1.-	COG2265	putative RNA methyltransferase
+NELDDEBG_01280	gene	1632				
+NELDDEBG_01281	CDS	975				hypothetical protein
+NELDDEBG_01281	gene	975				
+NELDDEBG_01282	CDS	615				hypothetical protein
+NELDDEBG_01282	gene	615				
+NELDDEBG_01283	CDS	975				hypothetical protein
+NELDDEBG_01283	gene	975				
+NELDDEBG_01284	CDS	1257	glyA	2.1.2.1		Serine hydroxymethyltransferase
+NELDDEBG_01284	gene	1257	glyA			
+NELDDEBG_01285	CDS	432				hypothetical protein
+NELDDEBG_01285	gene	432				
+NELDDEBG_01286	CDS	603	ywlC	2.7.7.87	COG0009	Threonylcarbamoyl-AMP synthase
+NELDDEBG_01286	gene	603	ywlC			
+NELDDEBG_01287	CDS	840	prmC	2.1.1.297		Release factor glutamine methyltransferase
+NELDDEBG_01287	gene	840	prmC			
+NELDDEBG_01288	CDS	1080	prfA		COG0216	Peptide chain release factor 1
+NELDDEBG_01288	gene	1080	prfA			
+NELDDEBG_01289	CDS	591	tdk	2.7.1.21	COG1435	Thymidine kinase
+NELDDEBG_01289	gene	591	tdk			
+NELDDEBG_01290	CDS	183	xylH	5.3.2.6		2-hydroxymuconate tautomerase
+NELDDEBG_01290	gene	183	xylH			
+NELDDEBG_01291	CDS	1374	mnmE	3.6.5.-	COG0486	tRNA modification GTPase MnmE
+NELDDEBG_01291	gene	1374	mnmE			
+NELDDEBG_01292	CDS	936	dapA	4.3.3.7	COG0329	4-hydroxy-tetrahydrodipicolinate synthase
+NELDDEBG_01292	gene	936	dapA			
+NELDDEBG_01293	CDS	1077	asd	1.2.1.11	COG0136	Aspartate-semialdehyde dehydrogenase
+NELDDEBG_01293	gene	1077	asd			
+NELDDEBG_01294	tRNA	73				tRNA-Thr(ggt)
+NELDDEBG_01294	gene	73				
+NELDDEBG_01295	CDS	510	queT		COG4708	Queuosine precursor transporter QueT
+NELDDEBG_01295	gene	510	queT			
+NELDDEBG_01296	CDS	432				hypothetical protein
+NELDDEBG_01296	gene	432				
+NELDDEBG_01297	CDS	378	mscL		COG1970	Large-conductance mechanosensitive channel
+NELDDEBG_01297	gene	378	mscL			
+NELDDEBG_01298	CDS	1095	hemH	4.99.1.1		Ferrochelatase
+NELDDEBG_01298	gene	1095	hemH			
+NELDDEBG_01299	CDS	1221	pepT	3.4.11.4		Peptidase T
+NELDDEBG_01299	gene	1221	pepT			
+NELDDEBG_01300	CDS	630				hypothetical protein
+NELDDEBG_01300	gene	630				
+NELDDEBG_01301	CDS	246				hypothetical protein
+NELDDEBG_01301	gene	246				
+NELDDEBG_01302	CDS	90				hypothetical protein
+NELDDEBG_01302	gene	90				
+NELDDEBG_01303	CDS	3120				hypothetical protein
+NELDDEBG_01303	gene	3120				
+NELDDEBG_01304	CDS	234				hypothetical protein
+NELDDEBG_01304	gene	234				
+NELDDEBG_01305	CDS	258				hypothetical protein
+NELDDEBG_01305	gene	258				
+NELDDEBG_01306	CDS	2670	polA	2.7.7.7		DNA polymerase I
+NELDDEBG_01306	gene	2670	polA			
+NELDDEBG_01307	CDS	438	yccU		COG1832	putative protein YccU
+NELDDEBG_01307	gene	438	yccU			
+NELDDEBG_01308	CDS	1011				hypothetical protein
+NELDDEBG_01308	gene	1011				
+NELDDEBG_01309	CDS	1170	patA	2.6.1.-	COG0436	Putative N-acetyl-LL-diaminopimelate aminotransferase
+NELDDEBG_01309	gene	1170	patA			
+NELDDEBG_01310	CDS	771	recO		COG1381	DNA repair protein RecO
+NELDDEBG_01310	gene	771	recO			
+NELDDEBG_01311	CDS	993	plsX	2.3.1.-	COG0416	Phosphate acyltransferase
+NELDDEBG_01311	gene	993	plsX			
+NELDDEBG_01312	CDS	234	acpP		COG0236	Acyl carrier protein
+NELDDEBG_01312	gene	234	acpP			
+NELDDEBG_01313	CDS	294			COG3039	IS5 family transposase ISSpn7
+NELDDEBG_01313	gene	294				
+NELDDEBG_01314	CDS	2292	pcrA	3.6.4.12	COG0210	ATP-dependent DNA helicase PcrA
+NELDDEBG_01314	gene	2292	pcrA			
+NELDDEBG_01315	CDS	681				hypothetical protein
+NELDDEBG_01315	gene	681				
+NELDDEBG_01316	CDS	690		2.4.2.-	COG2071	Putative glutamine amidotransferase
+NELDDEBG_01316	gene	690				
+NELDDEBG_01317	CDS	642	rex		COG2344	Redox-sensing transcriptional repressor Rex
+NELDDEBG_01317	gene	642	rex			
+NELDDEBG_01318	CDS	216				hypothetical protein
+NELDDEBG_01318	gene	216				
+NELDDEBG_01319	CDS	348				hypothetical protein
+NELDDEBG_01319	gene	348				
+NELDDEBG_01320	CDS	1116	iscS_2	2.8.1.7		Cysteine desulfurase IscS
+NELDDEBG_01320	gene	1116	iscS_2			
+NELDDEBG_01321	CDS	960	prs2	2.7.6.1		Putative ribose-phosphate pyrophosphokinase 2
+NELDDEBG_01321	gene	960	prs2			
+NELDDEBG_01322	CDS	570	yjbK	3.6.1.-	COG4116	Putative triphosphatase YjbK
+NELDDEBG_01322	gene	570	yjbK			
+NELDDEBG_01323	CDS	672	yjbM	2.7.6.5	COG2357	GTP pyrophosphokinase YjbM
+NELDDEBG_01323	gene	672	yjbM			
+NELDDEBG_01324	CDS	819	nadK	2.7.1.23	COG0061	NAD kinase
+NELDDEBG_01324	gene	819	nadK			
+NELDDEBG_01325	CDS	306				hypothetical protein
+NELDDEBG_01325	gene	306				
+NELDDEBG_01326	CDS	660	rluD_2	5.4.99.23	COG0564	Ribosomal large subunit pseudouridine synthase D
+NELDDEBG_01326	gene	660	rluD_2			
+NELDDEBG_01327	CDS	975	pta	2.3.1.8	COG0280	Phosphate acetyltransferase
+NELDDEBG_01327	gene	975	pta			
+NELDDEBG_01328	CDS	300			COG0718	Nucleoid-associated protein
+NELDDEBG_01328	gene	300				
+NELDDEBG_01329	CDS	687				hypothetical protein
+NELDDEBG_01329	gene	687				
+NELDDEBG_01330	CDS	315	rplU		COG0261	50S ribosomal protein L21
+NELDDEBG_01330	gene	315	rplU			
+NELDDEBG_01331	CDS	345				hypothetical protein
+NELDDEBG_01331	gene	345				
+NELDDEBG_01332	CDS	294	rpmA		COG0211	50S ribosomal protein L27
+NELDDEBG_01332	gene	294	rpmA			
+NELDDEBG_01333	CDS	918	ribF		COG0196	Riboflavin biosynthesis protein RibF
+NELDDEBG_01333	gene	918	ribF			
+NELDDEBG_01334	CDS	849				hypothetical protein
+NELDDEBG_01334	gene	849				
+NELDDEBG_01335	CDS	840			COG1307	DegV domain-containing protein
+NELDDEBG_01335	gene	840				
+NELDDEBG_01336	CDS	276	hup		COG0776	DNA-binding protein HU
+NELDDEBG_01336	gene	276	hup			
+NELDDEBG_01337	CDS	1902	ettA_2		COG0488	Energy-dependent translational throttle protein EttA
+NELDDEBG_01337	gene	1902	ettA_2			
+NELDDEBG_01338	CDS	864				hypothetical protein
+NELDDEBG_01338	gene	864				
+NELDDEBG_01339	CDS	1179				hypothetical protein
+NELDDEBG_01339	gene	1179				
+NELDDEBG_01340	CDS	1959	ligA	6.5.1.2		DNA ligase
+NELDDEBG_01340	gene	1959	ligA			
+NELDDEBG_01341	CDS	2280	glgX_2	3.2.1.-		Glycogen debranching enzyme
+NELDDEBG_01341	gene	2280	glgX_2			
+NELDDEBG_01342	CDS	1425	gapN	1.2.1.9	COG1012	NADP-dependent glyceraldehyde-3-phosphate dehydrogenase
+NELDDEBG_01342	gene	1425	gapN			
+NELDDEBG_01343	CDS	1929	glgB	2.4.1.18		1,4-alpha-glucan branching enzyme GlgB
+NELDDEBG_01343	gene	1929	glgB			
+NELDDEBG_01344	CDS	1143	glgC	2.7.7.27	COG0448	Glucose-1-phosphate adenylyltransferase
+NELDDEBG_01344	gene	1143	glgC			
+NELDDEBG_01345	CDS	1140	glgD		COG0448	Glycogen biosynthesis protein GlgD
+NELDDEBG_01345	gene	1140	glgD			
+NELDDEBG_01346	CDS	1434	glgA	2.4.1.21	COG0297	Glycogen synthase
+NELDDEBG_01346	gene	1434	glgA			
+NELDDEBG_01347	CDS	372	serB	3.1.3.3	COG0560	Phosphoserine phosphatase
+NELDDEBG_01347	gene	372	serB			
+NELDDEBG_01348	CDS	1116	glxK	2.7.1.31		Glycerate kinase
+NELDDEBG_01348	gene	1116	glxK			
+NELDDEBG_01349	CDS	447				hypothetical protein
+NELDDEBG_01349	gene	447				
+NELDDEBG_01350	CDS	1305	eno	4.2.1.11	COG0148	Enolase
+NELDDEBG_01350	gene	1305	eno			
+NELDDEBG_01351	CDS	1728	ezrA		COG4477	Septation ring formation regulator EzrA
+NELDDEBG_01351	gene	1728	ezrA			
+NELDDEBG_01352	CDS	1947	gyrB	5.99.1.3	COG0187	DNA gyrase subunit B
+NELDDEBG_01352	gene	1947	gyrB			
+NELDDEBG_01353	CDS	573	mupP	3.1.3.-	COG0546	N-acetylmuramic acid 6-phosphate phosphatase
+NELDDEBG_01353	gene	573	mupP			
+NELDDEBG_01354	CDS	555	yajL	3.1.2.-	COG0693	Protein/nucleic acid deglycase 3
+NELDDEBG_01354	gene	555	yajL			
+NELDDEBG_01355	CDS	1224	rodA	2.4.1.129	COG0772	Peptidoglycan glycosyltransferase RodA
+NELDDEBG_01355	gene	1224	rodA			
+NELDDEBG_01356	CDS	2451	dinG	3.6.4.12	COG0847	putative ATP-dependent helicase DinG 
+NELDDEBG_01356	gene	2451	dinG			
+NELDDEBG_01357	CDS	930				hypothetical protein
+NELDDEBG_01357	gene	930				
+NELDDEBG_01358	CDS	288				hypothetical protein
+NELDDEBG_01358	gene	288				
+NELDDEBG_01359	CDS	1335	sasA_2	2.7.-.-		Adaptive-response sensory-kinase SasA
+NELDDEBG_01359	gene	1335	sasA_2			
+NELDDEBG_01360	CDS	675	arlR_1		COG0745	Response regulator ArlR
+NELDDEBG_01360	gene	675	arlR_1			
+NELDDEBG_01361	CDS	2547	pepN	3.4.11.2		Aminopeptidase N
+NELDDEBG_01361	gene	2547	pepN			
+NELDDEBG_01362	CDS	441				hypothetical protein
+NELDDEBG_01362	gene	441				
+NELDDEBG_01363	CDS	870				hypothetical protein
+NELDDEBG_01363	gene	870				
+NELDDEBG_01364	CDS	699				hypothetical protein
+NELDDEBG_01364	gene	699				
+NELDDEBG_01365	CDS	480				hypothetical protein
+NELDDEBG_01365	gene	480				
+NELDDEBG_01366	CDS	699		1.1.1.391	COG1028	3-beta-hydroxycholanate 3-dehydrogenase (NAD(+)) 2
+NELDDEBG_01366	gene	699				
+NELDDEBG_01367	CDS	237				hypothetical protein
+NELDDEBG_01367	gene	237				
+NELDDEBG_01368	CDS	927	ydhF	1.-.-.-	COG4989	Oxidoreductase YdhF
+NELDDEBG_01368	gene	927	ydhF			
+NELDDEBG_01369	CDS	816				hypothetical protein
+NELDDEBG_01369	gene	816				
+NELDDEBG_01370	CDS	321				hypothetical protein
+NELDDEBG_01370	gene	321				
+NELDDEBG_01371	CDS	1998	metG	6.1.1.10		Methionine--tRNA ligase
+NELDDEBG_01371	gene	1998	metG			
+NELDDEBG_01372	CDS	1260	yknZ		COG0577	putative ABC transporter permease YknZ
+NELDDEBG_01372	gene	1260	yknZ			
+NELDDEBG_01373	CDS	702	yknY_3	3.6.3.-	COG1136	putative ABC transporter ATP-binding protein YknY
+NELDDEBG_01373	gene	702	yknY_3			
+NELDDEBG_01374	CDS	1200	yknX		COG0845	Putative efflux system component YknX
+NELDDEBG_01374	gene	1200	yknX			
+NELDDEBG_01375	CDS	1347	gor	1.8.1.7	COG1249	Glutathione reductase
+NELDDEBG_01375	gene	1347	gor			
+NELDDEBG_01376	CDS	537	bioY2		COG1268	Biotin transporter BioY2
+NELDDEBG_01376	gene	537	bioY2			
+NELDDEBG_01377	CDS	216				hypothetical protein
+NELDDEBG_01377	gene	216				
+NELDDEBG_01378	CDS	321				hypothetical protein
+NELDDEBG_01378	gene	321				
+NELDDEBG_01379	CDS	339				hypothetical protein
+NELDDEBG_01379	gene	339				
+NELDDEBG_01380	CDS	720	trmD	2.1.1.228		tRNA (guanine-N(1)-)-methyltransferase
+NELDDEBG_01380	gene	720	trmD			
+NELDDEBG_01381	CDS	519	rimM			Ribosome maturation factor RimM
+NELDDEBG_01381	gene	519	rimM			
+NELDDEBG_01382	CDS	789				hypothetical protein
+NELDDEBG_01382	gene	789				
+NELDDEBG_01383	CDS	240				hypothetical protein
+NELDDEBG_01383	gene	240				
+NELDDEBG_01384	CDS	273	rpsP		COG0228	30S ribosomal protein S16
+NELDDEBG_01384	gene	273	rpsP			
+NELDDEBG_01385	CDS	222				hypothetical protein
+NELDDEBG_01385	gene	222				
+NELDDEBG_01386	CDS	804				hypothetical protein
+NELDDEBG_01386	gene	804				
+NELDDEBG_01387	CDS	1542	ybiT_1		COG0488	putative ABC transporter ATP-binding protein YbiT
+NELDDEBG_01387	gene	1542	ybiT_1			
+NELDDEBG_01388	CDS	483				hypothetical protein
+NELDDEBG_01388	gene	483				
+NELDDEBG_01389	CDS	1086	rlmN	2.1.1.192		putative dual-specificity RNA methyltransferase RlmN
+NELDDEBG_01389	gene	1086	rlmN			
+NELDDEBG_01390	CDS	531				hypothetical protein
+NELDDEBG_01390	gene	531				
+NELDDEBG_01391	CDS	606	sodA	1.15.1.1	COG0605	Superoxide dismutase [Mn]
+NELDDEBG_01391	gene	606	sodA			
+NELDDEBG_01392	CDS	1038	yqeN		COG1466	putative protein YqeN
+NELDDEBG_01392	gene	1038	yqeN			
+NELDDEBG_01393	CDS	936	pyrDA	1.3.98.1	COG0167	putative dihydroorotate dehydrogenase A (fumarate)
+NELDDEBG_01393	gene	936	pyrDA			
+NELDDEBG_01394	CDS	1191	metK	2.5.1.6		S-adenosylmethionine synthase
+NELDDEBG_01394	gene	1191	metK			
+NELDDEBG_01395	CDS	1344	cshB	3.6.4.13	COG0513	DEAD-box ATP-dependent RNA helicase CshB
+NELDDEBG_01395	gene	1344	cshB			
+NELDDEBG_01396	CDS	816	mapP	3.1.3.90		Maltose 6'-phosphate phosphatase
+NELDDEBG_01396	gene	816	mapP			
+NELDDEBG_01397	CDS	2181	ptsG_2	2.7.1.199		PTS system glucose-specific EIICBA component
+NELDDEBG_01397	gene	2181	ptsG_2			
+NELDDEBG_01398	tRNA	74				tRNA-Asn(gtt)
+NELDDEBG_01398	gene	74				
+NELDDEBG_01399	rRNA	109				5S ribosomal RNA
+NELDDEBG_01399	gene	109				
+NELDDEBG_01400	rRNA	2897				23S ribosomal RNA
+NELDDEBG_01400	gene	2897				
+NELDDEBG_01401	tRNA	75				tRNA-Ala(tgc)
+NELDDEBG_01401	gene	75				
+NELDDEBG_01402	rRNA	1539				16S ribosomal RNA
+NELDDEBG_01402	gene	1539				
+NELDDEBG_01403	tRNA	72				tRNA-Glu(ttc)
+NELDDEBG_01403	gene	72				
+NELDDEBG_01404	CDS	480				hypothetical protein
+NELDDEBG_01404	gene	480				
+NELDDEBG_01405	CDS	1959	ftsH	3.4.24.-	COG0465	ATP-dependent zinc metalloprotease FtsH
+NELDDEBG_01405	gene	1959	ftsH			
+NELDDEBG_01406	CDS	543	hpt	2.4.2.8		Hypoxanthine-guanine phosphoribosyltransferase
+NELDDEBG_01406	gene	543	hpt			
+NELDDEBG_01407	CDS	1278	tilS	6.3.4.19	COG0037	tRNA(Ile)-lysidine synthase
+NELDDEBG_01407	gene	1278	tilS			
+NELDDEBG_01408	CDS	1269				hypothetical protein
+NELDDEBG_01408	gene	1269				
+NELDDEBG_01409	CDS	123				hypothetical protein
+NELDDEBG_01409	gene	123				
+NELDDEBG_01410	CDS	369				hypothetical protein
+NELDDEBG_01410	gene	369				
+NELDDEBG_01411	CDS	267				hypothetical protein
+NELDDEBG_01411	gene	267				
+NELDDEBG_01412	CDS	3510	mfd	3.6.4.-		Transcription-repair-coupling factor
+NELDDEBG_01412	gene	3510	mfd			
+NELDDEBG_01413	CDS	570	pth	3.1.1.29		Peptidyl-tRNA hydrolase
+NELDDEBG_01413	gene	570	pth			
+NELDDEBG_01414	CDS	1116	ychF		COG0012	Ribosome-binding ATPase YchF
+NELDDEBG_01414	gene	1116	ychF			
+NELDDEBG_01415	CDS	195				hypothetical protein
+NELDDEBG_01415	gene	195				
+NELDDEBG_01416	CDS	1137	dnaN		COG0592	Beta sliding clamp
+NELDDEBG_01416	gene	1137	dnaN			
+NELDDEBG_01417	CDS	1362	dnaA			Chromosomal replication initiator protein DnaA
+NELDDEBG_01417	gene	1362	dnaA			
+NELDDEBG_01418	CDS	744	spo0J		COG1475	Stage 0 sporulation protein J
+NELDDEBG_01418	gene	744	spo0J			
+NELDDEBG_01419	CDS	1182	htrA	3.4.21.107	COG0265	Serine protease Do-like HtrA
+NELDDEBG_01419	gene	1182	htrA			
+NELDDEBG_01420	CDS	480	rlmH	2.1.1.177	COG1576	Ribosomal RNA large subunit methyltransferase H
+NELDDEBG_01420	gene	480	rlmH			
+NELDDEBG_01421	tRNA	74				tRNA-Arg(tct)
+NELDDEBG_01421	gene	74				
+NELDDEBG_01422	CDS	126	comC1			Competence-stimulating peptide type 1
+NELDDEBG_01422	gene	126	comC1			
+NELDDEBG_01423	CDS	1326				hypothetical protein
+NELDDEBG_01423	gene	1326				
+NELDDEBG_01424	CDS	753	agrA_2		COG3279	Accessory gene regulator A
+NELDDEBG_01424	gene	753	agrA_2			
+NELDDEBG_01425	tRNA	72				tRNA-Glu(ttc)
+NELDDEBG_01425	gene	72				
+NELDDEBG_01426	tRNA	74				tRNA-Asn(gtt)
+NELDDEBG_01426	gene	74				
+NELDDEBG_01427	CDS	543				hypothetical protein
+NELDDEBG_01427	gene	543				
+NELDDEBG_01428	CDS	807				hypothetical protein
+NELDDEBG_01428	gene	807				
+NELDDEBG_01429	CDS	339				hypothetical protein
+NELDDEBG_01429	gene	339				
+NELDDEBG_01430	CDS	2553				hypothetical protein
+NELDDEBG_01430	gene	2553				
+NELDDEBG_01431	CDS	1623	ybiT_2		COG0488	putative ABC transporter ATP-binding protein YbiT
+NELDDEBG_01431	gene	1623	ybiT_2			
+NELDDEBG_01432	CDS	1026	trpS2	6.1.1.2	COG0180	Tryptophan--tRNA ligase 2
+NELDDEBG_01432	gene	1026	trpS2			
+NELDDEBG_01433	CDS	1479	guaB_1	1.1.1.205		Inosine-5'-monophosphate dehydrogenase
+NELDDEBG_01433	gene	1479	guaB_1			
+NELDDEBG_01434	CDS	1098	recF		COG1195	DNA replication and repair protein RecF
+NELDDEBG_01434	gene	1098	recF			
+NELDDEBG_01435	CDS	369				hypothetical protein
+NELDDEBG_01435	gene	369				
+NELDDEBG_01436	CDS	1251				hypothetical protein
+NELDDEBG_01436	gene	1251				
+NELDDEBG_01437	CDS	1284				hypothetical protein
+NELDDEBG_01437	gene	1284				
+NELDDEBG_01438	CDS	822				hypothetical protein
+NELDDEBG_01438	gene	822				
+NELDDEBG_01439	CDS	546	pgsA	2.7.8.5		CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase
+NELDDEBG_01439	gene	546	pgsA			
+NELDDEBG_01440	CDS	828	ecfA1	3.6.3.-	COG1122	Energy-coupling factor transporter ATP-binding protein EcfA1
+NELDDEBG_01440	gene	828	ecfA1			
+NELDDEBG_01441	CDS	840	ecfA2	3.6.3.-	COG1122	Energy-coupling factor transporter ATP-binding protein EcfA2
+NELDDEBG_01441	gene	840	ecfA2			
+NELDDEBG_01442	CDS	795	ecfT_2		COG0619	Energy-coupling factor transporter transmembrane protein EcfT
+NELDDEBG_01442	gene	795	ecfT_2			
+NELDDEBG_01443	CDS	819	mreC		COG1792	Cell shape-determining protein MreC
+NELDDEBG_01443	gene	819	mreC			
+NELDDEBG_01444	CDS	495				hypothetical protein
+NELDDEBG_01444	gene	495				
+NELDDEBG_01445	CDS	1179				hypothetical protein
+NELDDEBG_01445	gene	1179				
+NELDDEBG_01446	CDS	780	rpsB			30S ribosomal protein S2
+NELDDEBG_01446	gene	780	rpsB			
+NELDDEBG_01447	CDS	1041	tsf		COG0264	Elongation factor Ts
+NELDDEBG_01447	gene	1041	tsf			
+NELDDEBG_01448	CDS	231				hypothetical protein
+NELDDEBG_01448	gene	231				
+NELDDEBG_01449	CDS	126				hypothetical protein
+NELDDEBG_01449	gene	126				
+NELDDEBG_01450	CDS	894				hypothetical protein
+NELDDEBG_01450	gene	894				
+NELDDEBG_01451	CDS	297				hypothetical protein
+NELDDEBG_01451	gene	297				
+NELDDEBG_01452	CDS	1137				hypothetical protein
+NELDDEBG_01452	gene	1137				
+NELDDEBG_01453	CDS	483				hypothetical protein
+NELDDEBG_01453	gene	483				
+NELDDEBG_01454	CDS	597			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_01454	gene	597				
+NELDDEBG_01455	CDS	492				hypothetical protein
+NELDDEBG_01455	gene	492				
+NELDDEBG_01456	CDS	2154	lagD_2	3.4.22.-		Lactococcin-G-processing and transport ATP-binding protein LagD
+NELDDEBG_01456	gene	2154	lagD_2			
+NELDDEBG_01457	CDS	1350	lcnD_3			Lactococcin A secretion protein LcnD
+NELDDEBG_01457	gene	1350	lcnD_3			
+NELDDEBG_01458	CDS	708	purC	6.3.2.6	COG0152	Phosphoribosylaminoimidazole-succinocarboxamide synthase
+NELDDEBG_01458	gene	708	purC			
+NELDDEBG_01459	CDS	3726	purL	6.3.5.3	COG0046	Phosphoribosylformylglycinamidine synthase
+NELDDEBG_01459	gene	3726	purL			
+NELDDEBG_01460	CDS	1443	purF	2.4.2.14	COG0034	Amidophosphoribosyltransferase
+NELDDEBG_01460	gene	1443	purF			
+NELDDEBG_01461	CDS	1023	purM	6.3.3.1	COG0150	Phosphoribosylformylglycinamidine cyclo-ligase
+NELDDEBG_01461	gene	1023	purM			
+NELDDEBG_01462	CDS	546	purN	2.1.2.2		Phosphoribosylglycinamide formyltransferase
+NELDDEBG_01462	gene	546	purN			
+NELDDEBG_01463	CDS	510				hypothetical protein
+NELDDEBG_01463	gene	510				
+NELDDEBG_01464	CDS	1548	purH			Bifunctional purine biosynthesis protein PurH
+NELDDEBG_01464	gene	1548	purH			
+NELDDEBG_01465	CDS	1263	purD	6.3.4.13	COG0151	Phosphoribosylamine--glycine ligase
+NELDDEBG_01465	gene	1263	purD			
+NELDDEBG_01466	CDS	489	purE	5.4.99.18	COG0041	N5-carboxyaminoimidazole ribonucleotide mutase
+NELDDEBG_01466	gene	489	purE			
+NELDDEBG_01467	CDS	1092	purK	6.3.4.18		N5-carboxyaminoimidazole ribonucleotide synthase
+NELDDEBG_01467	gene	1092	purK			
+NELDDEBG_01468	CDS	228				hypothetical protein
+NELDDEBG_01468	gene	228				
+NELDDEBG_01469	CDS	1299	purB	4.3.2.2	COG0015	Adenylosuccinate lyase
+NELDDEBG_01469	gene	1299	purB			
+NELDDEBG_01470	CDS	3939	strH	3.2.1.52	COG3525	Beta-N-acetylhexosaminidase
+NELDDEBG_01470	gene	3939	strH			
+NELDDEBG_01471	CDS	717	dasR		COG2188	HTH-type transcriptional repressor DasR
+NELDDEBG_01471	gene	717	dasR			
+NELDDEBG_01472	CDS	1788	bga	3.2.1.23		Beta-galactosidase
+NELDDEBG_01472	gene	1788	bga			
+NELDDEBG_01473	CDS	477	sorB	2.7.1.206	COG3444	PTS system sorbose-specific EIIB component
+NELDDEBG_01473	gene	477	sorB			
+NELDDEBG_01474	CDS	906				hypothetical protein
+NELDDEBG_01474	gene	906				
+NELDDEBG_01475	CDS	816	manZ_3		COG3716	PTS system mannose-specific EIID component
+NELDDEBG_01475	gene	816	manZ_3			
+NELDDEBG_01476	CDS	339	manX_2	2.7.1.191		PTS system mannose-specific EIIAB component
+NELDDEBG_01476	gene	339	manX_2			
+NELDDEBG_01477	CDS	1167	agaS	3.5.99.-	COG2222	Putative D-galactosamine-6-phosphate deaminase AgaS
+NELDDEBG_01477	gene	1167	agaS			
+NELDDEBG_01478	CDS	1038	mro	5.1.3.3	COG2017	Aldose 1-epimerase
+NELDDEBG_01478	gene	1038	mro			
+NELDDEBG_01479	CDS	855	catE	1.13.11.2	COG2514	Catechol-2,3-dioxygenase
+NELDDEBG_01479	gene	855	catE			
+NELDDEBG_01480	CDS	258				hypothetical protein
+NELDDEBG_01480	gene	258				
+NELDDEBG_01481	CDS	363				hypothetical protein
+NELDDEBG_01481	gene	363				
+NELDDEBG_01482	CDS	297		2.8.1.-	COG0607	Sulfurtransferase
+NELDDEBG_01482	gene	297				
+NELDDEBG_01483	CDS	765	deoD_1	2.4.2.1		Purine nucleoside phosphorylase DeoD-type
+NELDDEBG_01483	gene	765	deoD_1			
+NELDDEBG_01484	CDS	1380	ktrB		COG0168	Ktr system potassium uptake protein B
+NELDDEBG_01484	gene	1380	ktrB			
+NELDDEBG_01485	CDS	666	ktrA		COG0569	Ktr system potassium uptake protein A
+NELDDEBG_01485	gene	666	ktrA			
+NELDDEBG_01486	CDS	159				hypothetical protein
+NELDDEBG_01486	gene	159				
+NELDDEBG_01487	CDS	540				hypothetical protein
+NELDDEBG_01487	gene	540				
+NELDDEBG_01488	CDS	411				hypothetical protein
+NELDDEBG_01488	gene	411				
+NELDDEBG_01489	CDS	1770				hypothetical protein
+NELDDEBG_01489	gene	1770				
+NELDDEBG_01490	CDS	1956	mtlR			Transcriptional regulator MtlR
+NELDDEBG_01490	gene	1956	mtlR			
+NELDDEBG_01491	CDS	438	mtlF		COG2213	Mannitol-specific phosphotransferase enzyme IIA component
+NELDDEBG_01491	gene	438	mtlF			
+NELDDEBG_01492	CDS	1137	mtlD	1.1.1.17	COG0246	Mannitol-1-phosphate 5-dehydrogenase
+NELDDEBG_01492	gene	1137	mtlD			
+NELDDEBG_01493	CDS	1284	tig	5.2.1.8	COG0544	Trigger factor
+NELDDEBG_01493	gene	1284	tig			
+NELDDEBG_01494	CDS	2367	recD2	3.6.4.12	COG0507	ATP-dependent RecD-like DNA helicase
+NELDDEBG_01494	gene	2367	recD2			
+NELDDEBG_01495	CDS	615	spsB	3.4.21.89		Signal peptidase IB
+NELDDEBG_01495	gene	615	spsB			
+NELDDEBG_01496	CDS	873	rnhC	3.1.26.4	COG1039	Ribonuclease HIII
+NELDDEBG_01496	gene	873	rnhC			
+NELDDEBG_01497	CDS	303				hypothetical protein
+NELDDEBG_01497	gene	303				
+NELDDEBG_01498	CDS	549				hypothetical protein
+NELDDEBG_01498	gene	549				
+NELDDEBG_01499	CDS	2337	mutS2	3.1.-.-		Endonuclease MutS2
+NELDDEBG_01499	gene	2337	mutS2			
+NELDDEBG_01500	CDS	1323	alsT		COG1115	Amino-acid carrier protein AlsT
+NELDDEBG_01500	gene	1323	alsT			
+NELDDEBG_01501	CDS	549				hypothetical protein
+NELDDEBG_01501	gene	549				
+NELDDEBG_01502	CDS	900				hypothetical protein
+NELDDEBG_01502	gene	900				
+NELDDEBG_01503	CDS	1275	serS	6.1.1.11		Serine--tRNA ligase
+NELDDEBG_01503	gene	1275	serS			
+NELDDEBG_01504	CDS	372				hypothetical protein
+NELDDEBG_01504	gene	372				
+NELDDEBG_01505	CDS	1365	yclM	2.7.2.4	COG0527	Aspartokinase 3
+NELDDEBG_01505	gene	1365	yclM			
+NELDDEBG_01506	CDS	786	fabM	5.3.3.14	COG1024	Trans-2-decenoyl-[acyl-carrier-protein] isomerase
+NELDDEBG_01506	gene	786	fabM			
+NELDDEBG_01507	CDS	435				hypothetical protein
+NELDDEBG_01507	gene	435				
+NELDDEBG_01508	CDS	975	fabH	2.3.1.180		3-oxoacyl-[acyl-carrier-protein] synthase 3
+NELDDEBG_01508	gene	975	fabH			
+NELDDEBG_01509	CDS	225	acpA		COG0236	Acyl carrier protein
+NELDDEBG_01509	gene	225	acpA			
+NELDDEBG_01510	CDS	975		1.13.12.16	COG2070	Nitronate monooxygenase
+NELDDEBG_01510	gene	975				
+NELDDEBG_01511	CDS	921	fabD	2.3.1.39	COG0331	Malonyl CoA-acyl carrier protein transacylase
+NELDDEBG_01511	gene	921	fabD			
+NELDDEBG_01512	CDS	732	fabG	1.1.1.100		3-oxoacyl-[acyl-carrier-protein] reductase FabG
+NELDDEBG_01512	gene	732	fabG			
+NELDDEBG_01513	CDS	1236	fabF	2.3.1.179		3-oxoacyl-[acyl-carrier-protein] synthase 2
+NELDDEBG_01513	gene	1236	fabF			
+NELDDEBG_01514	CDS	486	accB			Biotin carboxyl carrier protein of acetyl-CoA carboxylase
+NELDDEBG_01514	gene	486	accB			
+NELDDEBG_01515	CDS	423	fabZ	4.2.1.59	COG0764	3-hydroxyacyl-[acyl-carrier-protein] dehydratase FabZ
+NELDDEBG_01515	gene	423	fabZ			
+NELDDEBG_01516	CDS	1368	accC	6.3.4.14	COG0439	Biotin carboxylase
+NELDDEBG_01516	gene	1368	accC			
+NELDDEBG_01517	CDS	867	accD	6.4.1.2	COG0777	Acetyl-coenzyme A carboxylase carboxyl transferase subunit beta
+NELDDEBG_01517	gene	867	accD			
+NELDDEBG_01518	CDS	768	accA	6.4.1.2	COG0825	Acetyl-coenzyme A carboxylase carboxyl transferase subunit alpha
+NELDDEBG_01518	gene	768	accA			
+NELDDEBG_01519	CDS	333				hypothetical protein
+NELDDEBG_01519	gene	333				
+NELDDEBG_01520	CDS	423	nusB		COG0781	Transcription antitermination protein NusB
+NELDDEBG_01520	gene	423	nusB			
+NELDDEBG_01521	CDS	390				putative protein
+NELDDEBG_01521	gene	390				
+NELDDEBG_01522	CDS	561	efp			Elongation factor P
+NELDDEBG_01522	gene	561	efp			
+NELDDEBG_01523	CDS	1443	gatB	6.3.5.-	COG0064	Aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase subunit B
+NELDDEBG_01523	gene	1443	gatB			
+NELDDEBG_01524	CDS	1467	gatA	6.3.5.7	COG0154	Glutamyl-tRNA(Gln) amidotransferase subunit A
+NELDDEBG_01524	gene	1467	gatA			
+NELDDEBG_01525	CDS	303	gatC_2	6.3.5.-	COG0721	Glutamyl-tRNA(Gln) amidotransferase subunit C
+NELDDEBG_01525	gene	303	gatC_2			
+NELDDEBG_01526	CDS	1545	prfC			Peptide chain release factor 3
+NELDDEBG_01526	gene	1545	prfC			
+NELDDEBG_01527	CDS	189	rpmB		COG0227	50S ribosomal protein L28
+NELDDEBG_01527	gene	189	rpmB			
+NELDDEBG_01528	CDS	366				putative protein
+NELDDEBG_01528	gene	366				
+NELDDEBG_01529	CDS	1668				putative protein
+NELDDEBG_01529	gene	1668				
+NELDDEBG_01530	CDS	774	srlR		COG1349	Glucitol operon repressor
+NELDDEBG_01530	gene	774	srlR			
+NELDDEBG_01531	CDS	1404	rhaB	2.7.1.5	COG1070	L-Rhamnulokinase
+NELDDEBG_01531	gene	1404	rhaB			
+NELDDEBG_01532	CDS	639	fucA	4.1.2.17	COG0235	L-fuculose phosphate aldolase
+NELDDEBG_01532	gene	639	fucA			
+NELDDEBG_01533	CDS	441	fucU	5.1.3.29	COG4154	L-fucose mutarotase
+NELDDEBG_01533	gene	441	fucU			
+NELDDEBG_01534	CDS	444	manX_3	2.7.1.191		PTS system mannose-specific EIIAB component
+NELDDEBG_01534	gene	444	manX_3			
+NELDDEBG_01535	CDS	471	levE_2	2.7.1.202	COG3444	PTS system fructose-specific EIIB component
+NELDDEBG_01535	gene	471	levE_2			
+NELDDEBG_01536	CDS	774	sorC_2		COG3715	PTS system sorbose-specific EIIC component
+NELDDEBG_01536	gene	774	sorC_2			
+NELDDEBG_01537	CDS	801	manZ_4		COG3716	PTS system mannose-specific EIID component
+NELDDEBG_01537	gene	801	manZ_4			
+NELDDEBG_01538	CDS	2295				hypothetical protein
+NELDDEBG_01538	gene	2295				
+NELDDEBG_01539	CDS	3117				hypothetical protein
+NELDDEBG_01539	gene	3117				
+NELDDEBG_01540	CDS	1767	fucI	5.3.1.25	COG2407	L-fucose isomerase
+NELDDEBG_01540	gene	1767	fucI			
+NELDDEBG_01541	CDS	1152	adhB	1.1.1.1		Alcohol dehydrogenase 2
+NELDDEBG_01541	gene	1152	adhB			
+NELDDEBG_01542	CDS	900	qmcA		COG0330	Protein QmcA
+NELDDEBG_01542	gene	900	qmcA			
+NELDDEBG_01543	CDS	291				hypothetical protein
+NELDDEBG_01543	gene	291				
+NELDDEBG_01544	CDS	1332		3.4.13.-	COG0624	Putative dipeptidase
+NELDDEBG_01544	gene	1332				
+NELDDEBG_01545	CDS	1512				hypothetical protein
+NELDDEBG_01545	gene	1512				
+NELDDEBG_01546	CDS	948	arcC1	2.7.2.2	COG0549	Carbamate kinase 1
+NELDDEBG_01546	gene	948	arcC1			
+NELDDEBG_01547	CDS	1017	arcB	2.1.3.3		Ornithine carbamoyltransferase, catabolic
+NELDDEBG_01547	gene	1017	arcB			
+NELDDEBG_01548	CDS	1230	arcA	3.5.3.6	COG2235	Arginine deiminase
+NELDDEBG_01548	gene	1230	arcA			
+NELDDEBG_01549	CDS	1680				hypothetical protein
+NELDDEBG_01549	gene	1680				
+NELDDEBG_01550	CDS	2085				hypothetical protein
+NELDDEBG_01550	gene	2085				
+NELDDEBG_01551	CDS	1281				hypothetical protein
+NELDDEBG_01551	gene	1281				
+NELDDEBG_01552	CDS	2646	mngB	3.2.1.170	COG0383	Mannosylglycerate hydrolase
+NELDDEBG_01552	gene	2646	mngB			
+NELDDEBG_01553	CDS	882	bglK_2	2.7.1.85	COG1940	Beta-glucoside kinase
+NELDDEBG_01553	gene	882	bglK_2			
+NELDDEBG_01554	CDS	1881				hypothetical protein
+NELDDEBG_01554	gene	1881				
+NELDDEBG_01555	CDS	216				hypothetical protein
+NELDDEBG_01555	gene	216				
+NELDDEBG_01556	CDS	348				hypothetical protein
+NELDDEBG_01556	gene	348				
+NELDDEBG_01557	CDS	636				hypothetical protein
+NELDDEBG_01557	gene	636				
+NELDDEBG_01558	CDS	885				IS1380 family transposase ISSpn5
+NELDDEBG_01558	gene	885				
+NELDDEBG_01559	CDS	492				IS1380 family transposase ISSpn5
+NELDDEBG_01559	gene	492				
+NELDDEBG_01560	CDS	1452				hypothetical protein
+NELDDEBG_01560	gene	1452				
+NELDDEBG_01561	CDS	642	yxdL_2		COG1136	ABC transporter ATP-binding protein YxdL
+NELDDEBG_01561	gene	642	yxdL_2			
+NELDDEBG_01562	CDS	1353	murD	6.3.2.9	COG0771	UDP-N-acetylmuramoylalanine--D-glutamate ligase
+NELDDEBG_01562	gene	1353	murD			
+NELDDEBG_01563	CDS	1059	murG	2.4.1.227		UDP-N-acetylglucosamine--N-acetylmuramyl-(pentapeptide) pyrophosphoryl-undecaprenol N-acetylglucosamine transferase
+NELDDEBG_01563	gene	1059	murG			
+NELDDEBG_01564	CDS	1179	divIB		COG1589	Cell division protein DivIB
+NELDDEBG_01564	gene	1179	divIB			
+NELDDEBG_01565	CDS	702	pyrF	4.1.1.23	COG0284	Orotidine 5'-phosphate decarboxylase
+NELDDEBG_01565	gene	702	pyrF			
+NELDDEBG_01566	CDS	633	pyrE	2.4.2.10	COG0461	Orotate phosphoribosyltransferase
+NELDDEBG_01566	gene	633	pyrE			
+NELDDEBG_01567	CDS	351				hypothetical protein
+NELDDEBG_01567	gene	351				
+NELDDEBG_01568	CDS	765				hypothetical protein
+NELDDEBG_01568	gene	765				
+NELDDEBG_01569	CDS	753				hypothetical protein
+NELDDEBG_01569	gene	753				
+NELDDEBG_01570	CDS	705				hypothetical protein
+NELDDEBG_01570	gene	705				
+NELDDEBG_01571	CDS	648	natA_2		COG4555	ABC transporter ATP-binding protein NatA
+NELDDEBG_01571	gene	648	natA_2			
+NELDDEBG_01572	CDS	861	glnH_2		COG0834	ABC transporter glutamine-binding protein GlnH
+NELDDEBG_01572	gene	861	glnH_2			
+NELDDEBG_01573	CDS	396	artM_2		COG1126	Arginine transport ATP-binding protein ArtM
+NELDDEBG_01573	gene	396	artM_2			
+NELDDEBG_01574	CDS	264	glnQ_4		COG1126	Glutamine transport ATP-binding protein GlnQ
+NELDDEBG_01574	gene	264	glnQ_4			
+NELDDEBG_01575	CDS	678	yecS_2		COG0765	L-cystine transport system permease protein YecS
+NELDDEBG_01575	gene	678	yecS_2			
+NELDDEBG_01576	CDS	621	glnM_2		COG0765	putative glutamine ABC transporter permease protein GlnM
+NELDDEBG_01576	gene	621	glnM_2			
+NELDDEBG_01577	CDS	147				hypothetical protein
+NELDDEBG_01577	gene	147				
+NELDDEBG_01578	CDS	1491	lysS	6.1.1.6	COG1190	Lysine--tRNA ligase
+NELDDEBG_01578	gene	1491	lysS			
+NELDDEBG_01579	CDS	1137	hmo	1.1.3.46		4-hydroxymandelate oxidase
+NELDDEBG_01579	gene	1137	hmo			
+NELDDEBG_01580	CDS	669	tenA_1	3.5.99.2	COG0819	Aminopyrimidine aminohydrolase
+NELDDEBG_01580	gene	669	tenA_1			
+NELDDEBG_01581	CDS	783	thiM_1	2.7.1.50		Hydroxyethylthiazole kinase
+NELDDEBG_01581	gene	783	thiM_1			
+NELDDEBG_01582	CDS	630	thiE_1	2.5.1.3		Thiamine-phosphate synthase
+NELDDEBG_01582	gene	630	thiE_1			
+NELDDEBG_01583	CDS	561	ykoE		COG4721	Putative HMP/thiamine permease protein YkoE
+NELDDEBG_01583	gene	561	ykoE			
+NELDDEBG_01584	CDS	165				hypothetical protein
+NELDDEBG_01584	gene	165				
+NELDDEBG_01585	CDS	1125	ykoD_3	3.6.3.-	COG1122	Putative HMP/thiamine import ATP-binding protein YkoD
+NELDDEBG_01585	gene	1125	ykoD_3			
+NELDDEBG_01586	CDS	651				hypothetical protein
+NELDDEBG_01586	gene	651				
+NELDDEBG_01587	CDS	693	tenA_2	3.5.99.2	COG0819	Aminopyrimidine aminohydrolase
+NELDDEBG_01587	gene	693	tenA_2			
+NELDDEBG_01588	CDS	525				hypothetical protein
+NELDDEBG_01588	gene	525				
+NELDDEBG_01589	CDS	804	thiM_2	2.7.1.50	COG2145	Hydroxyethylthiazole kinase
+NELDDEBG_01589	gene	804	thiM_2			
+NELDDEBG_01590	CDS	633	thiE_2	2.5.1.3	COG0352	Thiamine-phosphate synthase
+NELDDEBG_01590	gene	633	thiE_2			
+NELDDEBG_01591	CDS	792	thiD	2.7.1.49		Hydroxymethylpyrimidine/phosphomethylpyrimidine kinase
+NELDDEBG_01591	gene	792	thiD			
+NELDDEBG_01592	CDS	396	copY			Transcriptional repressor CopY
+NELDDEBG_01592	gene	396	copY			
+NELDDEBG_01593	CDS	372				hypothetical protein
+NELDDEBG_01593	gene	372				
+NELDDEBG_01594	CDS	2244	pacS	3.6.3.54		putative copper-transporting ATPase PacS
+NELDDEBG_01594	gene	2244	pacS			
+NELDDEBG_01595	CDS	1776	pox5	1.2.3.3	COG0028	Pyruvate oxidase
+NELDDEBG_01595	gene	1776	pox5			
+NELDDEBG_01596	CDS	348				hypothetical protein
+NELDDEBG_01596	gene	348				
+NELDDEBG_01597	CDS	333				hypothetical protein
+NELDDEBG_01597	gene	333				
+NELDDEBG_01598	CDS	417				hypothetical protein
+NELDDEBG_01598	gene	417				
+NELDDEBG_01599	CDS	351				hypothetical protein
+NELDDEBG_01599	gene	351				
+NELDDEBG_01600	CDS	204				hypothetical protein
+NELDDEBG_01600	gene	204				
+NELDDEBG_01601	CDS	6633				hypothetical protein
+NELDDEBG_01601	gene	6633				
+NELDDEBG_01602	CDS	723				hypothetical protein
+NELDDEBG_01602	gene	723				
+NELDDEBG_01603	CDS	2739				hypothetical protein
+NELDDEBG_01603	gene	2739				
+NELDDEBG_01604	CDS	477				hypothetical protein
+NELDDEBG_01604	gene	477				
+NELDDEBG_01605	CDS	669				hypothetical protein
+NELDDEBG_01605	gene	669				
+NELDDEBG_01606	CDS	345				hypothetical protein
+NELDDEBG_01606	gene	345				
+NELDDEBG_01607	CDS	348				hypothetical protein
+NELDDEBG_01607	gene	348				
+NELDDEBG_01608	CDS	306				hypothetical protein
+NELDDEBG_01608	gene	306				
+NELDDEBG_01609	CDS	336				hypothetical protein
+NELDDEBG_01609	gene	336				
+NELDDEBG_01610	CDS	1254				hypothetical protein
+NELDDEBG_01610	gene	1254				
+NELDDEBG_01611	CDS	543				hypothetical protein
+NELDDEBG_01611	gene	543				
+NELDDEBG_01612	CDS	1143				hypothetical protein
+NELDDEBG_01612	gene	1143				
+NELDDEBG_01613	CDS	1713				hypothetical protein
+NELDDEBG_01613	gene	1713				
+NELDDEBG_01614	CDS	480				hypothetical protein
+NELDDEBG_01614	gene	480				
+NELDDEBG_01615	CDS	543	xerC_2			Tyrosine recombinase XerC
+NELDDEBG_01615	gene	543	xerC_2			
+NELDDEBG_01616	CDS	465				hypothetical protein
+NELDDEBG_01616	gene	465				
+NELDDEBG_01617	CDS	354				hypothetical protein
+NELDDEBG_01617	gene	354				
+NELDDEBG_01618	CDS	93				hypothetical protein
+NELDDEBG_01618	gene	93				
+NELDDEBG_01619	CDS	315				hypothetical protein
+NELDDEBG_01619	gene	315				
+NELDDEBG_01620	CDS	168				hypothetical protein
+NELDDEBG_01620	gene	168				
+NELDDEBG_01621	CDS	105				hypothetical protein
+NELDDEBG_01621	gene	105				
+NELDDEBG_01622	CDS	228				hypothetical protein
+NELDDEBG_01622	gene	228				
+NELDDEBG_01623	CDS	195				hypothetical protein
+NELDDEBG_01623	gene	195				
+NELDDEBG_01624	CDS	771				hypothetical protein
+NELDDEBG_01624	gene	771				
+NELDDEBG_01625	CDS	159				hypothetical protein
+NELDDEBG_01625	gene	159				
+NELDDEBG_01626	CDS	858				hypothetical protein
+NELDDEBG_01626	gene	858				
+NELDDEBG_01627	CDS	297				hypothetical protein
+NELDDEBG_01627	gene	297				
+NELDDEBG_01628	CDS	321				hypothetical protein
+NELDDEBG_01628	gene	321				
+NELDDEBG_01629	CDS	258				hypothetical protein
+NELDDEBG_01629	gene	258				
+NELDDEBG_01630	CDS	711				hypothetical protein
+NELDDEBG_01630	gene	711				
+NELDDEBG_01631	CDS	786				hypothetical protein
+NELDDEBG_01631	gene	786				
+NELDDEBG_01632	CDS	165				hypothetical protein
+NELDDEBG_01632	gene	165				
+NELDDEBG_01633	CDS	210				hypothetical protein
+NELDDEBG_01633	gene	210				
+NELDDEBG_01634	CDS	384				hypothetical protein
+NELDDEBG_01634	gene	384				
+NELDDEBG_01635	CDS	369				hypothetical protein
+NELDDEBG_01635	gene	369				
+NELDDEBG_01636	CDS	234				hypothetical protein
+NELDDEBG_01636	gene	234				
+NELDDEBG_01637	CDS	264				hypothetical protein
+NELDDEBG_01637	gene	264				
+NELDDEBG_01638	CDS	381				hypothetical protein
+NELDDEBG_01638	gene	381				
+NELDDEBG_01639	CDS	924	polC_3	2.7.7.7		DNA polymerase III PolC-type
+NELDDEBG_01639	gene	924	polC_3			
+NELDDEBG_01640	CDS	1149	xerC_3			Tyrosine recombinase XerC
+NELDDEBG_01640	gene	1149	xerC_3			
+NELDDEBG_01641	CDS	1329	purA	6.3.4.4	COG0104	Adenylosuccinate synthetase
+NELDDEBG_01641	gene	1329	purA			
+NELDDEBG_01642	CDS	237				hypothetical protein
+NELDDEBG_01642	gene	237				
+NELDDEBG_01643	CDS	3276	rexB	3.1.-.-	COG3857	ATP-dependent helicase/deoxyribonuclease subunit B
+NELDDEBG_01643	gene	3276	rexB			
+NELDDEBG_01644	CDS	3651	addA	3.1.-.-	COG1074	ATP-dependent helicase/nuclease subunit A
+NELDDEBG_01644	gene	3651	addA			
+NELDDEBG_01645	CDS	1179				hypothetical protein
+NELDDEBG_01645	gene	1179				
+NELDDEBG_01646	CDS	6054	iga	3.4.24.13		Immunoglobulin A1 protease
+NELDDEBG_01646	gene	6054	iga			
+NELDDEBG_01647	CDS	852	rbgA		COG1161	Ribosome biogenesis GTPase A
+NELDDEBG_01647	gene	852	rbgA			
+NELDDEBG_01648	CDS	780	rnhB	3.1.26.4	COG0164	Ribonuclease HII
+NELDDEBG_01648	gene	780	rnhB			
+NELDDEBG_01649	CDS	1551	clcA		COG0038	H(+)/Cl(-) exchange transporter ClcA
+NELDDEBG_01649	gene	1551	clcA			
+NELDDEBG_01650	CDS	1071	xerS		COG0582	Tyrosine recombinase XerS
+NELDDEBG_01650	gene	1071	xerS			
+NELDDEBG_01651	CDS	153				hypothetical protein
+NELDDEBG_01651	gene	153				
+NELDDEBG_01652	CDS	990	lplJ	6.3.1.20	COG0095	Lipoate-protein ligase LplJ
+NELDDEBG_01652	gene	990	lplJ			
+NELDDEBG_01653	CDS	1704		1.8.1.4	COG1249	Dihydrolipoyl dehydrogenase
+NELDDEBG_01653	gene	1704				
+NELDDEBG_01654	CDS	1044	pdhC	2.3.1.12		Dihydrolipoyllysine-residue acetyltransferase component of pyruvate dehydrogenase complex
+NELDDEBG_01654	gene	1044	pdhC			
+NELDDEBG_01655	CDS	993	bfmBAB	1.2.4.4	COG0022	2-oxoisovalerate dehydrogenase subunit beta
+NELDDEBG_01655	gene	993	bfmBAB			
+NELDDEBG_01656	CDS	969	acoA	1.1.1.-	COG1071	Acetoin:2,6-dichlorophenolindophenol oxidoreductase subunit alpha
+NELDDEBG_01656	gene	969	acoA			
+NELDDEBG_01657	CDS	1362	norM		COG0534	Multidrug resistance protein NorM
+NELDDEBG_01657	gene	1362	norM			
+NELDDEBG_01658	CDS	261				hypothetical protein
+NELDDEBG_01658	gene	261				
+NELDDEBG_01659	CDS	1269	pyrC	3.5.2.3	COG0044	Dihydroorotase
+NELDDEBG_01659	gene	1269	pyrC			
+NELDDEBG_01660	CDS	465	mutX	3.6.1.55	COG0494	8-oxo-dGTP diphosphatase
+NELDDEBG_01660	gene	465	mutX			
+NELDDEBG_01661	CDS	654	ung	3.2.2.27	COG0692	Uracil-DNA glycosylase
+NELDDEBG_01661	gene	654	ung			
+NELDDEBG_01662	CDS	648				hypothetical protein
+NELDDEBG_01662	gene	648				
+NELDDEBG_01663	CDS	714	yfnB	3.-.-.-	COG1011	Putative HAD-hydrolase YfnB
+NELDDEBG_01663	gene	714	yfnB			
+NELDDEBG_01664	CDS	381	dhaM	2.7.1.121	COG3412	PTS-dependent dihydroxyacetone kinase, phosphotransferase subunit DhaM
+NELDDEBG_01664	gene	381	dhaM			
+NELDDEBG_01665	CDS	126				hypothetical protein
+NELDDEBG_01665	gene	126				
+NELDDEBG_01666	CDS	1227				hypothetical protein
+NELDDEBG_01666	gene	1227				
+NELDDEBG_01667	CDS	666				hypothetical protein
+NELDDEBG_01667	gene	666				
+NELDDEBG_01668	CDS	678				hypothetical protein
+NELDDEBG_01668	gene	678				
+NELDDEBG_01669	CDS	1257				hypothetical protein
+NELDDEBG_01669	gene	1257				
+NELDDEBG_01670	CDS	1278	nisC			Nisin biosynthesis protein NisC
+NELDDEBG_01670	gene	1278	nisC			
+NELDDEBG_01671	CDS	1881				hypothetical protein
+NELDDEBG_01671	gene	1881				
+NELDDEBG_01672	CDS	930	nisB			Nisin biosynthesis protein NisB
+NELDDEBG_01672	gene	930	nisB			
+NELDDEBG_01673	CDS	105				hypothetical protein
+NELDDEBG_01673	gene	105				
+NELDDEBG_01674	CDS	864				hypothetical protein
+NELDDEBG_01674	gene	864				
+NELDDEBG_01675	CDS	249	hasB	1.1.1.22	COG1004	UDP-glucose 6-dehydrogenase
+NELDDEBG_01675	gene	249	hasB			
+NELDDEBG_01676	CDS	651	ugd	1.1.1.22	COG1004	UDP-glucose 6-dehydrogenase
+NELDDEBG_01676	gene	651	ugd			
+NELDDEBG_01677	CDS	750	btrD	3.5.1.112		2'-N-acetylparomamine deacetylase
+NELDDEBG_01677	gene	750	btrD			
+NELDDEBG_01678	CDS	411				hypothetical protein
+NELDDEBG_01678	gene	411				
+NELDDEBG_01679	CDS	210				hypothetical protein
+NELDDEBG_01679	gene	210				
+NELDDEBG_01680	CDS	1617	msbA_1	3.6.3.-	COG1132	Lipid A export ATP-binding/permease protein MsbA
+NELDDEBG_01680	gene	1617	msbA_1			
+NELDDEBG_01681	CDS	876				hypothetical protein
+NELDDEBG_01681	gene	876				
+NELDDEBG_01682	CDS	462	bshA	2.4.1.-	COG0438	N-acetyl-alpha-D-glucosaminyl L-malate synthase
+NELDDEBG_01682	gene	462	bshA			
+NELDDEBG_01683	CDS	555				hypothetical protein
+NELDDEBG_01683	gene	555				
+NELDDEBG_01684	CDS	930				hypothetical protein
+NELDDEBG_01684	gene	930				
+NELDDEBG_01685	CDS	387				ISL3 family transposase ISSth1
+NELDDEBG_01685	gene	387				
+NELDDEBG_01686	CDS	1011	tsaD	2.3.1.234	COG0533	tRNA N6-adenosine threonylcarbamoyltransferase
+NELDDEBG_01686	gene	1011	tsaD			
+NELDDEBG_01687	CDS	438				hypothetical protein
+NELDDEBG_01687	gene	438				
+NELDDEBG_01688	CDS	684	tsaB		COG1214	tRNA threonylcarbamoyladenosine biosynthesis protein TsaB
+NELDDEBG_01688	gene	684	tsaB			
+NELDDEBG_01689	CDS	186				hypothetical protein
+NELDDEBG_01689	gene	186				
+NELDDEBG_01690	CDS	153				hypothetical protein
+NELDDEBG_01690	gene	153				
+NELDDEBG_01691	CDS	108				hypothetical protein
+NELDDEBG_01691	gene	108				
+NELDDEBG_01692	CDS	234				hypothetical protein
+NELDDEBG_01692	gene	234				
+NELDDEBG_01693	CDS	1680	rnj1	3.1.-.-		Ribonuclease J 1
+NELDDEBG_01693	gene	1680	rnj1			
+NELDDEBG_01694	CDS	1914	mnmG			tRNA uridine 5-carboxymethylaminomethyl modification enzyme MnmG
+NELDDEBG_01694	gene	1914	mnmG			
+NELDDEBG_01695	CDS	456				hypothetical protein
+NELDDEBG_01695	gene	456				
+NELDDEBG_01696	CDS	1122	mnmA	2.8.1.13	COG0482	tRNA-specific 2-thiouridylase MnmA
+NELDDEBG_01696	gene	1122	mnmA			
+NELDDEBG_01697	CDS	603	lytB_2	3.2.1.96	COG4193	Putative endo-beta-N-acetylglucosaminidase
+NELDDEBG_01697	gene	603	lytB_2			
+NELDDEBG_01698	CDS	960				hypothetical protein
+NELDDEBG_01698	gene	960				
+NELDDEBG_01699	CDS	546				hypothetical protein
+NELDDEBG_01699	gene	546				
+NELDDEBG_01700	CDS	195				hypothetical protein
+NELDDEBG_01700	gene	195				
+NELDDEBG_01701	CDS	633	liaR		COG2197	Transcriptional regulatory protein LiaR
+NELDDEBG_01701	gene	633	liaR			
+NELDDEBG_01702	CDS	996				hypothetical protein
+NELDDEBG_01702	gene	996				
+NELDDEBG_01703	CDS	699	liaF		COG4758	Protein LiaF
+NELDDEBG_01703	gene	699	liaF			
+NELDDEBG_01704	CDS	1011	fni	5.3.3.2		Isopentenyl-diphosphate delta-isomerase
+NELDDEBG_01704	gene	1011	fni			
+NELDDEBG_01705	CDS	1008		2.7.4.2		Phosphomevalonate kinase
+NELDDEBG_01705	gene	1008				
+NELDDEBG_01706	CDS	954				hypothetical protein
+NELDDEBG_01706	gene	954				
+NELDDEBG_01707	CDS	879	galK_2	2.7.1.6		Galactokinase
+NELDDEBG_01707	gene	879	galK_2			
+NELDDEBG_01708	CDS	1017				hypothetical protein
+NELDDEBG_01708	gene	1017				
+NELDDEBG_01709	CDS	690	arlR_2		COG0745	Response regulator ArlR
+NELDDEBG_01709	gene	690	arlR_2			
+NELDDEBG_01710	CDS	1425	gnd	1.1.1.44	COG0362	6-phosphogluconate dehydrogenase, decarboxylating
+NELDDEBG_01710	gene	1425	gnd			
+NELDDEBG_01711	CDS	1395	mapZ			Mid-cell-anchored protein Z
+NELDDEBG_01711	gene	1395	mapZ			
+NELDDEBG_01712	CDS	1158	rlmL		COG0116	Ribosomal RNA large subunit methyltransferase K/L
+NELDDEBG_01712	gene	1158	rlmL			
+NELDDEBG_01713	CDS	330	gpsB		COG3599	Cell cycle protein GpsB
+NELDDEBG_01713	gene	330	gpsB			
+NELDDEBG_01714	CDS	528				hypothetical protein
+NELDDEBG_01714	gene	528				
+NELDDEBG_01715	CDS	597	recU	3.1.22.-	COG3331	Holliday junction resolvase RecU
+NELDDEBG_01715	gene	597	recU			
+NELDDEBG_01716	CDS	2160	ponA		COG0744	Penicillin-binding protein 1A
+NELDDEBG_01716	gene	2160	ponA			
+NELDDEBG_01717	CDS	5304		3.2.1.97		Endo-alpha-N-acetylgalactosaminidase
+NELDDEBG_01717	gene	5304				
+NELDDEBG_01718	CDS	1983	sarA_2		COG4166	Oligopeptide-binding protein SarA
+NELDDEBG_01718	gene	1983	sarA_2			
+NELDDEBG_01719	CDS	1356	rlmCD	2.1.1.189	COG2265	23S rRNA (uracil-C(5))-methyltransferase RlmCD
+NELDDEBG_01719	gene	1356	rlmCD			
+NELDDEBG_01720	CDS	777				hypothetical protein
+NELDDEBG_01720	gene	777				
+NELDDEBG_01721	CDS	777	recX			Regulatory protein RecX
+NELDDEBG_01721	gene	777	recX			
+NELDDEBG_01722	CDS	534				hypothetical protein
+NELDDEBG_01722	gene	534				
+NELDDEBG_01723	CDS	348				hypothetical protein
+NELDDEBG_01723	gene	348				
+NELDDEBG_01724	CDS	333				hypothetical protein
+NELDDEBG_01724	gene	333				
+NELDDEBG_01725	CDS	774	ubiE_3	2.1.1.163		Ubiquinone/menaquinone biosynthesis C-methyltransferase UbiE
+NELDDEBG_01725	gene	774	ubiE_3			
+NELDDEBG_01726	CDS	327	queH_1	1.17.99.6	COG1636	Epoxyqueuosine reductase QueH
+NELDDEBG_01726	gene	327	queH_1			
+NELDDEBG_01727	CDS	93	queH_2	1.17.99.6	COG1636	Epoxyqueuosine reductase QueH
+NELDDEBG_01727	gene	93	queH_2			
+NELDDEBG_01728	CDS	1623	groL		COG0459	60 kDa chaperonin
+NELDDEBG_01728	gene	1623	groL			
+NELDDEBG_01729	CDS	285	groS		COG0234	10 kDa chaperonin
+NELDDEBG_01729	gene	285	groS			
+NELDDEBG_01730	CDS	396	ssb_2		COG0629	Single-stranded DNA-binding protein
+NELDDEBG_01730	gene	396	ssb_2			
+NELDDEBG_01731	CDS	762	ydfG	1.1.1.381	COG4221	NADP-dependent 3-hydroxy acid dehydrogenase YdfG
+NELDDEBG_01731	gene	762	ydfG			
+NELDDEBG_01732	CDS	627	pheT_1	6.1.1.20		Phenylalanine--tRNA ligase beta subunit
+NELDDEBG_01732	gene	627	pheT_1			
+NELDDEBG_01733	CDS	318	ytpP			Thioredoxin-like protein YtpP
+NELDDEBG_01733	gene	318	ytpP			
+NELDDEBG_01734	CDS	270				hypothetical protein
+NELDDEBG_01734	gene	270				
+NELDDEBG_01735	CDS	675				hypothetical protein
+NELDDEBG_01735	gene	675				
+NELDDEBG_01736	CDS	447				hypothetical protein
+NELDDEBG_01736	gene	447				
+NELDDEBG_01737	CDS	504				hypothetical protein
+NELDDEBG_01737	gene	504				
+NELDDEBG_01738	CDS	363				hypothetical protein
+NELDDEBG_01738	gene	363				
+NELDDEBG_01739	CDS	1032			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_01739	gene	1032				
+NELDDEBG_01740	CDS	828			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_01740	gene	828				
+NELDDEBG_01741	CDS	450				hypothetical protein
+NELDDEBG_01741	gene	450				
+NELDDEBG_01742	CDS	717	yeeN		COG0217	putative transcriptional regulatory protein YeeN
+NELDDEBG_01742	gene	717	yeeN			
+NELDDEBG_01743	CDS	1416	ply			Pneumolysin
+NELDDEBG_01743	gene	1416	ply			
+NELDDEBG_01744	CDS	411				hypothetical protein
+NELDDEBG_01744	gene	411				
+NELDDEBG_01745	CDS	609				hypothetical protein
+NELDDEBG_01745	gene	609				
+NELDDEBG_01746	CDS	459				hypothetical protein
+NELDDEBG_01746	gene	459				
+NELDDEBG_01747	CDS	132				hypothetical protein
+NELDDEBG_01747	gene	132				
+NELDDEBG_01748	CDS	261				hypothetical protein
+NELDDEBG_01748	gene	261				
+NELDDEBG_01749	CDS	543				hypothetical protein
+NELDDEBG_01749	gene	543				
+NELDDEBG_01750	CDS	198				hypothetical protein
+NELDDEBG_01750	gene	198				
+NELDDEBG_01751	CDS	795				hypothetical protein
+NELDDEBG_01751	gene	795				
+NELDDEBG_01752	CDS	897				hypothetical protein
+NELDDEBG_01752	gene	897				
+NELDDEBG_01753	CDS	189	lytA_2	3.5.1.28		Autolysin
+NELDDEBG_01753	gene	189	lytA_2			
+NELDDEBG_01754	CDS	762				hypothetical protein
+NELDDEBG_01754	gene	762				
+NELDDEBG_01755	CDS	1980				hypothetical protein
+NELDDEBG_01755	gene	1980				
+NELDDEBG_01756	CDS	840	licT_1		COG3711	Transcription antiterminator LicT
+NELDDEBG_01756	gene	840	licT_1			
+NELDDEBG_01757	CDS	1839	bglF		COG1263	PTS system beta-glucoside-specific EIIBCA component
+NELDDEBG_01757	gene	1839	bglF			
+NELDDEBG_01758	CDS	1416	bglH	3.2.1.86	COG2723	Aryl-phospho-beta-D-glucosidase BglH
+NELDDEBG_01758	gene	1416	bglH			
+NELDDEBG_01759	CDS	1047	pheS	6.1.1.20	COG0016	Phenylalanine--tRNA ligase alpha subunit
+NELDDEBG_01759	gene	1047	pheS			
+NELDDEBG_01760	CDS	510	paiA	2.3.1.57	COG0454	Spermidine/spermine N(1)-acetyltransferase
+NELDDEBG_01760	gene	510	paiA			
+NELDDEBG_01761	CDS	2406	pheT_2	6.1.1.20		Phenylalanine--tRNA ligase beta subunit
+NELDDEBG_01761	gene	2406	pheT_2			
+NELDDEBG_01762	CDS	1002				hypothetical protein
+NELDDEBG_01762	gene	1002				
+NELDDEBG_01763	CDS	303			COG2826	IS30 family transposase ISSpn8
+NELDDEBG_01763	gene	303				
+NELDDEBG_01764	CDS	198				hypothetical protein
+NELDDEBG_01764	gene	198				
+NELDDEBG_01765	CDS	2250	metE	2.1.1.14	COG0620	5-methyltetrahydropteroyltriglutamate--homocysteine methyltransferase
+NELDDEBG_01765	gene	2250	metE			
+NELDDEBG_01766	CDS	867	metF	1.5.1.20	COG0685	5,10-methylenetetrahydrofolate reductase
+NELDDEBG_01766	gene	867	metF			
+NELDDEBG_01767	CDS	2214	pnp	2.7.7.8		Polyribonucleotide nucleotidyltransferase
+NELDDEBG_01767	gene	2214	pnp			
+NELDDEBG_01768	CDS	618	cysE	2.3.1.30	COG1045	Serine acetyltransferase
+NELDDEBG_01768	gene	618	cysE			
+NELDDEBG_01769	CDS	885	mshD_2	2.3.1.189		Mycothiol acetyltransferase
+NELDDEBG_01769	gene	885	mshD_2			
+NELDDEBG_01770	CDS	1344	cysS	6.1.1.16		Cysteine--tRNA ligase
+NELDDEBG_01770	gene	1344	cysS			
+NELDDEBG_01771	CDS	387	mrnC	3.1.26.-	COG1939	Mini-ribonuclease 3
+NELDDEBG_01771	gene	387	mrnC			
+NELDDEBG_01772	CDS	885	lrp			Leucine-rich protein
+NELDDEBG_01772	gene	885	lrp			
+NELDDEBG_01773	CDS	729	yxlF	3.6.3.-	COG1131	putative ABC transporter ATP-binding protein YxlF
+NELDDEBG_01773	gene	729	yxlF			
+NELDDEBG_01774	CDS	738				hypothetical protein
+NELDDEBG_01774	gene	738				
+NELDDEBG_01775	CDS	711				hypothetical protein
+NELDDEBG_01775	gene	711				
+NELDDEBG_01776	CDS	222				hypothetical protein
+NELDDEBG_01776	gene	222				
+NELDDEBG_01777	CDS	1230	ftsW	2.4.1.129	COG0772	putative peptidoglycan glycosyltransferase FtsW
+NELDDEBG_01777	gene	1230	ftsW			
+NELDDEBG_01778	CDS	2697	ppc	4.1.1.31	COG2352	Phosphoenolpyruvate carboxylase
+NELDDEBG_01778	gene	2697	ppc			
+NELDDEBG_01779	CDS	1005				hypothetical protein
+NELDDEBG_01779	gene	1005				
+NELDDEBG_01780	CDS	867				hypothetical protein
+NELDDEBG_01780	gene	867				
+NELDDEBG_01781	CDS	759	thiQ	3.6.3.-	COG3840	Thiamine import ATP-binding protein ThiQ
+NELDDEBG_01781	gene	759	thiQ			
+NELDDEBG_01782	CDS	1761	dnaG	2.7.7.-	COG0358	DNA primase
+NELDDEBG_01782	gene	1761	dnaG			
+NELDDEBG_01783	CDS	1110	sigA		COG0568	RNA polymerase sigma factor SigA
+NELDDEBG_01783	gene	1110	sigA			
+NELDDEBG_01784	CDS	330	sufT			Fe-S protein maturation auxiliary factor SufT
+NELDDEBG_01784	gene	330	sufT			
+NELDDEBG_01785	CDS	1044	cpoA	2.4.1.-	COG0438	Alpha-galactosylglucosyldiacylglycerol synthase
+NELDDEBG_01785	gene	1044	cpoA			
+NELDDEBG_01786	CDS	1326		2.4.1.337	COG0438	Alpha-monoglucosyldiacylglycerol synthase
+NELDDEBG_01786	gene	1326				
+NELDDEBG_01787	CDS	177				hypothetical protein
+NELDDEBG_01787	gene	177				
+NELDDEBG_01788	CDS	135				hypothetical protein
+NELDDEBG_01788	gene	135				
+NELDDEBG_01789	CDS	1311	obg	3.6.5.-	COG0536	GTPase Obg
+NELDDEBG_01789	gene	1311	obg			
+NELDDEBG_01790	CDS	159				hypothetical protein
+NELDDEBG_01790	gene	159				
+NELDDEBG_01791	CDS	1260	murA1_2	2.5.1.7		UDP-N-acetylglucosamine 1-carboxyvinyltransferase
+NELDDEBG_01791	gene	1260	murA1_2			
+NELDDEBG_01792	CDS	552				hypothetical protein
+NELDDEBG_01792	gene	552				
+NELDDEBG_01793	CDS	1278	guaB_2	1.1.1.205		Inosine-5'-monophosphate dehydrogenase
+NELDDEBG_01793	gene	1278	guaB_2			
+NELDDEBG_01794	CDS	861	map	3.4.11.18	COG0024	Methionine aminopeptidase 1
+NELDDEBG_01794	gene	861	map			
+NELDDEBG_01795	CDS	957				hypothetical protein
+NELDDEBG_01795	gene	957				
+NELDDEBG_01796	CDS	1059				hypothetical protein
+NELDDEBG_01796	gene	1059				
+NELDDEBG_01797	CDS	1536	mglA	3.6.3.17	COG1129	Galactose/methyl galactoside import ATP-binding protein MglA
+NELDDEBG_01797	gene	1536	mglA			
+NELDDEBG_01798	CDS	1053	tmpC		COG1744	Membrane lipoprotein TmpC
+NELDDEBG_01798	gene	1053	tmpC			
+NELDDEBG_01799	CDS	390	cdd	3.5.4.5	COG0295	Cytidine deaminase
+NELDDEBG_01799	gene	390	cdd			
+NELDDEBG_01800	CDS	663	deoC	4.1.2.4	COG0274	Deoxyribose-phosphate aldolase
+NELDDEBG_01800	gene	663	deoC			
+NELDDEBG_01801	CDS	1278	pdp	2.4.2.2	COG0213	Pyrimidine-nucleoside phosphorylase
+NELDDEBG_01801	gene	1278	pdp			
+NELDDEBG_01802	CDS	582	rsmC	2.1.1.172	COG2813	Ribosomal RNA small subunit methyltransferase C
+NELDDEBG_01802	gene	582	rsmC			
+NELDDEBG_01803	CDS	237				hypothetical protein
+NELDDEBG_01803	gene	237				
+NELDDEBG_01804	CDS	921	coaA	2.7.1.33	COG1072	Pantothenate kinase
+NELDDEBG_01804	gene	921	coaA			
+NELDDEBG_01805	CDS	237	rpsT		COG0268	30S ribosomal protein S20
+NELDDEBG_01805	gene	237	rpsT			
+NELDDEBG_01806	CDS	525				hypothetical protein
+NELDDEBG_01806	gene	525				
+NELDDEBG_01807	CDS	711	deoD_2	2.4.2.1	COG0813	Purine nucleoside phosphorylase DeoD-type
+NELDDEBG_01807	gene	711	deoD_2			
+NELDDEBG_01808	CDS	513				hypothetical protein
+NELDDEBG_01808	gene	513				
+NELDDEBG_01809	CDS	813				hypothetical protein
+NELDDEBG_01809	gene	813				
+NELDDEBG_01810	CDS	810	punA	2.4.2.1	COG0005	Purine nucleoside phosphorylase 1
+NELDDEBG_01810	gene	810	punA			
+NELDDEBG_01811	CDS	561				hypothetical protein
+NELDDEBG_01811	gene	561				
+NELDDEBG_01812	CDS	1212	deoB	5.4.2.7	COG1015	Phosphopentomutase
+NELDDEBG_01812	gene	1212	deoB			
+NELDDEBG_01813	CDS	684	rpiA	5.3.1.6	COG0120	Ribose-5-phosphate isomerase A
+NELDDEBG_01813	gene	684	rpiA			
+NELDDEBG_01814	CDS	873	nnrD	4.2.1.136	COG0063	ADP-dependent (S)-NAD(P)H-hydrate dehydratase
+NELDDEBG_01814	gene	873	nnrD			
+NELDDEBG_01815	CDS	858	folD			Bifunctional protein FolD protein
+NELDDEBG_01815	gene	858	folD			
+NELDDEBG_01816	CDS	735	glnQ_5	3.6.3.-	COG1126	Glutamine transport ATP-binding protein GlnQ
+NELDDEBG_01816	gene	735	glnQ_5			
+NELDDEBG_01817	CDS	684	artQ		COG0765	Arginine transport system permease protein ArtQ
+NELDDEBG_01817	gene	684	artQ			
+NELDDEBG_01818	CDS	231				hypothetical protein
+NELDDEBG_01818	gene	231				
+NELDDEBG_01819	CDS	2259	clpE		COG0542	ATP-dependent Clp protease ATP-binding subunit ClpE
+NELDDEBG_01819	gene	2259	clpE			
+NELDDEBG_01820	CDS	921	cysK	2.5.1.47		Cysteine synthase
+NELDDEBG_01820	gene	921	cysK			
+NELDDEBG_01821	CDS	636	yigZ		COG1739	IMPACT family member YigZ
+NELDDEBG_01821	gene	636	yigZ			
+NELDDEBG_01822	CDS	1299	comFA	3.6.4.12	COG4098	ComF operon protein 1
+NELDDEBG_01822	gene	1299	comFA			
+NELDDEBG_01823	CDS	663				hypothetical protein
+NELDDEBG_01823	gene	663				
+NELDDEBG_01824	CDS	549	hpf			Ribosome hibernation promotion factor
+NELDDEBG_01824	gene	549	hpf			
+NELDDEBG_01825	CDS	1974	gdpP	3.1.4.-	COG3887	Cyclic-di-AMP phosphodiesterase GdpP
+NELDDEBG_01825	gene	1974	gdpP			
+NELDDEBG_01826	CDS	453	rplI			50S ribosomal protein L9
+NELDDEBG_01826	gene	453	rplI			
+NELDDEBG_01827	CDS	1353	dnaC	3.6.4.12	COG0305	Replicative DNA helicase
+NELDDEBG_01827	gene	1353	dnaC			
+NELDDEBG_01828	CDS	267				hypothetical protein
+NELDDEBG_01828	gene	267				
+NELDDEBG_01829	CDS	1347				hypothetical protein
+NELDDEBG_01829	gene	1347				
+NELDDEBG_01830	CDS	291				hypothetical protein
+NELDDEBG_01830	gene	291				
+NELDDEBG_01831	CDS	759	ribX			Riboflavin transport system permease protein RibX
+NELDDEBG_01831	gene	759	ribX			
+NELDDEBG_01832	CDS	1008	thiY		COG0715	Formylaminopyrimidine-binding protein
+NELDDEBG_01832	gene	1008	thiY			
+NELDDEBG_01833	CDS	729	cysA	3.6.3.25	COG1118	Sulfate/thiosulfate import ATP-binding protein CysA
+NELDDEBG_01833	gene	729	cysA			
+NELDDEBG_01834	CDS	459	ctsR		COG4463	Transcriptional regulator CtsR
+NELDDEBG_01834	gene	459	ctsR			
+NELDDEBG_01835	CDS	2433	clpC_2			ATP-dependent Clp protease ATP-binding subunit ClpC
+NELDDEBG_01835	gene	2433	clpC_2			
+NELDDEBG_01836	CDS	654	phoB		COG0745	Phosphate regulon transcriptional regulatory protein PhoB
+NELDDEBG_01836	gene	654	phoB			
+NELDDEBG_01837	CDS	1332	sasA_3	2.7.-.-		Adaptive-response sensory-kinase SasA
+NELDDEBG_01837	gene	1332	sasA_3			
+NELDDEBG_01838	CDS	528				hypothetical protein
+NELDDEBG_01838	gene	528				
+NELDDEBG_01839	CDS	657				hypothetical protein
+NELDDEBG_01839	gene	657				
+NELDDEBG_01840	CDS	699	saeR		COG0745	Response regulator SaeR
+NELDDEBG_01840	gene	699	saeR			
+NELDDEBG_01841	CDS	1053	saeS	2.7.13.3		Histidine protein kinase SaeS
+NELDDEBG_01841	gene	1053	saeS			
+NELDDEBG_01842	CDS	612	rpsD		COG0522	30S ribosomal protein S4
+NELDDEBG_01842	gene	612	rpsD			
+NELDDEBG_01843	CDS	261				hypothetical protein
+NELDDEBG_01843	gene	261				
+NELDDEBG_01844	CDS	222				hypothetical protein
+NELDDEBG_01844	gene	222				
+NELDDEBG_01845	CDS	930	yteP_3		COG4209	putative multiple-sugar transport system permease YteP
+NELDDEBG_01845	gene	930	yteP_3			
+NELDDEBG_01846	CDS	924	araQ_3		COG0395	L-arabinose transport system permease protein AraQ
+NELDDEBG_01846	gene	924	araQ_3			
+NELDDEBG_01847	CDS	1476				hypothetical protein
+NELDDEBG_01847	gene	1476				
+NELDDEBG_01848	CDS	987				hypothetical protein
+NELDDEBG_01848	gene	987				
+NELDDEBG_01849	CDS	861				hypothetical protein
+NELDDEBG_01849	gene	861				
+NELDDEBG_01850	CDS	165				hypothetical protein
+NELDDEBG_01850	gene	165				
+NELDDEBG_01851	CDS	780				hypothetical protein
+NELDDEBG_01851	gene	780				
+NELDDEBG_01852	CDS	300				hypothetical protein
+NELDDEBG_01852	gene	300				
+NELDDEBG_01853	CDS	126				hypothetical protein
+NELDDEBG_01853	gene	126				
+NELDDEBG_01854	CDS	198				hypothetical protein
+NELDDEBG_01854	gene	198				
+NELDDEBG_01855	CDS	1065				hypothetical protein
+NELDDEBG_01855	gene	1065				
+NELDDEBG_01856	CDS	912				hypothetical protein
+NELDDEBG_01856	gene	912				
+NELDDEBG_01857	CDS	594				hypothetical protein
+NELDDEBG_01857	gene	594				
+NELDDEBG_01858	CDS	327				hypothetical protein
+NELDDEBG_01858	gene	327				
+NELDDEBG_01859	CDS	1167	yycB		COG2807	putative transporter YycB
+NELDDEBG_01859	gene	1167	yycB			
+NELDDEBG_01860	CDS	1065	arnC_2	2.4.2.53		Undecaprenyl-phosphate 4-deoxy-4-formamido-L-arabinose transferase
+NELDDEBG_01860	gene	1065	arnC_2			
+NELDDEBG_01861	CDS	1851	fcl	1.1.1.271		GDP-L-fucose synthase
+NELDDEBG_01861	gene	1851	fcl			
+NELDDEBG_01862	CDS	279				hypothetical protein
+NELDDEBG_01862	gene	279				
+NELDDEBG_01863	CDS	729				hypothetical protein
+NELDDEBG_01863	gene	729				
+NELDDEBG_01864	CDS	354				hypothetical protein
+NELDDEBG_01864	gene	354				
+NELDDEBG_01865	CDS	903				hypothetical protein
+NELDDEBG_01865	gene	903				
+NELDDEBG_01866	CDS	375				hypothetical protein
+NELDDEBG_01866	gene	375				
+NELDDEBG_01867	CDS	978				hypothetical protein
+NELDDEBG_01867	gene	978				
+NELDDEBG_01868	CDS	1059				hypothetical protein
+NELDDEBG_01868	gene	1059				
+NELDDEBG_01869	CDS	246				hypothetical protein
+NELDDEBG_01869	gene	246				
+NELDDEBG_01870	CDS	126				hypothetical protein
+NELDDEBG_01870	gene	126				
+NELDDEBG_01871	CDS	372				hypothetical protein
+NELDDEBG_01871	gene	372				
+NELDDEBG_01872	CDS	165				hypothetical protein
+NELDDEBG_01872	gene	165				
+NELDDEBG_01873	CDS	381				hypothetical protein
+NELDDEBG_01873	gene	381				
+NELDDEBG_01874	CDS	1353				hypothetical protein
+NELDDEBG_01874	gene	1353				
+NELDDEBG_01875	CDS	468				hypothetical protein
+NELDDEBG_01875	gene	468				
+NELDDEBG_01876	CDS	2220	lagD_3	3.4.22.-		Lactococcin-G-processing and transport ATP-binding protein LagD
+NELDDEBG_01876	gene	2220	lagD_3			
+NELDDEBG_01877	CDS	864				hypothetical protein
+NELDDEBG_01877	gene	864				
+NELDDEBG_01878	CDS	588				hypothetical protein
+NELDDEBG_01878	gene	588				
+NELDDEBG_01879	CDS	672	sdhB	4.3.1.17		L-serine dehydratase, beta chain
+NELDDEBG_01879	gene	672	sdhB			
+NELDDEBG_01880	CDS	873	sdhA	4.3.1.17		L-serine dehydratase, alpha chain
+NELDDEBG_01880	gene	873	sdhA			
+NELDDEBG_01881	CDS	633		3.1.3.5	COG0546	5'-nucleotidase
+NELDDEBG_01881	gene	633				
+NELDDEBG_01882	CDS	297	bglA_2	3.2.1.86	COG2723	Aryl-phospho-beta-D-glucosidase BglA
+NELDDEBG_01882	gene	297	bglA_2			
+NELDDEBG_01883	CDS	945	manA	5.3.1.8	COG1482	Mannose-6-phosphate isomerase ManA
+NELDDEBG_01883	gene	945	manA			
+NELDDEBG_01884	CDS	1272				hypothetical protein
+NELDDEBG_01884	gene	1272				
+NELDDEBG_01885	CDS	741	mta		COG0789	HTH-type transcriptional activator mta
+NELDDEBG_01885	gene	741	mta			
+NELDDEBG_01886	CDS	456				hypothetical protein
+NELDDEBG_01886	gene	456				
+NELDDEBG_01887	CDS	1176			COG2081	putative protein
+NELDDEBG_01887	gene	1176				
+NELDDEBG_01888	CDS	846			COG1307	Fatty acid-binding protein
+NELDDEBG_01888	gene	846				
+NELDDEBG_01889	CDS	558				hypothetical protein
+NELDDEBG_01889	gene	558				
+NELDDEBG_01890	CDS	468	tadA_1	3.5.4.33		tRNA-specific adenosine deaminase
+NELDDEBG_01890	gene	468	tadA_1			
+NELDDEBG_01891	CDS	630	upp	2.4.2.9		Uracil phosphoribosyltransferase
+NELDDEBG_01891	gene	630	upp			
+NELDDEBG_01892	CDS	591	clpP	3.4.21.92	COG0740	ATP-dependent Clp protease proteolytic subunit
+NELDDEBG_01892	gene	591	clpP			
+NELDDEBG_01893	CDS	249				hypothetical protein
+NELDDEBG_01893	gene	249				
+NELDDEBG_01894	CDS	1161	braC		COG0683	Leucine-, isoleucine-, valine-, threonine-, and alanine-binding protein
+NELDDEBG_01894	gene	1161	braC			
+NELDDEBG_01895	CDS	870	livH		COG0559	High-affinity branched-chain amino acid transport system permease protein LivH
+NELDDEBG_01895	gene	870	livH			
+NELDDEBG_01896	CDS	957				hypothetical protein
+NELDDEBG_01896	gene	957				
+NELDDEBG_01897	CDS	765	lptB	3.6.3.-	COG1137	Lipopolysaccharide export system ATP-binding protein LptB
+NELDDEBG_01897	gene	765	lptB			
+NELDDEBG_01898	CDS	711	livF		COG0410	High-affinity branched-chain amino acid transport ATP-binding protein LivF
+NELDDEBG_01898	gene	711	livF			
+NELDDEBG_01899	CDS	657	guaB_3	1.1.1.205		Inosine-5'-monophosphate dehydrogenase
+NELDDEBG_01899	gene	657	guaB_3			
+NELDDEBG_01900	CDS	978	prfB			Peptide chain release factor 2
+NELDDEBG_01900	gene	978	prfB			
+NELDDEBG_01901	CDS	693	ftsE		COG2884	Cell division ATP-binding protein FtsE
+NELDDEBG_01901	gene	693	ftsE			
+NELDDEBG_01902	CDS	927	ftsX		COG2177	Cell division protein FtsX
+NELDDEBG_01902	gene	927	ftsX			
+NELDDEBG_01903	CDS	345	lacX			Protein LacX, plasmid
+NELDDEBG_01903	gene	345	lacX			
+NELDDEBG_01904	CDS	426	lacA	5.3.1.26		Galactose-6-phosphate isomerase subunit LacA
+NELDDEBG_01904	gene	426	lacA			
+NELDDEBG_01905	CDS	516	lacB	5.3.1.26		Galactose-6-phosphate isomerase subunit LacB
+NELDDEBG_01905	gene	516	lacB			
+NELDDEBG_01906	CDS	930	lacC_2	2.7.1.144		Tagatose-6-phosphate kinase
+NELDDEBG_01906	gene	930	lacC_2			
+NELDDEBG_01907	CDS	981	lacD	4.1.2.40		Tagatose 1,6-diphosphate aldolase
+NELDDEBG_01907	gene	981	lacD			
+NELDDEBG_01908	CDS	837	licT_2		COG3711	Transcription antiterminator LicT
+NELDDEBG_01908	gene	837	licT_2			
+NELDDEBG_01909	CDS	318	lacF_4			PTS system lactose-specific EIIA component
+NELDDEBG_01909	gene	318	lacF_4			
+NELDDEBG_01910	CDS	1692	lacE_2			PTS system lactose-specific EIICB component
+NELDDEBG_01910	gene	1692	lacE_2			
+NELDDEBG_01911	CDS	1407	lacG_2	3.2.1.85		6-phospho-beta-galactosidase
+NELDDEBG_01911	gene	1407	lacG_2			
+NELDDEBG_01912	CDS	186				hypothetical protein
+NELDDEBG_01912	gene	186				
+NELDDEBG_01913	CDS	762	lacR_3			Lactose phosphotransferase system repressor
+NELDDEBG_01913	gene	762	lacR_3			
+NELDDEBG_01914	CDS	963	nrdF	1.17.4.1	COG0208	Ribonucleoside-diphosphate reductase 2 subunit beta
+NELDDEBG_01914	gene	963	nrdF			
+NELDDEBG_01915	CDS	2160	nrdE1	1.17.4.1	COG0209	Ribonucleoside-diphosphate reductase subunit alpha 1
+NELDDEBG_01915	gene	2160	nrdE1			
+NELDDEBG_01916	CDS	219	nrdH		COG0695	Glutaredoxin-like protein NrdH
+NELDDEBG_01916	gene	219	nrdH			
+NELDDEBG_01917	CDS	264	ptsH		COG1925	Phosphocarrier protein HPr
+NELDDEBG_01917	gene	264	ptsH			
+NELDDEBG_01918	CDS	1725	ptsI	2.7.3.9	COG1080	Phosphoenolpyruvate-protein phosphotransferase
+NELDDEBG_01918	gene	1725	ptsI			
+NELDDEBG_01919	tRNA	76				tRNA-Ile(gat)
+NELDDEBG_01919	gene	76				
+NELDDEBG_01920	tRNA	90				tRNA-Ser(gct)
+NELDDEBG_01920	gene	90				
+NELDDEBG_01921	CDS	936	birA	6.3.4.15	COG0340	Bifunctional ligase/repressor BirA
+NELDDEBG_01921	gene	936	birA			
+NELDDEBG_01922	CDS	861	rhaS			HTH-type transcriptional activator RhaS
+NELDDEBG_01922	gene	861	rhaS			
+NELDDEBG_01923	CDS	2163	agaA_2	3.2.1.22		Alpha-galactosidase AgaA
+NELDDEBG_01923	gene	2163	agaA_2			
+NELDDEBG_01924	CDS	1260	msmE		COG1653	Multiple sugar-binding protein
+NELDDEBG_01924	gene	1260	msmE			
+NELDDEBG_01925	CDS	867	ugpA		COG1175	sn-glycerol-3-phosphate transport system permease protein UgpA
+NELDDEBG_01925	gene	867	ugpA			
+NELDDEBG_01926	CDS	834	araQ_4		COG0395	L-arabinose transport system permease protein AraQ
+NELDDEBG_01926	gene	834	araQ_4			
+NELDDEBG_01927	CDS	1443	gtfA	2.4.1.7	COG0366	Sucrose phosphorylase
+NELDDEBG_01927	gene	1443	gtfA			
+NELDDEBG_01928	CDS	1194				hypothetical protein
+NELDDEBG_01928	gene	1194				
+NELDDEBG_01929	CDS	1980	amiA		COG4166	Oligopeptide-binding protein AmiA
+NELDDEBG_01929	gene	1980	amiA			
+NELDDEBG_01930	CDS	1497				hypothetical protein
+NELDDEBG_01930	gene	1497				
+NELDDEBG_01931	CDS	927	oppC		COG1173	Oligopeptide transport system permease protein OppC
+NELDDEBG_01931	gene	927	oppC			
+NELDDEBG_01932	CDS	1068	oppD		COG0444	Oligopeptide transport ATP-binding protein OppD
+NELDDEBG_01932	gene	1068	oppD			
+NELDDEBG_01933	CDS	927	oppF		COG4608	Oligopeptide transport ATP-binding protein OppF
+NELDDEBG_01933	gene	927	oppF			
+NELDDEBG_01934	CDS	1446	lytR_2			Transcriptional regulator LytR
+NELDDEBG_01934	gene	1446	lytR_2			
+NELDDEBG_01935	CDS	732	cpsB	3.1.3.48	COG4464	Tyrosine-protein phosphatase CpsB
+NELDDEBG_01935	gene	732	cpsB			
+NELDDEBG_01936	CDS	693	ywqC		COG3944	putative capsular polysaccharide biosynthesis protein YwqC
+NELDDEBG_01936	gene	693	ywqC			
+NELDDEBG_01937	CDS	684	cpsD	2.7.10.2		Tyrosine-protein kinase CpsD
+NELDDEBG_01937	gene	684	cpsD			
+NELDDEBG_01938	CDS	636	epsL	2.-.-.-	COG2148	putative sugar transferase EpsL
+NELDDEBG_01938	gene	636	epsL			
+NELDDEBG_01939	CDS	795				hypothetical protein
+NELDDEBG_01939	gene	795				
+NELDDEBG_01940	CDS	1251				hypothetical protein
+NELDDEBG_01940	gene	1251				
+NELDDEBG_01941	CDS	906				hypothetical protein
+NELDDEBG_01941	gene	906				
+NELDDEBG_01942	CDS	1086	gtf1	2.4.1.-		Glycosyltransferase Gtf1
+NELDDEBG_01942	gene	1086	gtf1			
+NELDDEBG_01943	CDS	1005	arnC_3	2.4.2.53		Undecaprenyl-phosphate 4-deoxy-4-formamido-L-arabinose transferase
+NELDDEBG_01943	gene	1005	arnC_3			
+NELDDEBG_01944	CDS	954	arnC_4	2.4.2.53		Undecaprenyl-phosphate 4-deoxy-4-formamido-L-arabinose transferase
+NELDDEBG_01944	gene	954	arnC_4			
+NELDDEBG_01945	CDS	957				hypothetical protein
+NELDDEBG_01945	gene	957				
+NELDDEBG_01946	CDS	1413	rfbX		COG2244	Putative O-antigen transporter
+NELDDEBG_01946	gene	1413	rfbX			
+NELDDEBG_01947	CDS	1101	glf	5.4.99.9	COG0562	UDP-galactopyranose mutase
+NELDDEBG_01947	gene	1101	glf			
+NELDDEBG_01948	CDS	624				ISL3 family transposaseA
+NELDDEBG_01948	gene	624				
+NELDDEBG_01949	CDS	1203	rpsA		COG0539	30S Ribosomal protein S1
+NELDDEBG_01949	gene	1203	rpsA			
+NELDDEBG_01950	tRNA	72				tRNA-Gln(ttg)
+NELDDEBG_01950	gene	72				
+NELDDEBG_01951	tRNA	81				tRNA-Tyr(gta)
+NELDDEBG_01951	gene	81				
+NELDDEBG_01952	CDS	231				hypothetical protein
+NELDDEBG_01952	gene	231				
+NELDDEBG_01953	CDS	645	pcp_3	3.4.19.3		Pyrrolidone-carboxylate peptidase
+NELDDEBG_01953	gene	645	pcp_3			
+NELDDEBG_01954	CDS	924				hypothetical protein
+NELDDEBG_01954	gene	924				
+NELDDEBG_01955	CDS	690				hypothetical protein
+NELDDEBG_01955	gene	690				
+NELDDEBG_01956	CDS	693				hypothetical protein
+NELDDEBG_01956	gene	693				
+NELDDEBG_01957	CDS	1023	ilvE	2.6.1.42	COG0115	Branched-chain-amino-acid aminotransferase
+NELDDEBG_01957	gene	1023	ilvE			
+NELDDEBG_01958	CDS	2436	parC	5.99.1.3	COG0188	DNA topoisomerase 4 subunit A
+NELDDEBG_01958	gene	2436	parC			
+NELDDEBG_01959	CDS	108				hypothetical protein
+NELDDEBG_01959	gene	108				
+NELDDEBG_01960	CDS	1944	parE	5.99.1.3	COG0187	DNA topoisomerase 4 subunit B
+NELDDEBG_01960	gene	1944	parE			
+NELDDEBG_01961	CDS	642	plsY	2.3.1.-	COG0344	Glycerol-3-phosphate acyltransferase
+NELDDEBG_01961	gene	642	plsY			
+NELDDEBG_01962	CDS	342				IS3 family transposase ISSpn1
+NELDDEBG_01962	gene	342				
+NELDDEBG_01963	CDS	1506				hypothetical protein
+NELDDEBG_01963	gene	1506				
+NELDDEBG_01964	CDS	807	znuB		COG1108	High-affinity zinc uptake system membrane protein ZnuB
+NELDDEBG_01964	gene	807	znuB			
+NELDDEBG_01965	CDS	705	znuC	3.6.3.-	COG1121	High-affinity zinc uptake system ATP-binding protein ZnuC
+NELDDEBG_01965	gene	705	znuC			
+NELDDEBG_01966	CDS	441	adcR			Transcriptional regulator AdcR
+NELDDEBG_01966	gene	441	adcR			
+NELDDEBG_01967	CDS	1269	dltD		COG3966	Protein DltD
+NELDDEBG_01967	gene	1269	dltD			
+NELDDEBG_01968	CDS	240	dltC		COG0236	D-alanyl carrier protein
+NELDDEBG_01968	gene	240	dltC			
+NELDDEBG_01969	CDS	1245				hypothetical protein
+NELDDEBG_01969	gene	1245				
+NELDDEBG_01970	CDS	1551	dltA	6.2.1.-	COG1020	D-alanine--D-alanyl carrier protein ligase
+NELDDEBG_01970	gene	1551	dltA			
+NELDDEBG_01971	CDS	1179				hypothetical protein
+NELDDEBG_01971	gene	1179				
+NELDDEBG_01972	CDS	282				hypothetical protein
+NELDDEBG_01972	gene	282				
+NELDDEBG_01973	CDS	147				hypothetical protein
+NELDDEBG_01973	gene	147				
+NELDDEBG_01974	CDS	456				hypothetical protein
+NELDDEBG_01974	gene	456				
+NELDDEBG_01975	CDS	132				hypothetical protein
+NELDDEBG_01975	gene	132				
+NELDDEBG_01976	CDS	195				hypothetical protein
+NELDDEBG_01976	gene	195				
+NELDDEBG_01977	CDS	885	btuD_7	3.6.3.33		Vitamin B12 import ATP-binding protein BtuD
+NELDDEBG_01977	gene	885	btuD_7			
+NELDDEBG_01978	CDS	738				hypothetical protein
+NELDDEBG_01978	gene	738				
+NELDDEBG_01979	CDS	1098	desK	2.7.13.3	COG4585	Sensor histidine kinase DesK
+NELDDEBG_01979	gene	1098	desK			
+NELDDEBG_01980	CDS	600	desR		COG2197	Transcriptional regulatory protein DesR
+NELDDEBG_01980	gene	600	desR			
+NELDDEBG_01981	CDS	1011	ccpA_2		COG1609	Catabolite control protein A
+NELDDEBG_01981	gene	1011	ccpA_2			
+NELDDEBG_01982	CDS	963	ansB	3.5.1.1	COG0252	L-asparaginase 2
+NELDDEBG_01982	gene	963	ansB			
+NELDDEBG_01983	CDS	1389	cof	3.6.1.-		HMP-PP phosphatase
+NELDDEBG_01983	gene	1389	cof			
+NELDDEBG_01984	CDS	453				Putative universal stress protein
+NELDDEBG_01984	gene	453				
+NELDDEBG_01985	CDS	294				hypothetical protein
+NELDDEBG_01985	gene	294				
+NELDDEBG_01986	CDS	1215	alaA	2.6.1.2	COG0436	Glutamate-pyruvate aminotransferase AlaA
+NELDDEBG_01986	gene	1215	alaA			
+NELDDEBG_01987	CDS	1692	argS	6.1.1.19	COG0018	Arginine--tRNA ligase
+NELDDEBG_01987	gene	1692	argS			
+NELDDEBG_01988	CDS	447	argR_3		COG1438	Arginine regulator
+NELDDEBG_01988	gene	447	argR_3			
+NELDDEBG_01989	CDS	2535	mutS		COG0249	DNA mismatch repair protein MutS
+NELDDEBG_01989	gene	2535	mutS			
+NELDDEBG_01990	CDS	327				hypothetical protein
+NELDDEBG_01990	gene	327				
+NELDDEBG_01991	CDS	1359			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_01991	gene	1359				
+NELDDEBG_01992	CDS	309				hypothetical protein
+NELDDEBG_01992	gene	309				
+NELDDEBG_01993	CDS	1767			COG1132	putative ABC transporter ATP-binding protein
+NELDDEBG_01993	gene	1767				
+NELDDEBG_01994	CDS	690		2.4.2.-	COG2071	Putative glutamine amidotransferase
+NELDDEBG_01994	gene	690				
+NELDDEBG_01995	CDS	1350	pgi	5.3.1.9	COG0166	Glucose-6-phosphate isomerase
+NELDDEBG_01995	gene	1350	pgi			
+NELDDEBG_01996	CDS	1461	gltX	6.1.1.17	COG0008	Glutamate--tRNA ligase
+NELDDEBG_01996	gene	1461	gltX			
+NELDDEBG_01997	CDS	306				hypothetical protein
+NELDDEBG_01997	gene	306				
+NELDDEBG_01998	CDS	162				hypothetical protein
+NELDDEBG_01998	gene	162				
+NELDDEBG_01999	CDS	969	prs	2.7.6.1	COG0462	Ribose-phosphate pyrophosphokinase
+NELDDEBG_01999	gene	969	prs			
+NELDDEBG_02000	CDS	816				hypothetical protein
+NELDDEBG_02000	gene	816				
+NELDDEBG_02001	CDS	498	mtcA1	4.2.1.1	COG0288	Beta-carbonic anhydrase 1
+NELDDEBG_02001	gene	498	mtcA1			
+NELDDEBG_02002	CDS	1263	radA	3.6.4.-	COG1066	DNA repair protein RadA
+NELDDEBG_02002	gene	1263	radA			
+NELDDEBG_02003	CDS	516				hypothetical protein
+NELDDEBG_02003	gene	516				
+NELDDEBG_02004	CDS	444	dut	3.6.1.23		Deoxyuridine 5'-triphosphate nucleotidohydrolase
+NELDDEBG_02004	gene	444	dut			
+NELDDEBG_02005	CDS	468	tadA_2	3.5.4.33		tRNA-specific adenosine deaminase
+NELDDEBG_02005	gene	468	tadA_2			
+NELDDEBG_02006	CDS	180				hypothetical protein
+NELDDEBG_02006	gene	180				
+NELDDEBG_02007	CDS	189	lytA_3	3.5.1.28		Autolysin
+NELDDEBG_02007	gene	189	lytA_3			
+NELDDEBG_02008	CDS	951	macB	3.6.3.-	COG0577	Macrolide export ATP-binding/permease protein MacB
+NELDDEBG_02008	gene	951	macB			
+NELDDEBG_02009	CDS	1008	gap	1.2.1.12		Glyceraldehyde-3-phosphate dehydrogenase
+NELDDEBG_02009	gene	1008	gap			
+NELDDEBG_02010	CDS	876				hypothetical protein
+NELDDEBG_02010	gene	876				
+NELDDEBG_02011	CDS	2196	pbpF		COG0744	Penicillin-binding protein 1F
+NELDDEBG_02011	gene	2196	pbpF			
+NELDDEBG_02012	CDS	177				hypothetical protein
+NELDDEBG_02012	gene	177				
+NELDDEBG_02013	CDS	537	nusG			Transcription termination/antitermination protein NusG
+NELDDEBG_02013	gene	537	nusG			
+NELDDEBG_02014	CDS	405				hypothetical protein
+NELDDEBG_02014	gene	405				
+NELDDEBG_02015	CDS	708	dsbD_2	1.8.1.8	COG4232	Thiol:disulfide interchange protein DsbD
+NELDDEBG_02015	gene	708	dsbD_2			
+NELDDEBG_02016	CDS	558	resA_2			Thiol-disulfide oxidoreductase ResA
+NELDDEBG_02016	gene	558	resA_2			
+NELDDEBG_02017	CDS	1392	yhdG		COG0531	putative amino acid permease YhdG
+NELDDEBG_02017	gene	1392	yhdG			
+NELDDEBG_02018	CDS	918	znuA		COG0803	High-affinity zinc uptake system binding-protein ZnuA
+NELDDEBG_02018	gene	918	znuA			
+NELDDEBG_02019	CDS	1476	speA	4.1.1.19	COG1982	Arginine decarboxylase
+NELDDEBG_02019	gene	1476	speA			
+NELDDEBG_02020	CDS	1347	gdh	1.4.1.4	COG0334	NADP-specific glutamate dehydrogenase
+NELDDEBG_02020	gene	1347	gdh			
+NELDDEBG_02021	CDS	264				hypothetical protein
+NELDDEBG_02021	gene	264				
+NELDDEBG_02022	CDS	300				hypothetical protein
+NELDDEBG_02022	gene	300				
+NELDDEBG_02023	CDS	726				hypothetical protein
+NELDDEBG_02023	gene	726				
+NELDDEBG_02024	tRNA	73				tRNA-Met(cat)
+NELDDEBG_02024	gene	73				
+NELDDEBG_02025	tRNA	90				tRNA-Ser(tga)
+NELDDEBG_02025	gene	90				
+NELDDEBG_02026	tRNA	74				tRNA-Met(cat)
+NELDDEBG_02026	gene	74				
+NELDDEBG_02027	tRNA	76				tRNA-Met(cat)
+NELDDEBG_02027	gene	76				
+NELDDEBG_02028	tRNA	76				tRNA-Pro(tgg)
+NELDDEBG_02028	gene	76				
+NELDDEBG_02029	tRNA	74				tRNA-Arg(acg)
+NELDDEBG_02029	gene	74				
+NELDDEBG_02030	tRNA	86				tRNA-Leu(taa)
+NELDDEBG_02030	gene	86				
+NELDDEBG_02031	tRNA	72				tRNA-Gly(gcc)
+NELDDEBG_02031	gene	72				
+NELDDEBG_02032	tRNA	73				tRNA-Thr(tgt)
+NELDDEBG_02032	gene	73				
+NELDDEBG_02033	tRNA	84				tRNA-Leu(tag)
+NELDDEBG_02033	gene	84				
+NELDDEBG_02034	tRNA	73				tRNA-Lys(ttt)
+NELDDEBG_02034	gene	73				
+NELDDEBG_02035	tRNA	73				tRNA-Asp(gtc)
+NELDDEBG_02035	gene	73				
+NELDDEBG_02036	tRNA	73				tRNA-Val(tac)
+NELDDEBG_02036	gene	73				
+NELDDEBG_02037	CDS	348	msbA_2	3.6.3.-		Lipid A export ATP-binding/permease protein MsbA
+NELDDEBG_02037	gene	348	msbA_2			
+NELDDEBG_02038	CDS	171				hypothetical protein
+NELDDEBG_02038	gene	171				

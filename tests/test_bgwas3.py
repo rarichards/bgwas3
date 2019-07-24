@@ -23,11 +23,15 @@ def runStep(step_name, req_files, outfile, yml, local=False): # {{{
     for f in req_files:
         source = ref_dir + "/" + f
         target = temp_dir + "/" + f
-        assert os.path.exists(source),  f + " not found in reference folder."
+        assert os.path.exists(source), "Reference " +  f + " not found in reference folder."
         if os.path.isfile(source):
+            print("Copying reference file '" + f + "' to temp directory:", end=" ")
             shutil.copy(source, target)
+            print("done")
         if(os.path.isdir(source)):
+            print("Copying reference directory '" + f + "' to temp directory:", end=" ")
             shutil.copytree(source, target)
+            print("done")
 
     with open(temp_dir + "/pipeline.yml", "w") as f:
         f.write(yml)
@@ -42,7 +46,7 @@ def runStep(step_name, req_files, outfile, yml, local=False): # {{{
     with open("run.sh", "w") as f:
         f.write(statement)
 
-    print("\nRunning: " + statement + "\n")
+    print("Running: " + statement)
     os.system(statement + " 2>&1 | tee test.log")
 
     if len([f for f in os.listdir() if f.startswith("core")]) != 0:
@@ -74,11 +78,6 @@ def runStep(step_name, req_files, outfile, yml, local=False): # {{{
 
 # }}}
     
-@pytest.mark.local
-def test_listContigs():
-    req_files = ["fastq.dir", "contigs.dir"]
-    runStep("listContigs", req_files, "contig_list.txt", "", local=True)
-
 @pytest.mark.cluster
 def test_fsm():
     req_files = ["fastq.dir", "contigs.dir"]
@@ -96,10 +95,15 @@ def test_prokka():
 
 @pytest.mark.cluster
 def test_roary():
-    req_files = ["prokka.dir"]
+    req_files = ["fastq.dir", "contigs.dir", "annotations.dir"]
     runStep("roary", req_files, "roary.dir", "")
+
+@pytest.mark.local
+def test_distanceFromTree():
+    req_files = ["phenos.tsv", "phenos.dir"]
+    runStep("distanceFromTree", req_files, "distance.tsv", "", local=True)
 
 @pytest.mark.cluster
 def test_pyseer():
-    req_files = ["kmers.gz", "distance.tsv", "phenos.dir"]
-    punStep("pyseer", req_files, "annotations.dir", "")
+    req_files = ["fastq.dir", "contigs.dir", "annotations.dir", "roary.dir", "phenos.tsv", "phenos.dir", "distances.tsv"]
+    runStep("pyseer", req_files, "annotations.dir", "")
