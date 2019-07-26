@@ -106,6 +106,7 @@ def test_pyseer():
 @pytest.mark.local
 def test_pyseer_local():
     runStep("pyseer", ["pyseer"], local=True)
+<<<<<<< HEAD
 
 @pytest.mark.local
 def test_makeRefList():
@@ -114,3 +115,5 @@ def test_makeRefList():
 @pytest.mark.cluster
 def test_mapKmers():
     runStep("mapKmers", ["maps"])
+=======
+>>>>>>> 364210e25067eac66f5cc0e10e1400969c251f5a
