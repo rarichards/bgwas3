@@ -5,6 +5,8 @@ import cgatcore.experiment as E
 from cgatcore import pipeline as P
 import cgatcore.iotools as iotools
 
+import re
+
 PARAMS = P.get_parameters([
     "%s/pipeline.yml" % os.path.splitext(__file__)[0],
     "../pipeline.yml",
@@ -27,10 +29,10 @@ PARAMS = P.get_parameters([
     )
 def assembly(infile, outfile):
     ''' Contig assembly '''
+    to_cluster = False
     pass
 
 # }}}
-
 # fsm {{{
 @merge(
     assembly,
@@ -45,21 +47,21 @@ def fsm(infile, outfile):
     statement = '''
     ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
-    fsm-lite -l ../contig_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
+    fsm-lite -l ../contigs_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
     '''
 
     P.run(statement)
 
 # }}}
-
 # prokka {{{
 @follows(
-    mkdir("prokka")
+    mkdir("extra/prokka"),
+    mkdir("annotations")
     )
 @transform(
     assembly,
     regex("contigs/(.*)\.fa"),
-    r"prokka/\1\.gff",
+    r"annotations/\1.gff",
     r"\1"
     )
 def prokka(infile, outfile, idd):
@@ -69,22 +71,21 @@ def prokka(infile, outfile, idd):
     to_cluster = True
 
     statement = '''
-    prokka --centre X --compliant %(infile)s --outdir prokka --force --prefix %(idd)s &&
-    mv prokka/%(idd)s.gff prokka
+    prokka --centre X --compliant %(infile)s --outdir extra/prokka --force --prefix %(idd)s &&
+    mv extra/prokka/%(idd)s.gff %(outfile)s
     '''
 
     P.run(statement)
 
 # }}}
-
 # roary {{{
 @follows(
     prokka,
-    mkdir("roary")
+    mkdir("extra/roary")
     )
 @merge(
     prokka,
-    "roary/accessory_binary_genes.fa.newick"
+    "tree.newick"
     )
 def roary(infile, outfile):
 
@@ -93,7 +94,8 @@ def roary(infile, outfile):
     to_cluster = True
 
     statement = '''
-    roary -f %(outfile)s -e -n -v -r %(infile)s/*.gff 
+    roary -f extra/roary -e -n -v -r annotations/*.gff &&
+    cp extra/roary/accessory_binary_genes.fa.newick %(outfile)s
     '''
 
     P.run(statement)
@@ -101,7 +103,6 @@ def roary(infile, outfile):
     pass
 
 # }}}
-
 # distanceFromTree {{{
 @transform(
     roary,
@@ -111,6 +112,8 @@ def roary(infile, outfile):
 def distanceFromTree(infile, outfile):
     
     ''' Get distances from a phylogeny tree that has been midpoint rooted '''
+
+    to_cluster = False
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
@@ -123,7 +126,6 @@ def distanceFromTree(infile, outfile):
     P.run(statement)
 
 # }}}
-
 # splitPhenos {{{
 @follows(
     mkdir("phenos")
@@ -133,7 +135,10 @@ def distanceFromTree(infile, outfile):
     "phenos/*.tsv"
     )
 def splitPhenos(infile, outfiles):
-    ''' split a tsv file into multiple tsv files by column '''
+
+    ''' Split a tsv file into multiple tsv files by column '''
+
+    to_cluster = False
 
     statement = '''
     cols=`awk -F"\\t" '{print NF; exit}' %(infile)s` &&
@@ -146,83 +151,102 @@ def splitPhenos(infile, outfiles):
     P.run(statement)
 
 # }}}
-
 # pyseer {{{
 @follows(
-    mkdir("pyseer")
+    mkdir("associations"),
+    mkdir("extra/pyseer")
     )
 @transform(
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
     add_inputs(distanceFromTree, fsm),
-    r"pyseer/\1.assoc"
+    r"associations/\1.assoc.gz",
+    r"\1"
     )
-def pyseer(infiles, outfile):
+def pyseer(infiles, outfile, idd):
+
+    to_cluster = True
 
     pheno = infiles[0]
     distances = infiles[1]
     kmers = infiles[2]
 
     statement = '''
-    pyseer
-        --phenotypes=%(pheno)s
-        --kmers=%(kmers)s
-        --distances=%(distances)s
-        --min-af=0.01
-        --max-af=0.99
-        --cpu=15
-        --filter-pvalue=1E-8
+    pyseer 
+        --lmm 
+        --phenotypes %(pheno)s
+        --kmers %(kmers)s
+        --similarity %(distances)s
+        --output-patterns extra/pyseer/%(idd)s_patterns.txt
+        --cpu 8 
+        | gzip -c 
         > %(outfile)s
     '''
 
     P.run(statement)
 
 # }}}
-
 # makeRefList {{{
-@follows (
+@follows(
     mkdir("refs")
     )
 @merge(
-    [prokka, "refs/*"],
-    regex("([^/]+)/(.*).gff"),
-    "ref.txt",
+    [prokka, assembly, "refs/*"],
+    "ref.txt"
     )
 def makeRefList(infiles, outfile):
 
     ''' Make a list of references for kmer mapping '''
 
+    to_cluster = True
+
+    gffs = list(filter(re.compile(".*\.gff$").match, infiles))
+    refs = list(filter(re.compile("refs/.*").match, gffs))
+    drafts = list(filter(re.compile("annotations/.*").match, gffs))
+
+    with open(outfile, "w") as f:
+        for gff in refs:
+            idd = re.search("^.*/(.*)\.gff", gff).group(1)
+            regex = ".*/" + idd + "\.(fa|fasta)"
+            fa = list(filter(re.compile(regex).match, infiles))[0]
+            f.write(fa + "\t" + gff + "\tref\n")
+        for gff in drafts:
+            idd = re.search("^.*/(.*)\.gff", gff).group(1)
+            regex = ".*/" + idd + "\.(fa|fasta)"
+            fa = list(filter(re.compile(regex).match, infiles))[0]
+            f.write(fa + "\t" + gff + "\tdraft\n")
+
+
+# }}}
+# mapKmers {{{
+@follows(
+    mkdir("maps")
+    )
+@transform(
+    pyseer,
+    regex(r"^associations/(.*)\.assoc$"),
+    add_inputs(makeRefList),
+    r"maps/\1.txt"
+    )
+def mapKmers(infiles, outfile):
+
+    to_cluster = True
+
+    kmers = infiles[0]
+    refs = infiles[1]
+
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
     statement = '''
-    ls prokka | grep ".gff" | awk '{print $1"\t%(prokka_dir)/"$1"\tref" }' > %(outfile)s &&
-    ls %(ref_dir)s  | awk '{print $1"\t%(ref_dir)/"$1"\tref" }' 
+    python %(PY_SRC_PATH)s/annotate_kmers.py %(kmers)s %(refs)s %(outfile)s
     '''
 
     P.run(statement)
 
 # }}}
-
-# mapKmers {{{
-#@transform(
-#    pyseer,
-#    regex("pyseer.dir/(.*).assoc"),
-#    r"map.dir/\1\.txt",
-#    add_inputs = [makeRefList]
-#    )
-#def mapKmers(infiles, outfile):
-#
-#    infile = infiles[0][0]
-#    ref_genomes = infiles[1][0]
-#
-#    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-#
-#    statement = '''
-#    python %(PY_SRC_PATH)/summarise_annotations.py
-#    '''
-## }}}
-
 # full {{{
 @follows (
-    pyseer
+    mapKmers
     )
 def full():
     pass

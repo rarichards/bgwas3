@@ -81,15 +81,15 @@ def runStep(step_name, out, local=False): # {{{
     
 @pytest.mark.cluster
 def test_fsm():
-    runStep("fsm")
+    runStep("fsm", ["kmers.gz"])
 
 @pytest.mark.local
 def test_splitPhenos():
     runStep("splitPhenos", ["phenos"], local=True)
 
-@pytest.mark.cluster
+@pytest.mark.local
 def test_prokka():
-    runStep("prokka")
+    runStep("prokka", ["prokka"], local=True)
 
 @pytest.mark.cluster
 def test_roary():
@@ -102,3 +102,15 @@ def test_distanceFromTree():
 @pytest.mark.cluster
 def test_pyseer():
     runStep("pyseer", ["pyseer"])
+
+@pytest.mark.local
+def test_pyseer_local():
+    runStep("pyseer", ["pyseer"], local=True)
+
+@pytest.mark.local
+def test_makeRefList():
+    runStep("makeRefList", ["ref.txt"], local=True)
+
+@pytest.mark.cluster
+def test_mapKmers():
+    runStep("mapKmers", ["maps"])

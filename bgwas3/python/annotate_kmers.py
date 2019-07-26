@@ -10,8 +10,8 @@ import tempfile
 import subprocess
 import pybedtools
 
-from .bwa import bwa_index
-from .bwa import bwa_iter
+from bwa import bwa_index
+from bwa import bwa_iter
 
 def get_options():
     import argparse
