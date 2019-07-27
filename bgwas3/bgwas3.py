@@ -42,12 +42,20 @@ def fsm(infile, outfile):
 
     ''' Kmer mining/ counting with fsm-lite '''
 
+    print(PARAMS)
+
     to_cluster = True
 
     statement = '''
     ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
-    fsm-lite -l ../contigs_list.txt -s 6 -S 610 -v -t fsm_kmers | gzip -c > ../%(outfile)s
+    fsm-lite 
+        -l ../contigs_list.txt 
+        -t fsm_kmers 
+        -m %(fsm_kmer-min)s
+        -M %(fsm_kmer-max)s
+        -t fsm_kmers
+        | gzip -c > ../%(outfile)s
     '''
 
     P.run(statement)
@@ -106,7 +114,7 @@ def roary(infile, outfile):
 # distanceFromTree {{{
 @transform(
     roary,
-    regex("roary/accessory_binary_genes\.fa\.newick"),
+    regex(".*"),
     "distances.tsv"
     )
 def distanceFromTree(infile, outfile):
@@ -208,6 +216,15 @@ def makeRefList(infiles, outfile):
     refs = list(filter(re.compile("refs/.*").match, gffs))
     drafts = list(filter(re.compile("annotations/.*").match, gffs))
 
+    print(P["test_cool"])
+    print(P["test_sick"])
+
+    statement = '''
+    echo '%(P["test_cool"])s %(P["test_sick"])'
+    '''
+
+    P.run(statement)
+
     with open(outfile, "w") as f:
         for gff in refs:
             idd = re.search("^.*/(.*)\.gff", gff).group(1)
@@ -228,26 +245,47 @@ def makeRefList(infiles, outfile):
     )
 @transform(
     pyseer,
-    regex(r"^associations/(.*)\.assoc$"),
+    regex(r"^associations/(.*)\.assoc\.gz$"),
     add_inputs(makeRefList),
-    r"maps/\1.txt"
+    r"maps/\1.txt.gz"
     )
 def mapKmers(infiles, outfile):
 
     to_cluster = True
 
-    kmers = infiles[0]
-    refs = infiles[1]
-
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
     statement = '''
-    python %(PY_SRC_PATH)s/annotate_kmers.py %(kmers)s %(refs)s %(outfile)s
+    gzip -d %(infiles[0])s &&
+    python %(PY_SRC_PATH)s/annotate_kmers.py %(infiles[0][:-3])s %(infiles[1])s %(outfile[:-3])s &&
+    gzip %(infiles[0][:-3])s &&
+    gzip %(outfile[:-3])s
     '''
 
     P.run(statement)
 
 # }}}
+# summariseKmerHits {{{
+@follows(
+    mkdir("hits")
+    )
+@transform(
+    mapKmers,
+    regex(r"maps/(.*)\.txt"),
+    r"hits/\1.hits"
+    )
+def countGeneHits(infile, outfile):
+
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
+    statement = '''
+    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile)s %(outfile)s
+    '''
+
+    P.run(statement)
+
+# }}}
+
 # full {{{
 @follows (
     mapKmers
