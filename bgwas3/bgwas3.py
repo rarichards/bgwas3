@@ -54,7 +54,6 @@ def fsm(infile, outfile):
         -t fsm_kmers 
         -m %(fsm_kmer-min)s
         -M %(fsm_kmer-max)s
-        -t fsm_kmers
         | gzip -c > ../%(outfile)s
     '''
 
