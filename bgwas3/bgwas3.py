@@ -36,7 +36,7 @@ def assembly(infile, outfile):
 # fsm {{{
 @merge(
     assembly,
-    "kmers.gz"
+    "kmers.txt.gz"
     )
 def fsm(infile, outfile):
 
@@ -51,9 +51,10 @@ def fsm(infile, outfile):
     cd contigs &&
     fsm-lite 
         -l ../contigs_list.txt 
-        -t fsm_kmers 
         -m %(fsm_kmer-min)s
         -M %(fsm_kmer-max)s
+        -v
+        -t kmers
         | gzip -c > ../%(outfile)s
     '''
 
