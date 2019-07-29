@@ -1,74 +1,57 @@
 - [ ] finish pipeline
-	- [ ] fix cluster problem
-		~ antonio looking into it
-		- [ ] retry @wed
 	- [x] see how to run batch jobs
-	- [ ] finish core
-		~ maintenance
-		- [n] run prokka and roary step on laptop 
-			~ qsub working again
+	- [x] finish core
 		- [x] run prokka 
 		- [x] run roary 
-		- [ ] run pyseer @wed
-		- [w] kmer mapping @wed
-			- [ ] write test
-			- [ ] write
-			- [ ] test
+		- [x] pyseer step 
+		- [x] kmer mapping 
+	- [ ] fix cluster problem
+		~ antonio looking into it
+		- [s] ask antonio status @mon
 	- [w] test with cluster
 		~ waiting for fix
-	- [ ] make conda recipe/ travis work with conda
-		- [w] make pip package
-			~ until more finished
-	- [w] add settings for steps in yml
-		- [ ] prokka
-		- [ ] roary
-		- [ ] pyseer
+	- [m] make conda recipe/ travis work with conda
+		- [ ] make pip package
+	- [x] add settings for steps in yml
+		- [x] prokka
+		- [x] roary
+		- [x] pyseer
 	- [ ] adds analysis steps
-		- [m] read about 3 tools of analyis
-			- [x] ask antonio what each of these steps do
-			- [ ] matrixqtl
-				~ http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/
-			- [ ] bolt 
-				~ https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-20001
-			- [ ] qtltools
-				~ https://qtltools.github.io/qtltools/
-		- [ ] add pathway analysis step
-			- [x] go trough marvig paer (2014) to research how they did pathway analysis
-				~ compared number of mutation to genes (classes) that are frequently mutated
-			- [x] research tools for pathway analysis
-			- [w] write step @wed
-				~ waiting until get up to this
+		- [x] go trough marvig paer (2014) to research how they did pathway analysis
+			~ compared number of mutation to genes (classes) that are frequently mutated
+		- [x] research tools for pathway analysis
+		- [ ] write step @sat @sun
+			- [m] make automatic plots for results
 		- [w] add aalysis based on results of running data
-	- [ ] make a way for choosing a p-value cut off for significant kmers
-		- [ ] research how tools do it @wed
+	- [ ] make a way for choosing a p-value cut off for significant kmers @sat @sun
+		- [ ] research how tools do it @fri
 			- [ ] research how matrix qtl does this
 			- [ ] research how pyseer/ other tools do this
 				- [ ] does pyseer write to disk?
-	- [ ] add a multiple correction step
-		- [ ] research types of multiple correction @wed
+	- [ ] add a multiple correction step @sat @sun
+		- [ ] research types of multiple correction
 			~ benhjamin fdr?
 			~ bonferonni
 		- [ ] research q-value package
-	- [w] make automatic plots for results
-- [ ] volker
-	- [w] get data ready to show
-	- [s] meet volker
-- [w] write docs
 - [ ] run with metabolomic data
-	- [s] get data from antonio
+	- [s] get data from antonio @mon
+	- [m] ask antonio for data by email @sat @sun
 	- [w] run
 	- [w] analysis
+- [w] volker
+	- [ ] get data ready to show
+	- [s] meet volker
+- [w] write docs
 - [ ] dissertation
 	- [x] go through examples
-	- [x] read metabolomics papers again @mon
-	- [ ] rewrite notes to rst
+	- [x] read metabolomics papers again
+	- [ ] rewrite notes to rst @sat @sun
 		- [ ] go over project 2
 		- [ ] go over old kb
-	- [ ] write outline (for wednesday) !!! @wed
-	- [ ] make flowchart graphic (for wednesday) @wed
+	- [ ] write outline (for wednesday) @sun
+	- [ ] make flowchart graphic (for wednesday) @sun
+	- [w] email dis and graph to antonio @sun !!!!
 	- [w] write draft 1
-- [s] send antonio stuff
-- [s] meet antonio
 - [w] arrange meeting with huw and jake
 - [m] research amazon cloud
 	~ if nothing working

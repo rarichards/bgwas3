@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 from ruffus import *
 import cgatcore.experiment as E
 from cgatcore import pipeline as P
@@ -285,10 +286,28 @@ def countGeneHits(infile, outfile):
     P.run(statement)
 
 # }}}
+# pathwayAnalysis {{{
+@merge(
+    mapKmers,
+    "pathways"
+    )
+def pathwayAnalysis(infiles, outfile):
+    os.mkdir(outfile);
 
+# }}}
+# visualise {{{
+@merge(
+    [mapKmers, pathwayAnalysis],
+    "visuals"
+    )
+def visualise(infiles, outfile):
+    path = os.path.dirname(os.path.realpath(__file__)) + "/template"
+    shutil.copytree(path, os.getcwd())
+
+# }}}
 # full {{{
 @follows (
-    mapKmers
+    visualise
     )
 def full():
     pass
