@@ -62,7 +62,7 @@ def extract_genes(bedtools_intervals):
             else:
                 gene = ""
 
-        annotations[int(kmer_id)][int(hit_id)] = gene
+        annotations[int(kmer_id)][int(hit_id)] = ID #changed this from gene
 
     return annotations
 

@@ -313,26 +313,26 @@ def pathwayAnalysis(infiles, outfile):
 
 # }}}
 # plot {{{
-@transform(
-    countGeneHits,
-    regex("hits/(.*)_hits.txt.gz"),
-    r"plots/\1_plot.png"
-    )
-def plot(infile, outfile):
+# @transform(
+#     countGeneHits,
+#     regex("hits/(.*)_hits.txt.gz"),
+#     r"plots/\1_plot.png"
+#     )
+# def plot(infile, outfile):
 
 # visualise {{{
-@merge(
-    [mapKmers, pathwayAnalysis],
-    "visuals"
-    )
-def visualise(infiles, outfile):
-    path = os.path.dirname(os.path.realpath(__file__)) + "/template"
-    shutil.copytree(path, os.getcwd())
+# @merge(
+#     [mapKmers, pathwayAnalysis],
+#     "visuals"
+#     )
+# def visualise(infiles, outfile):
+#     path = os.path.dirname(os.path.realpath(__file__)) + "/template"
+#     shutil.copytree(path, os.getcwd())
 
 # }}}
 # full {{{
 @follows (
-    visualise
+    countGeneHits
     )
 def full():
     pass
