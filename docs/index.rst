@@ -1,7 +1,7 @@
 bgwas3
 ======
 
-.. image:: _static/flow.svg
+.. image:: _static/flowchart.png
 
 .. toctree::
    :maxdepth: 2

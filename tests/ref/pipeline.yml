@@ -22,6 +22,3 @@ pyseer:
   max-af: 0.99
   pvalue-thresh: 1
   pyseer-extra:
-test:
-  cool: wow
-  sick: 69

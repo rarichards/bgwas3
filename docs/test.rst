@@ -1,0 +1,2 @@
+- run pipeline with test data and signigicant kmers (pipeline)
+- send table of contents

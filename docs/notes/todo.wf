@@ -1,0 +1,57 @@
+- [ ] finish pipeline
+	- [x] see how to run batch jobs
+	- [x] finish core
+		- [x] run prokka 
+		- [x] run roary 
+		- [x] pyseer step 
+		- [x] kmer mapping 
+	- [ ] fix cluster problem
+		~ antonio looking into it
+		- [s] ask antonio status @mon
+	- [w] test with cluster
+		~ waiting for fix
+	- [m] make conda recipe/ travis work with conda
+		- [ ] make pip package
+	- [x] add settings for steps in yml
+		- [x] prokka
+		- [x] roary
+		- [x] pyseer
+	- [ ] adds analysis steps
+		- [x] go trough marvig paer (2014) to research how they did pathway analysis
+			~ compared number of mutation to genes (classes) that are frequently mutated
+		- [x] research tools for pathway analysis
+		- [ ] write step @mon
+			- [m] make automatic plots for results
+		- [w] add aalysis based on results of running data
+	- [ ] make a way for choosing a p-value cut off for significant kmers @mon
+		- [ ] research how tools do it 
+			- [ ] research how matrix qtl does this
+			- [ ] research how pyseer/ other tools do this
+				- [ ] does pyseer write to disk?
+	- [ ] add a multiple correction step
+		- [ ] research types of multiple correction
+			~ benhjamin fdr?
+			~ bonferonni
+		- [ ] research q-value package
+- [ ] run with metabolomic data
+	- [s] get data from antonio @mon
+	- [m] ask antonio for data by email
+	- [w] run
+	- [w] analysis
+- [w] volker
+	- [ ] get data ready to show @mon
+	- [s] meet volker
+- [w] write docs
+- [ ] dissertation
+	- [x] go through examples
+	- [x] read metabolomics papers again
+	- [ ] rewrite notes to rst @mon
+		- [ ] go over project 2
+		- [ ] go over old kb
+	- [ ] write outline (for wednesday) @mon
+	- [ ] make flowchart graphic (for wednesday) @mon
+	- [m] email dis and graph to antonio
+	- [m] write draft 1
+- [w] arrange meeting with huw and jake
+- [m] research amazon cloud
+	~ if nothing working

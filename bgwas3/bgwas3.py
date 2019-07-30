@@ -115,7 +115,7 @@ def roary(infile, outfile):
 # distanceFromTree {{{
 @transform(
     roary,
-    regex(".*"),
+    regex("tree\.newick"),
     "distances.tsv"
     )
 def distanceFromTree(infile, outfile):
@@ -125,6 +125,9 @@ def distanceFromTree(infile, outfile):
     to_cluster = False
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
+    print("\n" + infile + "\n")
+    print("\n" + outfile + "\n")
 
     statement = '''
     python %(PY_SRC_PATH)s/phylogeny_distance.py 
@@ -248,7 +251,7 @@ def makeRefList(infiles, outfile):
     pyseer,
     regex(r"^associations/(.*)\.assoc\.gz$"),
     add_inputs(makeRefList),
-    r"maps/\1.txt.gz"
+    r"maps/\1_maps.txt.gz"
     )
 def mapKmers(infiles, outfile):
 
@@ -256,31 +259,42 @@ def mapKmers(infiles, outfile):
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
+    # TODO change to zcat
+
+    assoc_gzip = infiles[0]
+    assoc = infiles[0][:-3]
+    ref_list = infiles[1]
+    maps = outfile[:-3]
+    
+    reflist = infiles[1]
+
     statement = '''
-    gzip -d %(infiles[0])s &&
-    python %(PY_SRC_PATH)s/annotate_kmers.py %(infiles[0][:-3])s %(infiles[1])s %(outfile[:-3])s &&
-    gzip %(infiles[0][:-3])s &&
-    gzip %(outfile[:-3])s
+    gzip -d %(assoc_gzip)s &&
+    python %(PY_SRC_PATH)s/annotate_kmers.py %(assoc)s %(ref_list)s %(maps)s &&
+    gzip %(assoc)s &&
+    gzip %(maps)s
     '''
 
     P.run(statement)
 
 # }}}
-# summariseKmerHits {{{
+# countGeneHits {{{
 @follows(
     mkdir("hits")
     )
 @transform(
     mapKmers,
-    regex(r"maps/(.*)\.txt"),
-    r"hits/\1.hits"
+    regex(r"maps/(.*)_maps\.txt.gz"),
+    r"hits/\1_hits.txt.gz"
     )
 def countGeneHits(infile, outfile):
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
     statement = '''
-    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile)s %(outfile)s
+    zcat %(infile)s
+    |   python %(PY_SRC_PATH)s/summarise_annotations.py 
+    |   gzip > %(outfile)s
     '''
 
     P.run(statement)
