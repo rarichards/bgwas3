@@ -291,10 +291,13 @@ def countGeneHits(infile, outfile):
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
+    infile_unzip = infile[:-3]
+    outfile_unzip = outfile[:-3]
+
     statement = '''
-    zcat %(infile)s
-    |   python %(PY_SRC_PATH)s/summarise_annotations.py 
-    |   gzip > %(outfile)s
+    gzip -d %(infile)s &&
+    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile_unzip)s > %(outfile_unzip)s &&
+    gzip %(outfile_unzip)s
     '''
 
     P.run(statement)
@@ -309,6 +312,14 @@ def pathwayAnalysis(infiles, outfile):
     os.mkdir(outfile);
 
 # }}}
+# plot {{{
+@transform(
+    countGeneHits,
+    regex("hits/(.*)_hits.txt.gz"),
+    r"plots/\1_plot.png"
+    )
+def plot(infile, outfile):
+
 # visualise {{{
 @merge(
     [mapKmers, pathwayAnalysis],
