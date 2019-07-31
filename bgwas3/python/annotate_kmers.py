@@ -1,4 +1,4 @@
-opyright 2017 Marco Galardini and John Lees
+# Copyright 2017 Marco Galardini and John Lees
 
 '''Script to annotate kmer hits'''
 
@@ -9,8 +9,8 @@ import tempfile
 import subprocess
 import pybedtools
 
-from .bwa import bwa_index
-from .bwa import bwa_iter
+from bwa import bwa_index
+from bwa import bwa_iter
 
 def get_options():
     import argparse
