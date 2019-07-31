@@ -1,4 +1,5 @@
-opyright 2017 Marco Galardini and John Lees
+#!/usr/bin/env python
+# Copyright 2017 Marco Galardini and John Lees
 
 '''Script to annotate kmer hits'''
 
@@ -9,8 +10,8 @@ import tempfile
 import subprocess
 import pybedtools
 
-from .bwa import bwa_index
-from .bwa import bwa_iter
+from bwa import bwa_index
+from bwa import bwa_iter
 
 def get_options():
     import argparse
@@ -43,8 +44,7 @@ def extract_genes(bedtools_intervals):
     annotations = {}
     for match in bedtools_intervals.features():
         kmer_id, hit_id = match.fields[3].split("_")
-        if annotations.get(int(kmer_id)) == None:
-            annotations[int(kmer_id)] = {}
+        annotations[int(kmer_id)] = {}
 
         ID = None
         gene = None
@@ -56,16 +56,13 @@ def extract_genes(bedtools_intervals):
                     break
                 elif parse_tag.group(1) == "ID" and ID is None:
                     ID = parse_tag.group(2)
-        if ID is not None:
-            gene = ID # TODO
-        else:
-            if gene is None:
+        if gene is None:
+            if ID is not None:
+                gene = ID
+            else:
                 gene = ""
 
-        if annotations[int(kmer_id)].get(int(hit_id)) == None or annotations[int(kmer_id)][int(hit_id)] == "":
-            annotations[int(kmer_id)][int(hit_id)] = gene
-        else:
-            annotations[int(kmer_id)][int(hit_id)] += "|" + gene
+        annotations[int(kmer_id)][int(hit_id)] = ID #changed this from gene
 
     return annotations
 
@@ -183,7 +180,8 @@ def main():
                         for hit_idx, hit in enumerate(map_pos[kmer_idx]):
                             annotation = hit + ";"
                             if kmer_idx in down_genes and hit_idx in down_genes[kmer_idx]:
-                                annotation += down_genes[kmer_idx][hit_idx]
+                                sys.stderr.write(down_genes[kmer_idx][hit_idx]) # TODO
+                                annotation += str(down_genes[kmer_idx][hit_idx])
                             annotation += ";"
                             if kmer_idx in in_genes and hit_idx in in_genes[kmer_idx]:
                                 annotation += in_genes[kmer_idx][hit_idx]
