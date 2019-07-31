@@ -180,7 +180,8 @@ def main():
                         for hit_idx, hit in enumerate(map_pos[kmer_idx]):
                             annotation = hit + ";"
                             if kmer_idx in down_genes and hit_idx in down_genes[kmer_idx]:
-                                annotation += down_genes[kmer_idx][hit_idx]
+                                sys.stderr.write(down_genes[kmer_idx][hit_idx]) # TODO
+                                annotation += str(down_genes[kmer_idx][hit_idx])
                             annotation += ";"
                             if kmer_idx in in_genes and hit_idx in in_genes[kmer_idx]:
                                 annotation += in_genes[kmer_idx][hit_idx]

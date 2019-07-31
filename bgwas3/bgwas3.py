@@ -220,12 +220,6 @@ def makeRefList(infiles, outfile):
     refs = list(filter(re.compile("refs/.*").match, gffs))
     drafts = list(filter(re.compile("annotations/.*").match, gffs))
 
-    print(P["test_cool"])
-    print(P["test_sick"])
-
-    statement = '''
-    echo '%(P["test_cool"])s %(P["test_sick"])'
-    '''
 
     P.run(statement)
 
@@ -241,7 +235,23 @@ def makeRefList(infiles, outfile):
             fa = list(filter(re.compile(regex).match, infiles))[0]
             f.write(fa + "\t" + gff + "\tdraft\n")
 
+# }}}
+# gff2tsv {{{
+@follows(
+    mkdir("refs")
+    )
+@transform(
+    "refs/*",
+    regex("refs/(.*)\.gff"),
+    r"refs/\1.tsv"
+    )
+def gff2tsv(infile, outfile):
 
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
+    statement = '''
+    Rscript %(R_SRC_PATH)s/gff2tsv.R %(infile)s
+    '''
 # }}}
 # mapKmers {{{
 @follows(
