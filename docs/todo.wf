@@ -7,7 +7,7 @@
 		- [x] kmer mapping 
 	- [ ] fix cluster problem
 		~ antonio looking into it
-		- [s] ask antonio status @mon
+		- [x] ask antonio status 
 	- [w] test with cluster
 		~ waiting for fix
 	- [m] make conda recipe/ travis work with conda
@@ -21,37 +21,46 @@
 			~ compared number of mutation to genes (classes) that are frequently mutated
 		- [x] research tools for pathway analysis
 		- [ ] write step @mon
+			- [ ] research xglr
+			- [ ] write and test
+			- [ ] make vis
 			- [m] make automatic plots for results
 		- [w] add aalysis based on results of running data
-	- [ ] make a way for choosing a p-value cut off for significant kmers @mon
+	- [n] make a way for choosing a p-value cut off for significant kmers
 		- [ ] research how tools do it 
 			- [ ] research how matrix qtl does this
 			- [ ] research how pyseer/ other tools do this
 				- [ ] does pyseer write to disk?
-	- [ ] add a multiple correction step
+	- [w] add a multiple correction step
 		- [ ] research types of multiple correction
 			~ benhjamin fdr?
 			~ bonferonni
 		- [ ] research q-value package
 - [ ] run with metabolomic data
-	- [s] get data from antonio @mon
+	- [x] get data from antonio
 	- [m] ask antonio for data by email
-	- [w] run
+	- [ ] run @tue
 	- [w] analysis
-- [w] volker
-	- [ ] get data ready to show @mon
+- [ ] volker
+	- [ ] get data ready to show
+		- [ ] prokka
+		- [ ] roary
+		- [ ] pyseer 
+		- [w] pathway analysis
+		- [ ] write summary of significant genes/pathways
 	- [s] meet volker
 - [w] write docs
 - [ ] dissertation
 	- [x] go through examples
 	- [x] read metabolomics papers again
-	- [ ] rewrite notes to rst @mon
+	- [ ] rewrite notes to rst @tue
 		- [ ] go over project 2
 		- [ ] go over old kb
-	- [ ] write outline (for wednesday) @mon
-	- [ ] make flowchart graphic (for wednesday) @mon
+	- [ ] write outline (table of content) @tue !!!
 	- [m] email dis and graph to antonio
 	- [m] write draft 1
 - [w] arrange meeting with huw and jake
 - [m] research amazon cloud
 	~ if nothing working
+- run pipeline with test data and signigicant kmers (pipeline)
+- send table of contents

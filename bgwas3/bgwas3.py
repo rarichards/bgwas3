@@ -288,14 +288,42 @@ def mapKmers(infiles, outfile):
     P.run(statement)
 
 # }}}
-# countGeneHits {{{
-@follows(
-    mkdir("hits")
-    )
+# bonferoniFilter {{{
 @transform(
     mapKmers,
-    regex(r"maps/(.*)_maps\.txt.gz"),
-    r"hits/\1_hits.txt.gz"
+    regex(r"^maps/(.*)_maps.txt.gz$"),
+    r"maps/\1_maps_filtered.txt"
+    )
+def bonferoniFilter(infiles, outfile):
+
+    to_cluster = True
+
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
+    # TODO change to zcat
+
+    assoc_gzip = infiles[0]
+    assoc = infiles[0][:-3]
+    ref_list = infiles[1]
+    maps = outfile[:-3]
+    
+    reflist = infiles[1]
+
+    statement = '''
+    gzip -d %(assoc_gzip)s &&
+    python %(PY_SRC_PATH)s/annotate_kmers.py %(assoc)s %(ref_list)s %(maps)s &&
+    gzip %(assoc)s &&
+    gzip %(maps)s
+    '''
+
+    P.run(statement)
+
+# }}}
+# countGeneHits {{{
+@transform(
+    bonferoniFilter,
+    regex("^maps/(.*)_maps_filtered.txt$"),
+    r"maps/\1_hits.txt"
     )
 def countGeneHits(infile, outfile):
 
@@ -314,35 +342,27 @@ def countGeneHits(infile, outfile):
 
 # }}}
 # pathwayAnalysis {{{
-@merge(
-    mapKmers,
-    "pathways"
+@transform(
+    countGeneHits,
+    regex("^maps/(.*)_hits.txt$"),
+    r"maps/\1_pathways.tsv"
     )
 def pathwayAnalysis(infiles, outfile):
-    os.mkdir(outfile);
+    pass
 
 # }}}
-# plot {{{
-# @transform(
-#     countGeneHits,
-#     regex("hits/(.*)_hits.txt.gz"),
-#     r"plots/\1_plot.png"
-#     )
-# def plot(infile, outfile):
-
 # visualise {{{
-# @merge(
-#     [mapKmers, pathwayAnalysis],
-#     "visuals"
-#     )
-# def visualise(infiles, outfile):
-#     path = os.path.dirname(os.path.realpath(__file__)) + "/template"
-#     shutil.copytree(path, os.getcwd())
+@merge(
+    [countGeneHits, pathwayAnalysis],
+    "visual"
+    )
+def visualise(infile, outfile):
+    pass
 
 # }}}
 # full {{{
 @follows (
-    countGeneHits
+    visualise
     )
 def full():
     pass
