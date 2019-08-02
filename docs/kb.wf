@@ -1,0 +1,46 @@
+- cystic fibrosis
+	- pseudomonas aeruginosa
+	- mucoid morphocyte
+- metabolomics
+	- importance
+- enrichmenent analysis
+- tools
+- papers 
+	- @marvig2015 Convergent evolution and adaptation of Pseudomonas aeruginosa within patients with cystic fibrosis 
+		~ Identified and confirmed genes probably associated with antibiotic resitance/ initial adaptation of pseudomonas in cystic fibrosis.
+		- Sequenced 474 isolates of pseudomonas from 34 children with cystic fibrosis (same data?)
+		- Identified 53 clone types based on SNP difference (those in the same clone type differed by avg 122, while different clones differed by >10,000).
+			- Most clone types (43) found in one patient.
+			- When clone types were in multiple patients, and when they differed by ~50 SNPs, suggesting not a result of direct transmission but a result of getting the clone type from a common source.
+			- When clone types were in multiple patients, AND when differed by <25 SNPs, suggested direct transmission.
+
+		- 52 genes identified
+		- Isolates from the same clone type were compared to estimate clone phylogenies.
+		- From these phylogenies, were able to find regions of the geneome which tend to mutate at a rate higher than genetic drift (and so probably are related to resistance).
+		- Pathway analysis
+		- Grouped genes according to their PseudoCap function (Pseudomonas Community Annotation Project)
+			- antibiotic resistance and susceptibility
+			- motility and attachment
+			- DNA replication, modification and repair
+			- cell wall/LPS/ capsule
+			- secreted factors (toxins, enzymes, alginate)
+			- transcriptional regulators
+
+		- Most mutations were frame shift, so probably due to loss of function?
+		- Also identified unclassified genes.
+		- Often, genes associated with same pathway were mutated, though most of the time it wasn't the same gene, suggesting a favourable phenotype
+- @behrend2013 Metabolic adaptations of Pseudomonas aeruginosa during cystic ﬁbrosis chronic lung infections
+	- Previous studies of pseudomonas aeruginosa adaptation is focused on the genes.
+		- Does not take into consideration metabolic changes
+	- Used untargeted EXOmetabolic profiling @l on 179 isoaltes from 18 CF patients
+	- Montitored growth 
+	- Monitored metabolite utilization and excretion
+	- Seperated bacteria into 'morphotypes'
+	- Results
+		- 9 metabolites had signiﬁcant (P < 0.01, Spearman’s rank-order correlation) association with length of infection
+		- Acetate production negatively correlated with length of infection
+		- Uptake/use of amino acids in the lung environment incresed with length of infection.
+		- Uptake/use of the non-mammalian metabolite 'trehalose' decreased with length of infection
+		- Inter-clonal variation was larger than variation by length of infection.
+		- Mucoid morphotype increased with time, while normal morphotype decreased.
+		- In vivo growth rate? didn't correlate with morphology or length of infection, but in vitro growth rate did (though stronger corr with patient).
