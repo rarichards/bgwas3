@@ -138,6 +138,26 @@ def distanceFromTree(infile, outfile):
     P.run(statement)
 
 # }}}
+# plotTrees {{{
+@follows(
+    mkdir("out"),
+    mkdir("out/static"),
+    mkdir("out/static/trees")
+    )
+@split(
+    [roary, "phenos.tsv"],
+    "out/static/trees/*.png"
+    )
+def plotTrees(infiles, outfiles):
+
+    tree = infiles[0]
+    phenos = infies[1]
+
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
+
+
+# }}}
 # splitPhenos {{{
 @follows(
     mkdir("phenos")
@@ -148,17 +168,23 @@ def distanceFromTree(infile, outfile):
     )
 def splitPhenos(infile, outfiles):
 
-    ''' Split a tsv file into multiple tsv files by column '''
+    ''' Split the main tsv file phenotype columns into their own tsv files '''
 
     to_cluster = False
 
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
     statement = '''
-    cols=`awk -F"\\t" '{print NF; exit}' %(infile)s` &&
-    for col in $(seq 2 $cols); do
-        pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' %(infile)s` &&
-        awk -F"\\t" -v col=$col '{print $1"\\t"$col}' %(infile)s > phenos/${pheno}.tsv;
-    done
+    Rscript %(R_SRC_PATH)s/splitPhenos.R %(infile)s phenos
     '''
+
+    # statement = '''
+    # cols=`awk -F"\\t" '{print NF; exit}' %(infile)s` &&
+    # for col in $(seq 2 $cols); do
+    #     pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' %(infile)s` &&
+    #     awk -F"\\t" -v col=$col '{print $1"\\t"$col}' %(infile)s > phenos/${pheno}.tsv;
+    # done
+    # '''
 
     P.run(statement)
 
@@ -352,6 +378,9 @@ def pathwayAnalysis(infiles, outfile):
 
 # }}}
 # visualise {{{
+@follows(
+    mkdir("viz")
+    )
 @merge(
     [countGeneHits, pathwayAnalysis],
     "visual"

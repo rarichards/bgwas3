@@ -1,12 +1,15 @@
 - [ ] finish pipeline
 	- [ ] fix kmer mapping
-		- [ ] troubleshoot kmer mapping @fri
-			- [ ] try mapping to single with phandango
-			- [ ] try a different script for mapping
+		- [ ] troubleshoot kmer mapping @sat
+			- [r] map test (small data) without filtering
+			- [w] make visualisation
+			- [m] try mapping to single with phandango
+			- [m] try a different script for mapping
 				- [ ] find other scripts that do mapping
-		- [ ] troubleshoot why some antibac not signigicant @fri
+		- [ ] troubleshoot why some antibac not signigicant @sat
 			- [ ] try running with log values and swarm/swim etx
-	- [ ] finish visual step @fri (using dummy data)
+				- [r] 
+	- [ ] finish visual step @sat (using dummy data)
 		- [ ] kmer association vis
 			- [ ] add a visualisation to output of qq plot and distribution of p-values {troubleshoot why some not significant}
 			- [ ] add tooltip/ links to sources
@@ -17,10 +20,10 @@
 	- [m] pathway analysis step
 		~ depends on time
 - [ ] test with cluster
-	- [ ] test if cluster is fixed @fri
-	- [w] test with cluster
+	- [x] test if cluster is fixed
+	- [n] test with cluster
 - [ ] packaging
-	- [ ] write basic docs @fri
+	- [ ] write basic docs @sat
 	- [ ] write simple tests
 	- [ ] incoporate coverall
 		- [ ] try
@@ -29,10 +32,10 @@
 	~ waiting for final data to be sent to me
 	- [ ] run with metabolomics data
 - [ ] dissertation
-	- [ ] set up r markdown document @fri
+	- [ ] set up r markdown document @sat
 	- [ ] write detailed table of contents and draft some parts (for monday) !!!
 		~ also try and be at point of draft by friday
 		~ use old report and kb notes
 		- [ ] write table of contents @sat
-		- [w] write basics stuff @sat
+		- [w] write basics stuff @sun
 		- [w] flesh out @sun

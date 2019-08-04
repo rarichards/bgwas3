@@ -1,0 +1,47 @@
+---
+title: "bgwas3"
+author: "Gregory Leeman"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+    fig_caption: true
+bibliography: bib.bib 
+---
+
+```{r setup, include=FALSE}
+library(dplyr);
+library(tidyr);
+library(ggplot2);
+library(knitr);
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE);
+```
+
+# Abstract
+# Acknowledgements
+# Introduction
+
+## Genome wide association studies
+## Pangenome wide association studies
+## Metabolomics
+
+# Methods
+
+```{r, out.width='25%', fig.align='center', fig.cap='...'}
+#knitr::include_graphics("")
+```
+
+## CGATcore and Ruffus
+## Genome Annotation
+## Phylogent estimation
+## Kmer association testing
+## Significant Kmer mapping
+## Pathway analysis
+## Visualisation
+## Testing
+## Packaging
+## Use case
+
+# Results
+# Discussion
+# References
