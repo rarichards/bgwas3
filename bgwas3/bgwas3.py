@@ -151,9 +151,15 @@ def distanceFromTree(infile, outfile):
 def plotTrees(infiles, outfiles):
 
     tree = infiles[0]
-    phenos = infies[1]
+    phenos = infiles[1]
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
+    statement =  '''
+    Rscript %(R_SRC_PATH)s/plotTrees.R trees.newick phenos.tsv out/static/trees
+    '''
+
+    P.run(statement)
 
 # }}}
 # splitPhenos {{{
@@ -283,7 +289,7 @@ def gff2tsv(infile, outfile):
     )
 @transform(
     pyseer,
-    regex(r"^associations/(.*)\.assoc\.gz$"),
+    regex(r"^associations/(.*)_assoc\.txt\.gz$"),
     add_inputs(makeRefList),
     r"maps/\1_maps.txt.gz"
     )
@@ -308,6 +314,8 @@ def mapKmers(infiles, outfile):
     gzip %(assoc)s &&
     gzip %(maps)s
     '''
+
+    print(statement)
 
     P.run(statement)
 
