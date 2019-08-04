@@ -202,7 +202,7 @@ def splitPhenos(infile, outfiles):
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
     add_inputs(distanceFromTree, fsm),
-    r"associations/\1.assoc.gz",
+    r"associations/\1_assoc.txt.gz",
     r"\1"
     )
 def pyseer(infiles, outfile, idd):
@@ -250,9 +250,6 @@ def makeRefList(infiles, outfile):
     refs = list(filter(re.compile("refs/.*").match, gffs))
     drafts = list(filter(re.compile("annotations/.*").match, gffs))
 
-
-    P.run(statement)
-
     with open(outfile, "w") as f:
         for gff in refs:
             idd = re.search("^.*/(.*)\.gff", gff).group(1)
@@ -291,15 +288,13 @@ def gff2tsv(infile, outfile):
     pyseer,
     regex(r"^associations/(.*)_assoc\.txt\.gz$"),
     add_inputs(makeRefList),
-    r"maps/\1_maps.txt.gz"
+    r"maps/\1_map.txt.gz"
     )
 def mapKmers(infiles, outfile):
 
     to_cluster = True
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-
-    # TODO change to zcat
 
     assoc_gzip = infiles[0]
     assoc = infiles[0][:-3]
