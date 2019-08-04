@@ -1,3 +1,0 @@
-cgatcore
-drmaa>=0.7.6
-ruffus>=2.6

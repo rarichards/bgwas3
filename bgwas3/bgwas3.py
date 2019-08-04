@@ -155,8 +155,6 @@ def plotTrees(infiles, outfiles):
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-
-
 # }}}
 # splitPhenos {{{
 @follows(

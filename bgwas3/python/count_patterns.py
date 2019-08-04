@@ -48,5 +48,5 @@ if __name__ == "__main__":
                " | wc -l")
 
     p = subprocess.check_output(command, shell=True, universal_newlines=True)
-    print("Patterns:\t" + p.rstrip())
-    print("Threshold:\t" + '%.2E' % Decimal(options.alpha/float(p.rstrip())))
+    print("file\tpatterns\tp_thresh")
+    print(options.patterns + "\t" + p.rstrip() + "\t" + '%.2E' % Decimal(options.alpha/float(p.rstrip())))
