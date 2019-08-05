@@ -174,7 +174,7 @@ def splitPhenos(infile, outfiles):
 
     ''' Split the main tsv file phenotype columns into their own tsv files '''
 
-    to_cluster = False
+    to_cluster = True
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
