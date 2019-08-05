@@ -1,6 +1,5 @@
 import setuptools
 import os
-import configparser
 
 here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
@@ -21,10 +20,5 @@ setuptools.setup(
     author_email = 'g-r-eg@outlook.com',
     license = 'GNU General Public License v3.0',
     packages = ['bgwas3'],
-    entry_points = {"console_scripts": ['bgwas3 = bgwas3.bgwas3:main']},
-    install_requires = [
-        "ruffus",
-        "cgatcore",
-        "argparse"
-        ]
+    entry_points = {"console_scripts": ['bgwas3 = bgwas3.bgwas3:main']}
     )

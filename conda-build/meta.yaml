@@ -2,15 +2,24 @@ package:
   name: bgwas3
   version: 0.1
 source:
-  git_url: https://github.com/g-r-eg/bgwas3
+  path: ..
 build:
   number: 1
   script: python setup.py install
 requirements:
   build:
-    - python
-    - numpy
+    - python >=3.7
+    - setuptools
   run:
-    - python
+    - argparse
     - ruffus
     - cgatcore
+    - prokka
+    - roary
+    - pyseer
+    - r-dplyr
+    - r-readr
+    - r-tidyr
+    - r-stringr
+    - r-tidytree
+    - bioconductor-ggtree
