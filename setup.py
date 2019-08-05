@@ -1,9 +1,9 @@
-from setuptools import setup
-import path
+import setuptools
+import os
 
-here = path.abspath(path.dirname(__file__))
+here = os.path.abspath(os.path.dirname(__file__))
 
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 install_requires = [
@@ -12,7 +12,7 @@ install_requires = [
     "argparse"
     ]
 
-setup(
+setuptools.setup(
     name = 'bgwas3',
     version = '0.0.1',
     long_description = long_description,
