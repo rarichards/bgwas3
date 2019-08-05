@@ -1,8 +1,8 @@
 import setuptools
 import os
+import configparser
 
 here = os.path.abspath(os.path.dirname(__file__))
-
 with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
@@ -24,7 +24,7 @@ setuptools.setup(
     entry_points = {"console_scripts": ['bgwas3 = bgwas3.bgwas3:main']},
     install_requires = [
         "ruffus",
-        "cgacore",
+        "cgatcore",
         "argparse"
         ]
     )

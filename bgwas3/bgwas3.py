@@ -174,7 +174,7 @@ def splitPhenos(infile, outfiles):
 
     ''' Split the main tsv file phenotype columns into their own tsv files '''
 
-    to_cluster = True
+    to_cluster = False
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
@@ -196,22 +196,24 @@ def splitPhenos(infile, outfiles):
 # pyseer {{{
 @follows(
     mkdir("associations"),
-    mkdir("extra/pyseer")
     )
 @transform(
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
     add_inputs(distanceFromTree, fsm),
-    r"associations/\1_assoc.txt.gz",
+    [r"associations/\1_assoc.txt.gz", r"associations/\1_patterns.txt"],
     r"\1"
     )
-def pyseer(infiles, outfile, idd):
+def pyseer(infiles, outfiles, idd):
 
     to_cluster = True
 
     pheno = infiles[0]
     distances = infiles[1]
     kmers = infiles[2]
+
+    assoc = outfiles[0]
+    patterns = outfiles[1]
 
     print(pheno)
     print(distances)
@@ -223,10 +225,10 @@ def pyseer(infiles, outfile, idd):
         --phenotypes %(pheno)s
         --kmers %(kmers)s
         --similarity %(distances)s
-        --output-patterns extra/pyseer/%(idd)s_patterns.txt
+        --output-patterns %(patterns)s
         --cpu 8 
         | gzip -c 
-        > %(outfile)s
+        > %(assoc)s
     '''
 
     P.run(statement)
@@ -280,41 +282,48 @@ def gff2tsv(infile, outfile):
     Rscript %(R_SRC_PATH)s/gff2tsv.R %(infile)s
     '''
 # }}}
-# filter {{{
+# bonferoni {{{
 @transform(
     pyseer,
-    regex(r"^associations/(.*)_assoc\.txt\.gz$"),
-    [r"assocations/\1_stats.txt", r"associations/\1_assoc_filtered.txt"]
+    regex(r"^associations/(.*)_patterns.txt$"),
+    r"assocations/\1_stats.txt"
     )
-def filter(infiles, outfile):
+def bonferoni(infiles, outfile):
 
     to_cluster = False
 
-    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
+    print(infiles)
 
     assoc_gzip = infiles[0]
     assoc = infiles[0][:-3]
-    stats = outfiles[0]
-    filtered = outfiles[0]
-    
-    reflist = infiles[1]
 
     statement = '''
     gzip -d %(assoc_gzip)s &&
-    python %(PY_SRC_PATH)s/filter.py %(assoc)s %(ref_list)s %(maps)s &&
-    gzip %(assoc)s &&
-    gzip %(maps)s
+    Rscript %(R_SRC_PATH)s/bonferoni.R %(assoc)s > %(outfile)s
+    gzip %(assoc)s
     '''
 
     P.run(statement)
 
+# }}}
+# filter {{{
+@transform(
+    [pyseer, bonferoni],
+    regex(r"^associations/(.*)_(assoc|stats).*$"),
+    r"associations/\1_assoc_filtered.txt"
+    )
+def filter(infiles, outfile):
+    print(infiles)
+    print(outfiles)
 # }}}
 # mapKmers {{{
 @follows(
     mkdir("maps")
     )
 @transform(
-    pyseer,
+    filter,
     regex(r"^associations/(.*)_assoc\.txt\.gz$"),
     add_inputs(makeRefList),
     r"maps/\1_map.txt.gz"
@@ -346,7 +355,7 @@ def mapKmers(infiles, outfile):
 # }}}
 # countGeneHits {{{
 @transform(
-    bonferoniFilter,
+    filter,
     regex("^maps/(.*)_maps_filtered.txt$"),
     r"maps/\1_hits.txt"
     )
