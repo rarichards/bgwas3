@@ -280,6 +280,35 @@ def gff2tsv(infile, outfile):
     Rscript %(R_SRC_PATH)s/gff2tsv.R %(infile)s
     '''
 # }}}
+# filter {{{
+@transform(
+    pyseer,
+    regex(r"^associations/(.*)_assoc\.txt\.gz$"),
+    [r"assocations/\1_stats.txt", r"associations/\1_assoc_filtered.txt"]
+    )
+def filter(infiles, outfile):
+
+    to_cluster = False
+
+    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+
+    assoc_gzip = infiles[0]
+    assoc = infiles[0][:-3]
+    stats = outfiles[0]
+    filtered = outfiles[0]
+    
+    reflist = infiles[1]
+
+    statement = '''
+    gzip -d %(assoc_gzip)s &&
+    python %(PY_SRC_PATH)s/filter.py %(assoc)s %(ref_list)s %(maps)s &&
+    gzip %(assoc)s &&
+    gzip %(maps)s
+    '''
+
+    P.run(statement)
+
+# }}}
 # mapKmers {{{
 @follows(
     mkdir("maps")
@@ -311,37 +340,6 @@ def mapKmers(infiles, outfile):
     '''
 
     print(statement)
-
-    P.run(statement)
-
-# }}}
-# bonferoniFilter {{{
-@transform(
-    mapKmers,
-    regex(r"^maps/(.*)_maps.txt.gz$"),
-    r"maps/\1_maps_filtered.txt"
-    )
-def bonferoniFilter(infiles, outfile):
-
-    to_cluster = True
-
-    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-
-    # TODO change to zcat
-
-    assoc_gzip = infiles[0]
-    assoc = infiles[0][:-3]
-    ref_list = infiles[1]
-    maps = outfile[:-3]
-    
-    reflist = infiles[1]
-
-    statement = '''
-    gzip -d %(assoc_gzip)s &&
-    python %(PY_SRC_PATH)s/annotate_kmers.py %(assoc)s %(ref_list)s %(maps)s &&
-    gzip %(assoc)s &&
-    gzip %(maps)s
-    '''
 
     P.run(statement)
 

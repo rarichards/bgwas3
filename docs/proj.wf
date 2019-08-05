@@ -6,16 +6,24 @@
 			- [m] try mapping to single with phandango
 			- [m] try a different script for mapping
 				- [ ] find other scripts that do mapping
+			- [w] troubleshoot with resistance data etc
 		- [ ] troubleshoot why some antibac not signigicant @sat
 			- [ ] try running with log values and swarm/swim etx
-				- [r] 
-	- [ ] finish visual step @sat (using dummy data)
-		- [ ] kmer association vis
+				- [r] prokka
+				- [w] roary
+				- [w] pyseer
+				- [w] mapping
+				- [w] troubleshoot
+	- [ ] finish visual step with small dummy data
+		- [w] kmer association vis
+			~ waiting for mapping to be done
 			- [ ] add a visualisation to output of qq plot and distribution of p-values {troubleshoot why some not significant}
 			- [ ] add tooltip/ links to sources
 			- [ ] add static part
-		- [ ] add phylogeny bit
-			- [ ] add static part
+		- [ ] add phylogeny tree bit
+			- [ ] interactive
+			- [ ] static
+			~ add static phylogeny
 	- [ ] summary table step
 	- [m] pathway analysis step
 		~ depends on time

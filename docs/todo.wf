@@ -1,9 +1,6 @@
 - toubleshoot kmer mapping with small test (cut losses)
 - finish visual step with small test data
 - write basic docs
-- finish running pyseer data as backup (left trying to run fsm)
-- finish runnng resistance etc one
-- set up r markdown document and write contents so can write in it sunday
 ~ saturday
 	~ waiting for:
 		~ fsm on full pyseer data
