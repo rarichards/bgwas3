@@ -285,27 +285,53 @@ def gff2tsv(infile, outfile):
 # bonferoni {{{
 @transform(
     pyseer,
-    regex(r"^associations/(.*)_patterns.txt$"),
-    r"assocations/\1_stats.txt"
+    regex("^associations/(.*)_assoc.*$"),
+    [r"associations/\1_stats.txt", r"associations/\1_assoc_filtered.txt"]
     )
-def bonferoni(infiles, outfile):
+def bonferoni(infiles, outfiles):
 
     to_cluster = False
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    print(infiles)
-
+    patterns = infiles[1]
     assoc_gzip = infiles[0]
-    assoc = infiles[0][:-3]
+    stats = outfiles[0]
+    filtered = outfiles[1]
 
     statement = '''
-    gzip -d %(assoc_gzip)s &&
-    Rscript %(R_SRC_PATH)s/bonferoni.R %(assoc)s > %(outfile)s
-    gzip %(assoc)s
+    Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s %(stats)s &&
+    gzip -d -c %(assoc_gzip)s > temp.tsv &&
+    wc -l temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
+    head -1 temp.tsv > %(filtered)s &&
+    awk '$1=="bonf_thresh"{print $2}' %(stats)s | xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
+    wc -l %(filtered)s | cut -f1 -d' ' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+    rm temp.tsv
     '''
 
     P.run(statement)
+
+# }}}
+# seer2fa {{{
+@transform(
+    bonferoni,
+    regex("^associations/(.*)_stats.*$"),
+    r"associations/\1_assoc_filtered.fa"
+    )
+def seer2fa(infiles, outfile):
+
+    to_cluster = False
+
+    print(infiles)
+    print(outfile)
+
+    with open(outfile, "w") as file_out:
+        with open(infiles[1]) as file_in:
+            kmers_sum = 0
+            header = file_in.readline()
+            for kmer in file_in:
+                kmers_sum +=1
+                file_out.write(">" + str(kmers_sum) + "\n" + kmer.split("\t")[0] + "\n")
 
 # }}}
 # filter {{{
@@ -315,40 +341,47 @@ def bonferoni(infiles, outfile):
     r"associations/\1_assoc_filtered.txt"
     )
 def filter(infiles, outfile):
+
+    statement = '''
+    cat <(head -1 penicillin_kmers.txt) <(awk '$4<1.90E-08 {print $0}' penicillin_kmers.txt) > significant_kmers.txt
+    '''
     print(infiles)
-    print(outfiles)
+    print(outfile)
+# }}}
+# bwa {{{
+@transform(
+    assembly,
+    suffix(".fa"),
+    [".amb", ".ann", ".bwt", ".pac", ".sa"]
+    )
+def bwa(infile, outfiles):
+    
+    statement = '''
+    bwa index %(infile)s
+    '''
+
+    P.run(statement)
+
 # }}}
 # mapKmers {{{
-@follows(
-    mkdir("maps")
-    )
 @transform(
-    filter,
-    regex(r"^associations/(.*)_assoc\.txt\.gz$"),
+    bonferoni,
+    regex(r"^associations/(.*)_stats.txt$"),
     add_inputs(makeRefList),
-    r"maps/\1_map.txt.gz"
+    r"associations/\1_map.txt"
     )
 def mapKmers(infiles, outfile):
 
-    to_cluster = True
+    to_cluster = False
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-
-    assoc_gzip = infiles[0]
-    assoc = infiles[0][:-3]
-    ref_list = infiles[1]
-    maps = outfile[:-3]
     
-    reflist = infiles[1]
+    filtered = infiles[0][1]
+    ref_list = infiles[1]
 
     statement = '''
-    gzip -d %(assoc_gzip)s &&
-    python %(PY_SRC_PATH)s/annotate_kmers.py %(assoc)s %(ref_list)s %(maps)s &&
-    gzip %(assoc)s &&
-    gzip %(maps)s
+    python %(PY_SRC_PATH)s/annotate_kmers.py %(filtered)s %(ref_list)s %(outfile)s
     '''
-
-    print(statement)
 
     P.run(statement)
 

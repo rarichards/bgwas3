@@ -12,7 +12,7 @@ from collections import namedtuple
 BWA = namedtuple('BWA', ['mapped', 'positions'])
 
 # Creates a bwa index, if it does not already exist
-def bwa_index(fasta_file):
+def bwa_index(fasta_file): # {{{
     suffix_list = [".amb", ".ann", ".bwt", ".pac", ".sa"]
 
     create_index = 0
@@ -30,8 +30,10 @@ def bwa_index(fasta_file):
             devnull = open(os.devnull, 'w')
             subprocess.check_call(command, shell=True, stderr=devnull)
 
+# }}}
+
 # Runs bwa, iterates over results and parses them
-def bwa_iter(reference, fasta, algorithm):
+def bwa_iter(reference, fasta, algorithm): # {{{
 
     if algorithm == "mem":
         command = "bwa mem -v 1 -k 8 '" + reference + "' '" + fasta + "'"

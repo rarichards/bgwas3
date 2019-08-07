@@ -48,6 +48,7 @@ def extract_genes(bedtools_intervals):
 
         ID = None
         gene = None
+        print(match)
         for tag in match.fields[15].split(";"):
             parse_tag = re.search('^(.+)=(.+)$', tag)
             if parse_tag:
@@ -152,7 +153,7 @@ def main():
             mapped_kmers = bwa_iter(ref_fa, remaining_fa_tmp, bwa_algorithm)
             with tempfile.NamedTemporaryFile('w', prefix=options.tmp_prefix + "/") as query_bed:
                 kmer_idx = 0
-                for mapping, kmer_line in zip(mapped_kmers, seer_remaining):
+                for mapping, kmer_line in zip(mapped_kmers, seer_remaining): # {{{
                     if mapping.mapped:
                         kmers_remaining -= 1
                         kmer_lines.append(kmer_line.rstrip())
