@@ -1,7 +1,5 @@
-- toubleshoot kmer mapping with small test (cut losses)
-- finish visual step with small test data
-- write basic docs
-~ saturday
-	~ waiting for:
-		~ fsm on full pyseer data
-		~ prokka/annotation my data (for resistance and motility)
+- test kmer filtering/mapping/vis step with pyseer data
+- test/ write phylogeny step with pyseer data
+- pathway analysis step with pyseer step
+- write draft draft
+- email antonio

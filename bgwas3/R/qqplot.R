@@ -7,7 +7,7 @@ parser <- ArgumentParser(description="Draw a QQ-plot fro out of pyseer");
 parser$add_argument('file_assoc', help='Associations file (output of pyseer in tsv format)');
 
 #args <- parser$parse_args()
-args <- parser$parse_args(c("log_at_assoc.txt"));
+args <- parser$parse_args(c("temp.tsv"));
 
 args$file_assoc %>% read_tsv() -> dat;
 

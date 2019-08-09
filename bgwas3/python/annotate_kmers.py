@@ -57,10 +57,10 @@ def extract_genes(bedtools_intervals):
                     break
                 elif parse_tag.group(1) == "ID" and ID is None:
                     ID = parse_tag.group(2)
-        if ID is not None:
-            gene = ID # TODO
-        else:
-            if gene is None:
+        if gene is None:
+            if ID is not None:
+                gene = ID # TODO
+            else:
                 gene = ""
 
         if annotations[int(kmer_id)].get(int(hit_id)) == None or annotations[int(kmer_id)][int(hit_id)] == "":
@@ -138,6 +138,7 @@ def main():
             # python prior to 3.5
             subprocess.check_call("gff2bed < " + ref_gff + " > " + tmp_bed.name, shell=True)
         ref_annotation = pybedtools.BedTool(tmp_bed.name)
+        #ref_annotation = ref_annotation.filter(lambda x: True if x[7] == "CDS" else False)
         filtered_ref = ref_annotation.filter(lambda x: True if x[7] == "CDS" else False).saveas('tmp_bed')
         ref_annotation = pybedtools.BedTool('tmp_bed')
 
@@ -217,8 +218,8 @@ def main():
             seer_remaining = open(remaining_tmp, 'r')
 
         # Clean up
-        tmp_bed.close()
-        os.remove('tmp_bed')
+        #tmp_bed.close() #TODO
+        #os.remove('tmp_bed')
 
     sys.stderr.write(str(kmers_remaining) + " kmers remain unannotated\n")
 

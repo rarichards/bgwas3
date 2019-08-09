@@ -70,18 +70,22 @@ def fsm(infile, outfile):
 @transform(
     assembly,
     regex("contigs/(.*)\.fa"),
-    r"annotations/\1.gff",
+    [r"annotations/\1.gff", r"annotations/\1.tsv"],
     r"\1"
     )
 def prokka(infile, outfile, idd):
     
     ''' Annotate with prokka '''
 
+    gff = outfiles[0]
+    tsv = outfiles[1]
+
     to_cluster = True
 
     statement = '''
     prokka --centre X --compliant %(infile)s --outdir extra/prokka --force --prefix %(idd)s &&
-    mv extra/prokka/%(idd)s.gff %(outfile)s
+    mv extra/prokka/%(idd)s.gff %(gff)s
+    mv extra/prokka/%(idd)s.tsv %(tsv)s
     '''
 
     P.run(statement)
@@ -253,29 +257,33 @@ def qqplot(infiles, outfile):
     mkdir("refs")
     )
 @merge(
-    [prokka, assembly, "refs/*"],
+    [prokka, [assembly], ["refs/*"]],
     "ref.txt"
     )
 def makeRefList(infiles, outfile):
 
     ''' Make a list of references for kmer mapping '''
 
+    temp = [str(i) for sublist in infiles for i in sublist]
+
     to_cluster = True
 
-    gffs = list(filter(re.compile(".*\.gff$").match, infiles))
-    refs = list(filter(re.compile("refs/.*").match, gffs))
-    drafts = list(filter(re.compile("annotations/.*").match, gffs))
+    gffs = [i for i in temp if re.match(r".*\.gff$", i)]
+    refs = [i for i in gffs if re.match(r"^refs/.*", i)]
+    drafts = [i for i in gffs if re.match(r"^annotations/.*", i)]
 
     with open(outfile, "w") as f:
         for gff in refs:
             idd = re.search("^.*/(.*)\.gff", gff).group(1)
-            regex = ".*/" + idd + "\.(fa|fasta)"
-            fa = list(filter(re.compile(regex).match, infiles))[0]
+            regex = r".*/" + idd + "\.(fa|fasta)"
+            print(regex)
+            fa = [i for i in temp if re.match(regex, i)][0]
+            print(fa)
             f.write(fa + "\t" + gff + "\tref\n")
         for gff in drafts:
             idd = re.search("^.*/(.*)\.gff", gff).group(1)
             regex = ".*/" + idd + "\.(fa|fasta)"
-            fa = list(filter(re.compile(regex).match, infiles))[0]
+            fa = [i for i in temp if re.match(regex, i)][0]
             f.write(fa + "\t" + gff + "\tdraft\n")
 
 # }}}
@@ -402,21 +410,16 @@ def mapKmers(infiles, outfile):
 # }}}
 # countGeneHits {{{
 @transform(
-    filter,
-    regex("^maps/(.*)_maps_filtered.txt$"),
-    r"maps/\1_hits.txt"
+    mapKmers,
+    regex("^associations/(.*)_map.txt$"),
+    r"associations/\1_hits.txt"
     )
 def countGeneHits(infile, outfile):
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
-    infile_unzip = infile[:-3]
-    outfile_unzip = outfile[:-3]
-
     statement = '''
-    gzip -d %(infile)s &&
-    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile_unzip)s > %(outfile_unzip)s &&
-    gzip %(outfile_unzip)s
+    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile)s > %(outfile)s
     '''
 
     P.run(statement)

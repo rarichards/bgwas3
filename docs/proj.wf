@@ -1,49 +1,32 @@
-- [ ] finish pipeline
-	- [ ] fix kmer mapping
-		- [ ] troubleshoot kmer mapping @sat
-			- [r] map test (small data) without filtering
-			- [w] make visualisation
-			- [m] try mapping to single with phandango
-			- [m] try a different script for mapping
-				- [ ] find other scripts that do mapping
-			- [w] troubleshoot with resistance data etc
-		- [ ] troubleshoot why some antibac not signigicant @sat
-			- [ ] try running with log values and swarm/swim etx
-				- [r] prokka
-				- [w] roary
-				- [w] pyseer
-				- [w] mapping
-				- [w] troubleshoot
-	- [ ] finish visual step with small dummy data
-		- [w] kmer association vis
-			~ waiting for mapping to be done
-			- [ ] add a visualisation to output of qq plot and distribution of p-values {troubleshoot why some not significant}
-			- [ ] add tooltip/ links to sources
-			- [ ] add static part
-		- [ ] add phylogeny tree bit
-			- [ ] interactive
-			- [ ] static
-			~ add static phylogeny
-	- [ ] summary table step
-	- [m] pathway analysis step
-		~ depends on time
-- [ ] test with cluster
-	- [x] test if cluster is fixed
-	- [n] test with cluster
-- [ ] packaging
-	- [ ] write basic docs @sat
-	- [ ] write simple tests
-	- [ ] incoporate coverall
-		- [ ] try
-- [w] get data
-	~ wating for pipeline to be finished
-	~ waiting for final data to be sent to me
-	- [ ] run with metabolomics data
+- [ ] fix/ finish tool
+	- [ ] make instalable with conda
+		- [x] add to conda
+		- [ ] test that it work
+		- [ ] add to docs
+	- [ ] kmer mapping
+		~ make sure kmer mapping works
+		- [ ] test kmer mapping with pyseer data
+			- [ ] run/ make sure filtering step works
+			- [w] run mapping step
+			- [ ] write/ run visualisation step
+		- [ ] test/ write phylogeny step with pyseer data
+		- [ ] map kmers with resistance data
+			- [r] roary
+				- [ ] follow up @wed
+			- [w] map
+	- [ ] add pathway analysis step
+		- [w] add to pyseer data @wed
+			~ once kmer mapping tested
+	- [w] docs
+		~ waiting to be installabe with conda
+		- [ ] write docs
+	- [w] tests
+		~ waiting to be installabe with conda
+		- [ ] rewrite tests
+- [ ] test tool works with cluster
+	- [ ] ask antionio for update
+	- [w] test with cluster
 - [ ] dissertation
-	- [ ] set up r markdown document @sat
-	- [ ] write detailed table of contents and draft some parts (for monday) !!!
-		~ also try and be at point of draft by friday
-		~ use old report and kb notes
-		- [ ] write table of contents @sat
-		- [w] write basics stuff @sun
-		- [w] flesh out @sun
+	- [ ] write draft draft draft (very brief) @wed
+- [ ] final data
+	- [ ] ask anout final data set @wed
