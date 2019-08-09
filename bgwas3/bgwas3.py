@@ -16,10 +16,10 @@ PARAMS = P.get_parameters([
 
 # generateOutputDir {{{
 @originate(
-    output
+    "output"
     )
-def generateOutputDir:
-    output_dir = os.path.dirname(os.path.realpath(__file__))) + "/output"
+def generateOutputDir(outfile):
+    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/output"
     cwd = os.getcwd()
     shutil.copytree(output_dir, os.getcwd())
 
@@ -79,7 +79,7 @@ def mineKmers(infile, outfile):
 @transform(
     assembly,
     regex("contigs/(.*)\.fa"),
-    r"annotations/\1.gff"
+    r"annotations/\1.gff",
     r"\1"
     )
 def annotateGenomes(infile, outfile, idd):
@@ -95,16 +95,15 @@ def annotateGenomes(infile, outfile, idd):
 # pangenomeAnalysis {{{
 @merge(
     annotateGenomes,
-    "pangenome/*"
+    "pangenome/accessory_binary_genes.fa.newick"
     )
 def pangenomeAnalysis(infile, outfile):
 
     ''' Make tree with Roary '''
 
-    os.mkdir(outfile)
+    os.mkdir("pangenome")
     statement = '''
-    roary -f -e -n -v -r annotations/*.gff &&
-    cp extra/roary/accessory_binary_genes.fa.newick %(outfile)s
+    roary -f pangenome -e -n -v -r annotations/*.gff
     '''
 
     P.run(statement, to_cluster=True)
@@ -116,15 +115,17 @@ def pangenomeAnalysis(infile, outfile):
     regex("pangenome/accessory_binary_genes.fa.newick"),
     "distances.tsv"
     )
-def getPhyloTree(infile, outfile):
+def distanceFromPangenome(infile, outfile):
     
     ''' Get distances from a phylogeny tree that has been midpoint rooted '''
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
+    newick = infile + "/accessory_binary_genes.fa.newick"
+
     statement = '''
     python %(PY_SRC_PATH)s/phylogeny_distance.py 
-        --calc-C %(infile)s 
+        --calc-C %(newick)s 
         > %(outfile)s
     '''
     
@@ -191,7 +192,7 @@ def splitPhenos(infile, outfiles):
 @transform(
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
-    add_inputs(getPhyloTree, mineKmers),
+    add_inputs(distanceFromPangenome, mineKmers),
     [r"associations/\1_assoc.txt.gz", r"associations/\1_patterns.txt"],
     r"\1"
     )
@@ -226,8 +227,8 @@ def testAssociations(infiles, outfiles, idd):
 @transform(
     testAssociations,
     regex("^associations/(.*)_assoc.*$"),
-    [r"output/p/\1_hist.png", r"output/p/\1_qq.png"]
-    r"\1"
+    [r"output/p/\1_hist.png", r"output/p/\1_qq.png"],
+    r"\1",
     "output/p"
     )
 def qqplot(infiles, outfile, pheno, outdir):
@@ -274,12 +275,12 @@ def bonferoniFilter(infiles, outfiles):
 
 # }}}
 # filterAnnotations {{{
-@tranform(
+@transform(
     annotateGenomes,
     regex("annotations/(.*)\.gff"),
     r"annotations/\1_genes_only.gff"
     )
-def filterAnnotations(infile, outfile)
+def filterAnnotations(infile, outfile):
     
     statement = '''
     cat %(infile)s | grep "gene=" > %(outfile)s
@@ -290,7 +291,7 @@ def filterAnnotations(infile, outfile)
 # }}}
 # makeRefList {{{
 @merge(
-    [[filterAnnotations], [assembly]]
+    [[filterAnnotations], [assembly]],
     "ref.txt"
     )
 def makeRefList(infiles, outfile):
@@ -302,17 +303,17 @@ def makeRefList(infiles, outfile):
 
     with open(outfile, "w") as f:
         for gff in gffs:
-            idd = re.search("^.*/(.*)\.gff", gff).group(1)
+            idd = re.search("^.*/(.*)\_genes_only.gff", gff).group(1)
             regex = r".*/" + idd + "\.(fa|fasta)"
             fa = [i for i in fas if re.match(regex, i)][0]
             f.write(fa + "\t" + gff + "\tdraft\n")
 
 # }}}
-# mapToAnnotations{{{
+# mapKmers{{{
 @transform(
     bonferoniFilter,
     regex(r"^associations/(.*)_stats.txt$"),
-    add_inputs(filterAnnotations, assembly),
+    add_inputs(makeRefList),
     r"associations/\1_maps.txt"
     )
 def mapKmers(infiles, outfile):
