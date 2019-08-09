@@ -1,8 +1,8 @@
-suppressPackageStartupMessages(library(readr));
-suppressPackageStartupMessages(library(dplyr));
-suppressPackageStartupMessages(library(tidyr));
-suppressPackageStartupMessages(library(argparse));
-suppressPackageStartupMessages(library(stringr));
+library(readr);
+library(dplyr);
+library(tidyr);
+library(argparse);
+library(stringr);
 
 parser <- ArgumentParser(description="Extract phenotype columns from a tsv file and write seperate tsv files for each");
 parser$add_argument("infile", help="File in tsv format that includes an 'id' column and one or more 'pheno_*' columns");
@@ -15,6 +15,7 @@ args$infile %>%
 
 for(col in dat %>% select(starts_with("pheno_")) %>% colnames()){
 	pheno = str_sub(col, 7, -1);
+	paste(pheno);
 	dat %>% 
 		select(c("id", col)) %>%
 		rename(pheno = col) %>%

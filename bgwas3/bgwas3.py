@@ -234,6 +234,20 @@ def pyseer(infiles, outfiles, idd):
     P.run(statement)
 
 # }}}
+# qqplot {{{
+@transform(
+    pyseer,
+    regex("^associations/(.*)_assoc.*$"),
+    r"associations/\1_qqplot.png"
+    )
+def qqplot(infiles, outfile):
+
+    assoc_gzip = infile[0][1]
+
+
+
+
+# }}}
 # makeRefList {{{
 @follows(
     mkdir("refs")
@@ -266,22 +280,22 @@ def makeRefList(infiles, outfile):
 
 # }}}
 # gff2tsv {{{
-@follows(
-    mkdir("refs")
-    )
-@transform(
-    "refs/*",
-    regex("refs/(.*)\.gff"),
-    r"refs/\1.tsv"
-    )
-def gff2tsv(infile, outfile):
+# @follows(
+#     mkdir("refs")
+#     )
+# @transform(
+#     "refs/*",
+#     regex("refs/(.*)\.gff"),
+#     r"refs/\1.tsv"
+#     )
+# def gff2tsv(infile, outfile):
 
-    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+#     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    statement = '''
-    Rscript %(R_SRC_PATH)s/gff2tsv.R %(infile)s
-    '''
-# }}}
+#     statement = '''
+#     Rscript %(R_SRC_PATH)s/gff2tsv.R %(infile)s
+#     '''
+# # }}}
 # bonferoni {{{
 @transform(
     pyseer,
