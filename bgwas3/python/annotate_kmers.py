@@ -64,7 +64,7 @@ def extract_genes(bedtools_intervals):
                 gene = ""
 
         if annotations[int(kmer_id)].get(int(hit_id)) == None or annotations[int(kmer_id)][int(hit_id)] == "":
-            annotations[int(kmer_id)][int(hit_id)] = gene
+            annotations[int(kmer_id)][int(hit_id)] = {"gene": gene}
         else:
             annotations[int(kmer_id)][int(hit_id)] += "|" + gene
 
@@ -143,6 +143,7 @@ def main():
         ref_annotation = pybedtools.BedTool('tmp_bed')
 
         for bwa_algorithm in bwa_algorithms:
+
             next_seer_remaining = open(remaining_next_tmp, 'w')
             next_fasta_remaining = open(remaining_fa_next_tmp, 'w')
 

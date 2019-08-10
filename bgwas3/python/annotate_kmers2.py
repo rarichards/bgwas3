@@ -3,112 +3,192 @@ import os
 import re
 import tempfile
 import subprocess
-import pybedtools
+import pybedtools 
 import argparse
 
+# argparse {{{
 parser = argparse.ArgumentParser(description='Annotate Kmers')
 
-parser.add_argument("kmers_file", help="Kmers file, filtered output from SEER")
-parser.add_argument("gff", help="gff reference file")
-parser.add_argument("output_file", help="output file")
-parser.add_argument("--type" defult = "ref")
+parser.add_argument("kmers", help="kmers file path (filtered output from SEER)")
+parser.add_argument("refs", help="text file listing annotation (paths of fa and gff)")
+parser.add_argument("output", help="output file")
 
 args = parser.parse_args()
+#args = parser.parse_args(["associations/log_at_assoc_filtered.txt", "ref.txt", "test.txt"])
 
-output_file = open(options.output, "rw")
+# }}}
 
+refs_file = open(args.refs, "r")
+output_file = open(args.output, "w")
+
+# load kmers {{{
 kmers_file = open(args.kmers, "r")
-header = kmers_file.readline()
-kmers_sum = 0
-kmers_fa_file = open("remaining_kmers.fa", "w")
-for kmer in kmers_file:
-    kmers_sum += 1
-    kmers_fa_file.write(">" + str(kmer_sum) + "\n" + kmer.split("\t")[0] _ "\t")
+header = kmers_file.readline().rstrip()
+header = header + "\tgene_in\tgene_up\tgene_down\n"
+output_file.write(header)
+kmers = {}
+id_kmer = 0
+for line in kmers_file:
+    id_kmer += 1
+    kmers[id_kmer] = line.rstrip()
 
-def bwa_mem(ref_fa, query_fa): # {{{
-    command = "bwa mem -v 1 -k 8 '" + reference + "' '" + fasta + "'"
-    bwa_p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-    for sam_line in bwa_p.stdout:
-        sam_fields = sam_line.rstrip().split("\t")
+kmers_file.close()
+print(str(len(kmers)) + " kmers loaded")
 
-        # discard header
-        if sam_fields[0][0] == "@":
+# }}}
+
+for line in refs_file:
+
+    if len(kmers) == 0:
+        print("all kmers mapped")
+        break
+
+    fa_path, gff_path = line.rstrip().split("\t")
+
+    print("mapping to " + fa_path)
+    # make index files from reference fasta (bwa index) (required for bwa mem)
+    # command = "bwa index " + fa_path
+    # subprocess.run(command, shell=True, check=True)
+
+    # make a fasta file with from unmapped kmers
+    query_fa = open("query.fa", "w")
+    for id_kmer in kmers.keys():
+        query_fa.write(">" + str(id_kmer) + "\n" + kmers[id_kmer].rstrip().split("\t")[0] + "\n")
+        # if len(kmers[id_kmer]["maps"]) == 0:
+        #     kmers_file_fa.write(">" + str(key) + "\n" + kmers[key]["seq"] + "\n")
+    query_fa.close()
+
+    query_bed = open("query.bed", "w")
+
+    # try to map kmers to reference index (bwa mem) {{{
+    command = "bwa mem -v 1 -k 8 '" + fa_path + "' 'query.fa'"
+    results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    # command2 = "bwa mem -v 1 -k 8 '" + fa_path + "' 'query.fa' > test"
+    # subprocess.run(command2, shell=True, check=True)
+
+    kmers_mapped = {}
+
+    for line in results.stdout:
+        fields = line.rstrip().split("\t")
+
+        if fields[0][0] == "@":
             continue
 
-        positions = []
-        if int(sam_fields[1]) & 4 == 4:
-            mapped = False
-        else:
-            mapped = True
+        if int(fields[1]) != 4:
 
-            # primary mapping
-            if int(sam_fields[1]) & 16 == 16:
+            id_kmer = int(fields[0])
+            kmers_mapped[id_kmer] = kmers[id_kmer]
+            del kmers[id_kmer]
+
+            # primary mapping {{{
+            id_hit = 1
+            if int(fields[1]) == 16:
                 strand = "-"
             else:
                 strand = "+"
-            if len(sam_fields) < 10:
-                mapped = False
-                positions = True
-            else:
-                positions.append((sam_fields[2], sam_fields[3], int(sam_fields[3]) + len(sam_fields[9]) - 1, strand))
+            contig = fields[2]
+            start = int(fields[3])
+            length = len(fields[9])
+            end = start + length -1
+            cigar = fields[5]
 
-                # secondary mappings (as good as primary - same CIGAR string)
-                if len(sam_fields) > 15:
-                    try:
-                        secondary = sam_fields[15].split(":")
-                        if secondary[0] == "XA" and secondary[1] == "Z":
-                            for secondary_mapping in secondary[2].split(";"):
-                                if secondary_mapping != '':
-                                    (contig, pos, cigar, edit_distance) = secondary_mapping.split(",")
-                                    if cigar == sam_fields[5]:
-                                        strand = pos[0]
-                                        positions.append((contig, pos[1:], int(pos[1:]) + len(sam_fields[9]) - 1, strand))
-                    # Ignore secondary mappings which don't match the expected format
-                    except ValueError:
-                        pass
-        yield(mapped, positions)
+            # kmers[id_kmer]["maps"].append({})
+            # kmers[id_kmer]["maps"][-1]["contig"] = contig
+            # kmers[id_kmer]["maps"][-1]["start"] = start
+            # kmers[id_kmer]["maps"][-1]["length"] = length
+            # kmers[id_kmer]["maps"][-1]["end"] = end
 
-def bwa_fastmap(ref_fa, query_fa): # {{{
-    else:
-        mapped = False
-        positions = []
+            query_bed.write('\t'.join([contig, str(start), str(end), str(id_kmer) + "_" + str(id_hit), '0', strand]) + "\n")
 
-        first_line = bwa_p.stdout.readline().rstrip().split("\t")
-        if first_line == ['']:
-            return
-        (sq, idx, length) = first_line
-        while True:
-            fastmap_line = bwa_p.stdout.readline()
-            fastmap_line = fastmap_line.rstrip()
-            if fastmap_line == "//":
-                next_line = bwa_p.stdout.readline().rstrip().split("\t")
-                fastmap_hit = BWA(mapped, positions)
-                if len(next_line) < 3:  # EOF reached
-                    yield(fastmap_hit)
-                    return
-                else:
-                    (sq, idx, length) = next_line
-                    mapped = False
-                    positions = []
-                    yield(fastmap_hit)
-            else:
-                hits = []
-                fastmap_fields = fastmap_line.split("\t")
-                # in case a line is missing a few fields
-                if len(fastmap_fields) < 5 or fastmap_fields[4] == '*':
-                    continue
-                #
-                if fastmap_fields[1] == '0' and fastmap_fields[2] == length: #  full hits only
-                    mapped = True
-                    for hit in fastmap_fields[4:]:
-                        try:
-                            (contig, pos) = hit.split(":")
-                        except:
-                            print(fastmap_fields[4:])
-                        strand = pos[0]
-                        positions.append((contig, int(pos[1:]), int(pos[1:]) + int(length) - 1, strand))
+            # }}}
+
+            # secondary mappings {{{
+            if len(fields) > 15:
+
+                try:
+                    secondary = fields[15].split(":")
+
+                    if secondary[0] == "XA" and secondary[1] == "Z":
+
+                        mappings = secondary[2].split(";")
+
+                        for mapping in mappings:
+
+                            if mapping != '':
+
+                                id_hit += 1
+                                fields = mapping.split(",")
+                                strand = fields[1][0]
+                                contig = fields[0]
+                                start = int(fields[1][1:])
+                                end = start + length -1
+                                cigar_secondary = fields[2]
+
+                                if secondary_cigar == cigar:
+
+                                    query_bed.write('\t'.join([contig, str(start), str(end), str(id_kmer) + "_" + str(id_hit), '0', strand]) + "\n")
+
+                                    # kmers[id_kmer]["maps"].append({})
+                                    # kmers[id_kmer]["maps"][-1]["contig"] = contig
+                                    # kmers[id_kmer]["maps"][-1]["start"] = start
+                                    # kmers[id_kmer]["maps"][-1]["length"] = length
+                                    # kmers[id_kmer]["maps"][-1]["end"] = end
+
+                except ValueError:
+                    pass
+
+            # }}}
 
 
+    # }}}
 
+    query_bed.close()
+    command = "bedtools sort -i query.bed > query_sorted.bed"
+    subprocess.run(command, shell=True, check=True)
 
+    genes_in = {}
+    command = "bedtools intersect -a query.bed -b " + gff_path + " -wb"
+    print(command)
+    results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    for line in results.stdout:
+        fields = line.rstrip().split("\t")
+        kmer_id, hit_id = fields[3].split("_")
+        features = dict(map(lambda s : s.split('='), fields[14].split(";")))
+        genes_in[kmer_id] = features["gene"]
 
+    # genes_up = {}
+    # command = 'bedtools closest -a query_sorted.bed -b ' + gff_path + ' -D "ref" -iu -nonamecheck'
+    # print(command)
+    # results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    # for line in results.stdout:
+    #     fields = line.rstrip().split("\t")
+    #     kmer_id, hit_id = fields[3].split("_")
+    #     features = dict(map(lambda s : s.split('='), fields[14].split(";")))
+    #     genes_up[kmer_id] = features["gene"]
+
+    # genes_down = {}
+    # command = 'bedtools closest -a query_sorted.bed -b ' + gff_path + ' -D "ref" -id -nonamecheck'
+    # results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+    # for line in results.stdout:
+    #     fields = line.rstrip().split("\t")
+    #     kmer_id, hit_id = fields[3].split("_")
+    #     features = dict(map(lambda s : s.split('='), fields[14].split(";")))
+    #     genes_down[kmer_id] = features["gene"]
+
+    print(genes_in)
+    for id_kmer in kmers_mapped.keys():
+        line = kmers_mapped[id_kmer] + "\t"
+        if str(id_kmer) in genes_in:
+            line += genes_in[str(id_kmer)]
+        # line += "\t"
+        # if id_kmer in genes_up:
+        #     line += genes_up[id_kmer]
+        # line += "\t"
+        # if id_kmer in genes_down:
+        #     line += genes_down[id_kmer]
+        line += "\n"
+        output_file.write(line)
+
+    print(str(len(kmers)) + " kmers left")
+output_file.close()
+refs_file.close()

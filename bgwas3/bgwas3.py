@@ -267,7 +267,7 @@ def bonferoniFilter(infiles, outfiles):
     wc -l temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
     head -1 temp.tsv > %(filtered)s &&
     awk '$1=="bonf_thresh"{print $2}' %(stats)s | xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
-    wc -l %(filtered)s | cut -f1 -d' ' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+    wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
     rm temp.tsv
     '''
 
