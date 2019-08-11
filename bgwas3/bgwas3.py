@@ -274,16 +274,35 @@ def bonferoniFilter(infiles, outfiles):
     P.run(statement)
 
 # }}}
-# filterAnnotations {{{
+# annotation2bed {{{
 @transform(
     annotateGenomes,
     regex("annotations/(.*)\.gff"),
-    r"annotations/\1_genes_only.gff"
+    r"annotations/\1.bed"
     )
-def filterAnnotations(infile, outfile):
-    
+def annotation2bed(infile, outfile):
+
+    if os.stat(infile).st_size == 0:
+        statement = '''
+        touch %(outfile)s
+        '''
+    else:
+        statement = '''
+        gff2bed < %(infile)s | grep "gene=" > %(outfile)s
+        '''
+    P.run(statement, to_cluster=False)
+
+# }}}
+# ref2bed {{{
+@transform(
+    "refs/*",
+    regex("refs/(.*)\.gff*"),
+    r"refs/\1.bed"
+    )
+def ref2bed(infile, outfile):
+
     statement = '''
-    cat %(infile)s | grep "gene=" > %(outfile)s
+    gff2bed < %(infile)s | awk '$8 != "region"{print $0}' | bedtools merge -c 10 -o collapse -delim "|" > %(outfile)s
     '''
 
     P.run(statement, to_cluster=False)
@@ -291,48 +310,75 @@ def filterAnnotations(infile, outfile):
 # }}}
 # makeRefList {{{
 @merge(
-    [[filterAnnotations], [assembly]],
+    [[ref2bed],[annotation2bed],[assembly, "refs/*.fa"]],
     "ref.txt"
     )
 def makeRefList(infiles, outfile):
 
     ''' Make a list of references for kmer mapping '''
 
-    gffs = infiles[0]
-    fas = infiles[1]
+    print(infiles)
+
+    ref_beds = infiles[0]
+    annotation_beds = infiles[1]
+    fas = infiles[2]
 
     with open(outfile, "w") as f:
-        for gff in gffs:
-            idd = re.search("^.*/(.*)\_genes_only.gff", gff).group(1)
-            regex = r".*/" + idd + "\.(fa|fasta)"
+        for bed in ref_beds:
+            idd = re.search("^.*/(.*)\.bed", bed).group(1)
+            regex = r".*/" + idd + "\.fa"
             fa = [i for i in fas if re.match(regex, i)][0]
-            f.write(fa + "\t" + gff + "\tdraft\n")
+            f.write(fa + "\t" + bed + "\n")
+        for bed in annotation_beds:
+            if os.stat(bed).st_size != 0:
+                idd = re.search("^.*/(.*)\.bed", bed).group(1)
+                regex = r".*/" + idd + "\.fa"
+                fa = [i for i in fas if re.match(regex, i)][0]
+                f.write(fa + "\t" + bed + "\n")
+
+
+# }}}
+# bwaIndex {{{
+@transform(
+    [assembly, "refs/*"],
+    suffix(".fa"),
+    [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
+    )
+def bwaIndex(infile, outfiles):
+    
+    statement = '''
+    bwa index %(infile)s
+    '''
+
+    P.run(statement)
 
 # }}}
 # mapKmers{{{
 @transform(
     bonferoniFilter,
-    regex(r"^associations/(.*)_stats.txt$"),
-    add_inputs(makeRefList),
-    r"associations/\1_maps.txt"
+    regex(r"^(.*)_stats.txt$"),
+    add_inputs(makeRefList, ref2bed, annotation2bed, bwaIndex),
+    [r"\1_maps.txt", r"\1_gene_info.txt"],
+    r"\1"
     )
-def mapKmers(infiles, outfile):
+def mapKmers(infiles, outfiles, prefix):
 
     to_cluster = False
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
-    
+
     filtered = infiles[0][1]
     ref_list = infiles[1]
+    print(prefix + filtered)
 
     statement = '''
-    python %(PY_SRC_PATH)s/annotate_kmers.py %(filtered)s %(ref_list)s %(outfile)s
+    python %(PY_SRC_PATH)s/mapKmers.py %(filtered)s %(ref_list)s --prefix %(prefix)s
     '''
 
     P.run(statement, to_cluster=False)
 
 # }}}
-# countGeneHits {{{
+# summariseGenes {{{
 @transform(
     mapKmers,
     regex("^associations/(.*)_map.txt$"),
