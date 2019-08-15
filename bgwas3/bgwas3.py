@@ -14,32 +14,34 @@ PARAMS = P.get_parameters([
     "pipeline.yml"
     ])
 
-# generateOutputDir {{{
+# makeDirs {{{
 @originate(
-    "output"
+    "results"
     )
-def generateOutputDir(outfile):
-    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/output"
+def makeDirs(outfile):
+
+    ''' Copy plot directory (index.html) to working directory '''
+
+    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/plot"
     cwd = os.getcwd()
     shutil.copytree(output_dir, os.getcwd())
 
 # }}}
 # assembly {{{
-@follows(
-    mkdir("fastqs"),
-    mkdir("contigs")
-    )
 #@transform(
 #    "fastqs/*",
 #    regex(".*"),
 #    "contigs"
 #    )
-@split(
-    "fastqs",
-    "contigs/*.fa"
+@originate(
+    "contigs"
     )
 def assembly(infile, outfile):
+
     ''' Contig assembly '''
+
+    # TODO this step with options from yml
+
     to_cluster = False
     pass
 
@@ -51,7 +53,7 @@ def assembly(infile, outfile):
     )
 def mineKmers(infile, outfile):
 
-    ''' Kmer mining/ counting with fsm-lite '''
+    ''' Kmer mining/ counting with fsm-lite (make a gzipped kmers file) '''
 
     print(PARAMS)
 
@@ -83,7 +85,8 @@ def mineKmers(infile, outfile):
     r"\1"
     )
 def annotateGenomes(infile, outfile, idd):
-    ''' Annotate genomes with prokka '''
+
+    ''' Annotate genomes with prokka (generate gff file for each contig) '''
 
     statement = '''
     prokka --centre X --compliant %(infile)s --outdir annotations --force --prefix %(idd)s
@@ -99,7 +102,9 @@ def annotateGenomes(infile, outfile, idd):
     )
 def pangenomeAnalysis(infile, outfile):
 
-    ''' Make tree with Roary '''
+    ''' Perform pangenome analalysis with Roary (based on difference in gene 
+    content) and generate a phylogenetic tree (.newick) file for use in mixed 
+    effects association testing '''
 
     os.mkdir("pangenome")
     statement = '''
@@ -117,7 +122,8 @@ def pangenomeAnalysis(infile, outfile):
     )
 def distanceFromPangenome(infile, outfile):
     
-    ''' Get distances from a phylogeny tree that has been midpoint rooted '''
+    ''' Get distances from a phylogenetic tree that has been midpoint 
+    rooted '''
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
@@ -132,6 +138,7 @@ def distanceFromPangenome(infile, outfile):
     P.run(statement, to_cluster=False)
 
 # }}}
+
 # plotPhyloTree {{{
 @follows(
     generateOutputDir
@@ -141,6 +148,8 @@ def distanceFromPangenome(infile, outfile):
     "output/trees/*"
     )
 def plotTrees(infiles, outfiles):
+
+    ''' Plot phylogenetic trees with filters based on clade and phenotype '''
 
     tree = "pangenome/accessory_binary_genes.fa.newick"
     phenos = infiles[1]
@@ -164,7 +173,8 @@ def plotTrees(infiles, outfiles):
     )
 def splitPhenos(infile, outfiles):
 
-    ''' Split the main tsv file phenotype columns into their own tsv files '''
+    ''' Split the main tsv file phenotype columns into their own tsv files 
+    (to be used in seperated association tests) '''
 
     to_cluster = False
 
@@ -185,18 +195,21 @@ def splitPhenos(infile, outfiles):
     P.run(statement)
 
 # }}}
+
 # testAssociations {{{
 @follows(
-    mkdir("associations"),
+    mkdir("results"),
     )
 @transform(
     splitPhenos,
     regex("phenos/(.*)\.tsv"),
     add_inputs(distanceFromPangenome, mineKmers),
-    [r"associations/\1_assoc.txt.gz", r"associations/\1_patterns.txt"],
+    [r"results/\1_assocs.txt.gz", r"results/\1_patterns.txt"],
     r"\1"
     )
 def testAssociations(infiles, outfiles, idd):
+
+    ''' Association test kmers and phenotypes with pyseer '''
 
     pheno = infiles[0]
     distances = infiles[1]
@@ -226,12 +239,14 @@ def testAssociations(infiles, outfiles, idd):
     )
 @transform(
     testAssociations,
-    regex("^associations/(.*)_assoc.*$"),
-    [r"output/p/\1_hist.png", r"output/p/\1_qq.png"],
+    regex("^results/(.*)_assocs.*$"),
+    [r"results/plot/p/\1_hist.png", r"results/plot/p/\1_qq.png"],
     r"\1",
     "output/p"
     )
 def qqplot(infiles, outfile, pheno, outdir):
+
+    ''' Plot p-values (histogram and qqlot) for each association test '''
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
@@ -247,10 +262,13 @@ def qqplot(infiles, outfile, pheno, outdir):
 # bonferoniFilter {{{
 @transform(
     testAssociations,
-    regex("^associations/(.*)_assoc.*$"),
-    [r"associations/\1_stats.txt", r"associations/\1_assoc_filtered.txt"]
+    regex("^results/(.*)_assocs.txt.gz"),
+    [r"results/\1_stats.txt", r"results/\1_assocs_filtered.txt"]
     )
 def bonferoniFilter(infiles, outfiles):
+
+    ''' Filter kmers from the output of association based on their p-value,
+    using bonferoni method to set a threshold '''
 
     to_cluster = False
 
@@ -274,6 +292,7 @@ def bonferoniFilter(infiles, outfiles):
     P.run(statement)
 
 # }}}
+
 # annotation2bed {{{
 @transform(
     annotateGenomes,
@@ -281,6 +300,9 @@ def bonferoniFilter(infiles, outfiles):
     r"annotations/\1.bed"
     )
 def annotation2bed(infile, outfile):
+
+    ''' Convert gff files into bed files. Also remove annotations that don't 
+    correspind to named genes (eg. hypothetical proteins) '''
 
     if os.stat(infile).st_size == 0:
         statement = '''
@@ -301,6 +323,10 @@ def annotation2bed(infile, outfile):
     )
 def ref2bed(infile, outfile):
 
+    ''' Convert reference gff files into bed files. Also merge overlapping
+    annotations (eg 'CDS' and 'Gene' entries that are the same, but have different 
+    information. Also remove 'Region' entries. '''
+
     statement = '''
     gff2bed < %(infile)s | awk '$8 != "region"{print $0}' | bedtools merge -c 10 -o collapse -delim "|" > %(outfile)s
     '''
@@ -315,7 +341,8 @@ def ref2bed(infile, outfile):
     )
 def makeRefList(infiles, outfile):
 
-    ''' Make a list of references for kmer mapping '''
+    ''' Make a list of references for kmer mapping (references first, then 
+    draft annotations) '''
 
     print(infiles)
 
@@ -346,6 +373,8 @@ def makeRefList(infiles, outfile):
     )
 def bwaIndex(infile, outfiles):
     
+    ''' BWA index (for Kmer mapping) '''
+    
     statement = '''
     bwa index %(infile)s
     '''
@@ -363,6 +392,8 @@ def bwaIndex(infile, outfiles):
     )
 def mapKmers(infiles, outfiles, prefix):
 
+    ''' Map kmers to annotation files '''
+
     to_cluster = False
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
@@ -378,13 +409,20 @@ def mapKmers(infiles, outfiles, prefix):
     P.run(statement, to_cluster=False)
 
 # }}}
+
 # summariseGenes {{{
 @transform(
     mapKmers,
-    regex("^associations/(.*)_map.txt$"),
-    r"associations/\1_hits.txt"
+    regex("^results/(.*)_map.txt$"),
+    r"results/\1_genes.txt"
     )
-def countGeneHits(infile, outfile):
+def countGeneHits(infiles, outfile):
+
+    ''' Count the number of kmer hits per gene, and calculate other
+    statistics '''
+
+    maps = infiles[0]
+    gene_info = infiles[1]
 
     PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
 
@@ -402,21 +440,22 @@ def countGeneHits(infile, outfile):
     r"maps/\1_pathways.tsv"
     )
 def pathwayAnalysis(infiles, outfile):
+    
+    # TODO
+
     pass
 
 # }}}
-# visualise {{{
-@follows(
-    mkdir("viz")
-    )
+
+# plotGenes {{{
 @merge(
     [countGeneHits, pathwayAnalysis],
-    "visual"
+    "results/plot/dat.js"
     )
 def visualise(infile, outfile):
-    pass
 
 # }}}
+
 # full {{{
 @follows (
     visualise

@@ -1,5 +1,8 @@
-- test kmer filtering/mapping/vis step with pyseer data
-- test/ write phylogeny step with pyseer data
-- pathway analysis step with pyseer step
-- write draft draft
-- email antonio
+- [ ] finish
+	- [ ] tool
+		- [ ] visualsation step @thu 1
+	- [ ] docs @thu 2
+	- [ ] packaging @thu 3
+	- [ ] data @thu 4
+	- [ ] dissertation
+		- [w] draft (friday) @fri
