@@ -1,9 +1,14 @@
-library(argparse);
-library(dplyr);
-library(readr);
-library(ggplot2);
+# 2019 Gregory Leeman g-r-eg@outlook.com
 
-parser <- ArgumentParser(description="draw a qqlot and histogram from pvalues");
+suppressWarnings(suppressMessages(library(argparse)));
+suppressWarnings(suppressMessages(library(dplyr)));
+suppressWarnings(suppressMessages(library(readr)));
+suppressWarnings(suppressMessages(library(ggplot2)));
+
+description <- "draw a qqlot and histogram from pvalues";
+
+parser <- ArgumentParser(description = description);
+
 parser$add_argument('pvalues', help="list of p values");
 parser$add_argument('--prefix', help="", default="plot");
 parser$add_argument('--confidence-interval', help="", default=0.95);

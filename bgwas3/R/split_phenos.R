@@ -1,8 +1,10 @@
-library(readr);
-library(dplyr);
-library(tidyr);
-library(argparse);
-library(stringr);
+# 2019 Gregory Leeman g-r-eg@outlook.com
+
+suppressWarnings(suppressMessages(library(readr)));
+suppressWarnings(suppressMessages(library(dplyr)));
+suppressWarnings(suppressMessages(library(tidyr)));
+suppressWarnings(suppressMessages(library(argparse)));
+suppressWarnings(suppressMessages(library(stringr)));
 
 parser <- ArgumentParser(description="Extract phenotype columns from a tsv file and write seperate tsv files for each");
 parser$add_argument("infile", help="File in tsv format that includes an 'id' column and one or more 'pheno_*' columns");

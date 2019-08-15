@@ -1,7 +1,9 @@
-library(readr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
+# 2019 Gregory Leeman g-r-eg@outlook.com
+
+suppressWarnings(suppressMessages(library(readr)));
+suppressWarnings(suppressMessages(library(dplyr)));
+suppressWarnings(suppressMessages(library(tidyr)));
+suppressWarnings(suppressMessages(library(ggplot2)));
 
 commandArgs(trailingOnly = TRUE) -> args;
 

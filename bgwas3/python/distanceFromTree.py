@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Copyright 2017 Marco Galardini and John Lees
 
 '''Extract a distance matrix from a phylogeny'''

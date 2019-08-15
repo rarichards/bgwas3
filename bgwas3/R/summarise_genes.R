@@ -1,8 +1,11 @@
+# 2019 Gregory Leeman g-r-eg@outlook.com
+
 suppressWarnings(suppressMessages(library(argparse, quietly=TRUE)));
 suppressWarnings(suppressMessages(library(dplyr, quietly=TRUE)));
 suppressWarnings(suppressMessages(library(readr, quietly=TRUE)));
 
-parser <- ArgumentParser(description="Generate stats for gene hits");
+description <- "Count the number of kmers mapped to each gene and calculate stats";
+parser <- ArgumentParser(description = description); 
 parser$add_argument("path_maps", help='maps file');
 parser$add_argument('path_gene_info', help='gene info file');
 parser$add_argument('path_output', help='output file');

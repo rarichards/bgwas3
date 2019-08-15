@@ -1,69 +1,64 @@
 import os
 import sys
 import shutil
-from ruffus import *
-import cgatcore.experiment as E
-from cgatcore import pipeline as P
-import cgatcore.iotools as iotools
-
 import re
+from ruffus import *
+from cgatcore import pipeline as P
 
 PARAMS = P.get_parameters([
     "%s/pipeline.yml" % os.path.splitext(__file__)[0],
     "../pipeline.yml",
     "pipeline.yml"
-    ])
+])
 
-# makeDirs {{{
+# make_dirs {{{
+@follows(
+    mkdir("results")
+)
 @originate(
-    "results"
-    )
-def makeDirs(outfile):
+    "results/plots"
+)
+def make_dirs(outfile):
 
     ''' Copy plot directory (index.html) to working directory '''
 
-    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/plot"
-    cwd = os.getcwd()
-    shutil.copytree(output_dir, os.getcwd())
+    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/plots"
+    shutil.copytree(output_dir, os.getcwd() + "/" + outfile)
 
 # }}}
 # assembly {{{
-#@transform(
+# @transform(
 #    "fastqs/*",
 #    regex(".*"),
 #    "contigs"
 #    )
+
 @originate(
     "contigs"
-    )
-def assembly(infile, outfile):
+)
+def assembly(outfile):
 
     ''' Contig assembly '''
 
     # TODO this step with options from yml
 
-    to_cluster = False
-    pass
-
 # }}}
-# mineKmers {{{
+# mine_kmers {{{
 @merge(
     assembly,
     "kmers.txt.gz"
-    )
-def mineKmers(infile, outfile):
+)
+def mine_kmers(infile, outfile):
 
     ''' Kmer mining/ counting with fsm-lite (make a gzipped kmers file) '''
 
     print(PARAMS)
 
-    to_cluster = True
-
     statement = '''
     ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
-    fsm-lite 
-        -l ../contigs_list.txt 
+    fsm-lite
+        -l ../contigs_list.txt
         -m %(fsm_kmer-min)s
         -M %(fsm_kmer-max)s
         -v
@@ -71,40 +66,41 @@ def mineKmers(infile, outfile):
         | gzip -c > ../%(outfile)s
     '''
 
-    P.run(statement)
+    P.run(statement, to_cluster=True)
 
 # }}}
-# annotateGenomes {{{
+# annotate {{{
 @follows(
     mkdir("annotations")
-    )
+)
 @transform(
     assembly,
-    regex("contigs/(.*)\.fa"),
+    regex("contigs/(.*).fa"),
     r"annotations/\1.gff",
     r"\1"
-    )
-def annotateGenomes(infile, outfile, idd):
+)
+def annotate(infile, outfile, idd):
 
     ''' Annotate genomes with prokka (generate gff file for each contig) '''
 
     statement = '''
-    prokka --centre X --compliant %(infile)s --outdir annotations --force --prefix %(idd)s
+    prokka --centre X --compliant %(infile)s --outdir annotations --force
+                                                         --prefix %(idd)s
     '''
 
     P.run(statement, to_cluster=True)
 
 # }}}
-# pangenomeAnalysis {{{
+# pangenome_analysis {{{
 @merge(
-    annotateGenomes,
+    annotate,
     "pangenome/accessory_binary_genes.fa.newick"
-    )
-def pangenomeAnalysis(infile, outfile):
+)
+def pangenome_analysis(infile, outfile):
 
-    ''' Perform pangenome analalysis with Roary (based on difference in gene 
-    content) and generate a phylogenetic tree (.newick) file for use in mixed 
-    effects association testing '''
+    ''' Perform pangenome analalysis with Roary (based on difference in gene
+    content) and generate a phylogenetic tree (.newick) file for use in mixed
+     effects association testing '''
 
     os.mkdir("pangenome")
     statement = '''
@@ -114,40 +110,42 @@ def pangenomeAnalysis(infile, outfile):
     P.run(statement, to_cluster=True)
 
 # }}}
-# distancesFromPangenome {{{
+# distance_from_tree {{{
 @transform(
-    pangenomeAnalysis,
+    pangenome_analysis,
     regex("pangenome/accessory_binary_genes.fa.newick"),
     "distances.tsv"
-    )
-def distanceFromPangenome(infile, outfile):
-    
-    ''' Get distances from a phylogenetic tree that has been midpoint 
+)
+def distance_from_tree(infile, outfile):
+
+    ''' Get distances from a phylogenetic tree that has been midpoint
     rooted '''
 
-    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+    PY_SRC_PATH = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "python")
+    )
 
     newick = infile + "/accessory_binary_genes.fa.newick"
 
     statement = '''
-    python %(PY_SRC_PATH)s/phylogeny_distance.py 
-        --calc-C %(newick)s 
+    python %(PY_SRC_PATH)s/distance_from_tree.py
+        --calc-C %(newick)s
         > %(outfile)s
     '''
-    
+
     P.run(statement, to_cluster=False)
 
 # }}}
 
-# plotPhyloTree {{{
+# plot_trees {{{
 @follows(
-    generateOutputDir
-    )
+    make_dirs
+)
 @split(
-    [pangenomeAnalysis, "phenos.tsv"],
+    [pangenome_analysis, "phenos.tsv"],
     "output/trees/*"
-    )
-def plotTrees(infiles, outfiles):
+)
+def plot_trees(infiles, outfiles):
 
     ''' Plot phylogenetic trees with filters based on clade and phenotype '''
 
@@ -156,58 +154,49 @@ def plotTrees(infiles, outfiles):
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    statement =  '''
-    Rscript %(R_SRC_PATH)s/plotTrees.R trees.newick phenos.tsv output/trees
+    statement = '''
+    Rscript %(R_SRC_PATH)s/plot_trees.R %(tree)s %(phenos)s results/plots
     '''
 
     P.run(statement)
 
 # }}}
-# splitPhenos {{{
+# split_phenos {{{
 @follows(
     mkdir("phenos")
-    )
+)
 @split(
     "phenos.tsv",
     "phenos/*.tsv"
-    )
-def splitPhenos(infile, outfiles):
+)
+def split_phenos(infile, outfiles):
 
-    ''' Split the main tsv file phenotype columns into their own tsv files 
+    ''' Split the main tsv file phenotype columns into their own tsv files
     (to be used in seperated association tests) '''
 
-    to_cluster = False
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
     statement = '''
-    Rscript %(R_SRC_PATH)s/splitPhenos.R %(infile)s phenos
+    Rscript %(R_SRC_PATH)s/split_phenos.R %(infile)s phenos
     '''
 
-    # statement = '''
-    # cols=`awk -F"\\t" '{print NF; exit}' %(infile)s` &&
-    # for col in $(seq 2 $cols); do
-    #     pheno=`awk -F"\\t" -v col=$col 'NR==1{print $col}' %(infile)s` &&
-    #     awk -F"\\t" -v col=$col '{print $1"\\t"$col}' %(infile)s > phenos/${pheno}.tsv;
-    # done
-    # '''
-
-    P.run(statement)
+    P.run(statement, to_cluster=False)
 
 # }}}
 
-# testAssociations {{{
+# test_assoc {{{
 @follows(
     mkdir("results"),
-    )
+)
 @transform(
-    splitPhenos,
-    regex("phenos/(.*)\.tsv"),
-    add_inputs(distanceFromPangenome, mineKmers),
+    split_phenos,
+    regex("phenos/(.*).tsv"),
+    add_inputs(distance_from_tree, mine_kmers),
     [r"results/\1_assocs.txt.gz", r"results/\1_patterns.txt"],
     r"\1"
-    )
-def testAssociations(infiles, outfiles, idd):
+)
+def test_assoc(infiles, outfiles, idd):
 
     ''' Association test kmers and phenotypes with pyseer '''
 
@@ -219,53 +208,53 @@ def testAssociations(infiles, outfiles, idd):
     patterns = outfiles[1]
 
     statement = '''
-    pyseer 
-        --lmm 
+    pyseer
+        --lmm
         --phenotypes %(pheno)s
         --kmers %(kmers)s
         --similarity %(distances)s
         --output-patterns %(patterns)s
-        --cpu 8 
-        | gzip -c 
+        --cpu 8
+        | gzip -c
         > %(assoc)s
     '''
 
     P.run(statement, to_cluster=True)
 
 # }}}
-# plotP {{{
+# plot_ps {{{
 @follows(
-    generateOutputDir
-    )
+    make_dirs
+)
 @transform(
-    testAssociations,
+    test_assoc,
     regex("^results/(.*)_assocs.*$"),
     [r"results/plot/p/\1_hist.png", r"results/plot/p/\1_qq.png"],
     r"\1",
     "output/p"
-    )
-def qqplot(infiles, outfile, pheno, outdir):
+)
+def plot_ps(infiles, outfile, pheno, outdir):
 
-    ''' Plot p-values (histogram and qqlot) for each association test '''
+    ''' Plot p-values (histogram and qqplot) for each association test '''
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    statement =  '''
+    statement = '''
     zcat %(infile)s | awk '{print $4}' > temp &&
-    Rscript %(R_SRC_PATH)s/plotP.R temp --out %(outdir)s --prefix %(pheno)s &&
+    Rscript %(R_SRC_PATH)s/plot_ps.R temp --out %(outdir)s --prefix %(pheno)s &&
     rm temp
     '''
 
     P.run(statement)
 
 # }}}
-# bonferoniFilter {{{
+# bonferoni{{{
 @transform(
-    testAssociations,
+    test_assoc,
     regex("^results/(.*)_assocs.txt.gz"),
     [r"results/\1_stats.txt", r"results/\1_assocs_filtered.txt"]
-    )
-def bonferoniFilter(infiles, outfiles):
+)
+def bonferoni(infiles, outfiles):
 
     ''' Filter kmers from the output of association based on their p-value,
     using bonferoni method to set a threshold '''
@@ -282,10 +271,13 @@ def bonferoniFilter(infiles, outfiles):
     statement = '''
     Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s %(stats)s &&
     gzip -d -c %(assoc_gzip)s > temp.tsv &&
-    wc -l temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
+    wc -l temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@'
+    >> %(stats)s &&
     head -1 temp.tsv > %(filtered)s &&
-    awk '$1=="bonf_thresh"{print $2}' %(stats)s | xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
-    wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+    awk '$1=="bonf_thresh"{print $2}' %(stats)s |
+    xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
+    wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}'
+    | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
     rm temp.tsv
     '''
 
@@ -295,13 +287,13 @@ def bonferoniFilter(infiles, outfiles):
 
 # annotation2bed {{{
 @transform(
-    annotateGenomes,
-    regex("annotations/(.*)\.gff"),
+    annotate,
+    regex("annotations/(.*).gff"),
     r"annotations/\1.bed"
-    )
+)
 def annotation2bed(infile, outfile):
 
-    ''' Convert gff files into bed files. Also remove annotations that don't 
+    ''' Convert gff files into bed files. Also remove annotations that don't
     correspind to named genes (eg. hypothetical proteins) '''
 
     if os.stat(infile).st_size == 0:
@@ -318,30 +310,31 @@ def annotation2bed(infile, outfile):
 # ref2bed {{{
 @transform(
     "refs/*",
-    regex("refs/(.*)\.gff*"),
+    regex("refs/(.*).gff*"),
     r"refs/\1.bed"
-    )
+)
 def ref2bed(infile, outfile):
 
     ''' Convert reference gff files into bed files. Also merge overlapping
-    annotations (eg 'CDS' and 'Gene' entries that are the same, but have different 
-    information. Also remove 'Region' entries. '''
+    annotations (eg 'CDS' and 'Gene' entries that are the same, but have
+    different information. Also remove 'Region' entries. '''
 
     statement = '''
-    gff2bed < %(infile)s | awk '$8 != "region"{print $0}' | bedtools merge -c 10 -o collapse -delim "|" > %(outfile)s
+    gff2bed < %(infile)s | awk '$8 != "region"{print $0}' |
+    bedtools merge -c 10 -o collapse -delim "|" > %(outfile)s
     '''
 
     P.run(statement, to_cluster=False)
 
 # }}}
-# makeRefList {{{
+# make_ref_list {{{
 @merge(
-    [[ref2bed],[annotation2bed],[assembly, "refs/*.fa"]],
+    [[ref2bed], [annotation2bed], [assembly, "refs/*.fa"]],
     "ref.txt"
-    )
-def makeRefList(infiles, outfile):
+)
+def make_ref_list(infiles, outfile):
 
-    ''' Make a list of references for kmer mapping (references first, then 
+    ''' Make a list of references for kmer mapping (references first, then
     draft annotations) '''
 
     print(infiles)
@@ -352,29 +345,29 @@ def makeRefList(infiles, outfile):
 
     with open(outfile, "w") as f:
         for bed in ref_beds:
-            idd = re.search("^.*/(.*)\.bed", bed).group(1)
-            regex = r".*/" + idd + "\.fa"
+            idd = re.search("^.*/(.*).bed", bed).group(1)
+            regex = r".*/" + idd + ".fa"
             fa = [i for i in fas if re.match(regex, i)][0]
             f.write(fa + "\t" + bed + "\n")
         for bed in annotation_beds:
             if os.stat(bed).st_size != 0:
-                idd = re.search("^.*/(.*)\.bed", bed).group(1)
-                regex = r".*/" + idd + "\.fa"
+                idd = re.search("^.*/(.*).bed", bed).group(1)
+                regex = r".*/" + idd + ".fa"
                 fa = [i for i in fas if re.match(regex, i)][0]
                 f.write(fa + "\t" + bed + "\n")
 
 
 # }}}
-# bwaIndex {{{
+# bwa_index {{{
 @transform(
     [assembly, "refs/*"],
     suffix(".fa"),
     [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
-    )
-def bwaIndex(infile, outfiles):
-    
+)
+def bwa_index(infile, outfiles):
+
     ''' BWA index (for Kmer mapping) '''
-    
+
     statement = '''
     bwa index %(infile)s
     '''
@@ -382,41 +375,44 @@ def bwaIndex(infile, outfiles):
     P.run(statement)
 
 # }}}
-# mapKmers{{{
+# map_kmers{{{
 @transform(
-    bonferoniFilter,
+    bonferoni,
     regex(r"^(.*)_stats.txt$"),
-    add_inputs(makeRefList, ref2bed, annotation2bed, bwaIndex),
+    add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
     [r"\1_maps.txt", r"\1_gene_info.txt"],
     r"\1"
-    )
-def mapKmers(infiles, outfiles, prefix):
+)
+def map_kmers(infiles, outfiles, prefix):
 
     ''' Map kmers to annotation files '''
 
     to_cluster = False
 
-    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+    PY_SRC_PATH = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "python")
+    )
 
     filtered = infiles[0][1]
     ref_list = infiles[1]
     print(prefix + filtered)
 
     statement = '''
-    python %(PY_SRC_PATH)s/mapKmers.py %(filtered)s %(ref_list)s --prefix %(prefix)s
+    python %(PY_SRC_PATH)s/map_kmers.py %(filtered)s %(ref_list)s
+        --prefix %(prefix)s
     '''
 
     P.run(statement, to_cluster=False)
 
 # }}}
 
-# summariseGenes {{{
+# summarise_genes {{{
 @transform(
-    mapKmers,
+    map_kmers,
     regex("^results/(.*)_map.txt$"),
     r"results/\1_genes.txt"
-    )
-def countGeneHits(infiles, outfile):
+)
+def summarise_genes(infiles, outfile):
 
     ''' Count the number of kmer hits per gene, and calculate other
     statistics '''
@@ -424,42 +420,41 @@ def countGeneHits(infiles, outfile):
     maps = infiles[0]
     gene_info = infiles[1]
 
-    PY_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "python"))
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
     statement = '''
-    python %(PY_SRC_PATH)s/summarise_annotations.py %(infile)s > %(outfile)s
+    python %(R_SRC_PATH)s/summarise_genes.R %(infile)s > %(outfile)s
     '''
 
     P.run(statement)
 
 # }}}
-# pathwayAnalysis {{{
+# pathway_analysis {{{
 @transform(
-    countGeneHits,
+    summarise_genes,
     regex("^maps/(.*)_hits.txt$"),
     r"maps/\1_pathways.tsv"
-    )
+)
 def pathwayAnalysis(infiles, outfile):
-    
-    # TODO
-
     pass
 
 # }}}
 
-# plotGenes {{{
+# plot_genes {{{
 @merge(
-    [countGeneHits, pathwayAnalysis],
+    [summarise_genes],
     "results/plot/dat.js"
-    )
+)
 def visualise(infile, outfile):
+    pass
 
 # }}}
 
 # full {{{
-@follows (
+
+@follows(
     visualise
-    )
+)
 def full():
     pass
 
