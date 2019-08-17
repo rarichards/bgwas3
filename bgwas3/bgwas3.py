@@ -152,6 +152,8 @@ def plot_trees(infiles, outfiles):
     tree = "pangenome/accessory_binary_genes.fa.newick"
     phenos = infiles[1]
 
+
+
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
     statement = '''
@@ -228,21 +230,35 @@ def test_assoc(infiles, outfiles, idd):
 )
 @transform(
     test_assoc,
-    regex("^results/(.*)_assocs.*$"),
-    [r"results/plot/p/\1_hist.png", r"results/plot/p/\1_qq.png"],
-    r"\1",
-    "output/p"
+    regex("^results/(.*)_assocs.txt.gz$"),
+    [r"results/plots/p/\1_hist.png", r"results/plots/p/\1_qq.png", r"results/plots/p/\1_unadj_hist.png", r"results/plots/p/\1_unadj_qq.png"],
+    r"\1"
 )
-def plot_ps(infiles, outfile, pheno, outdir):
+def plot_ps(infiles, outfiles, pheno):
 
     ''' Plot p-values (histogram and qqplot) for each association test '''
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
+    PY_SRC_PATH = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "python")
+    )
+
+    assoc = infiles[0]
+
+    p_hist = outfiles[0]
+    p_qq = outfiles[1]
+    p_unadj_hist = outfiles[2]
+    p_unadj_qq = outfiles[3]
+    
     statement = '''
-    zcat %(infile)s | awk '{print $4}' > temp &&
-    Rscript %(R_SRC_PATH)s/plot_ps.R temp --out %(outdir)s --prefix %(pheno)s &&
-    rm temp
+    zcat %(assoc)s | awk '{print $4}' > %(pheno)s_temp_p &&
+    zcat %(assoc)s | awk '{print $3}' > %(pheno)s_temp_p_unadj &&
+    Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p --output %(p_hist)s &&
+    Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p_unadj --output %(p_unadj_hist)s &&
+    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p --output %(p_qq)s &&
+    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p_unadj --output %(p_unadj_qq)s_anadj &&
+    rm %(pheno)s_temp_p*
     '''
 
     P.run(statement)
