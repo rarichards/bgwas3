@@ -2,8 +2,13 @@ import os
 import sys
 import shutil
 import re
-from ruffus import *
+from ruffus import * 
 from cgatcore import pipeline as P
+from mako.template import Template
+import json
+
+'''
+'''
 
 PARAMS = P.get_parameters([
     "%s/pipeline.yml" % os.path.splitext(__file__)[0],
@@ -11,21 +16,6 @@ PARAMS = P.get_parameters([
     "pipeline.yml"
 ])
 
-# make_dirs {{{
-@follows(
-    mkdir("results")
-)
-@originate(
-    "results/plots"
-)
-def make_dirs(outfile):
-
-    ''' Copy plot directory (index.html) to working directory '''
-
-    output_dir = os.path.dirname(os.path.realpath(__file__)) + "/plots"
-    shutil.copytree(output_dir, os.getcwd() + "/" + outfile)
-
-# }}}
 # assembly {{{
 # @transform(
 #    "fastqs/*",
@@ -33,14 +23,18 @@ def make_dirs(outfile):
 #    "contigs"
 #    )
 
-@originate(
-    "contigs"
+@follows(
+    mkdir("assembly")
+    )
+@split(
+    "assembly",
+    "contigs/*.fa"
 )
 def assembly(outfile):
 
-    ''' Contig assembly '''
-
-    # TODO this step with options from yml
+    ''' 
+    Contig assembly
+    '''
 
 # }}}
 # mine_kmers {{{
@@ -50,7 +44,12 @@ def assembly(outfile):
 )
 def mine_kmers(infile, outfile):
 
-    ''' Kmer mining/ counting with fsm-lite (make a gzipped kmers file) '''
+    ''' Kmer mining and counting with fsm-lite
+    
+    :param infile: directory of geneomes (fasta files)
+    :param outfile: gzipped file of Kmer patterns and genomes they are found in
+
+    '''
 
     print(PARAMS)
 
@@ -69,6 +68,7 @@ def mine_kmers(infile, outfile):
     P.run(statement, to_cluster=True)
 
 # }}}
+
 # annotate {{{
 @follows(
     mkdir("annotations")
@@ -91,6 +91,7 @@ def annotate(infile, outfile, idd):
     P.run(statement, to_cluster=True)
 
 # }}}
+
 # pangenome_analysis {{{
 @merge(
     annotate,
@@ -137,10 +138,26 @@ def distance_from_tree(infile, outfile):
 
 # }}}
 
+# mash {{{
+@merge(
+    assembly,
+    regex("^contigs/(.*).fa$"),
+    "mash.tsv"
+    )
+def mash(infiles, outfile):
+
+    '''
+    '''
+
+    statement = '''
+    mash sketch -s 10000 -o mash_sketch assemblies/*.fa
+    '''
+
+    P.run(statement, to_cluster = False)
+
+# }}}
+
 # plot_trees {{{
-@follows(
-    make_dirs
-)
 @split(
     [pangenome_analysis, "phenos.tsv"],
     "output/trees/*"
@@ -195,7 +212,7 @@ def split_phenos(infile, outfiles):
     split_phenos,
     regex("phenos/(.*).tsv"),
     add_inputs(distance_from_tree, mine_kmers),
-    [r"results/\1_assocs.txt.gz", r"results/\1_patterns.txt"],
+    [r"results/\1_assocs.tsv.gz", r"results/\1_patterns.tsv"],
     r"\1"
 )
 def test_assoc(infiles, outfiles, idd):
@@ -225,12 +242,9 @@ def test_assoc(infiles, outfiles, idd):
 
 # }}}
 # plot_ps {{{
-@follows(
-    make_dirs
-)
 @transform(
     test_assoc,
-    regex("^results/(.*)_assocs.txt.gz$"),
+    regex("^results/(.*)_assocs.tsv.gz$"),
     [r"results/plots/p/\1_hist.png", r"results/plots/p/\1_qq.png", r"results/plots/p/\1_unadj_hist.png", r"results/plots/p/\1_unadj_qq.png"],
     r"\1"
 )
@@ -267,10 +281,11 @@ def plot_ps(infiles, outfiles, pheno):
 # bonferoni{{{
 @transform(
     test_assoc,
-    regex("^results/(.*)_assocs.txt.gz"),
-    [r"results/\1_stats.txt", r"results/\1_assocs_filtered.txt"]
+    regex("^results/(.*)_assocs.tsv.gz"),
+    [r"results/\1_stats.txt", r"results/\1_assocs_filtered.tsv"],
+    r"\1"
 )
-def bonferoni(infiles, outfiles):
+def bonferoni(infiles, outfiles, pheno):
 
     ''' Filter kmers from the output of association based on their p-value,
     using bonferoni method to set a threshold '''
@@ -294,6 +309,7 @@ def bonferoni(infiles, outfiles):
     xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
     wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}'
     | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+    echo -e 'pheno\\t%(pheno)s' >> %(stats)s &&
     rm temp.tsv
     '''
 
@@ -309,8 +325,12 @@ def bonferoni(infiles, outfiles):
 )
 def annotation2bed(infile, outfile):
 
-    ''' Convert gff files into bed files. Also remove annotations that don't
-    correspind to named genes (eg. hypothetical proteins) '''
+    print(infile)
+
+    ''' 
+    Convert gff files into bed files. Also remove annotations that don't
+    correspind to named genes (eg. hypothetical proteins) 
+    '''
 
     if os.stat(infile).st_size == 0:
         statement = '''
@@ -320,6 +340,7 @@ def annotation2bed(infile, outfile):
         statement = '''
         gff2bed < %(infile)s | grep "gene=" > %(outfile)s
         '''
+
     P.run(statement, to_cluster=False)
 
 # }}}
@@ -391,12 +412,13 @@ def bwa_index(infile, outfiles):
     P.run(statement)
 
 # }}}
+
 # map_kmers{{{
 @transform(
     bonferoni,
     regex(r"^(.*)_stats.txt$"),
     add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
-    [r"\1_maps.txt", r"\1_gene_info.txt"],
+    [r"\1_maps.tsv", r"\1_gene_info.tsv"],
     r"\1"
 )
 def map_kmers(infiles, outfiles, prefix):
@@ -404,6 +426,10 @@ def map_kmers(infiles, outfiles, prefix):
     ''' Map kmers to annotation files '''
 
     to_cluster = False
+    
+    print(outfiles[0])
+    print("\n#\n")
+    print(outfiles[1])
 
     PY_SRC_PATH = os.path.abspath(
         os.path.join(os.path.dirname(__file__), "python")
@@ -425,10 +451,11 @@ def map_kmers(infiles, outfiles, prefix):
 # summarise_genes {{{
 @transform(
     map_kmers,
-    regex("^results/(.*)_map.txt$"),
-    r"results/\1_genes.txt"
+    regex("^results/(.*)_maps.tsv$"),
+    r"results/\1_genes.tsv",
+    r"\1"
 )
-def summarise_genes(infiles, outfile):
+def summarise_genes(infiles, outfile, pheno):
 
     ''' Count the number of kmer hits per gene, and calculate other
     statistics '''
@@ -439,7 +466,10 @@ def summarise_genes(infiles, outfile):
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
     statement = '''
-    python %(R_SRC_PATH)s/summarise_genes.R %(infile)s > %(outfile)s
+    Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s %(outfile)s &&
+    awk '$1 != "significant_genes"{print $0}' results/%(pheno)s_stats.txt > results/temp_%(pheno)s &&
+    mv results/temp_%(pheno)s results/%(pheno)s_stats.txt &&
+    wc -l %(outfile)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> results/%(pheno)s_stats.txt
     '''
 
     P.run(statement)
@@ -448,7 +478,7 @@ def summarise_genes(infiles, outfile):
 # pathway_analysis {{{
 @transform(
     summarise_genes,
-    regex("^maps/(.*)_hits.txt$"),
+    regex("^maps/(.*)_genes.tsv$"),
     r"maps/\1_pathways.tsv"
 )
 def pathwayAnalysis(infiles, outfile):
@@ -457,19 +487,94 @@ def pathwayAnalysis(infiles, outfile):
 # }}}
 
 # plot_genes {{{
-@merge(
-    [summarise_genes],
-    "results/plot/dat.js"
+@transform(
+    summarise_genes,
+    regex("^results/(.*)_genes.tsv$"),
+    r"results/plots/\1.html",
+    r"\1"
 )
-def visualise(infile, outfile):
-    pass
+def plot_genes(infile, outfile, pheno):
+
+    template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/template.html"
+    template = Template(filename=template_path)
+
+    json_genes = ""
+    with open(infile) as dat:
+        titles = dat.readline().split(sep="\t")
+        for l in dat:
+            d = {}
+            for t, f in zip(titles, l.split(sep="\t")):
+                d[t.rstrip()] = f.rstrip()
+            json_genes += json.dumps(d, indent=4) + ","
+    page = template.render(pheno=pheno, json_genes=json_genes)
+    html_file = open(outfile, "w")
+    html_file.write(page)
+    html_file.close()
+
+    if not os.path.exists("results/plots/src"):
+        shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
 
 # }}}
+# summarise {{{
+@follows(
+    plot_genes
+)
+@merge(
+    bonferoni,
+    "results/summary.tsv"
+)
+def summarise(infiles, outfile):
+
+    stats = [j for j in [i for sublist in infiles for i in sublist] if re.match(r"^.*stats.*$", j)]
+
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+    
+    statement = "Rscript %(R_SRC_PATH)s/summarise.R"
+
+    for i in stats:
+        statement += " " + i
+
+    statement += " --output %(outfile)s"
+
+    P.run(statement)
+
+# }}}
+# make_index {{{
+@transform(
+    summarise,
+    regex(".*"),
+    "results/plots/index.html"
+    )
+def make_index(infile, outfile):
+
+    template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/index.html"
+    template = Template(filename=template_path)
+
+    table = "<table><thead><tr>"
+    with open(infile, "r") as stats_file:
+        header = stats_file.readline().rstrip().split("\t")
+        for h in header:
+            table += "<th>" + h + "</th>"
+        table += "</tr></thead><tbody>"
+        for line in stats_file:
+            stats = line.rstrip().split("\t")
+            pheno = stats[0]
+            table += "<tr><td><a href='" + pheno + ".html'>" + pheno + "</td>"
+            for s in stats[1:]:
+                table += "<td>" + s + "</td>"
+            table += "</tr>"
+        table += "</body></table>"
+
+    page = template.render(table=table)
+    html_file = open(outfile, "w")
+    html_file.write(page)
+    html_file.close()
+
 
 # full {{{
 
 @follows(
-    visualise
+    summarise
 )
 def full():
     pass
@@ -479,5 +584,8 @@ def full():
 def main():
     P.main(sys.argv)
 
+
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>${pheno}</title>
+	<script src="src/d3.v5.min.js"></script>
+	<script src="src/d3-selection-multi.v1.min.js"></script>
+</head>
+<body>
+	<div id="d3Container"></div>
+	<div id="pPlots">
+		<img src="p/${pheno}_qq.png">
+		<img src="p/${pheno}_hist.png">
+	</div>
+	<script>
+		const dat = [${json_genes}];
+	</script>
+	<script src="src/script.js"></script>
+</body>
+</html>
