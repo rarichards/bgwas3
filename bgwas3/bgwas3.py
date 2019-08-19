@@ -282,7 +282,7 @@ def plot_ps(infiles, outfiles, pheno):
 @transform(
     test_assoc,
     regex("^results/(.*)_assocs.tsv.gz"),
-    [r"results/\1_stats.txt", r"results/\1_assocs_filtered.tsv"],
+    [r"results/\1_stats.tsv", r"results/\1_assocs_filtered.tsv"],
     r"\1"
 )
 def bonferoni(infiles, outfiles, pheno):
@@ -416,7 +416,7 @@ def bwa_index(infile, outfiles):
 # map_kmers{{{
 @transform(
     bonferoni,
-    regex(r"^(.*)_stats.txt$"),
+    regex(r"^(.*)_stats.tsv$"),
     add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
     [r"\1_maps.tsv", r"\1_gene_info.tsv"],
     r"\1"
@@ -467,9 +467,9 @@ def summarise_genes(infiles, outfile, pheno):
 
     statement = '''
     Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s %(outfile)s &&
-    awk '$1 != "significant_genes"{print $0}' results/%(pheno)s_stats.txt > results/temp_%(pheno)s &&
-    mv results/temp_%(pheno)s results/%(pheno)s_stats.txt &&
-    wc -l %(outfile)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> results/%(pheno)s_stats.txt
+    awk '$1 != "significant_genes"{print $0}' results/%(pheno)s_stats.tsv > results/temp_%(pheno)s &&
+    mv results/temp_%(pheno)s results/%(pheno)s_stats.tsv &&
+    wc -l %(outfile)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> results/%(pheno)s_stats.tsv
     '''
 
     P.run(statement)
