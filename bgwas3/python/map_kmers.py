@@ -1,6 +1,7 @@
 '''
 Annotate Kmers
 '''
+import sys
 import os
 import re
 import subprocess
@@ -66,7 +67,7 @@ def main(kmers_path, refs_path, prefix):
 
         # try to map kmers to reference index (bwa mem) {{{
 
-        command = "bwa mem -v 1 -k 8 '" + fa_path + "' '" + query_fa_path+ "'"
+        command = "bwa mem -v 1 -k 8 '" + fa_path + "' '" + query_fa_path + "'"
         results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True) # stderr=subprocess.DEVNULL
 
         kmers_mapped = {}
@@ -74,6 +75,7 @@ def main(kmers_path, refs_path, prefix):
         query_bed = open(query_bed_path, "w")
 
         for line in results.stdout:
+            
             fields = line.rstrip().split("\t")
 
             if fields[0][0] == "@":
@@ -82,8 +84,10 @@ def main(kmers_path, refs_path, prefix):
             if int(fields[1]) != 4:
 
                 id_kmer = int(fields[0])
+
                 kmers_mapped[id_kmer] = kmers[id_kmer]
-                del kmers[id_kmer]
+
+                # del kmers[id_kmer]
 
                 # primary mapping {{{
                 id_hit = 1
@@ -134,6 +138,9 @@ def main(kmers_path, refs_path, prefix):
 
         query_bed.close()
 
+        for key in kmers_mapped.keys():
+            del kmers[key] 
+
         # }}}
 
         if kmers_mapped != False:
@@ -174,11 +181,11 @@ def main(kmers_path, refs_path, prefix):
             subprocess.run(command, shell=True, check=True)
             query_sorted_bed.close()
             
-            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -iu -nonamecheck"
+            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -iu -nonamecheck"
             results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
             genes_up = getGenes(results_up)
 
-            command = "bedtools closest -a " + query_bed_path + " -b " + bed_path + " -D 'ref' -id -nonamecheck"
+            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -id -nonamecheck"
             results_down = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
             genes_down = getGenes(results_down)
 

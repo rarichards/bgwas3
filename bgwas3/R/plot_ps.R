@@ -22,7 +22,7 @@ args$pvalues %>%
 if(diff(range(pull(dat, "p"))) != 0){
 	dat %>%
 		ggplot(aes(x=p)) +
-		geom_histogram(binwidth = bw);
+		geom_histogram();
 }else{
 	data_frame() %>% 
 		ggplot() + 
