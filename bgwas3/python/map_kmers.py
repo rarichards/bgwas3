@@ -65,6 +65,14 @@ def main(kmers_path, refs_path, prefix):
             query_fa.write(">" + str(id_kmer) + "\n" + kmers[id_kmer].rstrip().split("\t")[0] + "\n")
         query_fa.close()
 
+        # bwa index
+        for suffix in ["amb", "ann", "bwt", "pac", "sa"]:
+            if not os.path.exists(fa_path + "." + suffix):
+                command = "bwa index " + fa_path
+                subprocess.run(command, shell=True, check=True)
+            else:
+                break
+
         # try to map kmers to reference index (bwa mem) {{{
 
         command = "bwa mem -v 1 -k 8 '" + fa_path + "' '" + query_fa_path + "'"

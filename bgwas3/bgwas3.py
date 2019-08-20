@@ -17,17 +17,11 @@ PARAMS = P.get_parameters([
 ])
 
 # assembly {{{
-# @transform(
-#    "fastqs/*",
-#    regex(".*"),
-#    "contigs"
-#    )
-
 @follows(
-    mkdir("assembly")
+    mkdir("fastqs")
     )
 @split(
-    "assembly",
+    "fastqs",
     "contigs/*.fa"
 )
 def assembly(outfile):
@@ -242,6 +236,10 @@ def test_assoc(infiles, outfiles, idd):
 
 # }}}
 # plot_ps {{{
+@follows(
+    mkdir("results/plots"),
+    mkdir("results/plots/p")
+)
 @transform(
     test_assoc,
     regex("^results/(.*)_assocs.tsv.gz$"),
@@ -396,28 +394,30 @@ def make_ref_list(infiles, outfile):
 
 # }}}
 # bwa_index {{{
-@transform(
-    [assembly, "refs/*"],
-    suffix(".fa"),
-    [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
-)
-def bwa_index(infile, outfiles):
+# @transform(
+#     [assembly, "refs/*"],
+#     suffix(".fa"),
+#     add_inputs(make_ref_list),
+#     [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
+# )
+# def bwa_index(infile, outfiles):
 
-    ''' BWA index (for Kmer mapping) '''
+#     refs_file = open(infile, "r"):
+#     ''' BWA index (for Kmer mapping) '''
 
-    statement = '''
-    bwa index %(infile)s
-    '''
+#     statement = '''
+#     bwa index %(infile)s
+#     '''
 
-    P.run(statement)
+#     P.run(statement)
 
-# }}}
+# # }}}
 
 # map_kmers{{{
 @transform(
     bonferoni,
     regex(r"^(.*)_stats.tsv$"),
-    add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
+    add_inputs(make_ref_list, ref2bed, annotation2bed),
     [r"\1_maps.tsv", r"\1_gene_info.tsv"],
     r"\1"
 )
@@ -487,6 +487,9 @@ def pathwayAnalysis(infiles, outfile):
 # }}}
 
 # plot_genes {{{
+@follows(
+    mkdir("results/plots")
+)
 @transform(
     summarise_genes,
     regex("^results/(.*)_genes.tsv$"),
