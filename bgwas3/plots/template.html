@@ -6,12 +6,37 @@
 	<title>${pheno}</title>
 	<script src="src/d3.v5.min.js"></script>
 	<script src="src/d3-selection-multi.v1.min.js"></script>
+	<script src="src/jquery.min.js"></script>
+	<script src="src/datatables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-	<div id="d3Container"></div>
-	<div id="pPlots">
-		<img src="p/${pheno}_qq.png">
-		<img src="p/${pheno}_hist.png">
+	<h1>Phenotype: ${pheno}</h1>
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<table id="table-info">
+				<thead>
+					<tr>
+						<th>Key</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="figs">
+		<div id="d3-container"></div>
+		<div id="static-figs">
+			<img src="p/${pheno}_qq.png" style="float:right;">
+			<img src="p/${pheno}_hist.png" style="float:right;">
+		</div>
+	</div>
+	<div id="table-container">
+		<table id="table-all"></table>
 	</div>
 	<script>
 		const dat = [${json_genes}];
