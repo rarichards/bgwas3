@@ -1,9 +1,9 @@
 - [ ] finish
 	- [ ] tool
 		- [ ] visualsation step
-			- [ ] test/fix static p 1
+			- [x] test/fix static p 1
 			- [ ] test/fix static tree 2
-			- [ ] final/ gene level 3
+			- [x] final/ gene level 3
 	- [ ] docs 4
 	- [ ] packaging 5
 	- [ ] data 6

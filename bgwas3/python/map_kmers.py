@@ -1,6 +1,5 @@
 '''
-Annotate Kmers
-'''
+Annotate Kmers '''
 import sys
 import os
 import re
@@ -31,13 +30,13 @@ def main(kmers_path, refs_path, prefix):
 
     # load kmers {{{
     kmers_file = open(kmers_path, "r")
-    header = kmers_file.readline().rstrip()
+    header = kmers_file.readline().rstrip("\n")
     header = header + "\tgene_in\tgene_up\tgene_down\n"
     output_file.write(header)
     id_kmer = 0
     for line in kmers_file:
         id_kmer += 1
-        kmers[id_kmer] = line.rstrip()
+        kmers[id_kmer] = line.rstrip("\n")
 
     kmers_file.close()
     print(str(len(kmers)) + " kmers loaded")
@@ -151,38 +150,45 @@ def main(kmers_path, refs_path, prefix):
 
         # }}}
 
-        if kmers_mapped != False:
+        if kmers_mapped != {}:
 
-            def getGenes(results):
+            def getGenes(results, info_index):
                 genes_list = {}
                 for line in results.stdout:
                     fields = line.rstrip().split("\t")
                     kmer_id, hit_id = fields[3].split("_")
 
-                    info = fields[9]
+                    # info = fields[9]
+                    info = fields[info_index]
+                    print(info)
                     gene = re.search("^.*gene=([^ ;]*);.*$", info)
                     name = re.search("^.*name=([^ ;]*);.*$", info)
                     description = re.search("^.*name=(\S* [^;]*);.*$", info)
                     ID = re.search("^.*ID=([^ ;]*);.*$", info)
 
                     if gene != None:
-                        gene_name = gene.group(1)
+                        gene_name = gene.group(1).strip('"')
                     elif name != None:
-                        gene_name = name.group(1)
+                        gene_name = name.group(1).strip('"')
                     elif description != None:
-                        gene_name = description.group(1)
+                        gene_name = description.group(1).strip('"')
                     elif ID != None:
-                        gene_name = ID.group(1)
+                        gene_name = ID.group(1).strip('"')
                     else:
+                        print(info)
                         break
 
-                    genes_list[kmer_id] = gene_name
+                    if kmer_id in genes_list.keys():
+                        genes_list[kmer_id] += ";" + gene_name
+                    else:
+                        genes_list[kmer_id] = gene_name
                     gene_info[gene_name] = info
+
                 return genes_list
 
             command = "bedtools intersect -a " + query_bed_path + " -b " + bed_path + " -wb"
             results_in = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_in = getGenes(results_in)
+            genes_in = getGenes(results_in, -1)
 
             query_sorted_bed = open(query_sorted_bed_path, "w")
             command = "bedtools sort -i " + query_bed_path + " > " + query_sorted_bed_path
@@ -191,11 +197,15 @@ def main(kmers_path, refs_path, prefix):
             
             command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -iu -nonamecheck"
             results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_up = getGenes(results_up)
+            genes_up = getGenes(results_up, -2)
 
             command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -id -nonamecheck"
             results_down = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_down = getGenes(results_down)
+            genes_down = getGenes(results_down, -2)
+
+            print("genes_in: " + str(len(genes_in)))
+            print("genes_up: " + str(len(genes_up)))
+            print("genes_down: " + str(len(genes_down)))
 
             for id_kmer in kmers_mapped.keys():
                 line = kmers_mapped[id_kmer] + "\t"
@@ -212,12 +222,12 @@ def main(kmers_path, refs_path, prefix):
 
         print(str(len(kmers_mapped)) + " new kmers mapped. " + str(len(kmers)) + " kmers left")
 
-    if os.path.exists(query_fa_path):
-        os.remove(query_fa_path)
-    if os.path.exists(query_bed_path):
-        os.remove(query_bed_path)
-    if os.path.exists(query_sorted_bed_path):
-        os.remove(query_sorted_bed_path)
+    # if os.path.exists(query_fa_path):
+    #     os.remove(query_fa_path)
+    # if os.path.exists(query_bed_path):
+    #     os.remove(query_bed_path)
+    # if os.path.exists(query_sorted_bed_path):
+    #     os.remove(query_sorted_bed_path)
 
     output_file.close()
     refs_file.close()   

@@ -3,9 +3,17 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="src/jquery.min.js"></script>
+	<script src="src/datatables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/datatables.min.css">
 	<title>bgwas3</title>
 </head>
 <body>
 	${table}
+	<script>
+		$(document).ready( function () {
+			$('table').DataTable();
+		});
+	</script>
 </body>
 </html>

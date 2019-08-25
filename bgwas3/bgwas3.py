@@ -449,25 +449,28 @@ def map_kmers(infiles, outfiles, prefix):
 # summarise_genes {{{
 @transform(
     map_kmers,
-    regex("^results/(.*)_maps.tsv$"),
-    r"results/\1_genes.tsv",
+    regex("^(.*)_maps.tsv$"),
+    [r"\1_genes.tsv", r"\1_genes_near.tsv"],
     r"\1"
 )
-def summarise_genes(infiles, outfile, pheno):
+def summarise_genes(infiles, outfiles, prefix):
 
     ''' Count the number of kmer hits per gene, and calculate other
     statistics '''
 
     maps = infiles[0]
     gene_info = infiles[1]
+    genes = outfiles[0]
+    genes_near = outfiles[1]
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
     statement = '''
-    Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s %(outfile)s &&
-    awk '$1 != "significant_genes"{print $0}' results/%(pheno)s_stats.tsv > results/temp_%(pheno)s &&
-    mv results/temp_%(pheno)s results/%(pheno)s_stats.tsv &&
-    wc -l %(outfile)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> results/%(pheno)s_stats.tsv
+    Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s --prefix %(prefix)s &&
+    awk '$1 != "significant_genes" && $1 != "significant_genes_near" {print $0}' %(prefix)s_stats.tsv > %(prefix)s_temp &&
+    mv %(prefix)s_temp %(prefix)s_stats.tsv &&
+    wc -l %(genes)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> %(prefix)s_stats.tsv &&
+    wc -l %(genes_near)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes_near\\t@' >> %(prefix)s_stats.tsv
     '''
 
     P.run(statement)
@@ -494,13 +497,14 @@ def pathwayAnalysis(infiles, outfile):
     r"results/plots/\1.html",
     r"\1"
 )
-def plot_genes(infile, outfile, pheno):
+
+def plot_genes(infiles, outfile, pheno):
 
     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/template.html"
     template = Template(filename=template_path)
 
     json_genes = ""
-    with open(infile) as dat:
+    with open(infiles[0]) as dat:
         titles = dat.readline().split(sep="\t")
         for l in dat:
             d = {}
@@ -564,7 +568,7 @@ def make_index(infile, outfile):
             for s in stats[1:]:
                 table += "<td>" + s + "</td>"
             table += "</tr>"
-        table += "</body></table>"
+        table += "</tbody></table>"
 
     page = template.render(table=table)
     html_file = open(outfile, "w")
