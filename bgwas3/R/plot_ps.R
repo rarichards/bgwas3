@@ -22,18 +22,27 @@ args$pvalues %>%
 if(diff(range(pull(dat, "p"))) != 0){
 	dat %>%
 		ggplot(aes(x=p)) +
-		geom_histogram();
+		geom_histogram(fill="black") + 
+		xlab("P-values") +
+		ylab("Count") +
+		theme_classic();
 }else{
 	data_frame() %>% 
 		ggplot() + 
 			geom_point() +
 			xlim(0, 1) + 
-			ylim(0, 1);
+			ylim(0, 1) +
+			theme_classic();
 }
 
-ggsave(filename = args$output);
+ggsave(
+			 filename = args$output,
+			 width = 4,
+			 height = 4,
+			 dpi = 150
+			 );
 
-	#arrange(p) %>%
+#arrange(p) %>%
 	#mutate(
 	#	"observed" = -log10(p),
 	#	"expected" = -log10(ppoints(n()))

@@ -1,12 +1,12 @@
 ---
-title: "bgwas3"
+title: "bgwas3: a pipeline for kmer based association testing in bacteria"
 author: "Gregory Leeman"
 output: 
   pdf_document:
     toc: true
     number_sections: true
     fig_caption: true
-bibliography: bib.bib 
+bibliography: bgwas3.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -18,30 +18,195 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE);
 ```
 
 # Abstract
+
+Background
+
+
+What i did
+
+
+Results
+
+
+Future
+
+
+Genome wide association studies are applied extensively to human populations, and aim to to identify the genetic basis of phenotypic traits. Because of clonal reproduction, bacteria experience greater population structure and genetic variation, and the use of single nucleotide polymorphisms is redundant. Only recently have GWAS-like studies started appearing for bacteria. These new ‘pangenome wide’ association studies facilitate the use of association-free K-mers as units of variation as apposed to SNPs.
+
+I developed, tested, and compared three pipelines for pGWAS using different association models, and using different open source tools to confound for population structure. I also attempted to use these pipelines to test antibiotic resistance traits in a sample of Pseudomonas aeruginosa from the sputum of cystic fibrosis patients; a condition where antibiotic resistance is a significant issue.
+
+I find that performing a mixed linear model with random effects calculated from estimated phylogenies based on either differences in gene content or difference in core genome SNPs seems to confound for population structure better than a linear model where significant principal components are used as fixed effects.
+
+Though I identified significantly associated K-mers, I was not able to map these K-mers to a reference genome; limiting my ability to perform downstream analysis of significant loci. However, I believe that this pipeline may be refined, given more time, into completed into a robust and useful work flow that will simplify pGWAS in the future.
+
+I also hope this report may also serve as a description and evaluation of pGWAS.
+
 # Acknowledgements
+
+# Abreviations
+
+SNPs
+
 # Introduction
 
-## Genome wide association studies
 ## Pangenome wide association studies
-## Metabolomics
+
+TODO make sure not too much like pyseer paper
+
+When used for phenotupes relatng to disease (virulence etc ?) this may help 'clinical interventions'.
+
+There is a recent relative abaundance of whole bacterial genome and phenotype data (from metabolomics)/ rapidly expanding repositories of genomic data for bacteria
+
+Studies that attempt to investigate the genetic causes of traits in bacteria often focus on identifying associated clonal groups as apposed to specific loci.
+
+Genome wide association studies can be used to identify genetetic and phenotype assocations in a hypthoses free manner.
+
+Commonly, SNPS have been used as units of genetc variation of which assocation to phenotypes have been tested. 
+
+Becasue bacteria produce clonally, significat regions of the geneome can be in linkage disequilibrium. 
+And though some species experience high rates of recombination, the recombination is not as reliable or consistent as that in, say, humans to reduce LD.
+
+Hard to do this in bactera due to recombination meaning hard to align genes to get snps,
+
+Tools exist for the alignment of the core genome of bacteria to extract SNPs (ref),
+this is an alignement based method/ requires alignment
+is limited to the core genome,
+and does not consider the huge variable accessory genome in bacteria/ will not encapsulate the ful0
+
+Similarly, the presence/ and or absence of known genes have been used.
+
+The problem with both these methods is due to features of bacteria such as clonal reporduction and recombination?, bacterial geneomes vary significantly 
+
+As an alternative, some recent studies have instead utlised K-mers.
+Initially a concept of genome assembly
+Can caputre multiple geneetic variations 
+SNPs, 
+longer deletions/ insertions 
+and recombination 
+Getting kmers is alignment freee
+The size of kmers effects the genetic variation captured
+Longer more specificS
+Shorter are more sensitive
+
+Seer (se (ref) and its reimplementation
+
+## The Need for Multiple Assocation Tests - Metabolomics
+
+Metabolomics provides a detailed snapshot of an organism’s physiological state through the quantification of hundreds to thousands of small molecules (Zampieri et al., 2017). Genomics on the other hand, can help us understand the function and evolution of an organism with unprecedented power (Marvig et al., 2015). Coupling genomics and metabolomics to study Pseudomonas aeruginosa in unique clinical samples can allow us to understand how bacteria adapt to the lung environment. In order to do so, we will use differential abundance, quantitative trait loci (QTL) and bacterial genome-wide association study (GWAS) methods (Power et al., 2017).
+
+## Results
+
+The foundation of this project was to create a tool, 
+
+The foundation of *bgwas3* is
+an integration of mutltiple open source genomics tools and custom scripts
+in python and R
+into a single installable package 
+which facilitates conducting multiple pangenome wide association studies
+in a single user step.
+
+The tool aims to be comprehensive and robust enough to convert only the most basic required input files into comprehensive and interpretable results including static and interactive visualisations.
+
+Similarly, when run on a node within a computer cluster, tasks that are computationaly intensive or long can be run simultaneuosly. TODO better word for long
+
+Though the additional confugiureation file, the specifics of multile intermiedary steps can be altered, which can have variable effects on the final results.
+
+In light of the necessity to peform multpple.. (\ref{fig:pipe})
 
 # Methods
 
-```{r, out.width='25%', fig.align='center', fig.cap='...'}
-#knitr::include_graphics("")
+```{r, out.height="90%", fig.align="center", fig.cap="\\label{fig:pipe}Pipeline of bgwas"}
+knitr::include_graphics("_static/pipe.png");
 ```
 
 ## CGATcore and Ruffus
+
+TODO how do pipeline refer to cgat core
+
+*bgwas3* was written primarily in python, utilising the pipline tools ruffus (ref) and cgatcore (ref).
+Ruffus 
+Cgatcore
+
+In its current iteration, *bgwas3* is comprised of n steps
+
 ## Genome Annotation
-## Phylogent estimation
+
+Prokka [@seemann_prokka:_2014] TODO write about
+
+# Kmer minig and counting
+
+bgwas3 integrates the tool fsm-lite to count kmers of user defined variable length kmers in the all samples.
+fsm lite runs on a single core.
+Throught the bgwas3 configuration file, the specifics of the kmers mined and counted can be 
+
+## Phylogeny estimation and generating covariates
+
+For linear mixed model assocation testing, a bgwas3 constructs a distance matrix based on a phylogenetic tree.
+
+This is different to the standard method of multi-dimensional scaling often used in human gwas and as part of the standard seer workflow.
+
+As found in my previous study (ref), 
+
+The 
+
 ## Kmer association testing
+
+Assocation between kmers and phenotypes is implemented with pyseer [@lees_pyseer:_2018].
+
+Specificially, pyseer is used to peform a linear mixed model using the Fast-LMM algorithm [@lippert_fast_2011].
+
+LMM tackle confounders in association tests by using a measure of similarity (in this case a distance defined from a estimated phylogenetic tree) as a random effect in a linear model.
+
+TODO equation
+
+Given a means of determining the hierarchichal relatedness between samples, the mixed model is generally preffered, and has been shown in past studies to control the inflation of p-values better [@lees_genome-wide_2017].
+
+## Bonferoni correction
+
+The output of pyseer, a list of all kmers and statistics relating to their association to the given phenotype, are then filtered by their p-value though bonferoni correction.
+
 ## Significant Kmer mapping
+
+Kmers 
+A new script, written in R, was made which itereatively 
+TODO workflow diagram
+
 ## Pathway analysis
+
 ## Visualisation
-## Testing
-## Packaging
+
+## Scienitif computing practices
+
+A significant goal of bgwas3 was to implement a useful and resuable tool that may be used outside the scope of this singlular project.
+
+As such, various software development principles and concepts were applied to the project.
+
+### Testing
+
+Pytest and 
+
+### Documentation
+
+### Packaging
+
 ## Use case
 
 # Results
+
+Pseudomonas aeruginosa forms chronic infections in the lungs of cystic ﬁbrosis (CF) patients, and is the leading cause of morbidity and mortality in patients with CF. Understanding how this opportunistic pathogen adapts to the CF lung during chronic infections is important to increase the efficacy of treatment and is likely to increase insight into other long-term infections. TODO rewrite
+Pseudomonas aeruginosa forms intractable infections in around 80% of patients with cystic ﬁbrosis (CF). Once infection is established within the respiratory tract, the bacterium is able to withstand both attacks from the host immune system and prolonged exposure to antibiotics. These chronic infections are associated with decreased lung function and an increased risk of respiratory failure and death (Schaedel et al., 2002; Hauser, 2011). As a result, much research has focused on understanding the factors that enable the opportunistic pathogen P. aeruginosa to play a dominant role during long-term infection of the CF lung. T
+We used untargeted metabolic proﬁling (metabolomics) of cell supernatants (exometabolome analysis, or metabolic footprinting) to compare 179 strains, collected over time periods ranging from 4 to 24 years for the individual patients, representing a series of mostly clonal lineages from 18 individual patients.
+There was clear evidence of metabolic adaptation to the CF lung environment: acetate production was highly signiﬁcantly negatively associated with length of infection.
+
+TODO figures (trees)
+
+TODO
+
+To test the usability and application of bgwas3, 
+
+The strong LD caused by the clonal reproduction of bacterial populations means that non-causal k-mers may also appear to be associated.?
+
+Confirmation of known resistance
+
 # Discussion
 # References

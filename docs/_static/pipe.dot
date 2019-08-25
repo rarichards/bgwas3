@@ -1,0 +1,460 @@
+digraph {
+	graph [ dpi = 300 ]; 
+
+	subgraph tasks { /* {{{ */
+
+		node [ shape=ellipse
+			fontname="Sans serif" 
+			fontsize="8"
+		];
+
+		task_bwa_index [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">bwa_index</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+
+		task_mine_kmers [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">mine_kmers</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_annotate [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">annotate</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_pangenome_analysis [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">pangenome_analysis</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_distance_from_tree [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">distance_from_tree</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_plot_trees [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">plot_trees</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_split_phenos [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">split_phenos</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_test_assoc [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">test_assoc</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_plot_ps [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">plot_ps</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_bonferoni [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">bonferoni</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_annotation2bed [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">annotation2bed</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_ref2bed [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">ref2bed</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_make_ref_list [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_ref_list</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_map_kmers [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">map_kmers</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_summarise_genes [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">summarise_genes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_plot_genes [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">plot_genes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_summarise [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">summarise</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_make_index [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_index</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+
+		task_make_index [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_index</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">pyseer</font></td></tr>
+				</table>
+			>
+		];
+	} /* }}} */
+
+	subgraph files { /* {{{ */
+
+		node [
+			shape=folder
+			fontname="Sans serif" 
+			fontsize="8"
+		];
+
+		subgraph cluster_input { /* {{{ */
+
+			label = "Input";
+
+			files_contigs [ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">Sample sequences</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">*.fa</font></td></tr>
+					</table>
+				>
+			];
+
+			files_pheno [ 
+				shape=note
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">pheno</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+					</table>
+				>
+			];
+
+			files_refs[ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">Reference sequences and annotations</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">.fa</font></td></tr>
+					</table>
+				>
+			];
+
+
+		} /* }}} */
+		subgraph cluster_output { /* {{{ */
+
+			label = "Output";
+
+			files_tree_plots [ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">Phylogenetic tree plots</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">png</font></td></tr>
+					</table>
+				>
+			];
+
+			files_plot_hist [ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">P-values histograms</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">html</font></td></tr>
+					</table>
+				>
+			];
+
+			files_plot_qq [ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">P-values QQ-plots</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">html</font></td></tr>
+					</table>
+				>
+			];
+
+			files_plot_genes [ 
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">Plot of genes</td></tr>
+						<tr><td align="center"><font point-size="6" color="blue">html</font></td></tr>
+					</table>
+				>
+			];
+
+
+		} /* }}} */
+
+		files_indexes [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Indexes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">gff</font></td></tr>
+				</table>
+			>
+		];
+
+		files_annotations [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Sample annotations</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">gff</font></td></tr>
+				</table>
+			>
+		];
+
+		files_annotations_bed [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Sample annotation (bed)</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">gff</font></td></tr>
+				</table>
+			>
+		];
+
+		files_phenos [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Phenoypes files</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+		files_associated_kmers [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">List of kmers and their association</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+		files_filtered_kmers [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">List of kmers (filtered)</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+		files_stats [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Stats file</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+		files_kmers_mapped [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Kmers and their genes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+		files_genes [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Genes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+
+		files_refs_bed [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Reference annotations (bed)</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">.gff, .fa</font></td></tr>
+				</table>
+			>
+		];
+
+		files_gene_info [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Info about genes</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">.gff, .fa</font></td></tr>
+				</table>
+			>
+		];
+		
+
+	files_kmers [ 
+		shape=note
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">kmers</td></tr>
+				<tr><td align="center"><font point-size="6" color="blue">txt.gz</font></td></tr>
+			</table>
+		>
+	];
+
+	files_phylogenetic_tree [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">phylogenetic_tree</td></tr>
+				<tr><td align="center"><font point-size="6" color="blue">newick</font></td></tr>
+			</table>
+		>
+	];
+
+	files_distance_matrix [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">distance_matrix</td></tr>
+					<tr><td align="center"><font point-size="6" color="blue">tsv</font></td></tr>
+				</table>
+			>
+		];
+
+	} /* }}} */
+	
+	files_contigs -> task_mine_kmers;
+	task_mine_kmers -> files_kmers;
+
+	files_contigs -> task_annotate;
+	task_annotate -> files_annotations;
+
+	files_annotations -> task_pangenome_analysis;
+	task_pangenome_analysis -> files_phylogenetic_tree;
+
+	files_phylogenetic_tree -> task_distance_from_tree;
+	task_distance_from_tree -> files_distance_matrix;
+
+	files_phylogenetic_tree -> task_plot_trees;
+	files_pheno -> task_plot_trees;
+	task_plot_trees -> files_tree_plots;
+
+	files_pheno -> task_split_phenos;
+	task_split_phenos -> files_phenos;
+
+	files_phenos -> task_test_assoc;
+	files_kmers -> task_test_assoc;
+	files_distance_matrix -> task_test_assoc;
+	task_test_assoc -> files_associated_kmers;
+
+	files_associated_kmers -> task_plot_ps;
+	task_plot_ps -> files_plot_qq;
+	task_plot_ps -> files_plot_hist;
+
+	files_associated_kmers -> task_bonferoni;
+	task_bonferoni -> files_filtered_kmers;
+	task_bonferoni -> files_stats;
+
+	files_refs -> task_ref2bed;
+	task_ref2bed -> files_refs_bed;
+
+	files_refs -> task_bwa_index;
+	files_contigs -> task_bwa_index;
+	task_bwa_index -> files_indexes;
+	
+	files_annotations -> task_annotation2bed;
+	task_annotation2bed -> files_annotations_bed;
+
+	files_indexes -> task_map_kmers;
+	files_filtered_kmers -> task_map_kmers;
+	files_annotations_bed -> task_map_kmers;
+	files_refs_bed -> task_map_kmers;
+	task_map_kmers -> files_kmers_mapped;
+	task_map_kmers -> files_stats;
+	task_map_kmers -> files_gene_info;
+
+	files_kmers_mapped -> task_summarise_genes;
+	files_gene_info -> task_summarise_genes;
+	task_summarise_genes -> files_genes;
+	task_summarise_genes -> files_stats;
+
+	files_genes -> task_plot_genes;
+	task_plot_genes -> files_plot_genes;
+
+	
+
+}
