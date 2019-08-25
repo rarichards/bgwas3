@@ -18,7 +18,7 @@ unique_patterns <- strtoi(system(statement, intern=TRUE));
 
 bonf_thresh <- args$alpha/unique_patterns;
 
-message(paste0("# bonf_thresh #\n", bonf_thresh, "\n# #\n"));
+# message(paste0("# bonf_thresh #\n", bonf_thresh, "\n# #\n"));
 
 tibble(
 		stat=c("unique_patterns", "bonf_thresh"),

@@ -206,7 +206,7 @@ def split_phenos(infile, outfiles):
     split_phenos,
     regex("phenos/(.*).tsv"),
     add_inputs(distance_from_tree, mine_kmers),
-    [r"results/\1_assocs.tsv.gz", r"results/\1_patterns.tsv"],
+    [r"results/\1_assocs.tsv.gz", r"results/\1_patterns.txt"],
     r"\1"
 )
 def test_assoc(infiles, outfiles, idd):
@@ -276,7 +276,7 @@ def plot_ps(infiles, outfiles, pheno):
     P.run(statement)
 
 # }}}
-# bonferoni{{{
+# bonferoni {{{
 @transform(
     test_assoc,
     regex("^results/(.*)_assocs.tsv.gz"),
@@ -299,16 +299,16 @@ def bonferoni(infiles, outfiles, pheno):
 
     statement = '''
     Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s %(stats)s &&
-    gzip -d -c %(assoc_gzip)s > temp.tsv &&
-    wc -l temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@'
+    gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
+    wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@'
     >> %(stats)s &&
-    head -1 temp.tsv > %(filtered)s &&
+    head -1 %(pheno)s_temp.tsv > %(filtered)s &&
     awk '$1=="bonf_thresh"{print $2}' %(stats)s |
-    xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' temp.tsv' >> %(filtered)s &&
+    xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' %(pheno)s_temp.tsv' >> %(filtered)s &&
     wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}'
     | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
     echo -e 'pheno\\t%(pheno)s' >> %(stats)s &&
-    rm temp.tsv
+    rm %(pheno)s_temp.tsv
     '''
 
     P.run(statement)
@@ -394,22 +394,20 @@ def make_ref_list(infiles, outfile):
 
 # }}}
 # bwa_index {{{
-# @transform(
-#     [assembly, "refs/*"],
-#     suffix(".fa"),
-#     add_inputs(make_ref_list),
-#     [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
-# )
-# def bwa_index(infile, outfiles):
+@transform(
+    [assembly, "refs/*"],
+    suffix(".fa"),
+    [".fa.amb", ".fa.ann", ".fa.bwt", ".fa.pac", ".fa.sa"]
+)
+def bwa_index(infile, outfiles):
 
-#     refs_file = open(infile, "r"):
-#     ''' BWA index (for Kmer mapping) '''
+    
 
-#     statement = '''
-#     bwa index %(infile)s
-#     '''
+    statement = '''
+    bwa index %(infile)s
+    '''
 
-#     P.run(statement)
+    P.run(statement)
 
 # # }}}
 
@@ -417,7 +415,7 @@ def make_ref_list(infiles, outfile):
 @transform(
     bonferoni,
     regex(r"^(.*)_stats.tsv$"),
-    add_inputs(make_ref_list, ref2bed, annotation2bed),
+    add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
     [r"\1_maps.tsv", r"\1_gene_info.tsv"],
     r"\1"
 )
