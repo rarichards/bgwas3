@@ -7,6 +7,7 @@ import subprocess
 import argparse
 import tempfile
 
+
 def parse_aguments(): # {{{
 
     parser = argparse.ArgumentParser(description=__doc__,
@@ -48,6 +49,7 @@ def main(kmers_path, refs_path, prefix):
         query_fa_path = prefix + "_query.fa"
         query_bed_path = prefix + "_query.bed"
         query_sorted_bed_path = prefix + "_query_sorted.bed"
+        mem_results_path = prefix + "_mem_results"
 
         if len(kmers) == 0:
             print("All kmers mapped!")
@@ -55,7 +57,7 @@ def main(kmers_path, refs_path, prefix):
 
         fa_path, bed_path = line.rstrip().split("\t")
 
-        print("mapping to " + fa_path, end=": ")
+        print("mapping to " + fa_path + ":")
 
         # make a fasta file with from unmapped kmers
         query_fa_path = prefix + "_query.fa"
@@ -64,24 +66,29 @@ def main(kmers_path, refs_path, prefix):
             query_fa.write(">" + str(id_kmer) + "\n" + kmers[id_kmer].rstrip().split("\t")[0] + "\n")
         query_fa.close()
 
+
         # bwa index
         for suffix in ["amb", "ann", "bwt", "pac", "sa"]:
             if not os.path.exists(fa_path + "." + suffix):
                 command = "bwa index " + fa_path
                 subprocess.run(command, shell=True, check=True)
-            else:
-                break
+
 
         # try to map kmers to reference index (bwa mem) {{{
 
-        command = "bwa mem -v 1 -k 8 '" + fa_path + "' '" + query_fa_path + "'"
-        results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True) # stderr=subprocess.DEVNULL
+        if not os.path.exists(mem_results_path):
+            command = "bwa mem " + fa_path + " " + query_fa_path + " > " + mem_results_path
+            print(command)
+            subprocess.run(command, shell=True, check=True)
+            # results = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True) # stderr=subprocess.DEVNULL
 
         kmers_mapped = {}
 
         query_bed = open(query_bed_path, "w")
+        mem_results = open(mem_results_path, "r")
 
-        for line in results.stdout:
+        # for line in results.stdout:
+        for line in mem_results:
             
             fields = line.rstrip().split("\t")
 
@@ -152,56 +159,72 @@ def main(kmers_path, refs_path, prefix):
 
         if kmers_mapped != {}:
 
-            def getGenes(results, info_index):
+            def getGenes(results_path, info_index):
                 genes_list = {}
-                for line in results.stdout:
-                    fields = line.rstrip().split("\t")
-                    kmer_id, hit_id = fields[3].split("_")
+                with open(results_path, encoding="utf8", errors='ignore') as results:
+                    for line in results:
+                    # for line in results.stdout:
+                        fields = line.rstrip().split("\t")
+                        kmer_id, hit_id = fields[3].split("_")
 
-                    # info = fields[9]
-                    info = fields[info_index]
-                    print(info)
-                    gene = re.search("^.*gene=([^ ;]*);.*$", info)
-                    name = re.search("^.*name=([^ ;]*);.*$", info)
-                    description = re.search("^.*name=(\S* [^;]*);.*$", info)
-                    ID = re.search("^.*ID=([^ ;]*);.*$", info)
+                        # info = fields[9]
+                        info = fields[info_index]
+                        # gene = re.search("^.*gene=([^ ;]*);.*$", info)
+                        gene = re.findall(r'gene="([^ "]*)";', info)
+                        name = re.findall(r'name="([^ "]*)";', info)
+                        # name = re.search("^.*name=([^ ;]*);.*$", info)
+                        description = re.search("^.*name=(\S* [^;]*);.*$", info)
+                        ID = re.search("^.*ID=([^ ;]*);.*$", info)
 
-                    if gene != None:
-                        gene_name = gene.group(1).strip('"')
-                    elif name != None:
-                        gene_name = name.group(1).strip('"')
-                    elif description != None:
-                        gene_name = description.group(1).strip('"')
-                    elif ID != None:
-                        gene_name = ID.group(1).strip('"')
-                    else:
-                        print(info)
-                        break
+                        if len(gene) != 0:
+                            # gene_name = gene.group(1).strip('"')
+                            gene_name = min(gene, key=len)
+                        elif len(name) != 0:
+                            # gene_name = name.group(1).strip('"')
+                            gene_name = min(name, key=len)
+                        elif description != None:
+                            gene_name = description.group(1).strip('"')
+                        elif ID != None:
+                            gene_name = ID.group(1).strip('"')
+                        else:
+                            break
 
-                    if kmer_id in genes_list.keys():
-                        genes_list[kmer_id] += ";" + gene_name
-                    else:
-                        genes_list[kmer_id] = gene_name
-                    gene_info[gene_name] = info
+                        if kmer_id in genes_list.keys():
+                            genes_list[kmer_id] += ";" + gene_name
+                        else:
+                            genes_list[kmer_id] = gene_name
+                        gene_info[gene_name] = info
+
+                # os.remove(results_path)
 
                 return genes_list
 
-            command = "bedtools intersect -a " + query_bed_path + " -b " + bed_path + " -wb"
-            results_in = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_in = getGenes(results_in, -1)
+            path_genes_in = prefix + "_genes_in"
+            command = "bedtools intersect -a " + query_bed_path + " -b " + bed_path + " -wb > " + path_genes_in
+            # results_in = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+            # genes_in = getGenes(results_in, -1)
+            print(command)
+            subprocess.run(command, shell=True)
+            genes_in = getGenes(path_genes_in, -1)
 
             query_sorted_bed = open(query_sorted_bed_path, "w")
             command = "bedtools sort -i " + query_bed_path + " > " + query_sorted_bed_path
             subprocess.run(command, shell=True, check=True)
             query_sorted_bed.close()
             
-            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -iu -nonamecheck"
-            results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_up = getGenes(results_up, -2)
+            path_genes_up = prefix + "_genes_up"
+            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -iu -nonamecheck > " + path_genes_up
+            print(command)
+            # results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+            subprocess.run(command, shell=True)
+            genes_up = getGenes(path_genes_up, -2)
 
-            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -id -nonamecheck"
-            results_down = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            genes_down = getGenes(results_down, -2)
+            path_genes_down = prefix + "_genes_down"
+            command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -id -nonamecheck > " + path_genes_down
+            print(command)
+            # results_down = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+            subprocess.run(command, shell=True)
+            genes_down = getGenes(path_genes_down, -2)
 
             print("genes_in: " + str(len(genes_in)))
             print("genes_up: " + str(len(genes_up)))
@@ -221,6 +244,8 @@ def main(kmers_path, refs_path, prefix):
                 output_file.write(line)
 
         print(str(len(kmers_mapped)) + " new kmers mapped. " + str(len(kmers)) + " kmers left")
+
+        os.remove(mem_results_path);
 
     # if os.path.exists(query_fa_path):
     #     os.remove(query_fa_path)

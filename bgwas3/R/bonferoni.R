@@ -15,10 +15,10 @@ args <- parser$parse_args()
 
 statement <- paste0("LC_ALL=C sort -u -S 2014M ", args$file_patterns, " | wc -l");
 unique_patterns <- strtoi(system(statement, intern=TRUE));
-
-bonf_thresh <- args$alpha/unique_patterns;
-
-# message(paste0("# bonf_thresh #\n", bonf_thresh, "\n# #\n"));
+bonf_thresh <- 0;
+if(unique_patterns != 0){
+	bonf_thresh <- args$alpha/unique_patterns;
+}
 
 tibble(
 		stat=c("unique_patterns", "bonf_thresh"),
