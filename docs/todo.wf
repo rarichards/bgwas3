@@ -1,17 +1,21 @@
-- [ ] finish (end of monday)
-	- [n] add phandango step @sun
-		~ rather talk about it
-	- [r] process metabolomics and get vis for report @sun
-		~ running with mash
-	- [ ] package @sun
-	- [ ] testing @sun
-	- [ ] write results @sun
-	- [ ] write methods @sun
-		- [x] make flowchart
-		- [ ] finish flowchart
-		- [ ] write methodoly section
-	- [ ] background
-		- [ ] colate list of papers to read and reference @sun
-		- [w] read and take notes
-		- [w] write intro
-	- [w] discussion
+- [ ] finish (end of thursday)
+	- [x] email antonio
+	- [n] add phandango step 
+	- [ ] results
+		- [ ] pheno plots final
+		- [ ] correlation plot
+		- [ ] p hist plots and qq plot final
+		- [ ] trees
+		- [ ] table of genes and what they mean 
+		- [ ] write
+	- [ ] methods
+		- [ ] finalise program
+		- [ ] finalise flowchart
+		- [ ] write (without packaging and testing)
+	- [ ] background/ intro
+		- [ ] read and write
+	- [ ] package
+	- [ ] write documentation
+	- [ ] testing
+	- [ ] finish methods
+	- [ ] discussion

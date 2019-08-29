@@ -154,26 +154,34 @@ def mash(infiles, outfile):
 # plot_trees {{{
 @split(
     [pangenome_analysis, "phenos.tsv"],
-    "output/trees/*"
+    "results/plots/tree.html"
 )
-def plot_trees(infiles, outfiles):
+def plot_trees(infiles, outfile):
 
     ''' Plot phylogenetic trees with filters based on clade and phenotype '''
 
-    tree = "pangenome/accessory_binary_genes.fa.newick"
-    phenos = infiles[1]
+    template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/tree.html"
+    template = Template(filename=template_path)
 
+    json_phenos = ""
+    with open(infiles[1], "r") as dat:
+        titles = dat.readline().split(sep="\t")
+        for l in dat:
+            d = {}
+            for t, f in zip(titles, l.split(sep="\t")):
+                d[t.rstrip()] = f.rstrip()
+            json_phenos += json.dumps(d, indent=4) + ","
 
+    with open(infiles[0], "r") as tree_file:
+        newick = tree_file.readline();
 
-    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
-
-    statement = '''
-    Rscript %(R_SRC_PATH)s/plot_trees.R %(tree)s %(phenos)s results/plots
-    '''
-
-    P.run(statement)
-
+    page = template.render(json_phenos=json_phenos, newick=newick)
+    
+    with open(outfile, "w") as html_file:
+        html_file.write(page)
+   
 # }}}
+
 # split_phenos {{{
 @follows(
     mkdir("phenos")
@@ -197,6 +205,30 @@ def split_phenos(infile, outfiles):
     P.run(statement, to_cluster=False)
 
 # }}}
+# plot_phenos {{{
+@follows(
+    mkdir("results/plots"),
+)
+@transform(
+    split_phenos,
+    regex("^phenos/(.*).tsv$"),
+    r"results/plots/\1_density.png",
+    r"\1"
+)
+def plot_phenos(infile, outfile, pheno):
+
+    ''' Density plot phenotypes '''
+
+    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+
+        
+    statement = '''
+    Rscript %(R_SRC_PATH)s/plot_density.R %(infile)s %(outfile)s --width 1 --height 1 --axis 0 --column 2
+    '''
+
+    P.run(statement)
+
+# }}}
 
 # test_assoc {{{
 @follows(
@@ -206,7 +238,7 @@ def split_phenos(infile, outfiles):
     split_phenos,
     regex("phenos/(.*).tsv"),
     add_inputs(distance_from_tree, mine_kmers),
-    [r"results/\1_assocs.tsv.gz", r"results/\1_patterns.txt"],
+    [r"results/\1_assocs.tsv.gz", r"results/patterns.txt"],
     r"\1"
 )
 def test_assoc(infiles, outfiles, idd):
@@ -243,7 +275,7 @@ def test_assoc(infiles, outfiles, idd):
 @transform(
     test_assoc,
     regex("^results/(.*)_assocs.tsv.gz$"),
-    [r"results/plots/p/\1_hist.png", r"results/plots/p/\1_qq.png", r"results/plots/p/\1_unadj_hist.png", r"results/plots/p/\1_unadj_qq.png"],
+    [r"results/plots/p/\1_hist.png", r"results/plots/p/\1_qq.png", r"results/plots/p/\1_unadj_hist.png", r"results/plots/p/\1_unadj_qq.png", r"results/plots/\1_p.html"],
     r"\1"
 )
 def plot_ps(infiles, outfiles, pheno):
@@ -262,6 +294,14 @@ def plot_ps(infiles, outfiles, pheno):
     p_qq = outfiles[1]
     p_unadj_hist = outfiles[2]
     p_unadj_qq = outfiles[3]
+
+    template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/p.html"
+    template = Template(filename=template_path)
+
+    html_file = open(outfiles[4])
+    page = template.render(pheno=pheno, p_hist=p_hist, p_qq=p_qq)
+    html_file.write(page)
+    html_file.close()
     
     statement = '''
     zcat %(assoc)s | awk '{print $4}' > %(pheno)s_temp_p &&
@@ -276,14 +316,13 @@ def plot_ps(infiles, outfiles, pheno):
     P.run(statement)
 
 # }}}
+
 # bonferoni {{{
-@transform(
+@merge(
     test_assoc,
-    regex("^results/(.*)_assocs.tsv.gz"),
-    [r"results/\1_stats.tsv", r"results/\1_assocs_filtered.tsv"],
-    r"\1"
+    "results/bonf.txt"
 )
-def bonferoni(infiles, outfiles, pheno):
+def bonferoni(infiles, outfile):
 
     ''' Filter kmers from the output of association based on their p-value,
     using bonferoni method to set a threshold '''
@@ -292,21 +331,37 @@ def bonferoni(infiles, outfiles, pheno):
 
     R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    patterns = infiles[1]
-    assoc_gzip = infiles[0]
-    stats = outfiles[0]
-    filtered = outfiles[1]
+    patterns = infiles[0][1]
 
     statement = '''
-    Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s %(stats)s &&
+    Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s --output %(outfile)s
+    '''
+
+    P.run(statement)
+
+# }}}
+# filter {{{
+@transform(
+    test_assoc,
+    regex("^results/(.*)_assocs.tsv.gz$"),
+    add_inputs(bonferoni),
+    [r"results/\1_assocs_filtered.tsv", r"results/\1_stats.tsv"],
+    r"\1"
+    )
+def filter(infiles, outfiles, pheno):
+
+    assoc_gzip = infiles[0][0]
+    bonf = infiles[1]
+    filtered = outfiles[0]
+    stats = outfiles[1]
+
+    statement = '''
+    echo "stat\\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
-    wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@'
-    >> %(stats)s &&
+    wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
     head -1 %(pheno)s_temp.tsv > %(filtered)s &&
-    awk '$1=="bonf_thresh"{print $2}' %(stats)s |
-    xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' %(pheno)s_temp.tsv' >> %(filtered)s &&
-    wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}'
-    | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+    awk '$1=="bonf_thresh"{print $2}' %(bonf)s | xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' %(pheno)s_temp.tsv' >> %(filtered)s &&
+    wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
     echo -e 'pheno\\t%(pheno)s' >> %(stats)s &&
     rm %(pheno)s_temp.tsv
     '''
@@ -314,7 +369,6 @@ def bonferoni(infiles, outfiles, pheno):
     P.run(statement)
 
 # }}}
-
 # annotation2bed {{{
 @transform(
     annotate,
@@ -488,16 +542,12 @@ def pathwayAnalysis(infiles, outfile):
 # }}}
 
 # plot_genes {{{
-@follows(
-    mkdir("results/plots")
-)
 @transform(
     summarise_genes,
     regex("^results/(.*)_genes.tsv$"),
     r"results/plots/\1.html",
     r"\1"
 )
-
 def plot_genes(infiles, outfile, pheno):
 
     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/template.html"
@@ -548,7 +598,7 @@ def summarise(infiles, outfile):
 @transform(
     summarise,
     regex(".*"),
-    "results/plots/index.html"
+    ["results/plots/index.html", "results/plots/src"]
     )
 def make_index(infile, outfile):
 
@@ -558,22 +608,27 @@ def make_index(infile, outfile):
     table = "<table><thead><tr>"
     with open(infile, "r") as stats_file:
         header = stats_file.readline().rstrip().split("\t")
+        table += "<th></th>"
         for h in header:
             table += "<th>" + h + "</th>"
         table += "</tr></thead><tbody>"
         for line in stats_file:
             stats = line.rstrip().split("\t")
             pheno = stats[0]
-            table += "<tr><td><a href='" + pheno + ".html'>" + pheno + "</td>"
+            table += "<tr><td><img src='" + pheno + "_density.png' style='width:20px;height:20px'></td><td><a href='" + pheno + ".html'>" + pheno + "</td>"
             for s in stats[1:]:
                 table += "<td>" + s + "</td>"
             table += "</tr>"
         table += "</tbody></table>"
 
     page = template.render(table=table)
-    html_file = open(outfile, "w")
+    html_file = open(outfile[0], "w")
     html_file.write(page)
     html_file.close()
+
+    if os.path.exists(outfile[1]):
+        shutil.rmtree(outfile[1])
+    shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", outfile[1]);
 
 
 # full {{{

@@ -16,8 +16,8 @@ parser$add_argument("treefile", help="Tree file in newick format");
 parser$add_argument("phenofile", help="Phenotype file in tsv format. Must include an 'id' column. Phenotypes must start with 'pheno_'. Clades must start with 'clade_'. Times must start with 'time_'");
 parser$add_argument("outdir", help="Directory to output files", default=".");
 
-args <- parser$parse_args();
-# args <- parser$parse_args(c("pangenome/accessory_binary_genes.fa.newick", "phenos.tsv", "results/plot"));
+# args <- parser$parse_args();
+args <- parser$parse_args(c("pangenome/accessory_binary_genes.fa.newick", "phenos.tsv", "results/plot"));
 
 message("# loading data #");
 args$phenofile %>% read_tsv() -> dat_phenos;
@@ -44,3 +44,42 @@ for(pheno in phenos){
 	facet_plot(p1, panel=pheno, data=dat_phenos, geom=geom_barh, mapping=aes(x=dat_phenos[[pheno]]), stat="identity") -> p2;
 	ggsave(file=paste0(args$outdir, "/", pheno, "tree.png"));
 }
+
+"pangenome/accessory_binary_genes.fa.newick" %>% read.newick -> tree;
+tree %>% ggtree() -> p1;
+
+normalize <- function(x) {
+return ((x - min(x)) / (max(x) - min(x)))
+}
+
+"phenos.tsv" %>% 
+	read_tsv %>% 
+	select(id) %>%
+	bind_cols(
+						"phenos.tsv" %>% 
+							read_tsv() %>%
+							select(starts_with("pheno"), -ends_with("log"), -ends_with("bin"), -ends_with("int")) %>%
+							mutate_all(funs(normalize(.))) %>%
+							rename_all(funs(str_remove(., "pheno_")))
+	) -> dat; 
+
+rownames(dat) <- dat %>% pull(id);
+
+dat %>% select(-id) -> dat2;
+
+
+gheatmap(p1, dat2, offset = 0, width = 1, low = "green",
+high = "red", color = "white", colnames = TRUE,
+colnames_position = "bottom", colnames_angle = 90,
+colnames_level = NULL, colnames_offset_x = 0,
+colnames_offset_y = 0, font.size = 4, hjust = 0.5)
+
+
+
+
+
+	gather(key="key", value="value", -id) %>%
+	ggplot(aes(x=key, y=id, fill=value)) + geom_tile() -> p2;
+
+
+	ggplot(aes(y=id, fill=pheno_at)) + geom_tile();

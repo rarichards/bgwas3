@@ -1,0 +1,97 @@
+264a297,304
+> 
+>     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/p.html"
+>     template = Template(filename=template_path)
+> 
+>     html_file = open(outfiles[4])
+>     page = template.render(pheno=pheno, p_hist=p_hist, p_qq=p_qq)
+>     html_file.write(page)
+>     html_file.close()
+278a319
+> 
+280c321
+< @merge(
+---
+> @transform(
+282c323,325
+<     "results/bonf.txt"
+---
+>     regex("^results/(.*)_assocs.tsv.gz"),
+>     [r"results/\1_stats.tsv", r"results/\1_assocs_filtered.tsv"],
+>     r"\1"
+284c327
+< def bonferoni(infiles, outfile):
+---
+> def bonferoni(infiles, outfiles, pheno):
+293,315c336,339
+<     patterns = infiles[0][1]
+< 
+<     statement = '''
+<     Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s --output %(outfile)s
+<     '''
+< 
+<     P.run(statement)
+< 
+< # }}}
+< # filter {{{
+< @transform(
+<     test_assoc,
+<     regex("^results/(.*)_assocs.tsv.gz$"),
+<     add_inputs(bonferoni),
+<     [r"results/\1_assocs_filtered.tsv", r"results/\1_stats.tsv"],
+<     r"\1"
+<     )
+< def filter(infiles, outfiles, pheno):
+< 
+<     assoc_gzip = infiles[0][0]
+<     bonf = infiles[1]
+<     filtered = outfiles[0]
+<     stats = outfiles[1]
+---
+>     patterns = infiles[1]
+>     assoc_gzip = infiles[0]
+>     stats = outfiles[0]
+>     filtered = outfiles[1]
+318c342
+<     echo "stat\\tvalue" > %(stats)s &&
+---
+>     Rscript %(R_SRC_PATH)s/bonferoni.R %(patterns)s %(stats)s &&
+320c344
+<     wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
+---
+>     >> %(stats)s &&
+322,323c346,349
+<     awk '$1=="bonf_thresh"{print $2}' %(bonf)s | xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' %(pheno)s_temp.tsv' >> %(filtered)s &&
+<     wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+---
+>     awk '$1=="bonf_thresh"{print $2}' %(stats)s |
+>     xargs -I @ sh -c 'awk '\\''$4<@{print $0}'\\'' %(pheno)s_temp.tsv' >> %(filtered)s &&
+>     wc -l %(filtered)s | awk '{sum = $1 - 1; print sum}'
+>     | xargs -I @ echo -e 'significant_kmers\\t@' >> %(stats)s &&
+330a357
+> 
+504,506d530
+< @follows(
+<     mkdir("results/plots")
+< )
+513d536
+< 
+564c587
+<     "results/plots/index.html"
+---
+>     ["results/plots/index.html", "results/plots/src"]
+573a597
+>         table += "<th></th>"
+580c604
+<             table += "<tr><td><a href='" + pheno + ".html'>" + pheno + "</td>"
+---
+>             table += "<tr><td><img src='" + pheno + "_density.png' style='width:20px;height:20px'></td><td><a href='" + pheno + ".html'>" + pheno + "</td>"
+587c611
+<     html_file = open(outfile, "w")
+---
+>     html_file = open(outfile[0], "w")
+590a615,618
+>     if os.path.exists(outfile[1]):
+>         shutil.rmtree(outfile[1])
+>     shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", outfile[1]);
+> 

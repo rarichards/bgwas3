@@ -7,7 +7,6 @@ import subprocess
 import argparse
 import tempfile
 
-
 def parse_aguments(): # {{{
 
     parser = argparse.ArgumentParser(description=__doc__,
@@ -195,7 +194,7 @@ def main(kmers_path, refs_path, prefix):
                             genes_list[kmer_id] = gene_name
                         gene_info[gene_name] = info
 
-                # os.remove(results_path)
+                os.remove(results_path)
 
                 return genes_list
 
@@ -204,7 +203,7 @@ def main(kmers_path, refs_path, prefix):
             # results_in = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
             # genes_in = getGenes(results_in, -1)
             print(command)
-            subprocess.run(command, shell=True)
+            subprocess.run(command, shell=True, check=True)
             genes_in = getGenes(path_genes_in, -1)
 
             query_sorted_bed = open(query_sorted_bed_path, "w")
@@ -213,17 +212,17 @@ def main(kmers_path, refs_path, prefix):
             query_sorted_bed.close()
             
             path_genes_up = prefix + "_genes_up"
+            # results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
             command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -iu -nonamecheck > " + path_genes_up
             print(command)
-            # results_up = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            subprocess.run(command, shell=True)
+            subprocess.run(command, shell=True, check=True)
             genes_up = getGenes(path_genes_up, -2)
 
             path_genes_down = prefix + "_genes_down"
             command = "bedtools closest -a " + query_sorted_bed_path + " -b " + bed_path + " -D 'ref' -io -id -nonamecheck > " + path_genes_down
-            print(command)
             # results_down = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
-            subprocess.run(command, shell=True)
+            print(command)
+            subprocess.run(command, shell=True, check=True)
             genes_down = getGenes(path_genes_down, -2)
 
             print("genes_in: " + str(len(genes_in)))
@@ -247,12 +246,12 @@ def main(kmers_path, refs_path, prefix):
 
         os.remove(mem_results_path);
 
-    # if os.path.exists(query_fa_path):
-    #     os.remove(query_fa_path)
-    # if os.path.exists(query_bed_path):
-    #     os.remove(query_bed_path)
-    # if os.path.exists(query_sorted_bed_path):
-    #     os.remove(query_sorted_bed_path)
+    if os.path.exists(query_fa_path):
+        os.remove(query_fa_path)
+    if os.path.exists(query_bed_path):
+        os.remove(query_bed_path)
+    if os.path.exists(query_sorted_bed_path):
+        os.remove(query_sorted_bed_path)
 
     output_file.close()
     refs_file.close()   

@@ -19,27 +19,19 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE);
 
 # Abstract
 
-Background
+Genome-wide association studies (GWAS) are now being applied more frequently to bacterial populations.
+Specificially, alignment free association studies based on mixed width K-mers as apposed to short nucleotide polymorphisms are being deployed, and packages such as *pyseer* are making it possible.
+However, there is not at present a succint tool which pipelines the necessary intermediry data processing and analysis steps.
+Let alone combines all these tests and allows for multiple association studies to be peformed at once, and distrubuted onto multiple nodes in a computer cluster.
 
+which has utility in a time metabolomics data is becoming more common, and so the need to determine the genetic bases of possible hundreds of phenotypes as once is a requreid.
 
-What i did
+I researched, developed, and wrote and installable pipeline tool, *bgwas* which can test the association of multiple phenotypes at once to genetic loci.
+The tool integrates various open source software tools for Kmer counting, gene annotation, phylogeny estimation, kmer association testing, kmer-gene mapping and finally visualisation.
 
+In creating the tool, best practices for computational biology where excercised; resulting in a final tool that expresses approprate testing, documentation and packaging; meaning it can easily be utilised by other in the future.
 
-Results
-
-
-Future
-
-
-Genome wide association studies are applied extensively to human populations, and aim to to identify the genetic basis of phenotypic traits. Because of clonal reproduction, bacteria experience greater population structure and genetic variation, and the use of single nucleotide polymorphisms is redundant. Only recently have GWAS-like studies started appearing for bacteria. These new ‘pangenome wide’ association studies facilitate the use of association-free K-mers as units of variation as apposed to SNPs.
-
-I developed, tested, and compared three pipelines for pGWAS using different association models, and using different open source tools to confound for population structure. I also attempted to use these pipelines to test antibiotic resistance traits in a sample of Pseudomonas aeruginosa from the sputum of cystic fibrosis patients; a condition where antibiotic resistance is a significant issue.
-
-I find that performing a mixed linear model with random effects calculated from estimated phylogenies based on either differences in gene content or difference in core genome SNPs seems to confound for population structure better than a linear model where significant principal components are used as fixed effects.
-
-Though I identified significantly associated K-mers, I was not able to map these K-mers to a reference genome; limiting my ability to perform downstream analysis of significant loci. However, I believe that this pipeline may be refined, given more time, into completed into a robust and useful work flow that will simplify pGWAS in the future.
-
-I also hope this report may also serve as a description and evaluation of pGWAS.
+The tool was also used to test the assocation of n phenotypes - some relatiing to antibiotic resistance and others metabolomics measures - and the outputs suggest the tool is usuable, but similary provides insights into future improvements that could be made
 
 # Acknowledgements
 
@@ -94,7 +86,10 @@ Seer (se (ref) and its reimplementation
 
 Metabolomics provides a detailed snapshot of an organism’s physiological state through the quantification of hundreds to thousands of small molecules (Zampieri et al., 2017). Genomics on the other hand, can help us understand the function and evolution of an organism with unprecedented power (Marvig et al., 2015). Coupling genomics and metabolomics to study Pseudomonas aeruginosa in unique clinical samples can allow us to understand how bacteria adapt to the lung environment. In order to do so, we will use differential abundance, quantitative trait loci (QTL) and bacterial genome-wide association study (GWAS) methods (Power et al., 2017).
 
-## Results
+
+# Scope of work
+
+The aim of this work is threefold...
 
 The foundation of this project was to create a tool, 
 
@@ -119,6 +114,7 @@ In light of the necessity to peform multpple.. (\ref{fig:pipe})
 knitr::include_graphics("_static/pipe.png");
 ```
 
+For evaluation purposes, we use MS data... TODO
 ## CGATcore and Ruffus
 
 TODO how do pipeline refer to cgat core
@@ -181,22 +177,20 @@ A significant goal of bgwas3 was to implement a useful and resuable tool that ma
 
 As such, various software development principles and concepts were applied to the project.
 
-### Testing
+### Testing with PyTest and Travis
 
 Pytest and 
 
-### Documentation
+### Documentation with Sphinx
 
-### Packaging
-
-## Use case
+### Packaging with Conda
 
 # Results
 
-Pseudomonas aeruginosa forms chronic infections in the lungs of cystic ﬁbrosis (CF) patients, and is the leading cause of morbidity and mortality in patients with CF. Understanding how this opportunistic pathogen adapts to the CF lung during chronic infections is important to increase the efficacy of treatment and is likely to increase insight into other long-term infections. TODO rewrite
-Pseudomonas aeruginosa forms intractable infections in around 80% of patients with cystic ﬁbrosis (CF). Once infection is established within the respiratory tract, the bacterium is able to withstand both attacks from the host immune system and prolonged exposure to antibiotics. These chronic infections are associated with decreased lung function and an increased risk of respiratory failure and death (Schaedel et al., 2002; Hauser, 2011). As a result, much research has focused on understanding the factors that enable the opportunistic pathogen P. aeruginosa to play a dominant role during long-term infection of the CF lung. T
-We used untargeted metabolic proﬁling (metabolomics) of cell supernatants (exometabolome analysis, or metabolic footprinting) to compare 179 strains, collected over time periods ranging from 4 to 24 years for the individual patients, representing a series of mostly clonal lineages from 18 individual patients.
-There was clear evidence of metabolic adaptation to the CF lung environment: acetate production was highly signiﬁcantly negatively associated with length of infection.
+Pseudomonas aeruginosa forms chronic infections in the lungs of cystic fibrosis (CF) patients, and is the leading cause of morbidity and mortality in patients with CF. Understanding how this opportunistic pathogen adapts to the CF lung during chronic infections is important to increase the efficacy of treatment and is likely to increase insight into other long-term infections. TODO rewrite
+Pseudomonas aeruginosa forms intractable infections in around 80% of patients with cystic fibrosis (CF). Once infection is established within the respiratory tract, the bacterium is able to withstand both attacks from the host immune system and prolonged exposure to antibiotics. These chronic infections are associated with decreased lung function and an increased risk of respiratory failure and death (Schaedel et al., 2002; Hauser, 2011). As a result, much research has focused on understanding the factors that enable the opportunistic pathogen P. aeruginosa to play a dominant role during long-term infection of the CF lung. T
+We used untargeted metabolic profiling (metabolomics) of cell supernatants (exometabolome analysis, or metabolic footprinting) to compare 179 strains, collected over time periods ranging from 4 to 24 years for the individual patients, representing a series of mostly clonal lineages from 18 individual patients.
+There was clear evidence of metabolic adaptation to the CF lung environment: acetate production was highly significantly negatively associated with length of infection.
 
 TODO figures (trees)
 
