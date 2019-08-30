@@ -3,6 +3,8 @@ title: "bgwas3: a pipeline for kmer based association testing in bacteria"
 author: "Gregory Leeman"
 header-includes:
   - \usepackage{setspace}\doublespacing
+  - \usepackage{acro}
+  - \acsetup{first-style=short}
 output: 
   pdf_document:
     toc: true
@@ -17,7 +19,7 @@ library(tidyr);
 library(ggplot2);
 library(knitr);
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE);
-source("dat.R");
+source("tables.R");
 ```
 
 # Abstract
@@ -43,12 +45,18 @@ The tool was also used to test the assocation of n phenotypes - some relatiing t
 
 # Abreviations
 
-SNPs
+\DeclareAcronym{ny}{
+  short = NY ,
+  long  = New York ,
+  class = abbrev
+}
+\printacronyms[include-classes=abbrev]
 
 # Introduction
 ## Pangenome wide association studies
 
 There is a recent wealth of becterial genomes and phenotype data, and the repositories are rapidly expanding.
+\ac{ny}
 In conjunction, there are increasingly more studies whose focus is on identifying the genetic basis of traits. (TODO ref)
 In bacteria, these traits may corrsepond with virulence, resisitance, or some other quality that improves their ability as effecitve pathaogens, and for this reason,
 discovering the genetic resoning could lead to identigying targets for pharmaceutical intervention, and my ncrease the efficac of treatment
@@ -105,7 +113,7 @@ Determint the genetic basis of metabolomics of P ing the context of chronic inve
 
 
 
-# Scope of work
+## Scope of work
 
 The foundation of this project was to create a tool, *bgwas3*,
 an integration of mutltiple open source genomics tools 
@@ -268,18 +276,15 @@ dat_met %>% knitr::kable();
 ```
 
 ```{r, fig.cap="\\label{fig:cormat}Correlation matrix of phenotypes"}
+source("plot_cormat.R");
 plot_cormat;
 ```
-
 
 ```{r, out.height="90%", fig.align="center", fig.cap="\\label{fig:dens}Density plots"}
 knitr::include_graphics("_static/tree.png");
 ```
 
-
 ## Processing of phenotypes
-
-
 ```{r, out.height="90%", fig.align="center", fig.cap="\\label{fig:dens}Density plots"}
 knitr::include_graphics("_static/dens.png");
 ```
@@ -302,6 +307,15 @@ Number etc
 
 ## Association results
 
+```{r, out.height="90%", fig.align="center", fig.cap="\\label{fig:genes}Gens"}
+knitr::include_graphics("_static/genes.png");
+```
+
+```{r echo=FALSE, error=FALSE, message=FALSE, results='asis', fig.cap="\\label{table:genes}Table of metabolite phenotypes"}
+dat_genes %>% knitr::kable();
+```
+
+
 # Discussion
 
 ## Genome annotation
@@ -321,3 +335,5 @@ Reintroduce the problem of a large multiple alignment.
 
 
 # References
+
+\printacronyms[include-classes=abbrev]

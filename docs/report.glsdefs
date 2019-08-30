@@ -1,0 +1,30 @@
+\ifglsentryexists{snp}{}%
+{%
+\gls@defglossaryentry{snp}%
+{%
+name={SNP},%
+sort={SNP},%
+type={main},%
+first={SNP},%
+firstplural={SNPs},%
+text={SNP},%
+plural={SNPs},%
+description={Singel Nucleotide Polymorphism},%
+descriptionplural={Singel Nucleotide Polymorphism},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
