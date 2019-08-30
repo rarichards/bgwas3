@@ -1,10 +1,9 @@
 ---
+documentclass: DissertateUSU
 title: "bgwas3: a pipeline for kmer based association testing in bacteria"
 author: "Gregory Leeman"
 header-includes:
   - \usepackage{setspace}\doublespacing
-  - \usepackage{acro}
-  - \acsetup{first-style=short}
 output: 
   pdf_document:
     toc: true
@@ -45,18 +44,12 @@ The tool was also used to test the assocation of n phenotypes - some relatiing t
 
 # Abreviations
 
-\DeclareAcronym{ny}{
-  short = NY ,
-  long  = New York ,
-  class = abbrev
-}
-\printacronyms[include-classes=abbrev]
-
 # Introduction
 ## Pangenome wide association studies
 
 There is a recent wealth of becterial genomes and phenotype data, and the repositories are rapidly expanding.
-\ac{ny}
+
+
 In conjunction, there are increasingly more studies whose focus is on identifying the genetic basis of traits. (TODO ref)
 In bacteria, these traits may corrsepond with virulence, resisitance, or some other quality that improves their ability as effecitve pathaogens, and for this reason,
 discovering the genetic resoning could lead to identigying targets for pharmaceutical intervention, and my ncrease the efficac of treatment
@@ -336,4 +329,3 @@ Reintroduce the problem of a large multiple alignment.
 
 # References
 
-\printacronyms[include-classes=abbrev]

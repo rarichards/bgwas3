@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[]{DissertateUSU}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -21,7 +21,6 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={bgwas3: a pipeline for kmer based association testing in bacteria},
@@ -87,8 +86,6 @@
 \usepackage{setspace}
 
 \doublespacing
-\usepackage{acro}
-\acsetup{first-style=short}
 
 \begin{document}
 \maketitle
@@ -139,13 +136,6 @@ insights into future improvements that could be made
 \hypertarget{abreviations}{%
 \section{Abreviations}\label{abreviations}}
 
-\DeclareAcronym{ny}{
-  short = NY ,
-  long  = New York ,
-  class = abbrev
-}
-\printacronyms[include-classes=abbrev]
-
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
@@ -154,13 +144,15 @@ insights into future improvements that could be made
 studies}\label{pangenome-wide-association-studies}}
 
 There is a recent wealth of becterial genomes and phenotype data, and
-the repositories are rapidly expanding. \ac{ny} In conjunction, there
-are increasingly more studies whose focus is on identifying the genetic
-basis of traits. (TODO ref) In bacteria, these traits may corrsepond
-with virulence, resisitance, or some other quality that improves their
-ability as effecitve pathaogens, and for this reason, discovering the
-genetic resoning could lead to identigying targets for pharmaceutical
-intervention, and my ncrease the efficac of treatment
+the repositories are rapidly expanding.
+
+In conjunction, there are increasingly more studies whose focus is on
+identifying the genetic basis of traits. (TODO ref) In bacteria, these
+traits may corrsepond with virulence, resisitance, or some other quality
+that improves their ability as effecitve pathaogens, and for this
+reason, discovering the genetic resoning could lead to identigying
+targets for pharmaceutical intervention, and my ncrease the efficac of
+treatment
 
 Some studies have taken the approach of finding specifi clonal groups as
 apposed to genetic loci. (ref) Genome wide association studies can be
@@ -630,9 +622,8 @@ genome and snps\ldots{} May or may not be bettter Reintroduce the
 problem of a large multiple alignment.
 
 \hypertarget{references}{%
-\section{References}\label{references}}
-
-\printacronyms[include-classes=abbrev]
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-cribbs_cgat-core:_2019}{}%
