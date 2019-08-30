@@ -22,13 +22,13 @@ for(tsv in args$tsv){
 			tsv %>%
 				read_tsv() %>%
 				spread(stat, value) %>%
-				select(c("pheno", "bonf_thresh", "significant_kmers", "significant_genes")) %>%
+				select(c("pheno", "significant_kmers", "significant_genes")) %>%
 				mutate(
-					"bonf_thresh" = as.numeric(bonf_thresh),
 					"significant_kmers" = as.numeric(significant_kmers),
 					"significant_genes" = as.numeric(significant_genes)
 					)
 			) -> dat;
+
 }
 
 write_tsv(dat, args$output);

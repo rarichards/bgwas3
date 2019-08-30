@@ -10,3 +10,18 @@
 - can copy a directory to another computer can use --local
 - add link to ref
 - why int / type one error
+- writing scripts with argparse
+- add tree type to options
+- discussion better ways for tree
+- You could identify the genes in your genomes using PROKKA/PRODIGAL, cluster them with OrthoMCL (since you have fewer genomes) or CD-HIT (much quicker), align the core genes in core clusters (clusters with genes in all your genomes) separately with MUSCLE (or any other alignment tools), concatenate the individual cluster alignments and identify SNP sites in the concatenated alignment using SNP_SITES (https://github.com/sanger-pathogens/snp_sites). After getting the alignment of SNPs, you can use RAxML to build your phylogeny.
+
+- cost of dicot 
+	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1458573/<Paste>
+
+- Issues with data transformation in genome-wide association studies for phenotypic variability\
+https://www.biostars.org/p/312667/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4161304/
+https://www.statisticssolutions.com/assumptions-of-linear-regression/
+https://www.biostars.org/p/80597/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2921808/
+https://cran.r-project.org/web/packages/RNOmni/vignettes/RNOmni.html

@@ -1,3 +1,4 @@
+dat_tree %>% as_tibble() %>% inner_join(dat_temp) %>% as.treedata() %>% as.phyo() -> dat_tree;
 # 2019 Gregory Leeman g-r-eg@outlook.com
 
 suppressWarnings(suppressMessages(library(argparse)));

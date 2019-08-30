@@ -2,6 +2,7 @@ import os
 import sys
 import shutil
 import re
+from pathlib import Path
 from ruffus import * 
 from cgatcore import pipeline as P
 from mako.template import Template
@@ -356,7 +357,7 @@ def filter(infiles, outfiles, pheno):
     stats = outfiles[1]
 
     statement = '''
-    echo "stat\\tvalue" > %(stats)s &&
+    echo "stat\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
     wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
     head -1 %(pheno)s_temp.tsv > %(filtered)s &&
@@ -467,8 +468,8 @@ def bwa_index(infile, outfiles):
 
 # map_kmers{{{
 @transform(
-    bonferoni,
-    regex(r"^(.*)_stats.tsv$"),
+    filter,
+    regex(r"^(.*)_assocs_filtered.tsv$"),
     add_inputs(make_ref_list, ref2bed, annotation2bed, bwa_index),
     [r"\1_maps.tsv", r"\1_gene_info.tsv"],
     r"\1"
@@ -479,27 +480,25 @@ def map_kmers(infiles, outfiles, prefix):
 
     to_cluster = False
     
-    print(outfiles[0])
-    print("\n#\n")
-    print(outfiles[1])
-
     PY_SRC_PATH = os.path.abspath(
         os.path.join(os.path.dirname(__file__), "python")
     )
 
-    filtered = infiles[0][1]
+    filtered = infiles[0][0]
     ref_list = infiles[1]
     print(prefix + filtered)
 
-    statement = '''
-    python %(PY_SRC_PATH)s/map_kmers.py %(filtered)s %(ref_list)s
-        --prefix %(prefix)s
-    '''
+    if(os.path.getsize(filtered) == 0):
+        Path(filtered).touch
+    else:
+        statement = '''
+        python %(PY_SRC_PATH)s/map_kmers.py %(filtered)s %(ref_list)s
+            --prefix %(prefix)s
+        '''
 
-    P.run(statement, to_cluster=False)
+        P.run(statement, to_cluster=False)
 
 # }}}
-
 # summarise_genes {{{
 @transform(
     map_kmers,
@@ -517,27 +516,21 @@ def summarise_genes(infiles, outfiles, prefix):
     genes = outfiles[0]
     genes_near = outfiles[1]
 
-    R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
+    if(os.path.getsize(maps) == 0):
+        Path(genes).touch
+        Path(genes.near).touch
+    else:
+        R_SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "R"))
 
-    statement = '''
-    Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s --prefix %(prefix)s &&
-    awk '$1 != "significant_genes" && $1 != "significant_genes_near" {print $0}' %(prefix)s_stats.tsv > %(prefix)s_temp &&
-    mv %(prefix)s_temp %(prefix)s_stats.tsv &&
-    wc -l %(genes)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> %(prefix)s_stats.tsv &&
-    wc -l %(genes_near)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes_near\\t@' >> %(prefix)s_stats.tsv
-    '''
+        statement = '''
+        Rscript %(R_SRC_PATH)s/summarise_genes.R %(maps)s %(gene_info)s --prefix %(prefix)s &&
+        awk '$1 != "significant_genes" && $1 != "significant_genes_near" {print $0}' %(prefix)s_stats.tsv > %(prefix)s_temp &&
+        mv %(prefix)s_temp %(prefix)s_stats.tsv &&
+        wc -l %(genes)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes\\t@' >> %(prefix)s_stats.tsv &&
+        wc -l %(genes_near)s | awk '{sum = $1 - 1; print sum}' | xargs -I @ echo -e 'significant_genes_near\\t@' >> %(prefix)s_stats.tsv
+        '''
 
-    P.run(statement)
-
-# }}}
-# pathway_analysis {{{
-@transform(
-    summarise_genes,
-    regex("^maps/(.*)_genes.tsv$"),
-    r"maps/\1_pathways.tsv"
-)
-def pathwayAnalysis(infiles, outfile):
-    pass
+        P.run(statement)
 
 # }}}
 
@@ -562,12 +555,13 @@ def plot_genes(infiles, outfile, pheno):
                 d[t.rstrip()] = f.rstrip()
             json_genes += json.dumps(d, indent=4) + ","
     page = template.render(pheno=pheno, json_genes=json_genes)
-    html_file = open(outfile, "w")
+
+    html_file = open(outfile, "w+")
     html_file.write(page)
     html_file.close()
 
-    if not os.path.exists("results/plots/src"):
-        shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
+    # if not os.path.exists("results/plots/src"):
+    #     shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
 
 # }}}
 # summarise {{{
@@ -575,7 +569,7 @@ def plot_genes(infiles, outfile, pheno):
     plot_genes
 )
 @merge(
-    bonferoni,
+    filter,
     "results/summary.tsv"
 )
 def summarise(infiles, outfile):
