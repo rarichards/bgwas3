@@ -43,7 +43,6 @@ def mine_kmers(infile, outfile):
     
     :param infile: directory of geneomes (fasta files)
     :param outfile: gzipped file of Kmer patterns and genomes they are found in
-
     '''
 
     print(PARAMS)

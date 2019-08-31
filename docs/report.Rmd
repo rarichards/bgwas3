@@ -58,7 +58,6 @@ and a configuration file,
 and peforms gene annotation, phylogeny estimation, kmer association testing, kmer-gene mapping and finally visualisation with a automatically generated web report.
 
 In creating the tool, best practices for computational biology where excercised; resulting in a final tool that expresses approprate testing, documentation and packaging; meaning it can easily be utilised by other in the future.
-CGAT-core is implemented in Python 3 and installable via Conda and PyPI with minimal dependencies. We have successfully deployed and tested the code on OSX, Red Hat and Ubuntu. We have made CGAT-core and associated repositories open-source under the MIT licence, allowing full and free use for both commercial and non-commercial purposes. Our software is fully documented (https://pypi.org), version controlled and has extensive testing using continuous integration (https://travis-ci. org/cgat-developers.) We welcome community participation in code development and issue reporting through GitHub
 
 The tool was also used to test the assocation of 26 traits 
 - 18 relatiing correspjoning to a metabolomic measurement,
@@ -167,7 +166,7 @@ knitr::include_graphics("_static/pipe.png");
 
 ## Pipelining with CGAT-Core
 
-I wrote *bgwas3* primarily in python, utilising the piplining framework CGATCore, [@cribbs_cgat-core:_2019].
+*bgwas3" was made utilising the piplining framework CGATCore, [@cribbs_cgat-core:_2019].
 CGATCore is extremeley portable package coming as a dependency free Python package, but has been used to custruct many complex pipelines that are scalable to large amounts of data ?ref
 
 With the framework, individual pipelining steps, 
@@ -189,14 +188,14 @@ This makes executing pipeline that involve cimputationally intesive intermediary
 
 *bgwas3* was written as 18 'tasks' which are visualised in \ref{fig:pipe}.
 
-The 
+While the tasks were written in python, many individual tasks made calls to external tools or scripts I wrote in either pyton, R and bashscript.
 
+The program requires a directory named 'contigs' with fasta files uniquely named for each bacteria sample, an optional directory of reference sequences with accompanying annotations in gff format, and finally a single tab seperated value file (TSV) in which the first column matches the names of sample fasta files, and remaining columns correspong to phenotype values.
 
 ## Genome Annotation
 
-In the *bgwas* task "annotatate" all sample sequences are annotated by Prokka [@seemann_prokka:_2014]
-The tool functions as follows:
-It first makes predictions on features using a number of external tools including Prodigal [@] for the anotation of coding region, RNAmmer for ribosomal RNA genes, Aragorn for transfer RNA genes, SignalP for signal leader peptides and Infernal for non-coding RNA.
+In the *bgwas* task "annotatate" all sample sequences are annotated by the external tool Prokka [@seemann_prokka:_2014]
+Prokka first makes predictions on features using a number of external tools including Prodigal [@] for the anotation of coding region, RNAmmer for ribosomal RNA genes, Aragorn for transfer RNA genes, SignalP for signal leader peptides and Infernal for non-coding RNA.
 After feature prediction, the speculative features are queryed against a umber of databes suchs as UniProt [@], Refseq [@] and Pfam.
 
 The function of annotating input sequences in the *bgwas3* pipeline is twofold. 
@@ -205,44 +204,56 @@ and secondly, significantly associated Kmers are later mapped to the annatated g
 
 ## Kmer minig and counting
 
-*bgwas3* integrates the tool fsm-lite [@valimaki_fsm-lite_2018] to count 'mine' and count Kmers. of user defined variable length kmers in the all samples.
-fsm-lite benefits first by being able to run on a single core, but also because of its ability to read and count Kmers not of a single length, but of a range of lengths, unlike similar tools such as DSK?
-As mentioned before, the length of Kmers effects the specificuty and ? of the association testing.
-Therefore *bgwas3* allows the Kmers length to be changed by editing the configuration yml file ?
+*bgwas3* integrates the external tool FSM-lite [@valimaki_fsm-lite_2018] to 'mine' and count Kmers.
+A benefit of FSM-lite is, unlike other Kmer mining tools such as DSK [@rizk_dsk:_2013] is FSM-lite allows a range of kmer-sizes, as defined by the user, to be mined as apposed to a single length.
+*bgwas3* allows the Kmers length to be changed in the pipeline by editing the configuration yml file values 'fsm_kmer_min' and 'fsm_kmer_max'.
 
-## Phylogeny estimation and covariate estimation
+## Phylogeny estimation and covariate generation
 
-*bgwas3* currently takes a pangenomic approach to phylogeny estimation; as in it consideres the relative prescence and absence of genes in the samples as 
-An estimated phylogenetic tree is estimated with *bgwas3* primariy utilisng the tool Roary [@page_roary:_2015].
-In summary, Roary determnes genes which fall within the coregeneome, and then peforms clustering of isolates are clustered based on gene presence in the accessory genome.
-An newick tree output of roary, is then converted into a distance matrix using a pythons script from pyseer.
+*bgwas3* currently takes a pangenomic approach to phylogeny estimation; as in it consideres the relative prescence and absence of genes in the samples as factors in which to judge distance.
+An estimated phylogenetic tree is estimated by utilisng the tool Roary [@page_roary:_2015].
+In summary, Roary determnes genes which fall within the coregeneome, and then peforms clustering of isolates based in the constetution of the variable accessory geneome.
+One of roary's outputs is a newick tree, which is then converted into a distance matrix using an adapted python script from pyseer.
 
 The single reasoning for prediciting phylogeny in the *bgwas3* pipeine is to use the distances defined in the distance matrix as covariates int the assocation testing.
 
-This is different to the standard method of multi-dimensional scaling often used in human gwas and as part of the standard seer workflow.
-In general, if a phylogeny is accurate, th
+This is different to the standard method of correcting for population structrure of used in humsn studies
 
+In these studies, multi-dimensional scaling is often used on the ...
 
 ## Kmer association testing
 
-For linear mixed model assocation testing, a bgwas3 constructs a distance matrix based on a phylogenetic tree.
-Assocation between kmers and phenotypes is implemented with pyseer [@lees_pyseer:_2018].
+*bgwas* implements only one of the three available tests of assocation availabe in the pyseer [@lees_pyseer:_2018] suite:
+linear mixed model (LMM),
+specifically factored spectrally transformedas LMM [@lippert_fast_2011].
 
-Specificially, pyseer is used to peform a linear mixed model using the Fast-LMM algorithm [@lippert_fast_2011].
+LMM is considered to be more robust method of association testing, especially when a source of phylogeny is available ?ref
 
-LMM tackle confounders in association tests by using a measure of similarity (in this case a distance defined from a estimated phylogenetic tree) as a random effect in a linear model.
+basic linear regression linear regression, assume that the correlation between a phenotype and a genotypic marker exists because of the marker itself or a strong linkage disequilibrium with the causative locus.
+f the analysis is not accounted for confounding by population substructure, the test statistic is inflated [1], which makes its statistical interpretation difficult and may lead to false-positive findings.
 
-TODO equation
+LMMs can capture all of these confounders simultaneously, without knowledge of which are present and without the need to tease them apar
+
+Roughly speaking, LMMs tackle confounders by using mea sures of genetic similarity to capture the probabilities that pairs of individuals have causative alleles in common. Such measures include those based on identity by descent 10
 
 Given a means of determining the hierarchichal relatedness between samples, the mixed model is generally preffered, and has been shown in past studies to control the inflation of p-values better [@lees_genome-wide_2017].
+ 
+TODO equation
+
+In the *bgwas* task 'test_assoc' and association test for each phenotype on all the Kmers. In a computer cluster, these individual tests may be run simultaneuously.
 
 ## Bonferoni correction
 
 The output of pyseer, a list of all kmers and statistics relating to their association to the given phenotype, are then filtered by their p-value though bonferoni correction.
+
+This is done in two steps. First the bonferoni threshold is calculated from the number of kmers minded.
+
+Bgwas3 allows the user to change the alpha level
+
 The Bonferroni correction is a multiple-comparison correction used when several dependent or independent statistical tests, utilised to limit the number of spurious positive tests.
 f multiple hypotheses are tested, the chance of a rare event increases, and therefore, the likelihood of incorrectly rejecting a null hypothesis (i.e., making a Type I error) increases
-An R script **bonf.R** calculates a threshold p-value of which to accept an assocated kmer as significant based on its p-value
 
+Only significant kmers are then used in later steps of the pipeline.
 
 ## Significant Kmer mapping
 
@@ -250,22 +261,58 @@ An R script **bonf.R** calculates a threshold p-value of which to accept an asso
 knitr::include_graphics("_static/map_kmers.png");
 ```
 
-A new script, written in R **map_kmers.R**, and which calls on the external tools BWA-Mem [@] and Bedtools [@] attempts to assign each associated kmer to a gene found in either a supplied reference genome, or one of the sample geneomes which has previously been annotated.
-The be
-The script works as follows, and demonstrated in fig:make_kmers.
+The Burrows-Wheeler Alignment Tool (BWA) is primarily used to map significant Kmers to genes.
 
-1. Generate a Multi-Fasta file whereby all Kmers are represented as a single fasta enter.
-2. 
+The tool first required that sequences are first converted into an FM-index, an data-structure similar to a suffix array. This is peformed with the *bgwas* task 'bwa_index', on all sample and reference fast files.
+
+For use with bedtools, all annotation files in gff are similaryl converted into bed format, and then subsequently filtered with the tasks 'annatation2bed' and 'ref2bed' repsectively.
+Sample annotation from prokka are filtered to include only those annotation which correspond to a named gene, and so exclude ones which relate to hypothetical proteins or non-gene loci.
+Reference annotations which correspond to the same region but are present as two sperate entries are merged, keeping the information from both, as this was found to be a common nomenclature in well annotated references. 
+
+The task 'map_kmers', executes a python script I wrote whose algorithm is visualised in \ref{map_kmers}.
+
+In summuary, the algorithm works as follows:
+- A fake multi-fasta file is generated with an entry for each unmapped, significant kmer
+- The next reference is chosen
+- The command-line tool 'bwa-mem [@li_aligning_2013] attempts to align to the reference
+- A fake bed file is generated with an entry correspoinding to each successful alignement with bwa mem
+- The query bed file is compared to the reference bed file using the command line tool 'bed tools intersect'
+- The information about each intersection is harvested and stored in a gene info file, while the kmer is marked as mapped
+  Repeat until all kmers mapped or until all references have been used
 
 ## Visualisation
 
 An important feature of *bgwas3* is the automated generation of multiple figures, integrated into a final wbe based report.
 
+Static visualisations are made with external scripts I wrote in R that make use of ggplot2 package [@wikham_ggplot2:_2016].
+
+The task 'plot_ps' generated a quantile-quantile plot from all p-values unfilterd. This may give
+See fig
+
+A single phylogenetic tree is built from the newick file and phenotype file utiliseing external R package [@ggtree]. See figs
+
+Finally, for each phenotype, a plot of genes is made in which the following features are visually encoded
+
+- Maximum -log10(p-value) of Kmers mapped to that gene
+- Average beta value (effect size)
+- Average allele frequency
+- Number of kmers 'hits'
+
+Finally, a web based report which incorporates all the static visualisations, and remakes an interactive visualisation anaologous tot he gene plot, is buil with the task "make_index".
+
+A datatable which can be filtered by number of genes
+
+The interactive visualisation for each gene
+Shows
+
 ## Scienitif computing practices
 
 A significant goal of bgwas3 was to implement a useful and resuable tool that may be used outside the scope of this singlular project.
 
-As such, various software development principles and concepts were applied to the project.
+As such, various software development principles and concepts were applied to the project
+
+CGAT-core is implemented in Python 3 and installable via Conda and PyPI with minimal dependencies. We have successfully deployed and tested the code on OSX, Red Hat and Ubuntu. We have made CGAT-core and associated repositories open-source under the MIT licence, allowing full and free use for both commercial and non-commercial purposes. Our software is fully documented (https://pypi.org), version controlled and has extensive testing using continuous integration (https://travis-ci. org/cgat-developers.) We welcome community participation in code development and issue reporting through GitHub
+
 
 ### Testing with PyTest and Travis
 
@@ -274,16 +321,16 @@ Pytest and
 ### Documentation with Sphinx
 
 ### Packaging with Conda
-
 # Results
 
-For the development, testing, and evaluation of *bgwas3* a dataset of 
+For the development, testing, and evaluation of *bgwas3* a dataset of genomes and phenotypes related to *Pseudomonas aeruginosa* was used.
+
+92 strains were collected over a period of 24 years from 18 patients suffering from Cystic Fribrosis. ref
 
 Cystic fibrosiis is a an autosomal recessive disorder that, due to a single gene mutation, limits the ings ability to 
 Pseaudomonas euruginosa is one of the prmary bacteria present in the lungs of late stage and terminal patients with cystic fibrosis. ref(Schaedel et al., 2002; Hauser, 2011) (becomes chronic). when the lung begins to exhibit decreased function and signs of failure
 For this reason, undesrstanding the genetic adaptations pseudomonas experience when in chrnic state is significantly important in talking this disease
 
-This dataset involves n strains collected over a period of 24 years from 18 patients. ref
 
 In paper () it was shown that there was 'clear evidence' of the metabolic lung environment surrounding the bacteria. Specifically acetate production was negatively associated with length of infection
 and others? 

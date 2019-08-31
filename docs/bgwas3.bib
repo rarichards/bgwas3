@@ -140,6 +140,26 @@ CONCLUSION: We built a fast, lightweight, open source gene prediction program ca
 	file = {Full Text:/Users/gregory/Documents/Zotero/storage/VRBU63ZS/Hyatt et al. - 2010 - Prodigal prokaryotic gene recognition and transla.pdf:application/pdf}
 }
 
+@article{rizk_dsk:_2013,
+	title = {{DSK}: k-mer counting with very low memory usage},
+	volume = {29},
+	issn = {1367-4811},
+	shorttitle = {{DSK}},
+	doi = {10.1093/bioinformatics/btt020},
+	abstract = {SUMMARY: Counting all the k-mers (substrings of length k) in DNA/RNA sequencing reads is the preliminary step of many bioinformatics applications. However, state of the art k-mer counting methods require that a large data structure resides in memory. Such structure typically grows with the number of distinct k-mers to count. We present a new streaming algorithm for k-mer counting, called DSK (disk streaming of k-mers), which only requires a fixed user-defined amount of memory and disk space. This approach realizes a memory, time and disk trade-off. The multi-set of all k-mers present in the reads is partitioned, and partitions are saved to disk. Then, each partition is separately loaded in memory in a temporary hash table. The k-mer counts are returned by traversing each hash table. Low-abundance k-mers are optionally filtered. DSK is the first approach that is able to count all the 27-mers of a human genome dataset using only 4.0 GB of memory and moderate disk space (160 GB), in 17.9 h. DSK can replace a popular k-mer counting software (Jellyfish) on small-memory servers.
+AVAILABILITY: http://minia.genouest.org/dsk},
+	language = {eng},
+	number = {5},
+	journal = {Bioinformatics (Oxford, England)},
+	author = {Rizk, Guillaume and Lavenier, Dominique and Chikhi, Rayan},
+	month = mar,
+	year = {2013},
+	pmid = {23325618},
+	keywords = {Algorithms, Genome, Human, Humans, Sequence Analysis, DNA, Sequence Analysis, RNA, Software},
+	pages = {652--653},
+	file = {Full Text:/Users/gregory/Documents/Zotero/storage/JE5DKTQR/Rizk et al. - 2013 - DSK k-mer counting with very low memory usage.pdf:application/pdf}
+}
+
 @article{cribbs_cgat-core:_2019,
 	title = {{CGAT}-core: a python framework for building scalable, reproducible computational biology workflows},
 	volume = {8},
@@ -288,4 +308,34 @@ CONCLUSION: We built a fast, lightweight, open source gene prediction program ca
 	month = aug,
 	year = {2019},
 	note = {original-date: 2013-01-06T22:20:24Z}
+}
+
+@article{li_aligning_2013-1,
+	title = {Aligning sequence reads, clone sequences and assembly contigs with {BWA}-{MEM}},
+	url = {http://arxiv.org/abs/1303.3997},
+	abstract = {Summary: BWA-MEM is a new alignment algorithm for aligning sequence reads or long query sequences against a large reference genome such as human. It automatically chooses between local and end-to-end alignments, supports paired-end reads and performs chimeric alignment. The algorithm is robust to sequencing errors and applicable to a wide range of sequence lengths from 70bp to a few megabases. For mapping 100bp sequences, BWA-MEM shows better performance than several state-of-art read aligners to date. Availability and implementation: BWA-MEM is implemented as a component of BWA, which is available at http://github.com/lh3/bwa. Contact: hengli@broadinstitute.org},
+	urldate = {2019-08-31},
+	journal = {arXiv:1303.3997 [q-bio]},
+	author = {Li, Heng},
+	month = mar,
+	year = {2013},
+	note = {arXiv: 1303.3997},
+	keywords = {Quantitative Biology - Genomics},
+	file = {arXiv\:1303.3997 PDF:/Users/gregory/Documents/Zotero/storage/TP42R9YD/Li - 2013 - Aligning sequence reads, clone sequences and assem.pdf:application/pdf;arXiv.org Snapshot:/Users/gregory/Documents/Zotero/storage/QYQMRU6W/1303.html:text/html}
+}
+
+@book{wickham_ggplot2:_2016,
+	title = {ggplot2: {Elegant} {Graphics} for {Data} {Analysis}},
+	isbn = {978-3-319-24277-4},
+	url = {https://ggplot2.tidyverse.org},
+	publisher = {Springer-Verlag New York},
+	author = {Wickham, Hadley},
+	year = {2016}
+}
+
+@misc{noauthor_ggtree:_nodate,
+	title = {ggtree: an r package for visualization and annotation of phylogenetic trees with their covariates and other associated data - {Yu} - 2017 - {Methods} in {Ecology} and {Evolution} - {Wiley} {Online} {Library}},
+	url = {https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12628},
+	urldate = {2019-08-31},
+	file = {ggtree\: an r package for visualization and annotation of phylogenetic trees with their covariates and other associated data - Yu - 2017 - Methods in Ecology and Evolution - Wiley Online Library:/Users/gregory/Documents/Zotero/storage/YYG5LBXI/2041-210X.html:text/html}
 }
