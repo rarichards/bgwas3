@@ -1,11 +1,10 @@
-- the utility/ previous use of log transforms
-- bonferoni equations
-- talk about dmm variable and library
-- !questions
-- types of regression/ what is mixed model
-- why bwa/ not another/ what is bwa
-- only captures jeans/ phandango
-- talk about bwa
+- go into bonferoni/ equation
+- redo intro metabolomics
+- redo map kmers step
+- discussion
+	- 
+	- only captures jeans/ phandango
+	-
 - can copy a directory to another computer can use --local
 - add link to ref
 - why int / type one error

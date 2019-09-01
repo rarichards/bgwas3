@@ -168,19 +168,19 @@ def main(kmers_path, refs_path, prefix):
 
                         # info = fields[9]
                         info = fields[info_index]
-                        # gene = re.search("^.*gene=([^ ;]*);.*$", info)
-                        gene = re.findall(r'gene="([^ "]*)";', info)
-                        name = re.findall(r'name="([^ "]*)";', info)
-                        # name = re.search("^.*name=([^ ;]*);.*$", info)
+                        gene = re.search("^.*gene=([^ ;]*);.*$", info)
+                        # gene = re.findall(r'gene="([^ "]*)";', info)
+                        # name = re.findall(r'name="([^ "]*)";', info)
+                        name = re.search("^.*name=([^ ;]*);.*$", info)
                         description = re.search("^.*name=(\S* [^;]*);.*$", info)
                         ID = re.search("^.*ID=([^ ;]*);.*$", info)
 
-                        if len(gene) != 0:
-                            # gene_name = gene.group(1).strip('"')
-                            gene_name = min(gene, key=len)
-                        elif len(name) != 0:
-                            # gene_name = name.group(1).strip('"')
-                            gene_name = min(name, key=len)
+                        if gene != None:
+                            gene_name = gene.group(1).strip('"')
+                            # gene_name = min(gene, key=len)
+                        elif name != None:
+                            gene_name = name.group(1).strip('"')
+                            # gene_name = min(name, key=len)
                         elif description != None:
                             gene_name = description.group(1).strip('"')
                         elif ID != None:

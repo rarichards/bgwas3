@@ -6,6 +6,8 @@ digraph {
 		fontname="Sans serif" 
 		fontsize="11"
 		shape=folder
+		style=filled
+		fillcolor=white
 	];
 
 	subgraph cluster_input_files { /* {{{ */
@@ -35,6 +37,17 @@ digraph {
 				</table>
 			>
 		];
+		yml [ 
+			shape=note
+			fillcolor=yellow
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Configuration file</td></tr>
+					<tr><td align="center"><font point-size="8" color="blue">.yml</font></td></tr>
+				</table>
+			>
+		];
+
 	} /* }}} */
 
 	/* once {{{ */
@@ -193,7 +206,6 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">make_ref_list</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
 				</table>
 			>
 		];
@@ -205,13 +217,15 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">make_index</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
 				</table>
 			>
 		];
 	/* }}} */
 
 	subgraph cluster_rerun { /* {{{ */
+		label="Run for every phenotype"
+		style = filled;
+		color = lightblue;
 		stats [ 
 			shape=note
 			label=<
@@ -307,7 +321,6 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">test_assoc</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
 				</table>
 			>
 		];
@@ -318,7 +331,7 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">plot_ps</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
+					<tr><td align="center"><font point-size="8" color="black">plot_p.R</font></td></tr>
 				</table>
 			>
 		];
@@ -362,7 +375,7 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">summarise_genes</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
+					<tr><td align="center"><font point-size="8" color="black">summarise_genes.R</font></td></tr>
 				</table>
 			>
 		];
@@ -373,7 +386,7 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">plot_genes</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
+					<tr><td align="center"><font point-size="8" color="black">plot_genes.R</font></td></tr>
 				</table>
 			>
 		];
@@ -390,7 +403,6 @@ digraph {
 			label=<
 				<table border="0" cellborder="0" cellspacing="0">
 					<tr><td align="center">make_index</td></tr>
-					<tr><td align="center"><font point-size="8" color="black">pyseer</font></td></tr>
 				</table>
 			>
 		];

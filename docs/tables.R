@@ -57,6 +57,21 @@ dat_non_met$Description[dat_non_met$Name == "Hydrogen Cyanide"] <- "P. aeruginos
 	select(-bonf_thresh) %>%
 	filter(significant_kmers != 0) %>%
 	arrange(desc(significant_genes)) %>%
+	filter(
+				pheno == "3HIV" |
+				pheno == "anthranilate" |
+				pheno == "at_log" |
+				pheno == "ci" |
+				pheno == "co_log" |
+				pheno == "isoleucine" |
+				pheno == "leucine" |
+				pheno == "methanol" |
+				pheno == "swarm" |
+				pheno == "swim_log" |
+				pheno == "tm" |
+				pheno == "tryptophan" |
+				pheno == "uracil"
+	) %>%
 	rename(
 				 "Phenotype" = pheno,
 				 "Significant Kmers" = significant_kmers,
@@ -64,28 +79,18 @@ dat_non_met$Description[dat_non_met$Name == "Hydrogen Cyanide"] <- "P. aeruginos
 	) -> dat_genes;
 
 
-dat_genes$Phenotype[dat_genes$Phenotype == "isoleucine_int_log"] <- "log(Isoleucine)";
-dat_genes$Phenotype[dat_genes$Phenotype == "hcn_log"] <- "log(Hydrogen Cyanide)";
-dat_genes$Phenotype[dat_genes$Phenotype == "ci_log"] <- "log(Ciprofloxacin)";
-dat_genes$Phenotype[dat_genes$Phenotype == "at"] <- "Aztreonam";
-dat_genes$Phenotype[dat_genes$Phenotype == "3HIV"] <- "3-Hydroxyisovalerate";
-dat_genes$Phenotype[dat_genes$Phenotype == "3HIV_log"] <- "log(3-Hydroxyisovalerate)";
-dat_genes$Phenotype[dat_genes$Phenotype == "anthranilate"] <- "Anthranilate";
-dat_genes$Phenotype[dat_genes$Phenotype == "anthranilate_log"] <- "log(Anthranilate)";
-dat_genes$Phenotype[dat_genes$Phenotype == "at_log"] <- "log(Aztreonam)";
-dat_genes$Phenotype[dat_genes$Phenotype == "ci"] <- "Ciprofloxacin";
-dat_genes$Phenotype[dat_genes$Phenotype == "co_log"] <- "log(Colistin)";
 dat_genes$Phenotype[dat_genes$Phenotype == "isoleucine"] <- "Isoleucine";
-dat_genes$Phenotype[dat_genes$Phenotype == "isoleucine_log"] <- "log(Isoleucine)";
+dat_genes$Phenotype[dat_genes$Phenotype == "3HIV"] <- "3-Hydroxyisovalerate";
+dat_genes$Phenotype[dat_genes$Phenotype == "anthranilate"] <- "Anthranilate";
+dat_genes$Phenotype[dat_genes$Phenotype == "at_log"] <- "Aztreonam";
+dat_genes$Phenotype[dat_genes$Phenotype == "ci"] <- "Ciprofloxacin";
+dat_genes$Phenotype[dat_genes$Phenotype == "co_log"] <- "Colistin";
+dat_genes$Phenotype[dat_genes$Phenotype == "isoleucine"] <- "Isoleucine";
 dat_genes$Phenotype[dat_genes$Phenotype == "leucine"] <- "Leucine";
-dat_genes$Phenotype[dat_genes$Phenotype == "leucine_log"] <- "log(Leucine)";
 dat_genes$Phenotype[dat_genes$Phenotype == "methanol"] <- "Methanol";
-dat_genes$Phenotype[dat_genes$Phenotype == "methanol_log"] <- "log(Methanol)";
 dat_genes$Phenotype[dat_genes$Phenotype == "swarm"] <- "Swarm";
-dat_genes$Phenotype[dat_genes$Phenotype == "swim_log"] <- "log(Swim)";
+dat_genes$Phenotype[dat_genes$Phenotype == "swim_log"] <- "Swim";
 dat_genes$Phenotype[dat_genes$Phenotype == "tm"] <- "Tobromycin";
 dat_genes$Phenotype[dat_genes$Phenotype == "tryptophan"] <- "Tryptophan";
-dat_genes$Phenotype[dat_genes$Phenotype == "tryptophan_log"] <- "log(Tryptophan)";
 dat_genes$Phenotype[dat_genes$Phenotype == "uracil"] <- "Uracil";
-dat_genes$Phenotype[dat_genes$Phenotype == "uracil_log"] <- "log(Uracil)";
 
