@@ -1,0 +1,8 @@
+name: bgwas3
+channels:
+  - anaconda
+  - bioconda
+dependencies:
+  - cgatcore
+  - ruffus
+  - mako
