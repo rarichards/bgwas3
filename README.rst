@@ -26,11 +26,15 @@ Quick Usage
 
 3. Create a tsv file with an 'id' column and one or more 'pheno_xxx' columns
 
-4. Run::
+4. Run
+
+::
 
    bgwas3 make full
 
-5. View results with::
+5. View results with
+
+::
 
    open results/plots/index.html
 
