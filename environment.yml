@@ -1,0 +1,23 @@
+name: test
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - cgatcore
+  - fsm-lite
+  - prokka
+  - roary
+  - mash
+  - mako
+  - argparse
+  - pandas
+  - dendropy
+  - r-argparse
+  - r-dplyr
+  - r-readr
+  - r-tidyr
+  - r-stringr
+  - r-ggplot2
+  - r-tidytree
+  - bgwas3
