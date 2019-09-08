@@ -1,0 +1,533 @@
+digraph {
+
+	graph [ dpi = 300 ]; 
+
+	node [ 
+		fontname="Sans serif" 
+		fontsize="36"
+		shape=folder
+		style=filled
+		fillcolor=white
+	];
+
+	subgraph cluster_input_files { /* {{{ */
+		fontname="Sans serif" 
+		fontsize=36
+		label = "Input files";
+		contigs [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Sample sequences</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">*.fa</font></td></tr>
+				</table>
+			>
+		];
+		pheno [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Table of phenotypes</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		refs[ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">External reference files</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.fa, .gff</font></td></tr>
+				</table>
+			>
+		];
+		yml [ 
+			shape=note
+			fillcolor=yellow
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Configuration file</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.yml</font></td></tr>
+				</table>
+			>
+		];
+
+	} /* }}} */
+
+	/* once {{{ */
+	indexes [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Index</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">.amb, .ann, .bwt, .pac, .sa</font></td></tr>
+			</table>
+		>
+	];
+	annotations [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Sample annotations</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">gff</font></td></tr>
+			</table>
+		>
+	];
+	annotations_bed [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Sample annotations</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">.bed</font></td></tr>
+			</table>
+		>
+	];
+	phenos [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Phenoypes files</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+			</table>
+		>
+	];
+	refs_bed [ 
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Reference annotations</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">.bed</font></td></tr>
+			</table>
+		>
+	];
+	phylogenetic_tree [ 
+		shape=note
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">Phylogenetic tree</td></tr>
+				<tr><td align="center"><font point-size="28" color="blue">.newick</font></td></tr>
+			</table>
+		>
+	];
+	bwa_index [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">bwa_index</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">BWA index</font></td></tr>
+			</table>
+		>
+	];
+	mine_kmers [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">mine_kmers</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">FSM-lite</font></td></tr>
+			</table>
+		>
+	];
+	annotate [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">annotate</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">prokka</font></td></tr>
+			</table>
+		>
+	];
+	pangenome_analysis [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">pangenome_analysis</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">Roary</font></td></tr>
+			</table>
+		>
+	];
+	distance_from_tree [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">distance_from_tree</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">distance_from_tree.py</font></td></tr>
+			</table>
+		>
+	];
+	plot_tree [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">plot_tree</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">plot_tree.R</font></td></tr>
+			</table>
+		>
+	];
+	split_phenos [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=<
+			<table border="0" cellborder="0" cellspacing="0">
+				<tr><td align="center">split_phenos</td></tr>
+				<tr><td align="center"><font point-size="28" color="black">split_phenos.R</font></td></tr>
+			</table>
+		>
+	];
+	annotation2bed [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">annotation2bed</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">gff2bed, bedtools merge</font></td></tr>
+				</table>
+			>
+		];
+		ref2bed [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">ref2bed</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">gff2bed, bedtools merge</font></td></tr>
+				</table>
+			>
+		];
+		make_ref_list [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_ref_list</td></tr>
+				</table>
+			>
+		];
+		make_index [ 
+			shape=ellipse
+			style=filled
+
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_index</td></tr>
+				</table>
+			>
+		];
+	/* }}} */
+
+	subgraph cluster_rerun { /* {{{ */
+		fontname="Sans serif" 
+		fontsize=36
+		label="Run for every phenotype"
+		style = filled;
+		color = lightblue;
+		stats [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Summary statistics</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		kmers [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Kmers</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.txt.gz</font></td></tr>
+				</table>
+			>
+		];
+		distance_matrix [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Distance matrix</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+				>
+			];
+		pheno_i [ 
+				shape=note
+				label=<
+					<table border="0" cellborder="0" cellspacing="0">
+						<tr><td align="center">Phenotype file</td></tr>
+						<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+					</table>
+				>
+			];
+		associated_kmers [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Kmers and statistics of association</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		threshold[ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Threshold</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		kmers_filtered [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Kmers and statistics of association (filtered)</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		kmers_mapped [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Kmers and their gene associations</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		genes [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Genes and their statistics</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		gene_info [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Gene information</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">.tsv</font></td></tr>
+				</table>
+			>
+		];
+		test_assoc [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">test_assoc</td></tr>
+				</table>
+			>
+		];
+		plot_ps [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">plot_ps</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">plot_p.R</font></td></tr>
+				</table>
+			>
+		];
+		bonferoni [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">bonferoni</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">bonferoni.R</font></td></tr>
+				</table>
+			>
+		];
+		filter [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">filter</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">filter.R</font></td></tr>
+				</table>
+			>
+		];
+	map_kmers [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">map_kmers</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">map_kmers.py</font></td></tr>
+				</table>
+			>
+		];
+		summarise_genes [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">summarise_genes</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">summarise_genes.R</font></td></tr>
+				</table>
+			>
+		];
+		plot_genes [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">plot_genes</td></tr>
+					<tr><td align="center"><font point-size="28" color="black">plot_genes.R</font></td></tr>
+				</table>
+			>
+		];
+
+
+	} /* }}} */
+
+	subgraph cluster_output_files { /* {{{ */
+		fontname="Sans serif" 
+		fontsize=36
+		label = "Output files";
+		make_index [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">make_index</td></tr>
+				</table>
+			>
+		];
+		tree_plots [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Phylogenetic tree plots</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">png</font></td></tr>
+				</table>
+			>
+		];
+		plot_qq [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">QQ-plots</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">html</font></td></tr>
+				</table>
+			>
+		];
+		gene_plot [ 
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Gene plots</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">html</font></td></tr>
+				</table>
+			>
+		];
+		web_report [ 
+			shape=note
+			label=<
+				<table border="0" cellborder="0" cellspacing="0">
+					<tr><td align="center">Web report</td></tr>
+					<tr><td align="center"><font point-size="28" color="blue">html</font></td></tr>
+				</table>
+			>
+		];
+	} /* }}} */
+
+	/* edges {{{ */
+
+	edge [
+		arrowsize=3
+		penwidth=2
+	];
+
+	contigs -> mine_kmers;
+	mine_kmers -> kmers;
+
+	contigs -> annotate;
+	annotate -> annotations;
+
+	annotations -> pangenome_analysis;
+	pangenome_analysis -> phylogenetic_tree;
+
+	phylogenetic_tree -> distance_from_tree;
+	distance_from_tree -> distance_matrix;
+
+	phylogenetic_tree -> plot_tree;
+	pheno -> plot_tree;
+	plot_tree -> tree_plots;
+
+	pheno -> split_phenos;
+	split_phenos -> phenos;
+
+	phenos -> pheno_i;
+	pheno_i -> test_assoc;
+	kmers -> test_assoc;
+	distance_matrix -> test_assoc;
+	test_assoc -> associated_kmers;
+
+	associated_kmers -> plot_ps;
+	plot_ps -> plot_qq;
+
+	associated_kmers -> bonferoni;
+	bonferoni -> threshold;
+	threshold -> filter;
+	associated_kmers -> filter;
+	filter -> kmers_filtered;
+	
+	bonferoni -> stats;
+
+	refs -> ref2bed;
+	ref2bed -> refs_bed;
+
+	refs -> bwa_index;
+	contigs -> bwa_index;
+	bwa_index -> indexes;
+
+	annotations -> annotation2bed;
+	annotation2bed -> annotations_bed;
+
+	indexes -> make_ref_list;
+	refs_bed -> make_ref_list;
+	annotations_bed -> make_ref_list;
+	make_ref_list -> map_kmers;
+
+	indexes -> map_kmers;
+	kmers_filtered -> map_kmers;
+	annotations_bed -> map_kmers;
+	refs_bed -> map_kmers;
+	map_kmers -> kmers_mapped;
+	map_kmers -> stats;
+	map_kmers -> gene_info;
+
+	kmers_mapped -> summarise_genes;
+	gene_info -> plot_genes;
+	summarise_genes -> genes;
+	summarise_genes -> stats;
+
+	genes -> plot_genes;
+	plot_genes -> gene_plot;
+
+	gene_plot -> make_index;
+	plot_qq -> make_index;
+	tree_plots -> make_index;
+	gene_info -> make_index;
+	stats -> make_index;
+	make_index -> web_report;
+
+	/* }}} */
+
+}

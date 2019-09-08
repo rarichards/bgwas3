@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Steps &#8212; bgwas3 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="steps">
+<h1>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-bgwas3"></span><dl class="function">
+<dt id="bgwas3.assembly">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">assembly</code><span class="sig-paren">(</span><em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.assembly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contig assembly</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.mine_kmers">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">mine_kmers</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.mine_kmers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kmer mining and counting with fsm-lite</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> – directory of geneomes (fasta files)</p></li>
+<li><p><strong>outfile</strong> – gzipped file of Kmer patterns and genomes they are found in</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.annotate">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">annotate</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em>, <em class="sig-param">idd</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.annotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Annotate genomes with prokka (generate gff file for each contig)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.pangenome_analysis">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">pangenome_analysis</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.pangenome_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform pangenome analalysis with Roary (based on difference in gene
+content) and generate a phylogenetic tree (.newick) file for use in mixed</p>
+<blockquote>
+<div><p>effects association testing</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.distance_from_tree">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">distance_from_tree</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.distance_from_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get distances from a phylogenetic tree that has been midpoint
+rooted</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.mash">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">mash</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.mash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.plot_trees">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_trees</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.plot_trees" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot phylogenetic trees with filters based on clade and phenotype</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.split_phenos">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">split_phenos</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.split_phenos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the main tsv file phenotype columns into their own tsv files
+(to be used in seperated association tests)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.plot_phenos">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_phenos</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em>, <em class="sig-param">pheno</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.plot_phenos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Density plot phenotypes</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.test_assoc">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">test_assoc</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">idd</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.test_assoc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Association test kmers and phenotypes with pyseer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.plot_ps">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_ps</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">pheno</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.plot_ps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot p-values (histogram and qqplot) for each association test</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.bonferoni">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">bonferoni</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.bonferoni" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter kmers from the output of association based on their p-value,
+using bonferoni method to set a threshold</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.ref2bed">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">ref2bed</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.ref2bed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert reference gff files into bed files. Also merge overlapping
+annotations (eg ‘CDS’ and ‘Gene’ entries that are the same, but have
+different information. Also remove ‘Region’ entries.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.make_ref_list">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">make_ref_list</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.make_ref_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a list of references for kmer mapping (references first, then
+draft annotations)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.map_kmers">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">map_kmers</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.map_kmers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map kmers to annotation files</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bgwas3.summarise_genes">
+<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">summarise_genes</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.summarise_genes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the number of kmer hits per gene, and calculate other
+statistics</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">bgwas3</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Gregory Leeman.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/usage/steps.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

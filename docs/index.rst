@@ -1,13 +1,11 @@
 bgwas3
 ======
-
 .. toctree::
+   :hidden:
    :maxdepth: 2
-   :caption: Contents:
 
-.. graphviz:: flow.dot
+   installation
+   tutorial
+   steps
 
-.. automodule:: bgwas3
-    :members:
-
-.. autofunction:: bgwas3.plot_ps
+.. graphviz:: _static/pipe.dot

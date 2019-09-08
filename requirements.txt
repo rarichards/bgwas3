@@ -1,0 +1,5 @@
+sphinxcontrib-mermaid==0.3.1
+ruffus
+cgatcore
+mako
+json

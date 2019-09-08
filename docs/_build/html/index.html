@@ -15,6 +15,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,213 +36,539 @@
 <h1>bgwas3<a class="headerlink" href="#bgwas3" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="graphviz"><img src="_images/graphviz-222dde6d3372a23380d39fef60e4edaf6553d2a2.png" alt="digraph &quot;Pipeline:&quot;
-{
-	size=&quot;8,11&quot;;
-	splines=true;
-	fontsize=&quot;30&quot;;
-	ranksep = 0.3;
-	node[fontsize=&quot;20&quot;];
-	graph[clusterrank=&quot;local&quot;];
-	subgraph clustertasks
-{
-	rank=&quot;min&quot;;
-	fontcolor = &quot;#FF3232&quot;;
-	label = &quot;Pipeline:&quot;;
-	t24[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;mkdir('results') \nbefore test_assoc &quot;, shape=box3d, style=filled];
-	t22[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;mkdir('phenos') \nbefore split_phenos &quot;, shape=box3d, style=filled];
-	t8[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;split_phenos&quot;, peripheries=2, shape=house, style=filled];
-	t22 -&gt; t8[color=&quot;#0044A0&quot;];
-	t21[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;mkdir('annotations') \nbefore annotate &quot;, shape=box3d, style=filled];
-	t1[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;assembly&quot;, shape=box3d, style=filled];
-	t3[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;annotate&quot;, shape=box3d, style=dashed];
-	t21 -&gt; t3[color=&quot;#0044A0&quot;];
-	t1 -&gt; t3[color=&quot;#0044A0&quot;];
-	t4[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, height=1.1, label=&quot;pangenome_analysis&quot;, peripheries=2, shape=invhouse, style=filled];
-	t3 -&gt; t4[color=&quot;#0044A0&quot;];
-	t5[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;distance_from_tree&quot;, shape=box3d, style=filled];
-	t4 -&gt; t5[color=&quot;#0044A0&quot;];
-	t2[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, height=1.1, label=&quot;mine_kmers&quot;, peripheries=2, shape=invhouse, style=filled];
-	t1 -&gt; t2[color=&quot;#0044A0&quot;];
-	t9[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;test_assoc&quot;, shape=box3d, style=dashed];
-	t24 -&gt; t9[color=&quot;#0044A0&quot;];
-	t8 -&gt; t9[color=&quot;#0044A0&quot;];
-	t5 -&gt; t9[color=&quot;#0044A0&quot;];
-	t2 -&gt; t9[color=&quot;#0044A0&quot;];
-	t11[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;bonferoni&quot;, shape=box3d, style=dashed];
-	t9 -&gt; t11[color=&quot;#0044A0&quot;];
-	t13[color=&quot;#006000&quot;, fillcolor=&quot;#B8CC6E&quot;, fontcolor=&quot;#006000&quot;, label=&quot;ref2bed&quot;, shape=box3d, style=filled];
-	t12[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;annotation2bed&quot;, shape=box3d, style=dashed];
-	t3 -&gt; t12[color=&quot;#0044A0&quot;];
-	t14[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, height=1.1, label=&quot;make_ref_list&quot;, peripheries=2, shape=invhouse, style=filled];
-	t13 -&gt; t14[color=gray, arrowtype=normal];
-	t12 -&gt; t14[color=&quot;#0044A0&quot;];
-	t1 -&gt; t14[color=&quot;#0044A0&quot;];
-	t15[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;bwa_index&quot;, shape=box3d, style=dashed];
-	t1 -&gt; t15[color=&quot;#0044A0&quot;];
-	t16[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;map_kmers&quot;, shape=box3d, style=dashed];
-	t15 -&gt; t16[color=&quot;#0044A0&quot;];
-	t14 -&gt; t16[color=&quot;#0044A0&quot;];
-	t12 -&gt; t16[color=&quot;#0044A0&quot;];
-	t11 -&gt; t16[color=&quot;#0044A0&quot;];
-	t17[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;summarise_genes&quot;, shape=box3d, style=dashed];
-	t16 -&gt; t17[color=&quot;#0044A0&quot;];
-	t19[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, height=1.1, label=&quot;visualise&quot;, peripheries=2, shape=invhouse, style=filled];
-	t17 -&gt; t19[color=&quot;#0044A0&quot;];
-	t20[color=black, fillcolor=&quot;#EFA03B&quot;, fontcolor=black, label=&quot;full&quot;, shape=box3d, style=filled];
-	t19 -&gt; t20[color=&quot;#0044A0&quot;];
-	t13 -&gt; t16[color=gray, arrowtype=normal];
-}
-subgraph clusterkey1
-{
-rank=&quot;min&quot;;
-style=filled;
-fontsize=20;
-color=&quot;#F6F4F4&quot;;
-label = &quot;Key:&quot;;
-fontcolor = black;node[margin=&quot;0.2,0.2&quot;, fontsize=&quot;14&quot;];
-k1_1[color=&quot;#006000&quot;, fillcolor=&quot;#B8CC6E&quot;, fontcolor=&quot;#006000&quot;, label=&quot;Up-to-date task&quot;, shape=box3d, style=filled];
-k2_1[color=&quot;#0044A0&quot;, fillcolor=&quot;#EBF3FF&quot;, fontcolor=&quot;#0044A0&quot;, label=&quot;Task to run&quot;, shape=box3d, style=filled];
-k1_1 -&gt; k2_1[color=gray, arrowtype=normal];
-k3_1[color=&quot;#0044A0&quot;, fillcolor=transparent, fontcolor=&quot;#0044A0&quot;, label=&quot;Up-to-date task\nforced to rerun&quot;, shape=box3d, style=dashed];
-k2_1 -&gt; k3_1[color=&quot;#0044A0&quot;, arrowtype=normal];
-k4_1[color=black, fillcolor=&quot;#EFA03B&quot;, fontcolor=black, label=&quot;Final target&quot;, shape=box3d, style=filled];
-k3_1 -&gt; k4_1[color=&quot;#0044A0&quot;, arrowtype=normal];
-}
+<div class="graphviz"><img src="_images/graphviz-20b2d465b5ed48c7471cb189c7ad5078cc5325d1.png" alt="digraph {
+
+	graph [ dpi = 300 ]; 
+
+	node [ 
+		fontname=&quot;Sans serif&quot; 
+		fontsize=&quot;36&quot;
+		shape=folder
+		style=filled
+		fillcolor=white
+	];
+
+	subgraph cluster_input_files { /* {{{ */
+		fontname=&quot;Sans serif&quot; 
+		fontsize=36
+		label = &quot;Input files&quot;;
+		contigs [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Sample sequences&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;*.fa&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		pheno [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Table of phenotypes&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		refs[ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;External reference files&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.fa, .gff&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		yml [ 
+			shape=note
+			fillcolor=yellow
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Configuration file&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.yml&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+
+	} /* }}} */
+
+	/* once {{{ */
+	indexes [ 
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Index&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.amb, .ann, .bwt, .pac, .sa&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	annotations [ 
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Sample annotations&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;gff&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	annotations_bed [ 
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Sample annotations&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.bed&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	phenos [ 
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Phenoypes files&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	refs_bed [ 
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Reference annotations&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.bed&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	phylogenetic_tree [ 
+		shape=note
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Phylogenetic tree&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.newick&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	bwa_index [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;bwa_index&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;BWA index&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	mine_kmers [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;mine_kmers&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;FSM-lite&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	annotate [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;annotate&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;prokka&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	pangenome_analysis [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;pangenome_analysis&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;Roary&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	distance_from_tree [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;distance_from_tree&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;distance_from_tree.py&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	plot_tree [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;plot_tree&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;plot_tree.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	split_phenos [ 
+		shape=ellipse
+		style=filled
+		fillcolor=grey
+		label=&lt;
+			&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;split_phenos&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;split_phenos.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+		&gt;
+	];
+	annotation2bed [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;annotation2bed&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;gff2bed, bedtools merge&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		ref2bed [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;ref2bed&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;gff2bed, bedtools merge&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		make_ref_list [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;make_ref_list&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		make_index [ 
+			shape=ellipse
+			style=filled
+
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;make_index&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+	/* }}} */
+
+	subgraph cluster_rerun { /* {{{ */
+		fontname=&quot;Sans serif&quot; 
+		fontsize=36
+		label=&quot;Run for every phenotype&quot;
+		style = filled;
+		color = lightblue;
+		stats [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Summary statistics&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		kmers [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Kmers&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.txt.gz&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		distance_matrix [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Distance matrix&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+				&gt;
+			];
+		pheno_i [ 
+				shape=note
+				label=&lt;
+					&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+						&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Phenotype file&lt;/td&gt;&lt;/tr&gt;
+						&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+					&lt;/table&gt;
+				&gt;
+			];
+		associated_kmers [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Kmers and statistics of association&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		threshold[ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Threshold&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		kmers_filtered [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Kmers and statistics of association (filtered)&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		kmers_mapped [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Kmers and their gene associations&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		genes [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Genes and their statistics&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		gene_info [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Gene information&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;.tsv&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		test_assoc [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;test_assoc&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		plot_ps [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;plot_ps&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;plot_p.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		bonferoni [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;bonferoni&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;bonferoni.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		filter [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;filter&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;filter.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+	map_kmers [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;map_kmers&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;map_kmers.py&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		summarise_genes [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;summarise_genes&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;summarise_genes.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		plot_genes [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;plot_genes&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;black&quot;&gt;plot_genes.R&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+
+
+	} /* }}} */
+
+	subgraph cluster_output_files { /* {{{ */
+		fontname=&quot;Sans serif&quot; 
+		fontsize=36
+		label = &quot;Output files&quot;;
+		make_index [ 
+			shape=ellipse
+			style=filled
+			fillcolor=grey
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;make_index&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		tree_plots [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Phylogenetic tree plots&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;png&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		plot_qq [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;QQ-plots&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;html&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		gene_plot [ 
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Gene plots&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;html&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+		web_report [ 
+			shape=note
+			label=&lt;
+				&lt;table border=&quot;0&quot; cellborder=&quot;0&quot; cellspacing=&quot;0&quot;&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Web report&lt;/td&gt;&lt;/tr&gt;
+					&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font point-size=&quot;28&quot; color=&quot;blue&quot;&gt;html&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;/table&gt;
+			&gt;
+		];
+	} /* }}} */
+
+	/* edges {{{ */
+
+	edge [
+		arrowsize=3
+		penwidth=2
+	];
+
+	contigs -&gt; mine_kmers;
+	mine_kmers -&gt; kmers;
+
+	contigs -&gt; annotate;
+	annotate -&gt; annotations;
+
+	annotations -&gt; pangenome_analysis;
+	pangenome_analysis -&gt; phylogenetic_tree;
+
+	phylogenetic_tree -&gt; distance_from_tree;
+	distance_from_tree -&gt; distance_matrix;
+
+	phylogenetic_tree -&gt; plot_tree;
+	pheno -&gt; plot_tree;
+	plot_tree -&gt; tree_plots;
+
+	pheno -&gt; split_phenos;
+	split_phenos -&gt; phenos;
+
+	phenos -&gt; pheno_i;
+	pheno_i -&gt; test_assoc;
+	kmers -&gt; test_assoc;
+	distance_matrix -&gt; test_assoc;
+	test_assoc -&gt; associated_kmers;
+
+	associated_kmers -&gt; plot_ps;
+	plot_ps -&gt; plot_qq;
+
+	associated_kmers -&gt; bonferoni;
+	bonferoni -&gt; threshold;
+	threshold -&gt; filter;
+	associated_kmers -&gt; filter;
+	filter -&gt; kmers_filtered;
+	
+	bonferoni -&gt; stats;
+
+	refs -&gt; ref2bed;
+	ref2bed -&gt; refs_bed;
+
+	refs -&gt; bwa_index;
+	contigs -&gt; bwa_index;
+	bwa_index -&gt; indexes;
+
+	annotations -&gt; annotation2bed;
+	annotation2bed -&gt; annotations_bed;
+
+	indexes -&gt; make_ref_list;
+	refs_bed -&gt; make_ref_list;
+	annotations_bed -&gt; make_ref_list;
+	make_ref_list -&gt; map_kmers;
+
+	indexes -&gt; map_kmers;
+	kmers_filtered -&gt; map_kmers;
+	annotations_bed -&gt; map_kmers;
+	refs_bed -&gt; map_kmers;
+	map_kmers -&gt; kmers_mapped;
+	map_kmers -&gt; stats;
+	map_kmers -&gt; gene_info;
+
+	kmers_mapped -&gt; summarise_genes;
+	gene_info -&gt; plot_genes;
+	summarise_genes -&gt; genes;
+	summarise_genes -&gt; stats;
+
+	genes -&gt; plot_genes;
+	plot_genes -&gt; gene_plot;
+
+	gene_plot -&gt; make_index;
+	plot_qq -&gt; make_index;
+	tree_plots -&gt; make_index;
+	gene_info -&gt; make_index;
+	stats -&gt; make_index;
+	make_index -&gt; web_report;
+
+	/* }}} */
+
 }" class="graphviz" /></div>
-<span class="target" id="module-bgwas3"></span><dl class="function">
-<dt id="bgwas3.make_dirs">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">make_dirs</code><span class="sig-paren">(</span><em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.make_dirs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Copy plot directory (index.html) to working directory</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.assembly">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">assembly</code><span class="sig-paren">(</span><em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.assembly" title="Permalink to this definition">¶</a></dt>
-<dd><p>Contig assembly</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.mine_kmers">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">mine_kmers</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.mine_kmers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kmer mining and counting with fsm-lite</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>infile</strong> – directory of geneomes (fasta files)</p></li>
-<li><p><strong>outfile</strong> – gzipped file of Kmer patterns and genomes they are found in</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.annotate">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">annotate</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em>, <em class="sig-param">idd</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.annotate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Annotate genomes with prokka (generate gff file for each contig)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.pangenome_analysis">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">pangenome_analysis</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.pangenome_analysis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform pangenome analalysis with Roary (based on difference in gene
-content) and generate a phylogenetic tree (.newick) file for use in mixed</p>
-<blockquote>
-<div><p>effects association testing</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.distance_from_tree">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">distance_from_tree</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.distance_from_tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get distances from a phylogenetic tree that has been midpoint
-rooted</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.mash">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">mash</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.mash" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.plot_trees">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_trees</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.plot_trees" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot phylogenetic trees with filters based on clade and phenotype</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.split_phenos">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">split_phenos</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.split_phenos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Split the main tsv file phenotype columns into their own tsv files
-(to be used in seperated association tests)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.test_assoc">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">test_assoc</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">idd</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.test_assoc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Association test kmers and phenotypes with pyseer</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.plot_ps">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_ps</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">pheno</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.plot_ps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot p-values (histogram and qqplot) for each association test</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.bonferoni">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">bonferoni</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.bonferoni" title="Permalink to this definition">¶</a></dt>
-<dd><p>Filter kmers from the output of association based on their p-value,
-using bonferoni method to set a threshold</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.annotation2bed">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">annotation2bed</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.annotation2bed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert gff files into bed files. Also remove annotations that don’t
-correspind to named genes (eg. hypothetical proteins)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.ref2bed">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">ref2bed</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.ref2bed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert reference gff files into bed files. Also merge overlapping
-annotations (eg ‘CDS’ and ‘Gene’ entries that are the same, but have
-different information. Also remove ‘Region’ entries.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.make_ref_list">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">make_ref_list</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.make_ref_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make a list of references for kmer mapping (references first, then
-draft annotations)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.bwa_index">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">bwa_index</code><span class="sig-paren">(</span><em class="sig-param">infile</em>, <em class="sig-param">outfiles</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.bwa_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>BWA index (for Kmer mapping)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.map_kmers">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">map_kmers</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.map_kmers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Map kmers to annotation files</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="bgwas3.summarise_genes">
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">summarise_genes</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfile</em><span class="sig-paren">)</span><a class="headerlink" href="#bgwas3.summarise_genes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Count the number of kmer hits per gene, and calculate other
-statistics</p>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<code class="sig-prename descclassname">bgwas3.</code><code class="sig-name descname">plot_ps</code><span class="sig-paren">(</span><em class="sig-param">infiles</em>, <em class="sig-param">outfiles</em>, <em class="sig-param">pheno</em><span class="sig-paren">)</span></dt>
-<dd><p>Plot p-values (histogram and qqplot) for each association test</p>
-</dd></dl>
-
 </div>
 
 
@@ -261,11 +588,17 @@ statistics</p>
 
 
 <h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steps.html">Steps</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
   </ul></li>
 </ul>
 </div>
