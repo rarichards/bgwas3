@@ -20,19 +20,19 @@ Install
 Quick Usage
 -----------
 
-1. Create a project directory
+1. Create and cd into an empty project directory
 
-2. Put all contigs into a directory named "contigs"
+2. Put all contigs into a sub-directory named "contigs"
 
 3. Create a tsv file with an 'id' column and one or more 'pheno_xxx' columns
 
-4. Run
+4. Run:
 
 ::
 
    bgwas3 make full
 
-5. View results with
+5. View results with:
 
 ::
 
