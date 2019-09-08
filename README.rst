@@ -14,7 +14,7 @@ Install
 
 ::
 
-   conda install bgwas3
+   conda install -c g-r-eg bgwas3
 
 
 Quick Usage
