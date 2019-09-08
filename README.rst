@@ -21,13 +21,16 @@ Quick Usage
 -----------
 
 1. Create a project directory
-1. Put all contigs into a directory named "contigs"
-2. Create a tsv file with an 'id' column and one or more 'pheno_xxx' columns
-3. Run::
+
+2. Put all contigs into a directory named "contigs"
+
+3. Create a tsv file with an 'id' column and one or more 'pheno_xxx' columns
+
+4. Run::
 
    bgwas3 make full
 
-4. View results with::
+5. View results with::
 
    open results/plots/index.html
 
