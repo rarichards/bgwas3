@@ -1,17 +1,15 @@
 language: python
-matrix:
-  include:
-    - name: "Python 3.6 on Xenial Linux"
-      python: 3.6
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7"
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda env create python=$TRAVIS_PYTHON_VERSION -f .env.yml
-  - source activate bgwas3
-  - conda install pytest
+  - conda install bgwas3
 script:
-  - cd tests
-  - pytest -v -s --cache-clear -m local
+  - bgwas3 --help
