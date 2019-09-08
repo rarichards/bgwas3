@@ -3,6 +3,7 @@ channels:
   - bioconda
   - conda-forge
   - defaults
+  - g-r-eg
 dependencies:
   - cgatcore
   - fsm-lite
