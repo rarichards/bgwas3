@@ -24,7 +24,7 @@ Quick Usage
 
 2. Put all contigs into a sub-directory named "contigs"
 
-3. Create a tsv file with an 'id' column and one or more 'pheno_xxx' columns
+3. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
 
 4. Run:
 
