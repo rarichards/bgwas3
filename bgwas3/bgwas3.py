@@ -17,19 +17,26 @@ PARAMS = P.get_parameters([
     "pipeline.yml"
 ])
 
+
 # assembly {{{
 @follows(
-    mkdir("fastqs")
-    )
+    mkdir("contigs") # change to make dir "SPAdes"
+ )
 @split(
     "fastqs",
-    "contigs/*.fa"
+    "contigs/contigs.fa"
 )
-def assembly(outfile):
+
+def assembly(infile, outfile):
 
     ''' 
     Contig assembly
     '''
+    statement = '''/media/ruth/external-drive/project/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py --pe1-1 %(infile)s/*.fastq.1.gz --pe1-2 %(infile)s/*.fastq.2.gz -m8 -o ./SPAdes-out/ &&
+
+    mv ./SPAdes-out/contigs.fasta %(outfile)s'''
+
+    P.run(statement, to_cluster=True)
 
 # }}}
 # mine_kmers {{{
@@ -52,13 +59,11 @@ def mine_kmers(infile, outfile):
     cd contigs &&
     fsm-lite
         -l ../contigs_list.txt
-        -m %(fsm_kmer-min)s
-        -M %(fsm_kmer-max)s
         -v
         -t kmers
         | gzip -c > ../%(outfile)s
     '''
-
+    #remvoed the min and max input because couldn't find the file
     P.run(statement, to_cluster=True)
 
 # }}}
@@ -69,9 +74,9 @@ def mine_kmers(infile, outfile):
 )
 @transform(
     assembly,
-    regex("contigs/(.*).fa"),
-    r"annotations/\1.gff",
-    r"\1"
+    regex("contigs/(.*).fa"), 
+    r"annotations/\1.gff", 
+    r"\1" #
 )
 def annotate(infile, outfile, idd):
 
