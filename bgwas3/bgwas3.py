@@ -17,23 +17,23 @@ PARAMS = P.get_parameters([
     "pipeline.yml"
 ])
 
-
 # assembly {{{
 @follows(
-    mkdir("contigs") # change to make dir "SPAdes"
- )
-@split(
-    "fastqs",
-    "contigs/contigs.fa"
-)
+    mkdir("contigs") 
+    )
+@collate("fastqs/*", #RR: may need to make this filter more
+    formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
+    "contigs/{NAME[0]}.fa"
+    )
 
-def assembly(infile, outfile):
+def assembly(infiles, outfile):
+    
+    #RR: can't guarantee that these will always be in order so should be sorted.
+    infile1 = infiles[0]
+    infile2 = infiles[1]
 
-    ''' 
-    Contig assembly
-    '''
-    statement = '''/media/ruth/external-drive/project/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py --pe1-1 %(infile)s/*.fastq.1.gz --pe1-2 %(infile)s/*.fastq.2.gz -m8 -o ./SPAdes-out/ &&
 
+    statement = '''spades.py --pe1-1 %(infile1)s --pe1-2 %(infile2)s -m8 -o ./SPAdes-out/ &&
     mv ./SPAdes-out/contigs.fasta %(outfile)s'''
 
     P.run(statement, to_cluster=True)
@@ -52,6 +52,8 @@ def mine_kmers(infile, outfile):
     :param outfile: gzipped file of Kmer patterns and genomes they are found in
     '''
 
+    #RR: where do fsm_kmer-min and fsm_kmer-max come from? removed from below.
+
     print(PARAMS)
 
     statement = '''
@@ -63,7 +65,7 @@ def mine_kmers(infile, outfile):
         -t kmers
         | gzip -c > ../%(outfile)s
     '''
-    #remvoed the min and max input because couldn't find the file
+
     P.run(statement, to_cluster=True)
 
 # }}}
@@ -74,9 +76,9 @@ def mine_kmers(infile, outfile):
 )
 @transform(
     assembly,
-    regex("contigs/(.*).fa"), 
-    r"annotations/\1.gff", 
-    r"\1" #
+    regex("contigs/(.*).fa"),
+    r"annotations/\1.gff",
+    r"\1"
 )
 def annotate(infile, outfile, idd):
 
