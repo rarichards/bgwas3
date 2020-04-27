@@ -18,23 +18,49 @@ PARAMS = P.get_parameters([
 ])
 
 # assembly {{{
+
+"""
 @follows(
-    mkdir("contigs") 
+    mkdir("fastqs") #changed from "fastqs" to "contigs"
     )
-@collate("fastqs/*", #RR: may need to make this filter more
+@split(
+    "fastqs",
+    "contigs/*.fa" #causes error "first argument must be string, not list - renaming this to be one file rather than a list makes it work but isn't a good fix - causing problems later on"
+)
+def assembly(infile, outfile): #changed to fix the error "takes 1 positional argument but 2 were given"
+
+    ''' 
+    Contig assembly
+
+    '''
+    statement = '''spades.py --pe1-1 %(infile)s/*.fastq.1.gz --pe1-2 %(infile)s/*.fastq.2.gz -m8 -o ./SPAdes-out/ &&
+    mv ./SPAdes-out/contigs.fasta %(outfile)s'''
+
+    P.run(statement, to_cluster=True)
+"""
+
+@follows(
+    mkdir("contigs") #RR: changed from "fastqs" to "contigs". New requirement for running is for user to have fastqs file of raw data.
+    )
+@collate("fastqs/*", #RR: probably need to make this fileter more robust so that it doesn't break the formatter 
     formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
-    "contigs/{NAME[0]}.fa"
+    "contigs/{NAME[0]}.fa",
+    "{NAME[0]}"
     )
 
-def assembly(infiles, outfile):
-    
-    #RR: can't guarantee that these will always be in order so should be sorted.
+def assembly(infiles, outfile, iid):
+    #RR: find a way to select each infile based on .1.gz and .2.gz
+    print(infiles)
+
+    #can't garuentee that these will always be in order so should be sorted. Below line doens't work because infiles is a tuple, not list
+    #infiles.sort()
+
     infile1 = infiles[0]
     infile2 = infiles[1]
 
 
-    statement = '''spades.py --pe1-1 %(infile1)s --pe1-2 %(infile2)s -m8 -o ./SPAdes-out/ &&
-    mv ./SPAdes-out/contigs.fasta %(outfile)s'''
+    statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s --isolate -m8 -o ./SPAdes-out-%(iid)s &&
+    mv ./SPAdes-out-%(iid)s/contigs.fasta %(outfile)s && rm -rf ./SPAdes-out-%(iid)s'''
 
     P.run(statement, to_cluster=True)
 
@@ -647,5 +673,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
-
 
