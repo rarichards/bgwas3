@@ -83,10 +83,10 @@ def mine_kmers(infile, outfile):
     print(PARAMS)
 
     statement = '''
-    ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
-    fsm-lite
-        -l ../contigs_list.txt
+    ls *.fa | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
+        fsm-lite
+        -l contigs_list.txt
         -v
         -t kmers
         | gzip -c > ../%(outfile)s
@@ -130,7 +130,7 @@ def pangenome_analysis(infile, outfile):
     content) and generate a phylogenetic tree (.newick) file for use in mixed
      effects association testing '''
 
-    os.mkdir("pangenome")
+    #os.mkdir("pangenome")
     statement = '''
     roary -f pangenome -e -n -v -r annotations/*.gff
     '''
@@ -153,11 +153,11 @@ def distance_from_tree(infile, outfile):
         os.path.join(os.path.dirname(__file__), "python")
     )
 
-    newick = infile + "/accessory_binary_genes.fa.newick"
+    #newick = infile + "/accessory_binary_genes.fa.newick"
 
     statement = '''
     python %(PY_SRC_PATH)s/distance_from_tree.py
-        --calc-C %(newick)s
+        --calc-C %(infile)s
         > %(outfile)s
     '''
 
@@ -673,4 +673,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
-
