@@ -26,15 +26,15 @@ Quick Usage
 
 3. Put reference genome (.fa) and annotations (.gff) into a directory named "ref"
 
-3. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
+4. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
 
-4. Run:
+5. Run:
 
 ::
 
    bgwas3 make full
 
-5. View results with:
+6. View results with:
 
 ::
 
