@@ -19,26 +19,6 @@ PARAMS = P.get_parameters([
 
 # assembly {{{
 
-"""
-@follows(
-    mkdir("fastqs") #changed from "fastqs" to "contigs"
-    )
-@split(
-    "fastqs",
-    "contigs/*.fa" #causes error "first argument must be string, not list - renaming this to be one file rather than a list makes it work but isn't a good fix - causing problems later on"
-)
-def assembly(infile, outfile): #changed to fix the error "takes 1 positional argument but 2 were given"
-
-    ''' 
-    Contig assembly
-
-    '''
-    statement = '''spades.py --pe1-1 %(infile)s/*.fastq.1.gz --pe1-2 %(infile)s/*.fastq.2.gz -m8 -o ./SPAdes-out/ &&
-    mv ./SPAdes-out/contigs.fasta %(outfile)s'''
-
-    P.run(statement, to_cluster=True)
-"""
-
 @follows(
     mkdir("contigs") #RR: changed from "fastqs" to "contigs". New requirement for running is for user to have fastqs file of raw data.
     )
@@ -59,7 +39,7 @@ def assembly(infiles, outfile, iid):
     infile2 = infiles[1]
 
 
-    statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s --isolate -m8 -o ./SPAdes-out-%(iid)s &&
+    statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s -m8 -o ./SPAdes-out-%(iid)s &&
     mv ./SPAdes-out-%(iid)s/contigs.fasta %(outfile)s && rm -rf ./SPAdes-out-%(iid)s'''
 
     P.run(statement, to_cluster=True)
@@ -130,8 +110,8 @@ def pangenome_analysis(infile, outfile):
     content) and generate a phylogenetic tree (.newick) file for use in mixed
      effects association testing '''
 
-    #os.mkdir("pangenome")
     statement = '''
+    rm -r pangenome &&
     roary -f pangenome -e -n -v -r annotations/*.gff
     '''
 
@@ -292,6 +272,7 @@ def test_assoc(infiles, outfiles, idd):
         --kmers %(kmers)s
         --similarity %(distances)s
         --output-patterns %(patterns)s
+        --print-samples
         --cpu 8
         | gzip -c
         > %(assoc)s
@@ -331,7 +312,7 @@ def plot_ps(infiles, outfiles, pheno):
     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/p.html"
     template = Template(filename=template_path)
 
-    html_file = open(outfiles[4])
+    html_file = open(outfiles[4], "w")
     page = template.render(pheno=pheno, p_hist=p_hist, p_qq=p_qq)
     html_file.write(page)
     html_file.close()
@@ -342,7 +323,7 @@ def plot_ps(infiles, outfiles, pheno):
     Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p --output %(p_hist)s &&
     Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p_unadj --output %(p_unadj_hist)s &&
     python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p --output %(p_qq)s &&
-    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p_unadj --output %(p_unadj_qq)s_anadj &&
+    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p_unadj --output %(p_unadj_qq)s &&
     rm %(pheno)s_temp_p*
     '''
 
@@ -387,9 +368,9 @@ def filter(infiles, outfiles, pheno):
     bonf = infiles[1]
     filtered = outfiles[0]
     stats = outfiles[1]
-
+    #add second backslash before t for stat\\tvalue
     statement = '''
-    echo "stat\tvalue" > %(stats)s &&
+    echo "stat\\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
     wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
     head -1 %(pheno)s_temp.tsv > %(filtered)s &&
@@ -592,13 +573,13 @@ def plot_genes(infiles, outfile, pheno):
     html_file.write(page)
     html_file.close()
 
-    # if not os.path.exists("results/plots/src"):
-    #     shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
+    #if not os.path.exists("results/plots/src"):
+    #    shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
 
 # }}}
 # summarise {{{
 @follows(
-    plot_genes
+    filter 
 )
 @merge(
     filter,
@@ -673,3 +654,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
+    
