@@ -29,15 +29,9 @@ PARAMS = P.get_parameters([
     )
 
 def assembly(infiles, outfile, iid):
-    
-    print(infiles)
-
-    #can't garuentee that these will always be in order so should be sorted. Below line doens't work because infiles is a tuple, not list
-    #infiles.sort()
 
     infile1 = infiles[0]
     infile2 = infiles[1]
-
 
     statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s -m8 -o ./SPAdes-out-%(iid)s &&
     mv ./SPAdes-out-%(iid)s/contigs.fasta %(outfile)s && rm -rf ./SPAdes-out-%(iid)s'''
@@ -130,8 +124,6 @@ def distance_from_tree(infile, outfile):
     PY_SRC_PATH = os.path.abspath(
         os.path.join(os.path.dirname(__file__), "python")
     )
-
-    #newick = infile + "/accessory_binary_genes.fa.newick"
 
     statement = '''
     python %(PY_SRC_PATH)s/distance_from_tree.py
@@ -366,7 +358,7 @@ def filter(infiles, outfiles, pheno):
     bonf = infiles[1]
     filtered = outfiles[0]
     stats = outfiles[1]
-    #add second backslash before t for stat\\tvalue
+
     statement = '''
     echo "stat\\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
@@ -571,13 +563,13 @@ def plot_genes(infiles, outfile, pheno):
     html_file.write(page)
     html_file.close()
 
-    #if not os.path.exists("results/plots/src"):
-    #    shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
+    # if not os.path.exists("results/plots/src"):
+    #     shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
 
 # }}}
 # summarise {{{
 @follows(
-    filter 
+    plot_genes
 )
 @merge(
     filter,
