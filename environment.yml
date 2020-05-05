@@ -22,3 +22,6 @@ dependencies:
   - r-ggplot2
   - r-tidytree
   - bgwas3
+  - bwa
+  - pyseer
+  - bedops

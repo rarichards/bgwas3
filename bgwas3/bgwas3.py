@@ -18,18 +18,25 @@ PARAMS = P.get_parameters([
 ])
 
 # assembly {{{
-@follows(
-    mkdir("fastqs")
-    )
-@split(
-    "fastqs",
-    "contigs/*.fa"
-)
-def assembly(outfile):
 
-    ''' 
-    Contig assembly
-    '''
+@follows(
+    mkdir("contigs")
+    )
+@collate("fastqs/*",
+    formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
+    "contigs/{NAME[0]}.fa",
+    "{NAME[0]}"
+    )
+
+def assembly(infiles, outfile, iid):
+
+    infile1 = infiles[0]
+    infile2 = infiles[1]
+
+    statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s -m8 -o ./SPAdes-out-%(iid)s &&
+    mv ./SPAdes-out-%(iid)s/contigs.fasta %(outfile)s && rm -rf ./SPAdes-out-%(iid)s'''
+
+    P.run(statement, to_cluster=True)
 
 # }}}
 # mine_kmers {{{
@@ -48,12 +55,10 @@ def mine_kmers(infile, outfile):
     print(PARAMS)
 
     statement = '''
-    ls contigs | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
     cd contigs &&
-    fsm-lite
-        -l ../contigs_list.txt
-        -m %(fsm_kmer-min)s
-        -M %(fsm_kmer-max)s
+    ls *.fa | awk -F. '{print $1 "\t" $0}' > contigs_list.txt &&
+        fsm-lite
+        -l contigs_list.txt
         -v
         -t kmers
         | gzip -c > ../%(outfile)s
@@ -97,8 +102,8 @@ def pangenome_analysis(infile, outfile):
     content) and generate a phylogenetic tree (.newick) file for use in mixed
      effects association testing '''
 
-    os.mkdir("pangenome")
     statement = '''
+    rm -r pangenome &&
     roary -f pangenome -e -n -v -r annotations/*.gff
     '''
 
@@ -120,11 +125,9 @@ def distance_from_tree(infile, outfile):
         os.path.join(os.path.dirname(__file__), "python")
     )
 
-    newick = infile + "/accessory_binary_genes.fa.newick"
-
     statement = '''
     python %(PY_SRC_PATH)s/distance_from_tree.py
-        --calc-C %(newick)s
+        --calc-C %(infile)s
         > %(outfile)s
     '''
 
@@ -259,6 +262,7 @@ def test_assoc(infiles, outfiles, idd):
         --kmers %(kmers)s
         --similarity %(distances)s
         --output-patterns %(patterns)s
+        --print-samples
         --cpu 8
         | gzip -c
         > %(assoc)s
@@ -298,7 +302,7 @@ def plot_ps(infiles, outfiles, pheno):
     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/p.html"
     template = Template(filename=template_path)
 
-    html_file = open(outfiles[4])
+    html_file = open(outfiles[4], "w")
     page = template.render(pheno=pheno, p_hist=p_hist, p_qq=p_qq)
     html_file.write(page)
     html_file.close()
@@ -309,7 +313,7 @@ def plot_ps(infiles, outfiles, pheno):
     Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p --output %(p_hist)s &&
     Rscript %(R_SRC_PATH)s/plot_ps.R %(pheno)s_temp_p_unadj --output %(p_unadj_hist)s &&
     python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p --output %(p_qq)s &&
-    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p_unadj --output %(p_unadj_qq)s_anadj &&
+    python %(PY_SRC_PATH)s/plot_qq.py %(pheno)s_temp_p_unadj --output %(p_unadj_qq)s &&
     rm %(pheno)s_temp_p*
     '''
 
@@ -356,7 +360,7 @@ def filter(infiles, outfiles, pheno):
     stats = outfiles[1]
 
     statement = '''
-    echo "stat\tvalue" > %(stats)s &&
+    echo "stat\\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
     wc -l %(pheno)s_temp.tsv | cut -f1 -d' ' | xargs -I @ echo -e 'kmers_tested\\t@' >> %(stats)s &&
     head -1 %(pheno)s_temp.tsv > %(filtered)s &&
@@ -640,5 +644,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
-
-
+    

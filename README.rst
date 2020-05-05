@@ -22,17 +22,19 @@ Quick Usage
 
 1. Create and cd into an empty project directory
 
-2. Put all contigs into a sub-directory named "contigs"
+2. Put all fastqs into a sub-directory named "fastqs"
 
-3. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
+3. Put reference genome (.fa) and annotations (.gff) into a directory named "ref"
 
-4. Run:
+4. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
+
+5. Run:
 
 ::
 
    bgwas3 make full
 
-5. View results with:
+6. View results with:
 
 ::
 
