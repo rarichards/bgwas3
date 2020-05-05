@@ -20,16 +20,16 @@ PARAMS = P.get_parameters([
 # assembly {{{
 
 @follows(
-    mkdir("contigs") #RR: changed from "fastqs" to "contigs". New requirement for running is for user to have fastqs file of raw data.
+    mkdir("contigs")
     )
-@collate("fastqs/*", #RR: probably need to make this fileter more robust so that it doesn't break the formatter 
+@collate("fastqs/*",
     formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
     "contigs/{NAME[0]}.fa",
     "{NAME[0]}"
     )
 
 def assembly(infiles, outfile, iid):
-    #RR: find a way to select each infile based on .1.gz and .2.gz
+    
     print(infiles)
 
     #can't garuentee that these will always be in order so should be sorted. Below line doens't work because infiles is a tuple, not list
@@ -57,8 +57,6 @@ def mine_kmers(infile, outfile):
     :param infile: directory of geneomes (fasta files)
     :param outfile: gzipped file of Kmer patterns and genomes they are found in
     '''
-
-    #RR: where do fsm_kmer-min and fsm_kmer-max come from? removed from below.
 
     print(PARAMS)
 
