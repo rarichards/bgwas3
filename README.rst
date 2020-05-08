@@ -24,7 +24,7 @@ Quick Usage
 
 2. Put all fastqs into a sub-directory named "fastqs"
 
-3. Put reference genome (.fa) and annotations (.gff) into a directory named "ref"
+3. Put reference genome (.fa) and annotations (.gff) into a directory named "refs"
 
 4. Create a tsv file named 'phenos.tsv' with an 'id' column and one or more 'pheno_xxx' columns
 
