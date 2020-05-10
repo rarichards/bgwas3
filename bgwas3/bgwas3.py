@@ -17,23 +17,46 @@ PARAMS = P.get_parameters([
     "pipeline.yml"
 ])
 
-# assembly {{{
+# trim adapters
+@follows(
+    mkdir("trimmed_fastqs")
+    )
+@transform("fastqs/*",
+    formatter(r"fastqs/(?P<NAME>.*)(\.1\.gz)$"),
+    add_inputs("fastqs/{NAME[0]}.2.gz",
+        "fastqcs/{NAME[0]}.1_fastqc.zip",
+        "fastqcs/{NAME[0]}.2_fastqc.zip"
+        ),
+    "trimmed_fastqs/*")
 
+
+def trim_adapters(infiles, outfiles):
+
+    infile1 = infiles[0]
+    infile2 = infiles[1]
+    infile3 = infiles[2]
+    infile4 = infiles[3]
+
+    statement = '''python3 scripts/trim-adapters3.py -1 %(infile1)s -2 %(infile2)s -fql %(infile3)s -rql %(infile4)s -o trimmed_fastqs'''
+
+    P.run(statement, to_cluster=True)
+
+# assembly {{{
 @follows(
     mkdir("contigs")
     )
-@collate("fastqs/*",
+@collate("trimmed_fastqs/*",
     formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
     "contigs/{NAME[0]}.fa",
     "{NAME[0]}"
     )
 
 def assembly(infiles, outfile, iid):
-
+    
     infile1 = infiles[0]
     infile2 = infiles[1]
 
-    statement = '''/media/ruth/external-drive/project-2/SPAdes/SPAdes-3.14.0-Linux/bin/spades.py -1 %(infile1)s -2 %(infile2)s -m8 -o ./SPAdes-out-%(iid)s &&
+    statement = '''spades.py -1 %(infile1)s -2 %(infile2)s --isolate -m8 --only-assembler -k55 -o ./SPAdes-out-%(iid)s &&
     mv ./SPAdes-out-%(iid)s/contigs.fasta %(outfile)s && rm -rf ./SPAdes-out-%(iid)s'''
 
     P.run(statement, to_cluster=True)
@@ -51,6 +74,8 @@ def mine_kmers(infile, outfile):
     :param infile: directory of geneomes (fasta files)
     :param outfile: gzipped file of Kmer patterns and genomes they are found in
     '''
+
+    #RR: where do fsm_kmer-min and fsm_kmer-max come from? removed from below.
 
     print(PARAMS)
 
@@ -102,6 +127,7 @@ def pangenome_analysis(infile, outfile):
     content) and generate a phylogenetic tree (.newick) file for use in mixed
      effects association testing '''
 
+    #roary won't overwrite existing dir, it makes a new output dir, if it already exists it adds a timestap (ie pangenome_<timestap>). The dir 'pangenome' is made in the merge decorator so must be removed for roary to write into it. temportary fix.
     statement = '''
     rm -r pangenome &&
     roary -f pangenome -e -n -v -r annotations/*.gff
@@ -125,6 +151,8 @@ def distance_from_tree(infile, outfile):
         os.path.join(os.path.dirname(__file__), "python")
     )
 
+    #newick = infile + "/accessory_binary_genes.fa.newick"
+
     statement = '''
     python %(PY_SRC_PATH)s/distance_from_tree.py
         --calc-C %(infile)s
@@ -134,7 +162,7 @@ def distance_from_tree(infile, outfile):
     P.run(statement, to_cluster=False)
 
 # }}}
-
+"""
 # mash {{{
 @merge(
     assembly,
@@ -153,7 +181,7 @@ def mash(infiles, outfile):
     P.run(statement, to_cluster = False)
 
 # }}}
-
+"""
 # plot_trees {{{
 @split(
     [pangenome_analysis, "phenos.tsv"],
@@ -292,7 +320,7 @@ def plot_ps(infiles, outfiles, pheno):
         os.path.join(os.path.dirname(__file__), "python")
     )
 
-    assoc = infiles[0]
+    assoc = infiles[0] #RR: infileS??
 
     p_hist = outfiles[0]
     p_qq = outfiles[1]
@@ -302,7 +330,7 @@ def plot_ps(infiles, outfiles, pheno):
     template_path = os.path.dirname(os.path.realpath(__file__)) + "/plots/p.html"
     template = Template(filename=template_path)
 
-    html_file = open(outfiles[4], "w")
+    html_file = open(outfiles[4], "w") #RR: no such file or directory
     page = template.render(pheno=pheno, p_hist=p_hist, p_qq=p_qq)
     html_file.write(page)
     html_file.close()
@@ -358,7 +386,7 @@ def filter(infiles, outfiles, pheno):
     bonf = infiles[1]
     filtered = outfiles[0]
     stats = outfiles[1]
-
+    #add second backslash before t for stat\\tvalue
     statement = '''
     echo "stat\\tvalue" > %(stats)s &&
     gzip -d -c %(assoc_gzip)s > %(pheno)s_temp.tsv &&
@@ -563,13 +591,15 @@ def plot_genes(infiles, outfile, pheno):
     html_file.write(page)
     html_file.close()
 
-    # if not os.path.exists("results/plots/src"):
-    #     shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
+    #RR: uncommented these two lines - why were they commented out?
+    if not os.path.exists("results/plots/src"):
+        shutil.copytree(os.path.dirname(os.path.realpath(__file__)) + "/plots/src", "results/plots/src")
 
 # }}}
 # summarise {{{
 @follows(
-    plot_genes
+    filter #RR: Can't get summarise_genes to work because no gene_info.tsv created in map_kmers.
+    #summarise doesn't depend on output from summarise_genes anyway so this is changed to follow filter. 
 )
 @merge(
     filter,
@@ -644,4 +674,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(P.main(sys.argv))
-    
