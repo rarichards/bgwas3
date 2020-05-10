@@ -37,22 +37,28 @@ def trim_adapters(infiles, outfiles):
     infile3 = infiles[2]
     infile4 = infiles[3]
 
-    statement = '''python3 scripts/trim-adapters3.py -1 %(infile1)s -2 %(infile2)s -fql %(infile3)s -rql %(infile4)s -o trimmed_fastqs'''
+    #statement = '''python3 scripts/trim-adapters3.py -1 %(infile1)s -2 %(infile2)s -fql %(infile3)s -rql %(infile4)s -o trimmed_fastqs'''
+    # python3 scripts/trim-adapters3.py -1 fastqs/S90_TP_D7_009_TP_D5_003-1-1.fastq.1.gz -2 fastqs/S90_TP_D7_009_TP_D5_003-1-1.fastq.1.gz -fql fastqcs/S90_TP_D7_009_TP_D5_003-1-1.fastq.1_fastqc.zip -rql fastqcs/S90_TP_D7_009_TP_D5_003-1-1.fastq.2_fastqc.zip -o trimmed_fastqs
 
-    P.run(statement, to_cluster=True)
+    #P.run(statement, to_cluster=True)
 
 # assembly {{{
 @follows(
-    mkdir("contigs")
+    mkdir("contigs") #RR: changed from "fastqs" to "contigs". New requirement for running is for user to have fastqs file of raw data.
     )
-@collate("trimmed_fastqs/*",
-    formatter(r"(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
+@collate(trim_adapters, 
+    formatter(r"trimmed_fastqs/(?P<NAME>S[^_]+)_.*(fastq\.(1|2)\.gz)$"),
     "contigs/{NAME[0]}.fa",
     "{NAME[0]}"
     )
 
 def assembly(infiles, outfile, iid):
+    #RR: find a way to select each infile based on .1.gz and .2.gz
     
+
+    #can't garuentee that these will always be in order so should be sorted. Below line doens't work because infiles is a tuple, not list
+    infiles.sorted()
+
     infile1 = infiles[0]
     infile2 = infiles[1]
 
